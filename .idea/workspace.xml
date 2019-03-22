@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/episode8/episode8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/episode8/episode8.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/episode8/episode8.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +19,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/math/episode8/episode8.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
+            <state relative-caret-position="404">
+              <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#7;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#8;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#14;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#16;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#30;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#32;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#38;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#13825#13866#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/math/episode4/episode4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4173" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/math/episode5/episode5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="167" column="79" lean-forward="true" selection-start-line="167" selection-start-column="79" selection-end-line="167" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -36,7 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>p-progressstory-index__text</find>
       <find>p-progressstory-index__image</find>
       <find>p-index-fact</find>
       <find>background2</find>
@@ -66,6 +96,7 @@
       <find>font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;</find>
       <find>font-family</find>
       <find>koch</find>
+      <find>lam</find>
     </findStrings>
     <replaceStrings>
       <replace>font-family: 等线，&quot;等线 Light&quot;，&quot;微软雅黑 Light&quot;</replace>
@@ -111,13 +142,13 @@
         <option value="$PROJECT_DIR$/actuary/episode3/episode3.html" />
         <option value="$PROJECT_DIR$/actuary/episode2/episode2.html" />
         <option value="$PROJECT_DIR$/articles/episode5/episode5.html" />
+        <option value="$PROJECT_DIR$/math/episode8/test.html" />
         <option value="$PROJECT_DIR$/math/episode8/episode8.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="323" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="69" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -127,6 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,13 +198,13 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="episode5" type="462c0819:PsiDirectoryNode" />
+              <item name="episode4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="episode6" type="462c0819:PsiDirectoryNode" />
+              <item name="episode5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -184,7 +216,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,21 +317,22 @@
       <workItem from="1552787519675" duration="4266000" />
       <workItem from="1552859428071" duration="10446000" />
       <workItem from="1553081932817" duration="4538000" />
+      <workItem from="1553230525334" duration="14407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229957000" />
+    <option name="totallyTimeSpent" value="244364000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="323" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23114869" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23114869" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.08187919" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.08072289" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39919892" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -494,28 +526,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math/episode7/episode7.html">
+    <entry file="file://$PROJECT_DIR$/math/episode8/image/log.svg" />
+    <entry file="file://$PROJECT_DIR$/math/episode8/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4871" />
+        <state relative-caret-position="154">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/episode9/episode9.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/math/episode6/episode6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3550" />
+        <state relative-caret-position="-3591" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/episode7/episode7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/episode4/episode4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4173" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/math/episode5/episode5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4002" />
+        <state relative-caret-position="494">
+          <caret line="167" column="79" lean-forward="true" selection-start-line="167" selection-start-column="79" selection-end-line="167" selection-end-column="79" />
+        </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/episode8/image/log.svg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/math/episode8/episode8.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="168" column="58" selection-start-line="168" selection-start-column="58" selection-end-line="168" selection-end-column="58" />
+        <state relative-caret-position="404">
+          <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#7;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#8;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#14;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#16;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#30;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#32;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#38;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#13825#13866#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

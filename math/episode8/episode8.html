@@ -18,6 +18,15 @@
 
     <meta name="theme-color" content="#ffffff">
 
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -140,33 +149,57 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始以为gamma分布和beta分布比较冷门，后来发现错了，据说，他们如同基石奠定了整个特殊函数论大厦的基础。首先介绍一下他们的应用，第一，他们提供了大部分超级和函数的理论基础；第二，分数阶微积分，也就是牛顿莱布尼茨微积分的推广，依赖于beta函数和gamma函数的定义；第三，riemann zeta function的一个基本的积分表示其核心就是gamma函数；第四，laplace变化和mellin变换可以十分好地统一在gamma函数的积分表示上，也就是说，gamma函数是mellin变换，还是幂函数的laplace变换</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始以为gamma分布和beta分布比较冷门，后来发现错了，据说，他们如同基石奠定了整个特殊函数论大厦的基础。首先介绍一下他们的应用，第一，他们提供了大部分超级和函数的理论基础；第二，分数阶微积分，也就是牛顿莱布尼茨微积分的推广，依赖于beta函数和gamma函数的定义；第三，riemann zeta function的一个基本的积分表示其核心就是gamma函数；第四，laplace变化和mellin变换可以十分好地统一在gamma函数的积分表示上，也就是说，gamma函数是mellin变换，还是幂函数的laplace变换。上面那些，感觉挺虚的，主要因为我不了解，所以还是先从最简单的说起。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">从定义上来说，gamma分布是指多个独立同分布的指数分布变量的和的分布。之前也说过了，指数分布就是相邻两个事件的发生的时间间隔的分布，所以gamma分布就是指相邻n件事发生的时间间隔的分布。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">要理解gamma分布，还是从gamma函数的来源说起吧，简单来说就是哥德巴赫在考虑n！的插值想到的一个问题，就是怎么把n！从整数集延拓到实数集，即我们可以计算2！，那么可以计算2.5！吗，后来，欧拉和贝怒利发现了n！的极限表达式，说实话我是不知道他们怎么想到这样的一个表达式的，反正就是一个式子的一个未知数趋于无穷就可以逼近n！，其实我也想推导一下这条公式，不过实在太长了，</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">要理解gamma分布，还是从gamma函数说起:</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\Gamma(\alpha) = \int_0^\infty x^{(\alpha-1)}e^{(-x)}dx$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">gamma函数又被称为阶乘函数，具有以下性质</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\Gamma(x+1) = x\Gamma(x)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因此可推导，对于任意自然数n：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\Gamma(n) = (n-1)!$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果对Gamma函数的定义做一个变形，可得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\int_0^\infty \frac{\alpha^{(x-1)}e^{(-\alpha)}}{\Gamma(\alpha)}d\alpha = 1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，这里积分的结果为1，所以如果把其中的函数作为概率密度函数，就得到最简单的Gamma分布的密度函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ Gamma(x|\alpha)=\frac{x^{(\alpha-1)}e^{(-x)}}{\Gamma(\alpha)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">令x=(beta)t，则得到Gamma分布更一般的形式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ Gamma(t|\alpha ,\beta)=\frac{\beta^{\alpha}t^{(\alpha-1)}e^{-\beta t}}{\Gamma(\alpha)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中alpha成为shape parameter，主要决定了分布曲线的形状，beta成为rate parameter或者inverse scale parameter，主要决定曲线有多陡。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是重点了，关于Gamma分布和其他分布的关系，首先从形式上从Gamma分布推导Possion分布，注意观察两个分布的函数，当alpha = k + 1时，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ Gamma(x|\alpha=k+1)=\frac{x^{k}e^{(-x)}}{\Gamma(k+1)}=\frac{x^{k}e^{(-x)}}{k!}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对比该函数和Possion分布在数学形式上是一致的，只是Possion是离散这里是连续的，所以可以认为Gamma分布是Possion分布在正实数集上的连续版本</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于Gamma分布和Possion分布之间的联系，有一种分析方法是从二项分布出发分析，不过那种方法个人认为还不够直观地显示出两者的联系，暂不作详细介绍，而希望从更直白的方式，分析他们的关系。首先注意到他们函数形式是一致的，做代换只是使得这个形式变得更明显而已，从Possion分布的角度来说，它分析的是Gamma分布中的alpha的取值的概率分布，而Gamma分布考察的则是Possion分布中的lambda（Possion分布的期望），所以这里就可以看出这两种分布是针对同一个形式的函数的不同对象进行研究他们的概率分布。更简单地说，可以认为，Possion是给定了单位时间平均发生次数，研究实际发生次数的分布，Gamma则是给定了实际发生次数，研究平均发生次数，从这个角度来说，他们两个更像先验概率和后验概率的关系，另一方面，因为实际发生次数只能是整数次，而平均次数在实际发生次数除以时间后可以得到非整数次，这也导致了Gamma分布是连续型，比Possion分布适用范围更广。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">随着对Gamma的慢慢分析，发现Gamma分布的函数实在太重要了，感觉它就是一个更普通的分布函数，不仅仅可以推导Possion分布，还可以推导指数分布，只要针对Gamma分布一般形式，做代换beta=lambda，alpha=1，可得：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ Gamma(t|\alpha =1,\beta =\lambda)=\lambda e^{-\lambda t}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式就是指数分布的分布函数，这里就不再进行具体的分析，但是很明显可以看出，在函数形式上，Possion分布、指数分布都是特殊的Gamma分布，这是很关键也很重要的一个结论。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来是关于beta分布，beta分布也可以看成是概率分布之上的分布，是多次进行二项分布试验所得到的分布，也被认为是Dirichlet分布的特殊情况，分布函数为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ f(x;\alpha,\beta)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为Beta分布是二项分布的概率的概率分布，所以x的取值范围为[0，1]。而B则是指Beta函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ B(m,n)=\frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里，再次看到Gamma函数的身影，但是这里引入Gamma函数的主要目的只是作为一个归一化的常数引入，保证概率求和（或积分）等于1。具体证明见参考资料[4]。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">结合前面提到的内容，先对Beta分布进行一下总结，首先它是概率的概率分布，有一个对理想模型的修正（先验概率和后验概率），和二项分布、Gamma分布有一定联系，事实上，学术地说，Beta分布就是二项分布的共轭先验。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来，我们主要分析这个结论。首先，二项分布的概率密度函数为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ p(x)=\frac{n!}{x!(n-x)!}q^x(1-q)^{n-x}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">考察二项分布的概率的概率分布，意思就是二项分布的概率是不一定的，那么此时二项分布的概率密度函数的概率就变成变量，然后有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ f(q)\propto q^a(1-q)^b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的式子是什么意思？主要就是当q变成自变量后，与q^a*(1-q)^b成正比关系（省略的部分没影响，因为一定为正），然后原来的成功失败次数之和为n这个条件也没有了，主要因为现在进行多次二项分布试验，而没有规定每次进行的次数，所以次数和每次进行的成功率都具有随机性。为了让这个式子成为一个分布函数，主要要做的就是把它的积分变成1，实际上就是引入Beta函数，这里不做具体分析，主要希望解释清楚的是从二项分布到二项分布的概率的分布到引入Beta函数进行规范化分布函数这个过程。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从前面的介绍也可以看到，Beta函数里面就包含了Gamma函数，毫无疑问，这两个函数有着千丝万缕的关系，这里暂时不深究下去，总的来说，就是希望表明Gamma分布和Beta分布在统计学上的重要意义和作用。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
 
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
                 [1]https://cosx.org/2013/01/lda-math-gamma-function/<br>
-                [2]https://www.zhihu.com/question/31407058</div>
+                [2]https://www.zhihu.com/question/31407058
+                [3]http://www.52nlp.cn/lda-math-%E7%A5%9E%E5%A5%87%E7%9A%84gamma%E5%87%BD%E6%95%B03<br>
+                [4]https://blog.csdn.net/lanchunhui/article/details/75647076<br>
+                [5]https://blog.csdn.net/lucien_zong/article/details/50041341</div>
 
           </div>
       </div>
