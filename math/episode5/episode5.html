@@ -141,7 +141,6 @@
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">终于来到概率分布模型的最后一部分了，关于连续型的概率分布模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先要介绍的是指数分布，其实这个指数分布和泊松分布也是有一定关系的。泊松分布主要分析制定时间间隔内时间发生次数的概率分布，而指数分布，分析的就是从一次事件发生完，到下一次事件再次发生之间的时间间隔的概率分布。比如来电的时间间隔、网站访问的时间间隔等等。其实，泊松分布的概率函数可以通过泊松分布推导出来。因为我们分析的是下次事件发生前的时间间隔分布概率，这就意味着这段时间t内没有事件发生，把事件发生数目为零代入泊松分布，就可以得到这段时间没有时间发生的概率分布，再用1减去这个式子，就得到指数分布的概率函数。</div>
@@ -156,6 +155,9 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了中心极限定理和正态分布之间的关系之后，再看正态分布的例子，比如人的身高，某一个国家的男生可能平均身高是一米七，可以认为，在这个国家、这个环境下一般正常男生理想达到的身高是一米七，然后实际上因为各人的生活习惯、家庭因素等等因素，对身高的生长造成了影响，导致了最后可能比一米七高，可能更矮，但是这个大环境下一米七就是一个理想的数字，所以可能实际上存在误差，但总体男性的身高还是趋于一米七。我认为这个就是正态分布广泛存在的原因了：理想是存在的，现实各种因素的影响也是存在的，在各种因素影响下的现实情况的概率分布就是正态分布。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来主要分析怎么使用正态分布估计二项分布，还记得二项分布是概率为p的n次独立抽样取得k次成功的概率分布，整个分布是对称的，大致近似正态分布，但是正态分布是连续型的，二项分布是离散型的，所以这种近似是有条件的。还记得之前也提到过，当二项分布的n增大，同时np存在极限lambda，那么二项分布就可以近似成Possion分布，可是如果np没有极限，那么这时候根据De'Movire-Laplace中心极限定理，二项分布将趋近于正态分布。一般来说，如果np(1-p)>10，就可以用正态分布的概率进行近似计算了。具体的近似过程就是把二项分布的期望和方差作为正太分布的期望方差计算概率。但是因为一个是连续型一个是离散型，直接近似还有误差有点大，所以会采取修正，主要是对x<=a修正为x<a+0.5,对x>=b修正为x>b-0.5,对a<=x<=b修正为a-0.5<x<b+0.5</a></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，还有一些比较冷门的分布（在soa考试和本科的数学学习中都很少见到的），一个是triangular distribution，如果两个独立随机变量都服从均匀分布，那么他们的和就服从三角分布，这个实际意义不大，暂不讨论。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后是柯西分布，依然觉得意义不大，跳过（这里主要指在本人的相关研究应用和考试的意义，不是指这些分布的学术意义）</div>

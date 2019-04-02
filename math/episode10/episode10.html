@@ -18,6 +18,15 @@
 
     <meta name="theme-color" content="#ffffff">
 
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,7 +36,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -133,42 +142,42 @@
 
 
 
-          <div class="p-lower">
+      <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Bayesian Data Analysis</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">概率分布的转换</h2>
 
-		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍贝叶斯统计之前，首先需要学习什么是先验概率什么是后验概率。</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，先验概率就是，事件发生前的预判概率，可以是基于历史数据的统计，也可以是人的主观观点给出的，一般是单独事件概率，比如通过统计得到全国有百分之七十的人玩过王者荣耀，这个百分之七十就是先验概率。</div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2">后验概率，简单来说，就是事件已经发生，那么这个事件发生的原因是由某个因素引起的可能性的大小。还有一种说法是，后验概率是基于事件发生了获得的新的信息，修正原来的先验概率后获得的更接近实际情况的概率估计，一般来说，后验概率是通过贝叶斯公式对先验概率进行修正而获得的概率。另一方面，通过似然函数也可以计算后验概率。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了先验概率和后验概率，之后先谈一下贝叶斯公式： P(y|x) = ( P(x|y) * P(y) ) / P(x)，以前用贝叶斯公式主要是为了在知道P(x|y)的前提下怎么求P(y|x)，当时感觉这就是一个解题的技巧，现在才明白它更多是与贝叶斯统计相关。首先要明白，在贝叶斯公式中，P(y|x) 是后验概率，一般是我们求解的目标，P(x|y) 是条件概率，又叫似然概率，一般是通过历史数据统计得到。一般不把它叫做先验概率，但从定义上也符合先验定义，P(y)是先验概率，一般都是人主观给出的。贝叶斯中的先验概率一般特指它。P(x) 其实也是先验概率，只是在贝叶斯的很多应用中不重要，需要时往往用全概率公式计算得到。比如说，假设y是文章种类，是一个枚举值；x是向量，表示文章中各个单词的出现次数，针对这种情况，可以统计出p(x),p(y),p(x|y)，而P(y|x)则是无法通过统计得到的（通过单词出现次数统计是哪种文章），所以只能通过贝叶斯公式去计算，这就是后验概率，也是贝叶斯公式的作用。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是重点贝叶斯推断，首先要明白的是，贝叶斯和以前的观点有一个不同，就是把参数看作随机变量。这也是为什么要提出先验概率和后验概率的原因，以前我们一般把参数看成实数或者向量，比如服从p=0.5的伯努利分布，贝叶斯则是把参数看成随机变量，也就是定义在样本空间上的实值函数，所以用一个分布来表示，它是不确定的，是可以根据实际情况进行修正的。比如，现在我写好了一段代码，但是不确定有没有bug，因此在一个简单的例子上应用这段代码，没有问题，我初步相信代码是正确的，然后进一步把代码应用到更复杂的例子中，都没有问题，在不断的测试过程中，我越来越坚信自己的代码没有问题，我的相信程度，就是一个随机变量，也是一个后验概率，通过实验结果不断修正改变，而这整个过程，就可看成是贝叶斯推断对参数估计的应用。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了对贝叶斯推断初步的了解，就可以看看怎么通过贝叶斯推断进行参数估计了。首先介绍的是最大后验估计（MAP），这个MAP实际上和MLE又是有一定联系的，之前介绍过MLE，就是通过事件发生的情况去判断参数的一个分布情况，再推断参数最有可能的取值，比如说，我们抛硬币，抛十次八次正面朝上，解似然函数得到朝上的概率为0.8时似然函数最大，所以按照MLE的思想0.8就是对参数的推断。但是可能有人会认为硬币一般是均匀的，做十次试验有可能有偶然性，甚至抛十次十次正面朝上都有可能，但我们不能因此就认为概率为1的嘛，所以就有人提出要考虑先验概率，引入了最大后验估计。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最大似然估计是求参数θ, 使似然函数P(x0|θ)最大。最大后验概率估计则是想求θ使P(x0|θ)P(θ)最大。主要不同的地方就在于MAP不仅仅考虑了似然函数，也考虑到P(θ)这个先验概率的影响，事实上，完整的表达式是P(x0|θ)P(θ)/P(x0)，也就是贝叶斯公式。但是因为我们已经做了试验，知道了P(x0)的结果（就是投十次正面朝上八次），是常数所以就省去了。最后，我们得到了后验概率分布后，可以选择求最大值进行点估计，也可以求分布的后验期望等等。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
-                [1]https://www.zhihu.com/question/55819120<br>
-                [2]https://www.jianshu.com/p/0a038974d48c<br>
-                [3]https://cloud.tencent.com/developer/article/1094425</div>
 
-            </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里主要介绍一下概率分布的转化，也就是对随机变量x有相应的概率密度函数，那么对随机变量y=t(x)，y的概率密度函数和分布函数是什么呢。推导过程见下：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ x=t^{-1}(y)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ F_Y(y)=p(Y < y)=p(t(x) < y)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ p(t(x) < y)=p(x < t^{-1}(y))(这里的变换就像x+1 < y等价于x < y-1)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ F_Y(y)=F_X(t^{-1}(y))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为y本身是关于x的函数，所以概率密度函数（对分布函数求导）是复合函数求导的结果：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ f_Y(y)=\frac{d}{dy}F_X(t^{-1}(y))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ f_Y(y)=(t^{-1}(y))'f_X(t^{-1}(y))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上述情况主要针对单调递增的情况，如果单调递减要加一个负号（主要是第三步变换的时候，结果变成1-F（），导致后来求导的时候多了一个负号）。总的来说，不论单调递增还是递减，求概率密度函数的对t（x）求导那一项结果都应该是它的绝对值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面讨论的主要是对某一个随机变量x作变换，分析变换后的变量的分布函数和概率密度函数，进一步的，我们可以分析这种变换应该怎么做才有意义，事实上，比较常用的一种变换，就是针对任意的随机变量，利用它的分布函数形式做变换，使得愿随机变量转换为服从均匀分布的新的随机变量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">用正式的语言来定义：随机变量x具有单调递增的分布函数F(x)，令Y=F(x),则Y服从[0，1]上的均匀分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">更振奋人心的是，利用这个定理作为桥梁，我们可以进一步推导一个转换，使得任意分布转化为另一种任意分布。首先看回定理，我们利用Y=F(x)，可把x转化为服从均匀分布的随机变量Y，同理，假如现在有一个均匀分布的随机变量y,利用：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x=F^{-1}(y)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一样可以把它转化为其他分布，主要是根据目标分布的分布函数决定转换公式。</div>
+
           </div>
-		  
+      </div>
 
 
 
-        </div>
+
+
+
 
         <!-- End to define the main content.-->
       </div>

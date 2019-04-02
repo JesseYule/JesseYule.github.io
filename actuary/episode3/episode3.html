@@ -18,6 +18,14 @@
 
     <meta name="theme-color" content="#ffffff">
 
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -135,24 +143,22 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">利息力</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Annuities Certain</h2>
 
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-              <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">利息力是衡量某个确切时点上利率水平的指标。主要通过假设利息一年复利无穷次计算得。从另一个角度，也可以这样理解利息力，就是在一个无穷小的时间区间，对应的利率是多少，所以其实它就反映了资金在每一个时间点上的增长强度（微分导数）</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                        <picture>
-                            <source media="(max-width: 568px)" srcset="image/force.png"><img src="image/force.png" alt="ポジショニングマップ">
-                        </picture>
-                    </div>
 
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">年金是指等额、定期的系列收支，比如分期付款、分期偿还贷款、每年相同的销售收入等等，都属于年金收付方式。所以简单来说，普通的年金的现值就是等比数列的和。这里主要介绍即期年金（Immediate Annuity：被保险人一次交足年金保险费，保险人当年立即进入给付周期，或于合同规定的等待期满后进入给付周期，开始向被保险人给付年金）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里就不再深入研究为什么他是这样定义的了，反正利息力就这样一个表达式，通过公式就可以和effective interest以及effective discount转换计算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">即期年金按照交钱的时间可以分为几种，一种是期末年金（in arrears，annuity-immediate），就是最后到期才交这一期的钱，一种是期首年金（in advance，annuity-due），就是一开始就交钱，有什么区别呢，首先这两种交的期数都是一样的，主要的区别就是，一开始就交钱，第一期是不用算利息的，所以说，到期才交钱，会比一开始就交钱多算一期利息。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">年金可以计算现值和终值，年金现值指一定时期内按相同时间间隔在每期期末或期初收入或支付的相等金额折算到第一期初的现值之和。终值则是指一定时期内每期期末或期初等额收付款项的复利终值之和，也就是没一起的金额，按复利换算到最后一期期末的终值，然后求和，就是该年金终值。虽然期末年金和期首年金有很多不同，但是如果分析的角度（估价日期）不同，期末年金和期首年金的界限并没有那么明显。所以，有一种更准确的定义，就是一种年金可以称为期末年金，如果在计算现值的时候，股价日期是第一次付款的前一个时期。一种年金可以称为期首年金，如果计算现值的估价日期是第一次付款那一刻。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了即期年金，还有一种递延年金（Deffered Annuity），指第一次付款发生在第二期或者第二期以后的年金，是在最初没有收付款项的情况下，后面若干等额的系列收付款项，是普通年金的特殊形式。这种年金计算现值和终值就是前面多了几期没有现金流，总的过程和之前的年金差不多。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍的年金属于标准型，接下来要介绍的，属于一般型年金，会有各种变化，比如利率的变化、计息期或计息频率的变化等，这种年金都属于一般型年金。首先要介绍的一种是off-payment annuities，这种年金和之前的区别就是，付款频率和计息频率是不一致的，比如说，现在有一种每年5%的effective rate的interest的年金，然后每五年交1（支付频率小于利息周期），或者每个月交1/12（支付频率大于利息周期），这两种情况都属于off-payment annuities。解决的方法有几种，我们主要考虑转换计息周期使它和付款周期相等，比如我们可以把第一种情况的每年5%转换成每五年的利息（1.05^ 5）再计算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">引入off-payment annuities的意义，就在于如果付款频率趋于无穷，也就得到连续年金了，就像之前提到的利息力是通过复利周期趋于无穷得到的利息，这里的连续型年金也一样，而且因为支付频率趋于无穷，利息i就变成了利息力，所以原表达式的i就要变成利息力，观察连续年金、期首年金、期末年金，主要区别主要就是分母。</div>
 
 
             </div>

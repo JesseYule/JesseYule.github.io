@@ -17,7 +17,12 @@
 
 
     <meta name="theme-color" content="#ffffff">
-
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -135,63 +140,41 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Logistic Regression</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">对数回归（Logistic Regression）</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归是有监督学习中的一个基本方法，简单来说就是假设数据之间是线性的，那么可通过已知的数据预测某一点的数据。</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">分形具有以下一些特征：</div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2">（1）它具有精细的结构，在任意小的尺度下，可以有更小的细节；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性模型可以用于回归学习，可是可以利用线性模型进行分类吗，答案肯定是可以的，只要利用广义线性模型中的对数回归就可以了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">（2）在很多情况下，可以通过迭代方法产生；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之所以强调是广义线性模型中的对数回归，是想突出对数回归和线性回归的联系，也就是我们主要是对输出利用link function进行转换，对于输入而言依然可以看成是线性函数。现在我们考虑二分类任务，输出标记为{0,1}，如果想要做分类，最简单的办法就是针对每个输入输出一个属于0或1的概率，比如对某个输入有0.9的概率属于1，等价的他就是有0.1的概率属于0，接下来，我们就需要考虑怎么把原来的线性输出转化为[0,1]之间的输出了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">（3）它是不规则的，比如Koch曲线，虽然它是一条曲线，但它的大小不适合用传统欧氏几何的长度衡量。简单计算表明，Koch曲线的长度为4/3的i次方，当i区域无穷，Koch曲线的长度为无穷，但它在一维欧氏空间占据的长度却是有限的。</div>
-            </div>
-          </div>
-		  
-          <div class="p-service-index-map c-fade-in-up js-scroll-item is-shown">
-            <div class="p-service-index-map__image">
-              <picture>
-                <source media="(max-width: 568px)" srcset="image/koch.jpg"><img src="image/koch.jpg" alt="ポジショニングマップ">
-              </picture>
-            </div>
-          </div>
-		  
-		   <div class="p-lower-kv">
-            <div class="p-lower-kv__text">
-              <div class="p-lower-kv__subtitle"> </div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">分形几何具有几种基本性质：</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">（1）自相似性，包括精确自相似性、近似自相似性、统计自相似性，其中统计自相似性指的是统计意义下的自相似，比如摩擦系统的时间序列信号，虽然从信号曲线及其两次局部放大的图看不出相似之处，但他们的统计参数却有一致性，分形维数随着曲线放大而保持常数，这就是统计自相似性；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对数几率函数（logistic function）就是我们需要的答案，logistic function也叫sigmoid function，提到这个sigmoid function又和神经网络有很大联系了，这里暂时不深究，它的形式为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$g(z) = \frac{1}{1+e^{-z}}$$</section></div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/sigmoid.png"><img src="image/sigmoid.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从图像就可以直观看出，函数的输出已经限制在[0，1]之间了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">（2）无标度性，指在分形对象上任选一个局部区域进行放大或缩小，它的形态、复杂程度、不规则形等都不会发生变化的特征；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">把sigmoid函数代进原来的线性方程中，得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y=\frac{1}{1+e^{-(w^Tx+b)}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">改写一下也可得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ln \frac{y}{1-y}=w^Tx+b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的右边就是原来的线性回归方程的一般形式，我们只对它的输出做了变换。更进一步，为了让后面的推导过程更易理解，这里需要说明，y其实就是指P(y=1|x),即针对给定的x，y等于1的概率。所以1-y自然就是y等于0的概率了。实际上我们就是利用线性回归的输出结果，去逼近真实标记的对数概率。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">（3）自仿射性，它是自相似性的一种延伸，如果局部到整体在各个方向上的变换比率是相同的，那么就是自相似性变换，而局部到整体在不同方向上的变换比率不一定相同时，就称为自仿射性变换。自相似变换是自放射变换的一种特例。</div>
-            </div>
-          </div>
-		  
-		  
-		  <h3 class="c-red-hyphen-head c-fade-in-up js-scroll-item is-shown">
-            <div class="c-red-hyphen-head__label">分形几何和欧氏几何的一些区别</div>
-          </h3>
-		  
-		   <div class="p-lower-kv">
-            <div class="p-lower-kv__text">
-              <div class="p-lower-kv__subtitle"> </div>
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">欧氏规则集合都具有一定的规则尺度，例如一个圆，近看一点是一段圆弧，再近一点可能就是一条直线了，但是分形几何没有这种情况，不论观察的尺度多小都可以观察到同等复杂的细节。</div>
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">欧氏规则几何的维数是整数，分形几何的维数可以是分数，给一个简单通俗的例子证明分形的维数是分数，假如我们面前有一条欧氏几何的传统直线，那么我们用一根尺度的尺子去测量他，他是一米的，如果我们用二维尺度的平面去测量他，它就是无限小的长度，类似的，假如我们面前有一块布，如果我们用尺子去测量他，它是无限大的，用平面去测量它，它可能是一平方米，如果我们用三维的测量工具（假如有一个世界流行用一个一立方米的箱子作为测量工具），那么它就是无限小的了，这就说明了，对传统的欧氏几何的对象，只有通过合适尺度去测量，才可以得到确切的结果，当尺度大了或者小了，就会得到无穷小或者无穷大的结果，再看回之前的Koch曲线，把它看成一条一维的线段，计算得到的长度是无穷大的，也就是它比一维大，但是它本身并不相交，没有构成平面，面积无穷小，所以它比二维小，这就证明了，Koch曲线的维数是分数。</div>
-            </div>
-          </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了预测函数的形式之后，下一步就是分析如何进行参数估计，也是和线性回归一样，想办法构造一个损失函数，通过使损失函数最小从而分析参数取值。之前线性回归我们是选择直接求偏导求参数，这里我们选择通过最大似然估计去分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前也提及到，y就是P(y=1|x)，这是一个后验概率，分析原方程显然有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=1|x)=\frac{e^{w^T x+b}}{1+e^{w^T x+b}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=0|x)=\frac{1}{1+e^{w^T x+b}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之后进一步构造似然函数，并使其最大得到参数估计，这里不再详细说明。</div>
 
 
 
-        </div>
+            </div>
 
         <!-- End to define the main content.-->
       </div>

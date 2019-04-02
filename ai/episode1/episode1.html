@@ -16,6 +16,13 @@
     <script async="" src="../../css/menu/js"></script>
 
 
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
     <meta name="theme-color" content="#ffffff">
 
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
@@ -148,21 +155,17 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归可分为一元线性回归和多元线性回归，首先介绍一元线性回归。简单来说就是只有自变量x和因变量y，得到一组训练数据（xi,yi）,把它们代进方程：Yi=a+bxi+c,其中b是回归系数，a+bxi是回归函数，也是线性部分，c则是随机误差。一元线性回归要解决的，首先是对a，b的估计，随机误差的估计，得到回归方程之后，还要进一步做显著性检验，分析回归系数的置信区间等等。简单来说，就是求出了一个回归方程，再分析它的准确程度。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因此线性回归要做的第一步当然是分析系数a、b，要估计a、b，简单来说就是找出它们的一个值，使得函数对原始数据尽可能好地拟合，这个拟合的意思就是数据点与回归函数的距离尽可能接近，最理想的情况就是找出完美的回归方程，使得所有的数据点都在方程上，可是这一般是很难做到的，因为现实数据的分布不可能仅仅由一个线性方程决定，而且一般来说这种情况也叫做过拟合，会导致预测的效果很差。所以实际上，我们会采取最小二乘的方法，针对同一个x点的数据y值和函数y值之间计算差的平方，对每一个点重复该步骤，最后相加就得到整体的离差平方和（只是一个名次），从这个相加得到的函数就可以判断回归函数对数据的拟合程度，最后计算该函数取最小值时各个参数的取值（即该函数对各个参数求偏导等于0是参数的取值），即可得到对各个参数的估计。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因此线性回归要做的第一步当然是分析系数a、b，要估计a、b，简单来说就是找出它们的一个值，使得函数对原始数据尽可能好地拟合，这个拟合的意思就是数据点与回归函数的距离尽可能接近，最理想的情况就是找出完美的回归方程，使得所有的数据点都在方程上，可是这一般是很难做到的，因为现实数据的分布不可能仅仅由一个线性方程决定，而且一般来说这种情况也叫做过拟合，会导致预测的效果很差。所以实际上，我们会采取最小二乘的方法（也可把最小二乘方程称为损失函数cost function），针对同一个x点的数据y值和函数y值之间计算差的平方，对每一个点重复该步骤，最后相加就得到整体的离差平方和（只是一个名次），从这个相加得到的函数就可以判断回归函数对数据的拟合程度，最后计算该函数取最小值时各个参数的取值（即该函数对各个参数求偏导等于0是参数的取值），即可得到对各个参数的估计。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了对参数的估计之后，需要进行误差方差的估计，这个误差方差的意义一方面可以反映这个自变量与因变量之间的线性关系程度，当自变量对因变量的影响不能超过随机误差对因变量的影响，实际上继续做预测或者类似的分析意义就不大了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对更一般的多元线性回归，可把多个变量写成矩阵形式，并得到更一般的回归方程：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x_i) = w^T x_i +b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">类似与一元的情况，这里也是把数据代进去然后应用最小二乘的方法，最后对每个参数w求偏导从而得到估计，但是因为过程中涉及到逆矩阵的计算，比单变量的情况更复杂。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之后需要进行假设检验，包括对回归方程的检验以及对回归系数的检验。对回归方程的检验意思就是我们怀疑回归方程本身是不成立的，即自变量与因变量之间没有显著性的关系，或者说回归方程中的随机误差项包含了很大一部分的因变量的内容，举个例子，当数据点的分布过于发散，这时候x和y就没有明显的线性关系，虽然我们依然可以得到回归方程，但这个回归方程就没什么意义了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">另一方面，因为现实中我们可能会遇到大量的变量，甚至矩阵列多于行（有无穷解），导致可解出多个w，他们都可以使得均方误差最小（就是满足最小二乘），选择哪个解作为输出，则由学习算法的归纳偏好决定，常见做法是引入正则化。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先介绍的是t检验法，</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">进一步的，我们还可以引入link function，把特征的线性变换映射到其他情况，比如通过对数函数，我们就可以把x的输出转变为指数变化的y：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$lny = w^T x+b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式子的右边依然是线性函数，可是输出因为link function，这个式子就变成了求输入空间到输出空间的非线性函数映射，类似的对线性函数引入link function得到的模型统称为广义线性模型。</div>
 
             </div>
 
