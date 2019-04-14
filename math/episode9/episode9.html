@@ -18,6 +18,14 @@
 
     <meta name="theme-color" content="#ffffff">
 
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,7 +35,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all;background-color: #323638 ">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -62,67 +70,22 @@
                   <div class="overlay-navigation__block">
                       <ul class="sitemap m-row m-row--fw--wrap">
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/concept/">主页<span
-                                  class="icon-arrow-s"></span></a></li>
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/" class="js-lower is-open">编程语言<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/news/">Java与Python的选择</a></li>
-                                  <li><a href="https://www.barhotel.com/news/">指令式编程与函数式编程</a></li>
-                                  <li><a href="https://www.barhotel.com/news/">面向对象的优势</a></li>
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
 
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
 
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
 
-                              </ul>
-                          </li>
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
 
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/the-bar/" class="js-lower is-open">数学理论<span class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/the-bar/">多项式理论</a></li>
-                                  <li><a href="https://www.barhotel.com/the-bar/bar-interior/">分形概论</a></li>
-                                  <li><a href="https://www.barhotel.com/the-bar/private-spa-bar/">求根公式的分形结构</a></li>
-                              </ul>
-                          </li>
-                      </ul>
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
 
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
 
-                      <ul class="sitemap m-row m-row--fw--wrap">
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/stay/" class="js-lower is-open">数据科学<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/stay/">数据库的作用</a></li>
-                                  <li><a href="https://www.barhotel.com/stay/suite/">大数据预处理</a></li>
-
-                              </ul>
-                          </li>
-
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">人工智能<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">机器学习与深度学习</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/lounge/">机器学习概述</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/art-and-design/">机器学习算法</a></li>
-                              </ul>
-                          </li>
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">交通大数据项目<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-
-                              </ul>
-                          </li>
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">自然语言识别项目<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/lounge/">代码详解</a></li>
-                              </ul>
-                          </li>
                       </ul>
 
                   </div>
@@ -144,39 +107,26 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">幂级数展开中各阶系数和一个数列对应相等的函数，称为这个数列的母函数，也叫生成函数。母函数有很多种，比如普通母函数、指数母函数、L级数等等，每个序列都可以写出以上类型的一个母函数，构造母函数的目的一般是为了解决某个特定的问题，因此选择哪种母函数主要是看序列本身的特性以及问题的类型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就开始介绍统计学中比较常见的概率母函数和矩母函数，对于取值为非负整数的随机变量X，其概率母函数为：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.svg"><img src="image/2.svg" alt="ポジショニングマップ">
-                    </picture>
-                </div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$G_x(t)=\sum_{i=0}^\infty P(X=i) t^i = E(t^X)$$</section></div>
+
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">就这样可能看不出什么，可是这个函数最牛逼的地方，就是对它求导并取t=0，就可以得到不同x的概率，比如求一次导，就得到x=1的概率（试一下就知道为什么了），所以这个式子包含了x的所有取值的概率，所以才叫概率母函数（概率生成函数）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">再看回母函数的定义，为什么要把这个函数称为概率母函数，或者说为什么要写成幂级数的形式，首先，母函数定义中的序列就是服从某个分布的随机变量的取值的概率值，把这个序列乘上一个t的i次方，也就是乘上一个幂级数，这样，在函数对t求导并取t=0的时候，就可以保留只保留求导次数对应的那个x的取值的概率，而使得其他概率的系数都变为零而省略掉。所以</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后，对于任意随机变量X（不要求非负整数），矩母函数则是：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.svg"><img src="image/3.svg" alt="ポジショニングマップ">
-                    </picture>
-                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$M_X(t) = E(e^{tX})$$</section></div>
+
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">从定义上来说，矩母函数是指能产生一个随机变量各阶原点矩的母函数。所以说，母函数定义中的序列在这里主要指各阶原点阵。可是这个序列在哪里？事实上，我们可以对e^(tx)通过拉普拉斯变换展开，其展开式就包含了所有高阶矩:</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/5.svg"><img src="image/5.svg" alt="ポジショニングマップ">
-                    </picture>
-                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$M(t) = \sum_{n=0}^\infty \frac{t^n}{n!} E[X^n]$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">和概率母函数类似，只要求导并取t=0，就可以得到各阶的原点矩了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">值得注意的是，概率母函数和矩母函数是可以相互转化的：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/4.svg"><img src="image/4.svg" alt="ポジショニングマップ">
-                    </picture>
-                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$M_X(log(t)) = E(e^{tlog(X)}) = E(X^t) = G_X(t)$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有就是这两个母函数的一些特性，比如他们都是和分布一一对应的，也就是说具有唯一性。除此之外，独立随机变量和的概率母函数或者矩母函数分别是独立随机变量相应函数的乘积。因此，我们可以通过概率母函数或者矩母函数求非负整数离散型随机变量的和的分布（比如二项分布、泊松分布等），如果是更一般的随机变量则只能用矩母函数（如正态分布）</div>
-
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
-                 [1]https://www.zhihu.com/question/25627482<br>
-            [2]https://www.datalearner.com/blog/1051508471058920</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                     [1]https://www.zhihu.com/question/25627482<br>
+                [2]https://www.datalearner.com/blog/1051508471058920</div>
 
           </div>
       </div>
@@ -190,31 +140,6 @@
         <!-- End to define the main content.-->
       </div>
 
-        <footer class="st-ftr" style="color: #535353; background-color: #ececec">
-
-
-
-            <div class="m-row">
-
-
-                <div class="ftr__txt">
-
-
-                    <section class="info" style="color: #535353">
-
-                        <h1 class="name"><span class="ja">Contact me</span></h1>
-                        <h2 class="name"><span class="ja">E-mail</span><span class="en">jesseyulejunjie@outlook.com</span></h2>
-                        <h2 class="name"><span class="ja">Facebook</span><span class="en">JesseYule</span></h2>
-                        <h2 class="name"><span class="ja">Address</span><span class="en">Guangzhou, China</span></h2>
-
-
-                    </section>
-                </div>
-            </div>
-            <p class="copyright" style="color: #535353">
-                <small style="color: #535353">Copyright ©Jesse Yule. All rights reserved.</small>
-            </p>
-        </footer>
 
     </div>
     <script src="../../css/main/main.min.js" async=""></script>

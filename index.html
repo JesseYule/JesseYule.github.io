@@ -3,6 +3,11 @@
 <html lang="ja">
 <head>
 
+
+    <link rel="stylesheet" href="css/mainmenu/menu.css" media="all">
+
+    <script type="text/javascript" async="" src="css/mainmenu/menu.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +67,7 @@
 
 
 <body class="pc no-tablet no-mobile no-mac no-linux no-ios no-android no-edge no-ie11 no-ie10 no-ie9 no-safari chrome no-firefox no-opera no-webview"
-      style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ; background-color: rgb(255,255,255);word-break: break-all ">
+      style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ; background-color: rgb(0,0,0);word-break: break-all ">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -78,105 +83,33 @@
 
 </header>
 
-<button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+<div id="myNav" class="overlay">
+    <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+    <div class="overlay-content">
+        <a href="about/about.html">About</a>
+        <a href="programming/programming.html">Programming</a>
+        <a href="math/math.html">Mathematics</a>
+        <a href="datascience/datascience.html">Data Science</a>
+        <a href="ai/ai.html">Machine Learning</a>
+        <a href="projects/projects.html">Projects</a>
+        <a href="articles/articles.html">Others</a>
+        <a href="javascript:void(0)"  onclick="closeNav()">X</a>
 
-
-<nav class="overlay-navigation" style="color: #eeeeee">
-    <div class="overlay-navigation__inner m-row">
-        <div class="overlay-navigation__block">
-            <ul class="sitemap m-row m-row--fw--wrap">
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/concept/">主页<span
-                        class="icon-arrow-s"></span></a></li>
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/" class="js-lower is-open">编程语言<span
-                        class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/news/">Java与Python的选择</a></li>
-                        <li><a href="https://www.barhotel.com/news/">指令式编程与函数式编程</a></li>
-                        <li><a href="https://www.barhotel.com/news/">面向对象的优势</a></li>
-
-
-
-                    </ul>
-                </li>
-
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/the-bar/" class="js-lower is-open">数学理论<span class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/the-bar/">多项式理论</a></li>
-                        <li><a href="https://www.barhotel.com/the-bar/bar-interior/">分形概论</a></li>
-                        <li><a href="https://www.barhotel.com/the-bar/private-spa-bar/">求根公式的分形结构</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-
-            <ul class="sitemap m-row m-row--fw--wrap">
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/stay/" class="js-lower is-open">数据科学<span
-                        class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/stay/">数据库的作用</a></li>
-                        <li><a href="https://www.barhotel.com/stay/suite/">大数据预处理</a></li>
-
-                    </ul>
-                </li>
-
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">人工智能<span
-                        class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/facility/">机器学习与深度学习</a></li>
-                        <li><a href="https://www.barhotel.com/facility/lounge/">机器学习概述</a></li>
-                        <li><a href="https://www.barhotel.com/facility/art-and-design/">机器学习算法</a></li>
-                    </ul>
-                </li>
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">交通大数据项目<span
-                        class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-
-                    </ul>
-                </li>
-
-                <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">自然语言识别项目<span
-                        class="icon"></span></a>
-                    <ul style="display: block;">
-                        <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-                        <li><a href="https://www.barhotel.com/facility/lounge/">代码详解</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-        <div class="sns"><h2 class="overlay-navigation__siteID"><img src="css/menu/img_siteID-m.svg"
-                                                                     alt=""></h2></div>
     </div>
-</nav>
+</div>
 
 
 <div class="l-page" data-page-id="index">
-    <!-- Start to define the global header.-->
-    <div class="l-gh"></div>
-    <!-- End to define the global header.-->
-    <div id="vue-global-navi">
 
-        <div class="p-copyright-pc is-shown">
-            <div class="p-copyright-pc__in"></div>
-        </div>
-    </div>
+
+
     <div class="l-contents">
         <!-- Start to define the main content.-->
-        <div class="l-bg on" id="js-bg"
-             style="position: fixed; left: 50%; top: 50%; margin-top: -512px; margin-left: -512px; transform: scale(1.06353);">
-            <canvas width="1024" height="1024" style="width: 1024px; height: 1024px;"></canvas>
-        </div>
 
 
         <div class="p-index-kv" style="background-color: #000000">
             <div class="is-shown">
-                <p class="p-index-kv__slogan-sub" style="color: #ffffff; text-align: center;line-height: 35px"><br><br><br><br></p>
+                <p class="p-index-kv__slogan-sub" style="color: #ffffff; text-align: center;line-height: 30px"><br><br><br><br></p>
             </div>
             <div class="is-shown">
                 <!--<p class="p-index-kv__slogan-sub" style="color: #ffffff; text-align: center;line-height: 35px;"><br>  </p>-->
@@ -191,228 +124,20 @@
                 center;line-height: 35px;letter-spacing: 0.2px;font-size: 2.7em;"><img src="css/main/image/line.png" style="width: 6em;height: 1em"></p>
 
                 <p class="p-index-kv__slogan-sub" style="color: #ffffff; text-align:
-                center;line-height: 1.5em;letter-spacing: 0.2px;font-size: 1.5em;">"programming is just<br>like playing a piano"</p>
+                center;line-height: 1.5em;letter-spacing: 0.2px;font-size: 1.5em;">"programming is just<br>like playing a piano"<br><br></p>
 
+                <p class="p-index-kv__slogan-sub" style="color: #ffffff; text-align:
+                center;line-height: 1.5em;letter-spacing: 0.2px;font-size: 1.5em;"><span style="font-size:20px;cursor:pointer;" onclick="openNav()">< Run ></span>
+
+                </p>
 
             </div>
 
 
 
-
-            <div class="p-scroll-bar">
-                <div class="p-scroll-bar__label">Scroll</div>
-                <div class="p-scroll-bar__bar">
-                    <div class="p-scroll-bar__bar-in"></div>
-                </div>
-            </div>
-        </div>
-
-        <!--<div class="p-lower">-->
-            <!--<div class="c-red-line c-slide-in u-animdel-100"></div>-->
-            <!--<h2 class="p-lower__title-en c-slide-in u-animdel-100">关于本站</h2>-->
-            <!--<br><br>-->
-        <!--</div>-->
-
-            <!--<div class="p-index-kv__slogan is-shown" style="text-align: center">-->
-                <!--<p class="p-index-kv__slogan-sub">我是JesseYule<br>学习数学和精算<br>打算通过这个blog分享我学习编程和数学的一些感悟<br>也想记录一下学习的过程<br> </p>-->
-                <!--<p class="p-index-kv__slogan-sub"> </p>-->
-
-            <!--</div>-->
-
-
-        <div class="p-lower">
-            <div class="c-red-line c-slide-in u-animdel-100"></div>
-            <h2 class="p-lower__title-en c-slide-in u-animdel-100">基础理论</h2>
-            <br><br>
         </div>
 
 
-
-
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-80 js-scroll-item is-shown">Theme01</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-90 js-scroll-item is-shown"><img src="image/t1.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-100 js-scroll-item is-shown">编程语言</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-100 js-scroll-item is-shown">编程语言是一切的原点<br>不同编程语言的区别、<br>选择哪一门语言对于新手而言都是一个重要的问题。</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-100 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="programming/programming.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-80 js-scroll-item is-shown">Theme02</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-90 js-scroll-item is-shown"><img src="image/t1.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-100 js-scroll-item is-shown">Java基础</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-100 js-scroll-item is-shown">Java作为一门基础编程语言<br>在很多领域都有重要应用<br>这里主要讲述一些我在学习Java过程中认为值得注意的知识点和理解。</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-100 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="programming/programming.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-40 js-scroll-item is-shown">Theme03</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-50 js-scroll-item is-shown"><img src="image/t2.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-60 js-scroll-item is-shown">数学理论</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-50 js-scroll-item is-shown">不论是对编程思想的理解<br>还是很多算法的推导<br>相关的数学知识都是关键的基础。</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-50 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="math/math.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-80 js-scroll-item is-shown">Theme04</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-90 js-scroll-item is-shown"><img src="image/t3.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-100 js-scroll-item is-shown">数据科学</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-100 js-scroll-item is-shown">数据之所以成为越来越重要的财富<br>就在于它背后蕴含的信息<br>通过数据挖掘分析为决策提供指导<br>已经成为各个行业的一个大趋势。</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-100 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="datascience/datascience.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-40 js-scroll-item is-shown">Theme05</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-50 js-scroll-item is-shown"><img src="image/t4.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-60 js-scroll-item is-shown">人工智能</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-50 js-scroll-item is-shown">自从Alpha Go战胜人类之后<br>人工智能成为一个越来越火的话题<br>它的本质并不会过于高深<br>但是它确实在某些领域无比强大。</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-50 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="ai/ai.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-
-        <h3 class="c-red-hyphen-head">
-            <div class="c-red-hyphen-head__label c-fade-in-up u-animdel-40 js-scroll-item is-shown">Theme06</div>
-        </h3>
-        <div class="p-progressstory-index">
-            <div class="p-progressstory-index__image c-fade-in-up u-animdel-50 js-scroll-item is-shown"><img src="image/t4.jpg" alt=""></div>
-            <div class="p-progressstory-index__text">
-                <div class="p-progressstory-index__excerpt c-fade-in-up u-animdel-60 js-scroll-item is-shown">精算基础</div>
-                <div class="p-progressstory-index__outline c-fade-in-up u-animdel-50 js-scroll-item is-shown">因为研究生读的是精算<br>也打算介绍一些精算模型<br>分析一下金融、精算是怎么和数学相结合的</div>
-                <div class="p-progressstory-index__btn c-fade-in-up u-animdel-50 js-scroll-item is-shown"><a class="c-btn2 js-hover c-btn--w240" href="actuary/actuary.html">
-                    <div class="c-btn__label">View More</div></a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="p-lower">
-            <div class="c-red-line c-slide-in u-animdel-100"></div>
-            <h2 class="p-lower__title-en c-slide-in u-animdel-100">项目</h2>
-            <br><br>
-        </div>
-
-        <div class="p-index-fact js-scroll-item is-shown" style="background-image: url(image/jiaotong.jpg); color: #ffffff">
-            <h2 class="p-index-fact__title js-scroll-item-child is-shown">交通大数据</h2>
-            <div class="p-index-fact__outline js-scroll-item-child is-shown">应用数据分析的技术<br>对交通数据进行分析</div>
-            <div class="p-index-fact__btn js-scroll-item-child is-shown"><a class="c-btn2 js-hover c-btn--w240"
-                                                                            href="https://carrac.co.jp/recruit/fact/">
-                <div class="c-btn__label"  style="background-color: #eaecf1; color: #323232">View Project</div>
-            </a>
-            </div>
-        </div>
-
-        <br><br>
-
-        <div class="p-index-fact js-scroll-item is-shown" style="background-image: url(image/p2.jpg); color: #ffffff">
-            <h2 class="p-index-fact__title js-scroll-item-child is-shown">自然语言处理</h2>
-            <div class="p-index-fact__outline js-scroll-item-child is-shown">结合数据分析和nlp理论<br>对生物领域大量的论文进行信息提取、分析</div>
-            <div class="p-index-fact__btn js-scroll-item-child is-shown"><a class="c-btn2 js-hover c-btn--w240"
-                                                                            href="bio/bio.html">
-                <div class="c-btn__label" style="background-color: #eaecf1; color: #323232">View Project</div>
-            </a>
-            </div>
-        </div>
-
-
-
-        <div class="p-lower">
-            <div class="c-red-line c-slide-in u-animdel-100"></div>
-            <h2 class="p-lower__title-en c-slide-in u-animdel-100">其他文章</h2>
-
-            <div class="c-ft-links">
-                <div class="c-ft-links__wrap">
-                    <div class="c-ft-links__item"><a class="js-hover is-leave" href="articles/episode1/episode1.html">关于本网站的建立和网页设计初探</a></div>
-                    <div class="c-ft-links__item"><a class="js-hover is-leave" href="articles/episode1/episode2.html">编程基础学习计划</a></div>
-                    <div class="c-ft-links__item"><a class="js-hover is-leave" href="articles/articles.html">More</a></div>
-                </div>
-            </div>
-        </div>
-
-        <br><br>
-
-
-
-
-
-    </div>
-
-    <br><br>
-    <br>
-
-    <!--<div class="l-contents">-->
-        <!--&lt;!&ndash; Start to define the main content.&ndash;&gt;-->
-        <!--<div class="p-lower">-->
-            <!--<div class="c-red-line c-slide-in u-animdel-100"></div>-->
-            <!--<h2 class="p-lower__title-en c-slide-in u-animdel-100">Logo Story</h2>-->
-            <!--<div class="p-lower-kv">-->
-                <!--<div class="p-lower-kv__image"><img src="image/banner1.jpg" alt=""></div>-->
-                <!--<div class="p-lower-kv__text">-->
-                    <!--<div class="p-lower-kv__outline p-lower-kv__outline&#45;&#45;col2">曾经在盗梦空间里看过主角问阿丽瑞德妮，在限定时间内画出一个他不能马上解答的迷宫，阿丽瑞德妮尝试了几次，最后改成用圆形画，终于成功了。从这里就能看出圆形相对于矩形的一个特别之处就是无法分辨边界的区别，所以特别适合画迷宫。如果在这个基础上再快速增强迷宫的复杂度还有办法吗？<br></div>-->
-                    <!--<div class="p-lower-kv__outline p-lower-kv__outline&#45;&#45;col2">当然是有的，那就是结合分形，使得迷宫不论深入到哪一层，都具有同等程度的复杂度，让人觉得迷宫无穷无尽。当然这些只是理论的推导，但却十分迷人。</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-
-
-
-            <footer class="st-ftr" style="color: #535353; background-color: #ececec">
-
-
-
-    <div class="m-row">
-
-
-        <div class="ftr__txt">
-
-
-        <section class="info" style="color: #535353">
-
-            <h1 class="name"><span class="ja">Contact me</span></h1>
-            <h2 class="name"><span class="ja">E-mail</span><span class="en">jesseyulejunjie@outlook.com</span></h2>
-                <h2 class="name"><span class="ja">Facebook</span><span class="en">JesseYule</span></h2>
-                <h2 class="name"><span class="ja">Address</span><span class="en">Guangzhou, China</span></h2>
-
-
-            </section>
-        </div>
-    </div>
-    <p class="copyright" style="color: #535353">
-        <small style="color: #535353">Copyright ©Jesse Yule. All rights reserved.</small>
-    </p>
-</footer>
 
 </div>
 

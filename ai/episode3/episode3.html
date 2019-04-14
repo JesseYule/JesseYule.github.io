@@ -15,6 +15,12 @@
     <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
     <script async="" src="../../css/menu/js"></script>
 
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
 
     <meta name="theme-color" content="#ffffff">
 
@@ -27,7 +33,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -57,72 +63,28 @@
           <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
 
 
+
           <nav class="overlay-navigation" style="color: #eeeeee">
               <div class="overlay-navigation__inner m-row">
                   <div class="overlay-navigation__block">
                       <ul class="sitemap m-row m-row--fw--wrap">
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/concept/">主页<span
-                                  class="icon-arrow-s"></span></a></li>
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/" class="js-lower is-open">编程语言<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/news/">Java与Python的选择</a></li>
-                                  <li><a href="https://www.barhotel.com/news/">指令式编程与函数式编程</a></li>
-                                  <li><a href="https://www.barhotel.com/news/">面向对象的优势</a></li>
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
 
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
 
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
 
-                              </ul>
-                          </li>
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
 
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
 
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/the-bar/" class="js-lower is-open">数学理论<span class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/the-bar/">多项式理论</a></li>
-                                  <li><a href="https://www.barhotel.com/the-bar/bar-interior/">分形概论</a></li>
-                                  <li><a href="https://www.barhotel.com/the-bar/private-spa-bar/">求根公式的分形结构</a></li>
-                              </ul>
-                          </li>
-                      </ul>
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
 
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
 
-                      <ul class="sitemap m-row m-row--fw--wrap">
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/stay/" class="js-lower is-open">数据科学<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/stay/">数据库的作用</a></li>
-                                  <li><a href="https://www.barhotel.com/stay/suite/">大数据预处理</a></li>
-
-                              </ul>
-                          </li>
-
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">人工智能<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">机器学习与深度学习</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/lounge/">机器学习概述</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/art-and-design/">机器学习算法</a></li>
-                              </ul>
-                          </li>
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">交通大数据项目<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-
-                              </ul>
-                          </li>
-
-                          <li class="sitemap__unit"><a href="https://www.barhotel.com/facility/" class="js-lower is-open">自然语言识别项目<span
-                                  class="icon"></span></a>
-                              <ul style="display: block;">
-                                  <li><a href="https://www.barhotel.com/facility/">项目概述</a></li>
-                                  <li><a href="https://www.barhotel.com/facility/lounge/">代码详解</a></li>
-                              </ul>
-                          </li>
                       </ul>
 
                   </div>
@@ -130,6 +92,7 @@
                                                                                alt=""></h2></div>
               </div>
           </nav>
+
 
 
 
@@ -152,10 +115,9 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是重点贝叶斯推断，首先要明白的是，贝叶斯和以前的观点有一个不同，就是把参数看作随机变量。这也是为什么要提出先验概率和后验概率的原因，以前我们一般把参数看成实数或者向量，比如服从p=0.5的伯努利分布，贝叶斯则是把参数看成随机变量，也就是定义在样本空间上的实值函数，所以用一个分布来表示，它是不确定的，是可以根据实际情况进行修正的。比如，现在我写好了一段代码，但是不确定有没有bug，因此在一个简单的例子上应用这段代码，没有问题，我初步相信代码是正确的，然后进一步把代码应用到更复杂的例子中，都没有问题，在不断的测试过程中，我越来越坚信自己的代码没有问题，我的相信程度，就是一个随机变量，也是一个后验概率，通过实验结果不断修正改变，而这整个过程，就可看成是贝叶斯推断对参数估计的应用。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了对贝叶斯推断初步的了解，就可以看看怎么通过贝叶斯推断进行参数估计了。首先介绍的是最大后验估计（MAP），这个MAP实际上和MLE又是有一定联系的，之前介绍过MLE，就是通过事件发生的情况去判断参数的一个分布情况，再推断参数最有可能的取值，比如说，我们抛硬币，抛十次八次正面朝上，解似然函数得到朝上的概率为0.8时似然函数最大，所以按照MLE的思想0.8就是对参数的推断。但是可能有人会认为硬币一般是均匀的，做十次试验有可能有偶然性，甚至抛十次十次正面朝上都有可能，但我们不能因此就认为概率为1的嘛，所以就有人提出要考虑先验概率，引入了最大后验估计。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了对贝叶斯推断初步的了解，就可以看看怎么通过贝叶斯推断进行参数估计了。在我们得到了参数的后验分布之后，可以选择根据后验分布的期望（mean）、中位数（median）或者众数（mode）作为对参数的估计值，其中，对后验分布的众数进行估计又称为maximum a posteriori（MAP，最大后验估计），这个最大后验估计是最常用的，主要是因为计算期望或者中位数都需要积分，对计算机而言是比较困难的计算，而MAP并不需要积分，所以更常用。顺带一提，mode指的是概率密度函数达到最大的值（因为密度最大，所以在整个分布里面最多），又因为整个计算过程涉及到密度函数，所以不需要积分，然后最重要的是！其实我们的后验概率p(θ|x)本身就相当于密度函数（离散情况），所以估计后验分布的众数就是求参数使得后验概率达到最大，也就等价于使得P(x|θ)P(θ)达到最大（事实上，完整的表达式是P(x|θ)P(θ)/P(x)，也就是贝叶斯公式。但是因为我们已经做了试验，知道了P(x)的结果（就是投十次正面朝上八次），是常数所以就省去了）。这样看来，其实最大后验估计和极大似然估计又是相似的，只是在极大似然估计的基础上乘上了一个p(θ)。之所以这样做，主要是因为MAP不仅仅考虑了似然函数，也考虑了P(θ)这个先验概率的影响，从中也可以看出贝叶斯统计的思想。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最大似然估计是求参数θ, 使似然函数P(x0|θ)最大。最大后验概率估计则是想求θ使P(x0|θ)P(θ)最大。主要不同的地方就在于MAP不仅仅考虑了似然函数，也考虑到P(θ)这个先验概率的影响，事实上，完整的表达式是P(x0|θ)P(θ)/P(x0)，也就是贝叶斯公式。但是因为我们已经做了试验，知道了P(x0)的结果（就是投十次正面朝上八次），是常数所以就省去了。最后，我们得到了后验概率分布后，可以选择求最大值进行点估计，也可以求分布的后验期望等等。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上简单介绍了贝叶斯统计的基本思想以及对后验参数估计的一些方法，在后续的文章里会继续详细讲解如何计算后验期望以及最大后验概率的方法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
                 [1]https://www.zhihu.com/question/55819120<br>
@@ -173,31 +135,6 @@
         <!-- End to define the main content.-->
       </div>
 
-        <footer class="st-ftr" style="color: #535353; background-color: #ececec">
-
-
-
-            <div class="m-row">
-
-
-                <div class="ftr__txt">
-
-
-                    <section class="info" style="color: #535353">
-
-                        <h1 class="name"><span class="ja">Contact me</span></h1>
-                        <h2 class="name"><span class="ja">E-mail</span><span class="en">jesseyulejunjie@outlook.com</span></h2>
-                        <h2 class="name"><span class="ja">Facebook</span><span class="en">JesseYule</span></h2>
-                        <h2 class="name"><span class="ja">Address</span><span class="en">Guangzhou, China</span></h2>
-
-
-                    </section>
-                </div>
-            </div>
-            <p class="copyright" style="color: #535353">
-                <small style="color: #535353">Copyright ©Jesse Yule. All rights reserved.</small>
-            </p>
-        </footer>
 
     </div>
     <script src="../../css/main/main.min.js" async=""></script>

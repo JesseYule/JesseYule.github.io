@@ -1293,7 +1293,9 @@ input::selection, textarea::selection {
 
 .l-page {
     overflow: hidden;
-    visibility: visible
+    visibility: visible;
+    background-color: #323638;
+    color: #eeeeee;
 }
 
 .l-bg {
@@ -2394,7 +2396,7 @@ input::selection, textarea::selection {
 .c-red-line {
     width: 20px;
     padding-top: 10px;
-    border-bottom: 1px solid #d93a09
+    border-bottom: 1px solid #e91e63;
 }
 
 @media all and (min-width: 1025px) {
@@ -2867,53 +2869,54 @@ input::selection, textarea::selection {
 
     font-weight: 100;
     letter-spacing: .2em;
-    line-height: 1
+    line-height: 1;
+    color: #d0d0d0;
 }
 
 @media all and (min-width: 1025px) {
     .p-lower__title-en {
-        font-size: 40px;
-        font-size: 2.5rem
+        font-size: 33px;
+        font-size: 2.1rem
     }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
     .p-lower__title-en {
-        font-size: 40px;
-        font-size: 2.5rem
+        font-size: 37px;
+        font-size: 2.2rem
     }
 }
 
 @media all and (max-width: 767px) {
     .p-lower__title-en {
-        font-size: 25px;
-        font-size: 1.5625rem
+        font-size: 22px;
+        font-size: 1.3625rem
     }
 }
 
 @media all and (max-width: 767px) and (max-width: 414px) {
     .p-lower__title-en {
-        font-size: 6.66667vw
+        font-size: 6.16667vw
     }
 }
 
 @media all and (max-width: 767px) and (min-width: 415px) {
     .p-lower__title-en {
-        font-size: 27.6px
+        font-size: 25.6px
     }
 }
 
 @media all and (min-width: 768px) {
     .p-lower__title-en {
         margin-top: 43px;
-        margin-bottom: 43px
+        margin-bottom: 60px
     }
 }
 
 @media all and (max-width: 767px) {
     .p-lower__title-en {
         margin-top: 27px;
-        margin-bottom: 27px
+        margin-bottom: 60px
     }
 }
 
@@ -3147,42 +3150,83 @@ input::selection, textarea::selection {
     }
 }
 
-.p-lower-kv__outline {
+
+.title {
     font-weight: 300;
     letter-spacing: .2em;
     line-height: 2
 }
 
 @media all and (min-width: 1025px) {
+    .title {
+        font-size: 20px;
+        font-size: 1.5rem
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .title {
+        font-size: 21px;
+        font-size: 1.6rem
+    }
+}
+
+@media all and (max-width: 767px) {
+    .title {
+        font-size: 19px;
+        font-size: 1rem
+    }
+}
+
+@media all and (max-width: 767px) and (max-width: 414px) {
+    .title {
+        font-size: 4.8vw
+    }
+}
+
+@media all and (max-width: 767px) and (min-width: 415px) {
+    .title {
+        font-size: 19.56px
+    }
+}
+
+.p-lower-kv__outline {
+    font-weight: 300;
+    letter-spacing: .2em;
+    line-height: 2;
+    color: #d0d0d0;
+}
+
+@media all and (min-width: 1025px) {
     .p-lower-kv__outline {
-        font-size: 17px;
-        font-size: 1.3rem
+        font-size: 16px;
+        font-size: 1.2rem
     }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
     .p-lower-kv__outline {
-        font-size: 18px;
-        font-size: 1.4rem
+        font-size: 16px;
+        font-size: 1.2rem
     }
 }
 
 @media all and (max-width: 767px) {
     .p-lower-kv__outline {
-        font-size: 17px;
-        font-size: .9375rem
+        font-size: 15px;
+        font-size: .8375rem
     }
 }
 
 @media all and (max-width: 767px) and (max-width: 414px) {
     .p-lower-kv__outline {
-        font-size: 4.6vw
+        font-size: 4.2vw
     }
 }
 
 @media all and (max-width: 767px) and (min-width: 415px) {
     .p-lower-kv__outline {
-        font-size: 17.56px
+        font-size: 15.56px
     }
 }
 
@@ -4282,7 +4326,6 @@ input::selection, textarea::selection {
 
 @media all and (min-width: 767px) {
     .p-index-kv {
-        margin-bottom: 13.28125%;
         background-color: #ffffff;
         background-size: 100% 100%;
         background-image: url(image/background4.jpg);
@@ -4292,7 +4335,6 @@ input::selection, textarea::selection {
 
 @media all and (max-width: 767px) {
     .p-index-kv {
-        margin-bottom: 150px;
         background-image: url(image/background3.jpg);
         background-size: 100% 100%;
 
