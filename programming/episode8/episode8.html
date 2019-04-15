@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">JAVA的多态</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，多态就是事物在运行过程中存在不同的状态。多态的存在有三个前提：要有继承关系、子类要重写父类的方法、父类要引用指向子类对象（比如 Parent p = new Child（）；也称为向上转型）</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于继承和重写，之前已经说过了，主要先来谈一下这个向上转型。以上一段那句代码为例，向上转型就是指父类（Parent）引用（=）指向子类对象（通过new实例化的Child（）），简单来说就是将子类的对象转为父类对象，这样做的结果，就是如果父类和子类都有一个talk方法，那么我这个p调用talk方法的时候是调用子类的talk方法，可是如果子类有一个sleep方法是父类没有的，p就不能调用了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为什么要搞这么复杂，还是先从一个例子入手，假如我们现在有一个human父类，有两个子类man和woman，然后它们都有一个sleep和eat方法，不过子类重写了这两个方法，父类有一个information方法（里面会调用eat方法和sleep方法）。假如现在我们想要显示男人a和b、女人c的一些信息（即调用information方法），如果还没有学习多态，我们就需要实例化男人ab和女人c，再每个调用它们的sleep和eat方法（或者为每个子类都写一个information方法，如果子类很多那就是一个灾难了），现在有了多态，代码就能简化了，只要直接调用父类的information方法（information（new man（）），这就是向上转型的过程），然后父类的information方法会根据实例化的是man还是woman，调用它们已经重写了的eat和sleep方法，这样，就能大大减少了代码的重复。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说到了向上转型，就顺便再介绍一下向下转型。向上转型有一个缺点，那就是子类对象不能调用它独特的方法，只能调用父类子类都有的方法。如果我们既希望向上转型，又可以使得子类调用它的方法，就需要向下转型了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">向下转型是在向上转型的基础上进行的，比如一开始的向上转型Parent p = new Child（），如果我们希望进一步向下转型，可以运行以下代码Child c = (Child) p，它有点像强行转换类型的代码，经过乡下转型之后，就可以调用子类的所有方法了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1] https://blog.csdn.net/TNTZS666/article/details/80273986</div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
