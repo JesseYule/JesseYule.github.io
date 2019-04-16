@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/submenu/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/submenu/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/math.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/math.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/programming.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/programming.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/articles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datascience/datascience.html" beforeDir="false" afterPath="$PROJECT_DIR$/datascience/datascience.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,21 +16,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programming/programming.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/articles/episode6/episode6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="95" column="72" lean-forward="true" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+            <state relative-caret-position="528">
+              <caret line="103" column="195" selection-start-line="103" selection-start-column="195" selection-end-line="103" selection-end-column="195" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/programming/episode8/episode8.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/articles/articles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1271">
-              <caret line="106" column="85" selection-start-line="106" selection-start-column="85" selection-end-line="106" selection-end-column="85" />
+            <state relative-caret-position="525">
+              <caret line="89" column="63" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -91,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/株式会社カラック _ デジタルマーケティングエージェンシー.html" />
         <option value="$PROJECT_DIR$/bio/RECRUIT _ 株式会社カラック_files/main.min.css" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/bar hotel箱根香山【公式】.html" />
@@ -103,12 +101,10 @@
         <option value="$PROJECT_DIR$/programming/episode1/episode1.html" />
         <option value="$PROJECT_DIR$/bio/bio.html" />
         <option value="$PROJECT_DIR$/bio/details/bio_details.html" />
-        <option value="$PROJECT_DIR$/datascience/datascience.html" />
         <option value="$PROJECT_DIR$/datascience/episode1/episode1.html" />
         <option value="$PROJECT_DIR$/math/episode2/episode2.html" />
         <option value="$PROJECT_DIR$/math/episode1/episode1.html" />
         <option value="$PROJECT_DIR$/articles/episode1/episode1.html" />
-        <option value="$PROJECT_DIR$/articles/articles.html" />
         <option value="$PROJECT_DIR$/articles/episode2/episode2.html" />
         <option value="$PROJECT_DIR$/math/episodea/episode2.html" />
         <option value="$PROJECT_DIR$/ai/ai.html" />
@@ -140,12 +136,16 @@
         <option value="$PROJECT_DIR$/programming/programming.html" />
         <option value="$PROJECT_DIR$/programming/episode9/episode9.html" />
         <option value="$PROJECT_DIR$/programming/episode8/episode8.html" />
+        <option value="$PROJECT_DIR$/datascience/datascience.html" />
+        <option value="$PROJECT_DIR$/datascience/episode2/episode2.html" />
+        <option value="$PROJECT_DIR$/datascience/episode3/episode3.html" />
+        <option value="$PROJECT_DIR$/articles/articles.html" />
+        <option value="$PROJECT_DIR$/articles/episode6/episode6.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="31" />
-    <option name="y" value="147" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -165,25 +165,13 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="programming" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="programming" type="462c0819:PsiDirectoryNode" />
-              <item name="episode7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="programming" type="462c0819:PsiDirectoryNode" />
-              <item name="episode8" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="programming" type="462c0819:PsiDirectoryNode" />
-              <item name="episode9" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="episode6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,18 +309,20 @@
       <workItem from="1555116575267" duration="407000" />
       <workItem from="1555146555297" duration="400000" />
       <workItem from="1555286484632" duration="725000" />
-      <workItem from="1555287311506" duration="12781000" />
+      <workItem from="1555287311506" duration="13088000" />
+      <workItem from="1555328910739" duration="644000" />
+      <workItem from="1555377202881" duration="4696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341322000" />
+    <option name="totallyTimeSpent" value="346969000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23185341" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19802678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -374,29 +364,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bio/details/bio_details.html" />
-    <entry file="file://$PROJECT_DIR$/datascience/datascience.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="28" column="100" selection-start-line="28" selection-start-column="100" selection-end-line="28" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datascience/episode1/episode1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="29" column="100" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articles/articles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="155" column="116" selection-start-line="155" selection-start-column="116" selection-end-line="155" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/episodea/episode2.html" />
     <entry file="file://$PROJECT_DIR$/ai/ai.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="639">
@@ -642,9 +609,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming/episode7/episode6.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/programming/episode7/episode6.html" />
     <entry file="file://$PROJECT_DIR$/programming/programming2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1663" />
@@ -664,17 +629,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming/programming.html">
+    <entry file="file://$PROJECT_DIR$/programming/episode8/episode8.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="95" column="72" lean-forward="true" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+        <state relative-caret-position="123">
+          <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming/episode8/episode8.html">
+    <entry file="file://$PROJECT_DIR$/programming/programming.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1271">
-          <caret line="106" column="85" selection-start-line="106" selection-start-column="85" selection-end-line="106" selection-end-column="85" />
+        <state relative-caret-position="300">
+          <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/datascience.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="66" column="72" lean-forward="true" selection-start-line="66" selection-start-column="72" selection-end-line="66" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/episode2/episode2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="101" column="329" selection-start-line="101" selection-start-column="329" selection-end-line="101" selection-end-column="329" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datascience/episode3/episode3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="97" column="142" selection-start-line="97" selection-start-column="142" selection-end-line="97" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articles/articles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="89" column="63" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articles/episode6/episode6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="103" column="195" selection-start-line="103" selection-start-column="195" selection-end-line="103" selection-end-column="195" />
         </state>
       </provider>
     </entry>
