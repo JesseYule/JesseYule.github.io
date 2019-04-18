@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">多线程</h2>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，需要理解线程和进程的区别。针对进程，每个进程都有独立的代码和数据空间，进程间的切换会有较大的开销，一个进程包含了1-n个线程。而一类线程会共享代码和数据空间，每个线程都有独立的运行栈和程序计数器，线程切换开销小。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">线程是一个动态执行的过程，有一个产生到死亡的生命周期，首先是新建状态，使用new关键字和Thread类或其子类建立一个线程对象后，该线程就处于新建状态，保持这个状态直到程序start（）这个进程。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">当程序调用了start（）方法后，就进入了就绪状态，就绪状态的进程处于就绪队列中，要等待JVM里线程调度器的调度。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果就绪状态的线程获取了cpu的资源，就可以执行run（），此时线程便处于运行状态，此时线程的情况最为复杂，运行过程中可能变成阻塞状态、就绪状态、死亡状态。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">阻塞状态指的是，线程因为某些原因放弃了cpu使用权，暂时停止运行，直到线程进入就绪状态，才有机会转到运行状态，一般来说阻塞的情况分为三种：1）等待阻塞，运行的线程执行了wait（）方法；2）同步阻塞，运行的线程在获取对象的同步锁时，如果同步锁被其他线程占用，jvm就会把该线程放进锁池中；3）其他阻塞，运行的线程执行了sleep（）或join（）方法等，jvm会把线程设置为阻塞状态。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">死亡状态指的是一个运行线程完成了任务或者其他终止条件发生时，该线程就切换到死亡状态。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">以下图片会对线程的状态转换有更好的总结：</div>
+
+              <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                  <picture>
+                      <source media="(max-width: 568px)" srcset="image/thread"><img src="image/thread" alt="ポジショニングマップ">
+                  </picture>
+              </div>
+
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">创建一个线程提供了三种方法：通过实现Runnable接口；通过继承Thread类本身；通过Callable和Future创建线程。这里主要介绍前两种。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于怎么实现多线程，直接看代码就可以了，主要讲一下Thread和Runnable的区别，如果一个类继承Thread，则不适合资源共享，相反，Runnable更容易实现资源共享。总的来说，实现Runnable接口会有以下一些优势：1）适合多个相同的程序代码的线程去处理一个资源；2）🉑可以避免java中单继承的限制；3）增加程序的健壮性，代码可以被多个线程共享，代码和数据独立；4）线程池只能放入实现Runnable或Callable类线程，不能直接放入继承Thread类。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再讲一下synchronized（线程同步），为什么需要线程同步，主要是因为java允许多线程并发控制，如果多个线程同时操作了一个可共享资源变量时，就会导致数据不准确，比如对同一组数据进行了几次同样的处理，就会出现重复的结果，因此需要加入同步锁避免在该线程没有完成操作前就被其他线程调用，从而保证了变量的唯一和准确性。</div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
