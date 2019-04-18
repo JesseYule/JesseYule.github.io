@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/programming/programming.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/programming.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/programming2.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/programming2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programming/episode13/episode13.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/episode13/episode13.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +24,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programming/programming2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
+            <state relative-caret-position="478">
               <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/programming/episode13/episode13.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="121" column="16" lean-forward="true" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -37,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programming/programming.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="725">
               <caret line="93" column="69" lean-forward="true" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="69" />
             </state>
           </provider>
@@ -143,12 +151,12 @@
         <option value="$PROJECT_DIR$/datascience/episode3/episode3.html" />
         <option value="$PROJECT_DIR$/datascience/episode4/episode4.html" />
         <option value="$PROJECT_DIR$/programming/episode12/episode12.html" />
-        <option value="$PROJECT_DIR$/programming/episode13/episode13.html" />
         <option value="$PROJECT_DIR$/programming/episode5/episode5.html" />
         <option value="$PROJECT_DIR$/programming/episode14/episode14.html" />
         <option value="$PROJECT_DIR$/programming/episode15/episode15.html" />
         <option value="$PROJECT_DIR$/programming/programming.html" />
         <option value="$PROJECT_DIR$/programming/programming2.html" />
+        <option value="$PROJECT_DIR$/programming/episode13/episode13.html" />
       </list>
     </option>
   </component>
@@ -175,6 +183,12 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="programming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="programming" type="462c0819:PsiDirectoryNode" />
+              <item name="episode1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -358,12 +372,12 @@
       <workItem from="1555377202881" duration="4840000" />
       <workItem from="1555460311835" duration="9129000" />
       <workItem from="1555499203920" duration="5055000" />
-      <workItem from="1555543977630" duration="7222000" />
+      <workItem from="1555543977630" duration="7463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368519000" />
+    <option name="totallyTimeSpent" value="368760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -528,13 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2990">
           <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/episode1/episode1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="100" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -707,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming/episode13/episode13.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="92" column="68" selection-start-line="92" selection-start-column="65" selection-end-line="92" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programming/episode15/episode15.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -730,15 +730,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/programming/programming.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="725">
           <caret line="93" column="69" lean-forward="true" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/programming/programming2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
+        <state relative-caret-position="478">
           <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programming/episode1/episode1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programming/episode13/episode13.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="121" column="16" lean-forward="true" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
         </state>
       </provider>
     </entry>

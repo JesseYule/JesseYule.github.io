@@ -114,11 +114,14 @@
               <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
               <div class="p-lower-kv__outline p-lower-kv__outline--col2">创建一个线程提供了三种方法：通过实现Runnable接口；通过继承Thread类本身；通过Callable和Future创建线程。这里主要介绍前两种。</div>
               <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于怎么实现多线程，直接看代码就可以了，主要讲一下Thread和Runnable的区别，如果一个类继承Thread，则不适合资源共享，相反，Runnable更容易实现资源共享。总的来说，实现Runnable接口会有以下一些优势：1）适合多个相同的程序代码的线程去处理一个资源；2）🉑可以避免java中单继承的限制；3）增加程序的健壮性，代码可以被多个线程共享，代码和数据独立；4）线程池只能放入实现Runnable或Callable类线程，不能直接放入继承Thread类。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于怎么实现多线程，直接看代码就可以了，主要讲一下Thread和Runnable的区别，如果一个类继承Thread，则不适合资源共享，相反，Runnable更容易实现资源共享。总的来说，实现Runnable接口会有以下一些优势：1）适合多个相同的程序代码的线程去处理一个资源；2）可以避免java中单继承的限制；3）增加程序的健壮性，代码可以被多个线程共享，代码和数据独立；4）线程池只能放入实现Runnable或Callable类线程，不能直接放入继承Thread类。</div>
               <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
               <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再讲一下synchronized（线程同步），为什么需要线程同步，主要是因为java允许多线程并发控制，如果多个线程同时操作了一个可共享资源变量时，就会导致数据不准确，比如对同一组数据进行了几次同样的处理，就会出现重复的结果，因此需要加入同步锁避免在该线程没有完成操作前就被其他线程调用，从而保证了变量的唯一和准确性。</div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 
-            </div>
+
+          </div>
           </div>
         </div>
 
