@@ -90,15 +90,24 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">API与JDBC</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">JSP</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">API（Applicaiton Programming Interface，应用程序接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件的一访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。换句话说，就是一个API，会把一些功能封装好，我们作为调用的人可以很方便地使用这些功能，又不需要理解他们是怎么实现的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">JSP全程Java Server Page，是一种基于文本的程序，特点是html和java代码共存。JSP主要是为了简化Servlet的工作出现的，Servlet输出HTML十分困难，JSP就是替代Servlet输出HTML的。本质上来说，JSP也是一个Servlet。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来要介绍的JDBC（java database connector）就是一个API，主要可以用来连接访问数据库</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先主要讲一下JSP的生命周期，一开始，其他客户端会发送一个请求给服务器，服务器会识别出这是一个对JSP网页的请求，就会把请求传递给JSP引擎。JSP引擎载入JSP文件，把他们转化为Servlet，这种转化只是将所有模版文本改用println（）语句，并且将所有JSP元素转化为Java代码。Jsp引擎将Servlet编译成可执行类，并且将原始请求传递给Servlet引擎。服务器再调用Servlet引擎，载入Servlet类，Servlet产生HTML格式输出并上交给服务器。最后服务器以静态网页的形式将HTTP response返回到客户端，客户端浏览器处理HTTP response中产生的动态页面。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，JSP的生命周期比Servlet多了一步将JSP编译成Servlet。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://juejin.im/entry/5913d5f90ce4630069c854ce</div>
 
 
             </div>

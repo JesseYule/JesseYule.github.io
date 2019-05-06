@@ -90,27 +90,29 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Spring</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Servlet</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在面向对象设计方法中，封装是指一种将抽象性函数借口的实现细节部分包装、隐藏的方法，封装可以认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Servlet是运行在web服务器上的程序，作为浏览器和服务器数据库或应用程序之间的中间层，使用servlet就可以收集来自网页表单的用户输入，输出数据库的记录，还可以动态创建网页。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，人们使用servlet主要是为了：读取客户端发送的数据（接受请求）；处理这些数据并生成结果（可能需要访问数据库）；发送数据（处理结果）到客户端。然后还会有一个Servlet容器，主要是因为一般来说会有很多请求，每个请求要找到各自的servlet，就需要有一个东西管理这些servlet，servlet就是负责初始化并创建servlet，将请求解析程具体的类等操作。比如Tomcat就是最流行的servlet容器。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Servlet具有以下生命周期：1.通过调用init（）方法进行初始化；2.调用Service（）方法处理客户端的请求；3.通过destory（）方法终止；4.由jvm垃圾回收器进行回收</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先介绍一下Servlet容器（Tomcat为例）是怎么初始化Servlet的，首先是解析tomcat路径下的web.xml文件，web.xml是web项目的入口文件，tomcat可以利用它进行基本的配置工作，将各个配置项经过包装后设在Context容器中，就可以创建Servlet并初始化。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Service（）方法是执行实际任务的主要方法，每次服务器收到Servlet请求的时候，Service（）方法就会检查HTTP的请求类型（get、post之类的）并在适当的时候调用doGet、doPost等方法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">调用完Service方法，就轮到destory（）关闭数据库连接、停止后台线程等操作，结束Servlet的生命周期。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了生命周期，也介绍一下filter和listener，这两个是经常能在web.xml看到的配置项，实际上，filter就是过滤器，listener是监听器。过滤器可用于拦截请求，在请求处理钱进行一些预处理工作，一般用于处理编码问题、记录日志等。监听器用于监听Servlet容器中事件变化，当指定事件变化时，会触发注册该事件的监听器。从执行顺序来说，一般是监听器然后到过滤器最后到servlet，销毁或结束顺序则相反。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">狭义上来说，servlet就是指javax.servlet这个servlet的api类库，各大服务器厂商分别实现了这个标准并退出了像Tomcat之类的服务器，这些服务器可以帮我们实现处理连接、协议，并根据servlet标准帮我们封装请求和相应，这一套东西就被称为servlet工作机制。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://juejin.im/entry/5913d5f90ce4630069c854ce</div>
 
 
             </div>

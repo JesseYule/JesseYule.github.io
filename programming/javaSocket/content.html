@@ -90,16 +90,21 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">API与JDBC</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Socket</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">API（Applicaiton Programming Interface，应用程序接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件的一访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。换句话说，就是一个API，会把一些功能封装好，我们作为调用的人可以很方便地使用这些功能，又不需要理解他们是怎么实现的。</div>
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">要连接到其他机器，就需要socket的连接，socket代表着两台机器之间的网络连接的对象，所以如果我们要建立这个socket连接，就必须要知道ip地址和端口号，这样才能让我们定位我们要连接的是互联网上那么多机器的哪一台，还有是那台机器的哪一个程序。总的来说，socket就是用于描述ip地址和端口，应用程序可以通过socket向网络发出请求或者应答网络请求。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来要介绍的JDBC（java database connector）就是一个API，主要可以用来连接访问数据库</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Socket有两种主要的操作方式，就是之前提到的TCP（面向连接）和UDP（无连接），面向连接的socket就像一部电话，socket必须在发送信息前与目的地的socket取得连接，连接建立后socket就可以使用一个流接口进行打开、读写以及关闭操作，并且所有发送的数据在另一段都会以相同的顺序被接收。而无连接的socket操作就像一个邮件投递，每一个数据报都是一个独立的单元，它包含了这次投递的所有信息（目的地和发送的内容），在这个模式下的socket不需要连接目的地的socket，只是简单的投出数据报。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://blog.csdn.net/qq_33865313/article/details/79300531</div>
 
             </div>
           </div>
