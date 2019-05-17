@@ -110,11 +110,13 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来再介绍一些相关概念，首先是步长，也叫学习率，就是每一次迭代往负方向移动的距离；特征，也就是线性回归中的predictor，也是自变量，也是输入的数据，有很多叫法，但本质都是一样；假设函数，也就是我们的目标函数，线性回归中的回归函数，包含了自变量和我们需要估计的参数；损失函数，可以评价模型的好坏，像之前用到的均方误差，损失函数越小，证明预测值和真实值之间的差异越小，模型越好。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说完简单的理解，再举一个实际的例子，比如我们现在有一个二元函数求梯度：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x_1, x_2) = x_1 ^2 +x_1 x_2-3x_2$$</section></div>
 
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\nabla f = (\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2}) = (2x_1+x_2, x_1-3)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如我们设置初始点在（0，0），那么我们就可以代入梯度，知道函数往（0，-3）的方向下降得最快（假设学习率为1），验证一下，一开始我们函数的结果为0，第一次迭代后点在（0，3）（初始点减去梯度），函数结果为-9，确实下降了，所以这个点比初始点更接近最小值。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
                 [1]https://www.cnblogs.com/pinard/p/5970503.html</div>
-
-
 
             </div>
 

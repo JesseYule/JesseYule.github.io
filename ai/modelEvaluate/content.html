@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">机器学习模型评价</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">模型评估很重要，因为一般来说，我们针对一个问题会有很多个模型可以解决，那么我们应该用哪个模型？难道一个线性回归用到底吗，肯定不是的。另一方面，在测试模型的泛化能力时，我们怎么定义这个模型的泛化能力好不好，或者说我们怎么判断得到的模型好不好，下一次训练会不会比上一次训练得到的模型更好，这些都需要一些指标去指出当下的模型的性能。这就是模型评价的意义所在。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来要介绍的指标主要按照回归模型和分类模型分为两部分，首先是回归模型的指标。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个介绍的指标是MSE（mean squared error），均方误差，指估计值和真值之差的平方的期望。它主要就衡量了我们的模型对数据的拟合程度，MSE越小，说明模型越好，在回归模型中这个指标就最常作为损失函数使用了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat f(x_i))^2 = E(y - \hat f(x) )^2 $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假如我们把数据集通过分为了训练集验证机测试集，那么我们计算测试集的MSE，实际上可以分解为方差、偏差与随机误差的方差之和：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(y_0 - \hat f(x_0) )^2 = Var(\hat f(x0)) + [Bias(\hat f (x_0))]^2 + Var( \epsilon)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">随机误差项就不用看了，主要是方差和偏差。模型方差指的是，针对不同的训练数据，我们训练得到的模型的差异程度，一般来说，即使我们输入不同的训练数据进行训练，得到的模型最优的情况下都是差不多的，毕竟这些数据都是从一个真实模型产生的，如果方差大，就意味着每次得到的模型都不一样，自然就意味着学习的效果不好了。一般来说，灵活的模型（或者说复杂）会伴随着高方差，因为拟合数据的能力强，自然数据的微小变化都能被模型捕获并放大。模型偏差就是之模型的输出结果和真实值的差异，bias大，就说明拟合效果不好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实可以看到，bias和variance之间是有一定联系的，如果向variance小，就是希望模型不会过度拟合数据，就要简化模型复杂度，但是伴随着，就是模型拟合数据效果不够好，导致bias大，反之亦然。也就是说，bias和variance之间是很难同时下降的，只能做到一定的平衡。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个指标是MISE，MSE是一个函数，利用MSE我们只能得到某一点的预测值和真实值的均方误差，可是我们评价的是整个模型，我们需要的是一个能评估整个模型的指标，MISE做的就是这件事，它是MSE这个函数的积分的期望，所以MISE是一个数值。说到这里，其实刚刚提到的测试集的MSE期望，就是MISE。再顺便提一下，还记得最小二乘法，它也是求误差的平方（MSE），但是它要求和，求和的目的也是估计整体的误差情况，而MISE只是多了一步，那就是求和之后再去平均，这样做的目的是保持不同模型在不同训练数据量的情况下也能在同一个尺度比较MISE。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来要介绍的是分类模型的指标。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">先以最简单的二分类作为例子，评价分类效果好不好可以通过混淆矩阵，混淆矩阵主要用于比较分类结果和真实信息，矩阵的行表示预测的结果，每一列表示真实的结果。所以一个二分类的模型，就会有一个（2，2）的混淆矩阵，分别包含了预测为正实际为正等四个不同情况的数量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过混淆矩阵，我们可以推出第二个指标，准确率（Accuracy），准确率是最常用的分类性能指标，通过模型预测正确的数量除以总数得到。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个指标是精确率（Precision），等于预测为正的样本里面有多少是真实值为正的，它只针对预测正确的正样本，而不是所有预测正确的样本，可理解为查准率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第四个指标是召回率（Recall），精确率针对预测为正的样本，召回率针对实际为正的样本，模型能够预测出多少个，也就是预测为正实际为正占总的正样本的比例，所以和精确率是相对的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第五个是F1 Score，F值是精确率和召回率的调和值：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{2}{F1} = \frac{1}{Precision} + \frac{1}{Recall}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">它更接近两个指标更小的那个，当精确率和召回率都比较接近，F值最大，所以很多推荐系统的评测指标都是F值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面说了那么多指标，说到底都是计算了混淆矩阵之后，针对不同情况计算得到的一个数值，下面再介绍一些其他情况的指标。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在逻辑回归中，通过阈值决定正负例，大于阈值为正，如果我们减小阈值，就会有更多的样本被识别为正，提高了正类的识别率，但也会导致更多的负类被识别为正，为了直观表示这一现象，引入了ROC（receiver operating characteristic）曲线，横坐标为False Positive Rate，就是预测为正但实际为负的样本占总的负样本的比例，纵坐标为True Positive Rate，就是预测为正实际也为正的样本占总的正样本的比例，当我们改变阈值，就会得到不同的FPR和TPR的数值，把他们连成一条曲线，就能得到ROC曲线：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/roc2.png"><img src="image/roc2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">考虑几种特殊情况，点（0，0），因为阈值为1，所有样本都被预测为负类。（1，1），分类起把每个实例都预测为正类。（0，1），完美地将所有样本进行分类。（1，0），彻底避开了所有正确答案，所差的分类。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以可以知道最理想的阈值，应该是最接近（0，1）的阈值，通过ROC曲线，我们就能确定那个点距离（0，1）最近，从而确定最理想的阈值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺带一提，ROC曲线越光滑，证明阈值的改变不会导致模型突然发生剧烈的变化，这就证明了模型没有太大的过拟合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过对ROC积分得到的值是AUC（Area Under Curve）。随便挑一个正样本以及一个负样本，分类起判定正样本高于负样本的概率就是AUC值。或者从另一个更简单的角度去理解AUC，AUC越大，就表明不论阈值怎么选择，ROC曲线都更接近（0，1）这个最优点，也就是说分类器都能很好地正确进行分类，所以我们就可以通过AUC值去判断一个模型好不好了，而不关心它的阈值是否取到最优或者阈值怎么取值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">PR曲线和ROC曲线类似，只是横坐标换成精确率，纵坐标换成召回率，再回顾一下，简单地说，精确率就是预测为正的有多少个真的为正，召回率就是实际为正的有多少个预测为正。同样，选择不同的阈值，得到不同的精确率召回率，就可以画出PR曲线了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后小小的总结一下ROC和PRC，首先，ROC兼顾了正例与负例，所以比PRC更适用于评价分类器的整体性能，而PRC则完全聚焦在正例；在正负例样本分布极不均衡的情况下，PRC比ROC更能反映出实际情况。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                [1]https://blog.csdn.net/login_sonata/article/details/54288653</div>
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

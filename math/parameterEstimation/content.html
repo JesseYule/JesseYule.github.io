@@ -16,14 +16,15 @@
     <script async="" src="../../css/menu/js"></script>
 
 
+    <meta name="theme-color" content="#ffffff">
+
+
     <!-------------------------matjax------------------------------>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
     <!---------------------------------------------------------------->
-
-    <meta name="theme-color" content="#ffffff">
 
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,7 +35,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -97,35 +98,37 @@
 
       <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">线性回归</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">参数估计</h2>
 
-		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归是有监督学习中的一个基本方法，简单来说就是假设数据之间是线性的，那么可通过已知的数据预测某一点的数据。</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先要知道的是，变量之间具有确定性关系和相关性关系，比如做自由落体的物体的速度和时间之间是具有确定性关系的，是可以通过公式表达的，可是针对身高体重，虽然一般来说身高越高体重也会越重，可是这种关系并不确定，而回归分析，研究的就是这种相关性关系。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参数估计是统计推断的一种方法，主要是根据样本去推断总体分布的一些未知参数，主要分为点估计和区间估计。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归可分为一元线性回归和多元线性回归，首先介绍一元线性回归。简单来说就是只有自变量x和因变量y，得到一组训练数据（xi,yi）,把它们代进方程：Yi=a+bxi+c,其中b是回归系数，a+bxi是回归函数，也是线性部分，c则是随机误差。一元线性回归要解决的，首先是对a，b的估计，随机误差的估计，得到回归方程之后，还要进一步做显著性检验，分析回归系数的置信区间等等。简单来说，就是求出了一个回归方程，再分析它的准确程度。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，点估计就是根据样本去估计总体分布中所包含的未知参数，通常是期望、方差之类的，点估计的方法有矩估计法、极大似然估计、最小二乘、贝叶斯估计等等。区间估计就是根据样本，根据一定的正确度和精度要求，构造出适当的区间，作为总体分布的未知参数所在范围的估计。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因此线性回归要做的第一步当然是分析系数a、b，要估计a、b，简单来说就是找出它们的一个值，使得函数对原始数据尽可能好地拟合，这个拟合的意思就是数据点与回归函数的距离尽可能接近，最理想的情况就是找出完美的回归方程，使得所有的数据点都在方程上，可是这一般是很难做到的，因为现实数据的分布不可能仅仅由一个线性方程决定，而且一般来说这种情况也叫做过拟合，会导致预测的效果很差。所以实际上，我们会采取最小二乘的方法（也可把最小二乘方程称为损失函数cost function），针对同一个x点的数据y值和函数y值之间计算差的平方，对每一个点重复该步骤，最后相加就得到整体的离差平方和（只是一个名次），从这个相加得到的函数就可以判断回归函数对数据的拟合程度，最后计算该函数取最小值时各个参数的取值（即该函数对各个参数求偏导等于0是参数的取值），即可得到对各个参数的估计。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里主要介绍一下矩估计法。矩估计法的思想就是用样本的各阶矩去近似代替总体的各阶矩，首先什么是矩：设有自然数k，常数a，随机变量x，则E（x-a）^k称为随机变量x基于a的k阶矩，当常数为0，则称为原点矩。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对更一般的多元线性回归，可把多个变量写成矩阵形式，并得到更一般的回归方程：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x_i) = w^T x_i +b$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">类似与一元的情况，这里也是把数据代进去然后应用最小二乘的方法，最后对每个参数w求偏导从而得到估计，但是因为过程中涉及到逆矩阵的计算，比单变量的情况更复杂。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面说得比较抽象，现在换一个比较简明的说法，最简单的，我们平时估计的很多时候都是总体的期望和方差，根据矩的定义，我们就知道，一阶原点矩就是期望公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(x) = \int _{-\infty} ^\infty xf(x)dx$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时，我们也能通过二阶中心矩得到方差公式，中心矩的意思就是把矩的定义中的常数a用期望替代：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(x) = \int _{-\infty} ^\infty [x-E(x)]^2 f(x)dx$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">另一方面，因为现实中我们可能会遇到大量的变量，甚至矩阵列多于行（有无穷解），导致可解出多个w，他们都可以使得均方误差最小（就是满足最小二乘），选择哪个解作为输出，则由学习算法的归纳偏好决定，常见做法是引入正则化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假如现在有一个总体x服从区间[a，b]的均匀分布，ab为未知参数，我们知道均匀分布有公式可以求期望方差，另一方面，当我们得到样本之后，也可以求出样本的各阶矩，这样，我们就能把期望方差公式和样本的各阶矩联系起来：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(x) = \frac{a+b}{2} = \frac{x_1+x_2+...+x_n}{n}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(x^2) = D(x) + [E(x)]^2 = \frac{(b-a)^2}{12} + \frac{(b+a)^2}{4} = \frac{x_1 ^2+x_2 ^2+...+x_n ^2}{n}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">两条方程两个未知数，很完美。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">进一步的，我们还可以引入link function，把特征的线性变换映射到其他情况，比如通过对数函数，我们就可以把x的输出转变为指数变化的y：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$lny = w^T x+b$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式子的右边依然是线性函数，可是输出因为link function，这个式子就变成了求输入空间到输出空间的非线性函数映射，类似的对线性函数引入link function得到的模型统称为广义线性模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然说了很多，但实际上还是通过样本通过一些公式对总体的参数进行估计，本质上都是一样的，说实话，通过一阶原点矩估计总体期望不就是通过样本均值估计总体的期望吗。</div>
 
             </div>
+      </div>
 
 
-        </div>
+
+
+
+
 
         <!-- End to define the main content.-->
       </div>
