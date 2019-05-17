@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ai/densityEstimation/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/featureEngineering/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/kernelRegression/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/kernelRegression/image/KernelSmoother.svg copy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/kernelRegression/image/Localregressionsmoother.svg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/linearEvaluate/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/loess/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/monteCarloSimulation/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai/regularization/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/parameterEstimation/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/gradientdescent/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/gradientDescent/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/gradientdescent/image/rs" beforeDir="false" afterPath="$PROJECT_DIR$/ai/gradientDescent/image/rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/linearregression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/linearRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/linearregression/image/koch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ai/linearRegression/image/koch.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/logisticregression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/logisticRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/logisticregression/image/sigmoid.png" beforeDir="false" afterPath="$PROJECT_DIR$/ai/logisticRegression/image/sigmoid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/math.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/math.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/math2.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/math2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/unbiasedestimation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/unbiasedestimation/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/bootstrap/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/bootstrap/content.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,40 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/math/math2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/math/math.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/math/maxLikelihoodAlgorithm/content.html">
+        <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1952">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="3514">
+              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/math/maxLikelihood/content.html">
+        <entry file="file://$PROJECT_DIR$/math/gammaAndBeta/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2061" />
+            <state relative-caret-position="328">
+              <caret line="131" column="86" lean-forward="true" selection-start-line="131" selection-end-line="132" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -168,7 +131,6 @@
         <option value="$PROJECT_DIR$/ai/linearEvaluate/content.html" />
         <option value="$PROJECT_DIR$/math/unbiasedestimation/content.html" />
         <option value="$PROJECT_DIR$/math/parameterEstimation/content.html" />
-        <option value="$PROJECT_DIR$/math/bootstrap/content.html" />
         <option value="$PROJECT_DIR$/ai/nonparametricRegression/content.html" />
         <option value="$PROJECT_DIR$/ai/loess/content.html" />
         <option value="$PROJECT_DIR$/ai/kernelRegression/content.html" />
@@ -177,12 +139,13 @@
         <option value="$PROJECT_DIR$/ai/ai2.html" />
         <option value="$PROJECT_DIR$/math/math2.html" />
         <option value="$PROJECT_DIR$/math/math.html" />
+        <option value="$PROJECT_DIR$/math/bootstrap/content.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="12" />
-    <option name="y" value="42" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2" />
+    <option name="y" value="146" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -192,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,25 +166,29 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="math" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="maxLikelihood" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="maxLikelihoodAlgorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="gammaAndBeta" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,6 +200,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/math" />
+      <recent name="$PROJECT_DIR$/ai" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ai" />
       <recent name="$PROJECT_DIR$/math" />
@@ -379,17 +351,18 @@
       <workItem from="1557832663956" duration="183000" />
       <workItem from="1557902289988" duration="7682000" />
       <workItem from="1557977999598" duration="1603000" />
-      <workItem from="1558053588595" duration="9564000" />
+      <workItem from="1558053588595" duration="9826000" />
+      <workItem from="1558090116740" duration="3930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460236000" />
+    <option name="totallyTimeSpent" value="464428000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="42" width="1440" height="877" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26638478" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22057787" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -412,13 +385,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/programming/javaList/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="117" column="176" lean-forward="true" selection-start-line="117" selection-start-column="176" selection-end-line="117" selection-end-column="176" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programming/javaMultithreading/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="876">
@@ -681,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="110" column="186" selection-start-line="110" selection-start-column="186" selection-end-line="110" selection-end-column="186" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/densityEstimation/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-371">
@@ -760,14 +719,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math/math2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="1725">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/math/math.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="1633">
           <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -775,15 +734,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math/maxLikelihood/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2061" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/math/maxLikelihoodAlgorithm/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1952">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="23">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/maxLikelihood/content.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/gammaAndBeta/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="131" column="86" lean-forward="true" selection-start-line="131" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3514">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
         </state>
       </provider>
     </entry>
