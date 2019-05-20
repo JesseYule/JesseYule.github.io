@@ -97,37 +97,47 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">对数回归（Logistic Regression）</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">逻辑回归（Logistic Regression）</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性模型可以用于回归学习，可是可以利用线性模型进行分类吗，答案肯定是可以的，只要利用广义线性模型中的对数回归就可以了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性模型可以用于回归学习，可是可以利用线性模型进行分类吗，答案肯定是可以的，只要利用逻辑回归就可以了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之所以强调是广义线性模型中的对数回归，是想突出对数回归和线性回归的联系，也就是我们主要是对输出利用link function进行转换，对于输入而言依然可以看成是线性函数。现在我们考虑二分类任务，输出标记为{0,1}，如果想要做分类，最简单的办法就是针对每个输入输出一个属于0或1的概率，比如对某个输入有0.9的概率属于1，等价的他就是有0.1的概率属于0，接下来，我们就需要考虑怎么把原来的线性输出转化为[0,1]之间的输出了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">逻辑回归是从线性回归推导来的，在介绍逻辑回归之前，先介绍一下广义线性模型的概念。所谓广义，就是更加通常意义上的线性模型，看回线性回归，我们可以写成另一种形式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y = f(ax+b) = ax+b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中f(x)称为link function，在线性回归中f(x)=x，如果我们改变f(x)，实际上就相当与对x的输出做了一个映射，如果我们引入特别的f(x)，甚至能让线性变化的自变量获得非线性变化的因变量。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对数几率函数（logistic function）就是我们需要的答案，logistic function也叫sigmoid function，提到这个sigmoid function又和神经网络有很大联系了，这里暂时不深究，它的形式为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以逻辑回归就是从link function入手，为了实现分类，把线性回归的输出空间控制在[0,1]之间，这样就可以把输出作为概率，解决二分类问题了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们需要的link function是对数几率函数（logistic function），logistic function也叫sigmoid function，提到这个sigmoid function又和神经网络有很大联系了，这里暂时不深究，它的形式为：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$g(z) = \frac{1}{1+e^{-z}}$$</section></div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/sigmoid.png"><img src="image/sigmoid.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从图像就可以直观看出，函数的输出已经限制在[0，1]之间了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从图像就可以直观看出，不论自变量取什么值，输出都在[0，1]之间。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">把sigmoid函数代进原来的线性方程中，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y=\frac{1}{1+e^{-(w^Tx+b)}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">改写一下也可得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ln \frac{y}{1-y}=w^Tx+b$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的右边就是原来的线性回归方程的一般形式，我们只对它的输出做了变换。更进一步，为了让后面的推导过程更易理解，这里需要说明，y其实就是指P(y=1|x),即针对给定的x，y等于1的概率。所以1-y自然就是y等于0的概率了。实际上我们就是利用线性回归的输出结果，去逼近真实标记的对数概率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=1|x;\theta ) = \frac{1}{1+e^{-\theta ^T * x}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">来分析一下这个式子，首先要注意的是，我们对模型做了简化，还记得原来线性回归的表达式是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y = f(ax+b) = ax+b$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里不是简单把ax+b代入sigmoid函数里面，而是选择了theta*x，这是一个简化，省略了截距。另一方面，这个函数反映的是在自变量x和未知参数theta的条件下y=1的概率，同时定义阈值：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y^* = 1, P(y=1|x;\theta )>0.5$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样，我们就可以根据阈值和概率，对y进行分类了。这里想要补充说明的是，我觉得这个阈值有点像模型的超参数，也就是我们训练模型改变的是参数，也就是逻辑回归中的theta，当我们训练得到最优的theta之后，才可以根据实际情况对超参数进行调整，看模型会不会得到改进。另一方面，阈值为0.5是一般情况下的取值，如果输入数据十分不平衡，需要根据实际情况调整，具体来说，就是根据上面说的，可以随便选一个初始阈值，训练得到最优参数，调整阈值，再训练，重复这个过程，得到最优阈值和最优参数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了预测函数的形式之后，下一步就是分析如何进行参数估计，也是和线性回归一样，想办法构造一个损失函数，通过使损失函数最小从而分析参数取值。之前线性回归我们是选择直接求偏导求参数，这里我们选择通过最大似然估计去分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了模型，怎么求参数的办法就很多了，极大似然梯度下降什么都可以，这里不细说。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前也提及到，y就是P(y=1|x)，这是一个后验概率，分析原方程显然有：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=1|x)=\frac{e^{w^T x+b}}{1+e^{w^T x+b}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=0|x)=\frac{1}{1+e^{w^T x+b}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之后进一步构造似然函数，并使其最大得到参数估计，这里不再详细说明。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再强调一下，虽然我们通过sigmoid function将线性输入的输出变成非线性的，局限在了[0,1]之间，但是本质上逻辑回归还是一个线性模型。线性回归和逻辑回归都是线性模型，为什么我们一般采用逻辑回归做分类，事实上，我们也可以用线性回归做分类，可是因为线性回归模型受离群点影响较大，或者说对分类特征十分明显的数据，会对模型造成明显影响。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/linear.gif"><img src="image/linear.gif" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">而逻辑回归，因为sigmoid函数的特性，在输出为01附近逻辑曲线是十分不敏感的，这就意味着逻辑曲线对刚刚提到的离群点具有更强大的包容性，或者专业地说，就是模型鲁棒性更强，所以我们选择逻辑回归就是为了这个优点，而不是说通过一个sigmoid函数把原来做不了分类的线性回归变成了可以做分类的逻辑回归。因此，一般情况下，逻辑回归的分类边界是一条直线。为什么说一般情况，正如线性回归，我们同样也可以在特征工程中，引入新的特征（比如引入一个x^2），把分类边界变成曲线，更好地对数据进行分类，至于怎么找到合适的新特征，就是特征工程的工作了。</div>
+
 
 
 

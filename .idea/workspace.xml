@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/bootstrap/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/bootstrap/content.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
+        <entry file="file://$PROJECT_DIR$/ai/logisticRegression/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3514">
-              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/math/gammaAndBeta/content.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="131" column="86" lean-forward="true" selection-start-line="131" selection-end-line="132" />
+            <state relative-caret-position="450">
+              <caret line="124" column="84" selection-start-line="124" selection-start-column="84" selection-end-line="124" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -89,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/programming/episode6/episode6.html" />
         <option value="$PROJECT_DIR$/ai/episode4/episode4.html" />
         <option value="$PROJECT_DIR$/ai/episode5/episode5.html" />
         <option value="$PROJECT_DIR$/ai/episode6/episode6.html" />
@@ -128,25 +117,26 @@
         <option value="$PROJECT_DIR$/ai/regularization/content.html" />
         <option value="$PROJECT_DIR$/ai/featureEngineering/content.html" />
         <option value="$PROJECT_DIR$/ai/linearregression/content.html" />
-        <option value="$PROJECT_DIR$/ai/linearEvaluate/content.html" />
         <option value="$PROJECT_DIR$/math/unbiasedestimation/content.html" />
         <option value="$PROJECT_DIR$/math/parameterEstimation/content.html" />
         <option value="$PROJECT_DIR$/ai/nonparametricRegression/content.html" />
         <option value="$PROJECT_DIR$/ai/loess/content.html" />
         <option value="$PROJECT_DIR$/ai/kernelRegression/content.html" />
-        <option value="$PROJECT_DIR$/ai/modelEvaluate/content.html" />
-        <option value="$PROJECT_DIR$/ai/ai.html" />
         <option value="$PROJECT_DIR$/ai/ai2.html" />
         <option value="$PROJECT_DIR$/math/math2.html" />
         <option value="$PROJECT_DIR$/math/math.html" />
         <option value="$PROJECT_DIR$/math/bootstrap/content.html" />
+        <option value="$PROJECT_DIR$/ai/ai.html" />
+        <option value="$PROJECT_DIR$/ai/modelEvaluate/content.html" />
+        <option value="$PROJECT_DIR$/ai/linearEvaluate/content.html" />
+        <option value="$PROJECT_DIR$/ai/logisticRegression/content.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
-    <option name="y" value="146" />
-    <option name="width" value="1440" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="95" />
+    <option name="y" value="23" />
+    <option name="width" value="1341" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -155,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +156,12 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="logisticRegression" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -189,6 +184,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,16 +349,18 @@
       <workItem from="1557977999598" duration="1603000" />
       <workItem from="1558053588595" duration="9826000" />
       <workItem from="1558090116740" duration="3930000" />
+      <workItem from="1558350946642" duration="6245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464428000" />
+    <option name="totallyTimeSpent" value="470673000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="95" y="23" width="1341" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22057787" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22057787" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -506,13 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="85" column="72" selection-start-line="85" selection-start-column="72" selection-end-line="85" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/logisticRegression/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="127" column="93" lean-forward="true" selection-start-line="127" selection-end-line="128" />
         </state>
       </provider>
     </entry>
@@ -686,34 +677,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/linearEvaluate/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="99" column="74" selection-start-line="99" selection-start-column="65" selection-end-line="99" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/modelEvaluate/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="100" column="73" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="73" />
-          <folding>
-            <element signature="e#5429#5470#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/ai2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/ai.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -746,15 +713,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math/gammaAndBeta/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="131" column="86" lean-forward="true" selection-start-line="131" selection-end-line="132" />
+        <state relative-caret-position="3013">
+          <caret line="131" column="86" selection-start-line="131" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/modelEvaluate/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="100" column="75" selection-start-line="100" selection-start-column="75" selection-end-line="100" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/linearEvaluate/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/ai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3514">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+        <state relative-caret-position="663">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/logisticRegression/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="124" column="84" selection-start-line="124" selection-start-column="84" selection-end-line="124" selection-end-column="84" />
         </state>
       </provider>
     </entry>

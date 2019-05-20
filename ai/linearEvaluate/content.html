@@ -97,7 +97,7 @@
 
       <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">线性回归的一些指标</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">线性回归模型评价指标</h2>
 
 		  
 		   <div class="p-lower-kv">
@@ -105,14 +105,21 @@
               <div class="p-lower-kv__subtitle"> </div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归不难，可是它里面涉及到的一些指标却很繁杂，关于评价回归模型的指标在模型评价里面有介绍，这里主要介绍一些没有涉及到的一些其他指标公式之类的东西。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">1. RSE（Residual Sum of squares），在线性回归里面作为损失函数计算模型误差，本质上就是最小二乘法：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">1. RSS（Residual Sum of squares），在线性回归里面作为损失函数计算模型误差，本质上就是最小二乘法：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$RSS = (y_1 - \hat\beta_0 - \hat\beta_1 x_1)^2 + (y_2 - \hat\beta_0 - \hat\beta_1 x_2)^2 + ... + (y_n - \hat\beta_0 - \hat\beta_1 x_n)^2$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">2. Pearson Correlation Coefficient，有时候，我们需要衡量两个变量之间的线性相关强度，这时我们就需要皮尔逊相关系数：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cor(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">皮尔逊相关系数取值在-1到1之间，大于0就是正相关，小于0就是负相关，绝对值越大相关性越强。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">3. R^2，R平方可以反映模型有多大程度是自变量导致因变量的改变：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$R^2 = \frac{SSR}{SST} = \frac{\sum (\hat y_i - \overline y)^2}{\sum (y_i - \overline y)^2}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">3. R-squared，R平方，也叫决定系数（coefficient of determination）可以反映模型有多大程度是自变量导致因变量的改变，以此判断统计模型的解释力：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$R^2 = \frac{SSR}{SST} = \frac{\sum (\hat y_i - \overline y)^2}{\sum (y_i - \overline y)^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式中的SSR是回归平方和，SST是总平方和。对于简单的线性回归来说，决定系数为样本相关系数（皮尔逊相关系数）的平方，当加入其他回归自变量后，决定系数就相应变成多重相关系数的平方。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">4. Adjusted R-squared，校正R平方。在R平方中，它描述的是输入变量对输出变量的解释程度，在单变量线性回归中，R平方越大拟合程度越好。可是一旦引入更多的变量，不论增加的变量是否和输出变量存在关系，R平方都会增加，所以这时候就需要校正R平方了。它主要做了一件事，对那些增加的且不会改善模型效果的变量增加了一个惩罚项，这样，如果加入的无关变量越多，校正R平方就会下降，而如果加入了显著相关的变量，就会提高。因此，一般来说，对单变量线性回归会采取R平方，对多变量的情况则使用校正R平方。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，在检验模型过程中还会看到p值、t值、f值，这些和假设检验有关，这里不细说。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总结一下，在对机器学习模型进行评价的过程中，会有很多指标可以参考，我这里大致上分为三个部分，首先是根据模型是回归模型（MSE、MISE）还是分类模型（准确率、精确率），具有不同的评价指标，假如是线性回归模型，我们进一步的会有一些线性回归相关的指标（R平方、相关系数），最后，基于假设检验，又会有相关的指标（t值、p值），了解这些指标最重要的不是背公式，而是在遇到这些指标的时候能够知道它们描述的是什么就够了。</div>
 
             </div>
         </div>
