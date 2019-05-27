@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+      <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">假设检验实例</h2>
+
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了假设检验的基本思想，现在再介绍一些具体的假设检验方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个是Z检验，它是用于大样本（样本容量大于30）的均值的差异性检验的方法，换句话说就是检查两个平均值之间是否具有显著的差异，这两个平均值一般是样本的均值和总体的期望，当然也可以比较两个样本的均值之间的差异。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">举一个例子来结合说明，假如我们假设总体期望为mu0，样本的均值为\overline x，S是样本方差，n是样本容量，我们可以计算统计量Z值：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z = \frac{\overline X - \mu_0}{S/ \sqrt n}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，比较z值和理论z值（就是显著性水平对应的正态分布的x值），如果z值小于1.96，则不显著，很明显，这个过程，实质上就是像区间估计那样，把样本均值转化成一个pivotal quantities，使它服从标准正态分布，然后和显著性水平(0.05)对比，分析样本能不能显著支撑原假设。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是t检验，上面的z检验只在样本容量大的时候才有效，容量小具有一定误差，可能转换的z值就不服从正态分布了，所以对于小样本的情况，我们需要t检验去检测平均值之间的差异。顺带一提，t检验不需要知道总体方差。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基本过程和Z检验类似，主要是统计量我们换成了t统计量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$T = \frac{\overline X - \mu_0}{\sqrt {S/(n-1)}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后同样对比t统计量是否小于理论t值，如果小于则差异不明显。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单总结一下，如果我们想要分析样本期望是否能够很好地近似总体期望（或者两个样本的均值是否具有明显差异），根据样本容量可以构建Z统计量或者t统计量，然后和理想值对比，分析有没有显著差异。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面两个是用于估计均值，自然也会想到有没有检验样本方差和总体方差的差异性呢，答案当然是有的，可是这个检验是叫F检验，而不像区间估计那样叫卡方检验（当然其实也有卡方检验，只是它分析的对象是其他内容）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">F检验的过程还是和上面的差不多，首先构造F统计量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F(X) = \frac{S^2}{\sigma_0^2 / (n-1)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline X )^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，F统计量就是两个卡方统计量相除，也可以说是总体方差除以样本方差，结果还是服从卡方分布，于是其余过程都和z检验、t检验类似了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后总结一下，这里介绍了三种检验：Z检验、T检验、F检验，分别检验了样本期望、方差和总体期望、方差之间的差异程度，过程上是一致的，主要根据样本容量、分析对象选择不同的统计量，计算结果，转换成p值，和显著性水平对比，分析样本能不能显著支撑假设。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面介绍的是和均值方差有关的检验，最后再介绍一个衡量特定条件下的分布是否和理论分布一致的检验，或者说检验相关性的一种检验，卡方检验。这是一种非参数检验，前面的检验是参数检验，也就是说，卡方检验并没有假设样本数据服从正态分布，没有在检验前做任何假设。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如我现在想要检验喝牛奶和感冒发病率之间有没有联系，统计数据得到：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">确实感冒率有区别，但是我们没有充分理由认为这种区别是由于喝牛奶导致的（在这里也想说一下，假设检验是为了解决这样一个问题，如果我们认为两件事物存在差异，那么我们如何量化这种差异，如何从数据角度分析这种差异的大小，所以我们才需要假设检验，并在其中引入显著性水平、p值等概念，虽然这种方法看起来像是强行创造一种方法去证明结论，但正因为这种方法是定量分析的，因而比我单纯下结论更有说服力），所以我们就进行假设检验了，原假设为喝牛奶和感冒没关系。然后我们通过总样本（喝牛奶和不喝牛奶）计算感冒率为28.29%，根据这个概率重新得到理论表格：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个表格是根据我们通过总样本计算出样本的感冒率之后，再代进喝牛奶组和不喝牛奶组计算各自的理想人数，有了理想样本和实际样本，我们就可以计算卡方统计量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\chi^2 = \sum \frac{(A-T)^2}{T}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">A是实际值，T是理想值，计算那四组数据再求和得到x^2为1.077，然后我们要做的就是根据自由度（251），确定卡方分布，确定显著性水平，把卡方统计量转换为p值，和显著性水平对比，分析结果是样本是否能显著支撑原假设，基本上这个过程也和参数检验一样的了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://blog.csdn.net/ludan_xia/article/details/81737669</div>
+
+
+
+
+            </div>
+      </div>
+
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

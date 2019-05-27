@@ -121,14 +121,35 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">从图像就可以直观看出，不论自变量取什么值，输出都在[0，1]之间。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">把sigmoid函数代进原来的线性方程中，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=1|x;\theta ) = \frac{1}{1+e^{-\theta ^T * x}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">来分析一下这个式子，首先要注意的是，我们对模型做了简化，还记得原来线性回归的表达式是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$h_\theta (x) = \frac{1}{1+e^{-\theta ^T * x }}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">来分析一下这个式子，首先要注意的是，我们对表达式做了简化，原来线性回归的表达式是：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y = f(ax+b) = ax+b$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里不是简单把ax+b代入sigmoid函数里面，而是选择了theta*x，这是一个简化，省略了截距。另一方面，这个函数反映的是在自变量x和未知参数theta的条件下y=1的概率，同时定义阈值：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里不是简单把ax+b代入sigmoid函数里面，而是选择了theta*x，这是一个简化，其实是在x里面增加了一个常数项1，这样就可以把b归入theta中了。另一方面，我们也做了假设：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=1 | x;\theta)=h_\theta (x)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(y=0 | x;\theta)=1 - h_\theta (x)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为sigmoid函数的输出在01之间，所以这样定义是合理的，然后我们就可以把h(x)认为是输入属于1的概率，我们要知道，二分类样本数据的标签只有0和1，所以我们训练模型的目的，就是让标签为1的特征，在模型中输出的概率尽可能高，标签为0的特征，在模型中输出的概率尽可能低。根据这个特点，我们就可以定义损失函数了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">按之前的思路，我们完全可以定义MSE，</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - h_\theta (x_i))^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面这个损失函数当然没问题，但是实际上是计算梯度将会十分麻烦（因为sigmoid函数求导有点复杂），所以这里提出另一种新的损失函数，也是逻辑回归中更常用的损失函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cost(h_\theta (x), y) = h_\theta (x)^y (1 - h_\theta (x)) ^ {(1-y)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个损失函数其实就是同时考虑了y等于1和0的情况，从函数的形式可以看出，损失函数越接近1，模型的效果就越好，和之前最小化损失函数的情况有点不一样。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为了进一步简化求解，引入log，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cost(h_\theta (x), y) = y log h_\theta (x) + (1-y) log (1 - h_\theta (x)) $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，对损失函数求和，得到针对整个模型的损失函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$J(\theta) = \sum_{i=1} ^m [y^{(i)} log h_\theta (x^{(i)}) + (1-y^{(i)}) log (1 - h_\theta (x^{(i)}))] $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">既然我们要让损失函数最大化，就可以利用梯度上升了，为了简化计算过程，直接得出梯度的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{\partial J(\theta)}{\partial \theta _j } = (y - h_\theta (x)) x_j$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">不要忘记，x是一个一维矩阵，xj是矩阵的第j个元素，对应第j个参数（theta）的项。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，我们就可以的得到theta的迭代公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _j = \theta _j + \alpha \sum_{i=1} ^m (y^{(i)} - h_\theta(x^{(i)}))x_j^{(i)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是logistics regression的全过程，得到模型之后，可以定义阈值：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y^* = 1, P(y=1|x;\theta )>0.5$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样，我们就可以根据阈值和概率，对y进行分类了。这里想要补充说明的是，我觉得这个阈值有点像模型的超参数，也就是我们训练模型改变的是参数，也就是逻辑回归中的theta，当我们训练得到最优的theta之后，才可以根据实际情况对超参数进行调整，看模型会不会得到改进。另一方面，阈值为0.5是一般情况下的取值，如果输入数据十分不平衡，需要根据实际情况调整，具体来说，就是根据上面说的，可以随便选一个初始阈值，训练得到最优参数，调整阈值，再训练，重复这个过程，得到最优阈值和最优参数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了模型，怎么求参数的办法就很多了，极大似然梯度下降什么都可以，这里不细说。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再强调一下，虽然我们通过sigmoid function将线性输入的输出变成非线性的，局限在了[0,1]之间，但是本质上逻辑回归还是一个线性模型。线性回归和逻辑回归都是线性模型，为什么我们一般采用逻辑回归做分类，事实上，我们也可以用线性回归做分类，可是因为线性回归模型受离群点影响较大，或者说对分类特征十分明显的数据，会对模型造成明显影响。</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
@@ -137,10 +158,7 @@
                     </picture>
                 </div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">而逻辑回归，因为sigmoid函数的特性，在输出为01附近逻辑曲线是十分不敏感的，这就意味着逻辑曲线对刚刚提到的离群点具有更强大的包容性，或者专业地说，就是模型鲁棒性更强，所以我们选择逻辑回归就是为了这个优点，而不是说通过一个sigmoid函数把原来做不了分类的线性回归变成了可以做分类的逻辑回归。因此，一般情况下，逻辑回归的分类边界是一条直线。为什么说一般情况，正如线性回归，我们同样也可以在特征工程中，引入新的特征（比如引入一个x^2），把分类边界变成曲线，更好地对数据进行分类，至于怎么找到合适的新特征，就是特征工程的工作了。</div>
-
-
-
-
+                
             </div>
 
         <!-- End to define the main content.-->

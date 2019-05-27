@@ -18,12 +18,14 @@
 
     <meta name="theme-color" content="#ffffff">
 
+
     <!-------------------------matjax------------------------------>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
     <!---------------------------------------------------------------->
+
 
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -97,37 +99,30 @@
 
       <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">极大似然估计的迭代实现</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">置信区间</h2>
 
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">牛顿法是由泰勒展开式发展而来的。主要用来干嘛？比如现在要求一个方程的一个极大值（极大似然估计做的就是这件事），这个方程很复杂，求导了也是很复杂，那怎么求，回想一下，如果一个值是这个方程的极大值，那么它附近的斜率应该会越来越小最终收敛到零的，所以，如果我们能够找到这样一个收敛公式，首先随便定一个初始点，然后根据公式慢慢向极大值收敛，是不是就可以得到解了？</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">于是，牛顿就尝试从泰勒展开出发，泰勒展开主要做方程的模拟，他可以模拟方程在某一个点和它附近的值，根据这个，他就想，或许可以利用泰勒展开，在某一个初始点展开，然后逐步逼近方程的极大值（导函数为零的解），所以，为了简洁，取了泰勒公式右边前两项(因为取两项和取无穷项都只是近似，还不如取两项慢慢逼近)，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x)=f(x_0)+f'(x_0)(x-x_0)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里，x0就是初始点，x就是我们的解，因为x是极大值嘛，所以如果对f（x）求导就会等于0，按照这思路得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x=x_0-\frac{f'(x_0)}{f''(x_0)}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这就是牛顿法的迭代公式，可是这条公式是什么意思？意思就是当x取这个值，就可以使得原函数的导函数为0，可是因为我们前面构建的方程只是近似，所以就导致了，把这个得到的x代入原来完整的方程并不会得到极大值，可是会比初始点更接近极大值，这个就很重要了，跟着这个思路，慢慢迭代x，最后就可以无限逼近真实的极大值x，这就是牛顿法的思路。</div>
+
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，一阶导函数称为梯度，二阶导函数称为hessian matrix，为什么这里的二阶导函数要用矩阵的形式？主要是因为之前讨论的都是单变量的情况，在存在多个变量时，求二阶导函数就需要两两求导，最后得到一个矩阵，那就是hessian矩阵。顺带一提，多个变量的一阶偏导数也称为雅可比矩阵。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在主要讨论牛顿法可能存在的问题。首先我们分析的函数可能形状上很复杂，有一部分是凹函数有一部分是凸函数。先明确一点，我们要求出似然函数的最大值，那么就要求这个最大值所在邻域是一个凹函数（也就是随便在这段函数找两个点连线，这一段函数的其他点都在这条线段之上），这也意味着这段函数的二阶导函数小于0（增长速度越来越慢）。另一方面，我们也要注意到，在我们把初始点逐步逼近到最大值的过程中，如果逼近的方向是正确的（也就是朝着函数增长的方向逼近）如果有一部分是凸函数有一部分是凹函数，会导致二阶导函数有时候是正的有时候是负的，从图像看来，就是这个点，有时候会朝着最大值的方向走去，有时候又会原理（当然一般情况下总体还是不断逼近），那么，我们有没有办法针对这种情况做改进呢？这是牛顿法存在的第一个问题。还有一个需要注意的地方，如果似然函数是凹的，那么取了对数也依然是凹的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Hessian矩阵主要会导致一些问题，首先矩阵维度如果过大会带来巨大的运算量，然后就是如果Hessian矩阵非正定（非凸），会导致无法收敛，也就是无法收敛到局部（全局）最优解，当然我们可以通过hessian矩阵的正定性判断初始点的选取能不能得到最优解，可是我们总是希望不论输入什么初始点都能得到最优解，哪怕只是局部的，这就是它的问题所在。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
-            [1]https://www.zhihu.com/question/25627482</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br></div>
 
           </div>
       </div>
-
-
-
-
-
 
 
         <!-- End to define the main content.-->
