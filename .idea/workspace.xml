@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/math/centralLimitTheorem/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/confidenceIntervals/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/hypothesisTesting/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/hypothesisTesting2/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/math/samplingDistribution/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/chebyshev/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/chebyshev/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/math.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/math.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/maxLikelihood/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/maxLikelihood/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/maxLikelihoodAlgorithm/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/newtonMethod/content.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,15 +14,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ai/logisticRegression/content.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/ai2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2253">
-              <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="61">
+              <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ai/knn/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="746">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
         </entry>
@@ -91,7 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/programming/episode11/episode11.html" />
         <option value="$PROJECT_DIR$/programming/episode5/episode5.html" />
         <option value="$PROJECT_DIR$/programming/episode14/episode14.html" />
         <option value="$PROJECT_DIR$/programming/episode13/episode13.html" />
@@ -142,6 +138,7 @@
         <option value="$PROJECT_DIR$/math/samplingDistribution/content.html" />
         <option value="$PROJECT_DIR$/math/hypothesisTesting2/content.html" />
         <option value="$PROJECT_DIR$/ai/logisticRegression/content.html" />
+        <option value="$PROJECT_DIR$/ai/knn/content.html" />
       </list>
     </option>
   </component>
@@ -157,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,12 +170,13 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="ai" type="462c0819:PsiDirectoryNode" />
-              <item name="logisticRegression" type="462c0819:PsiDirectoryNode" />
+              <item name="knn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,16 +188,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ai" />
-      <recent name="$PROJECT_DIR$/math" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/math" />
       <recent name="$PROJECT_DIR$/ai" />
+      <recent name="$PROJECT_DIR$/math" />
       <recent name="$PROJECT_DIR$/projects" />
       <recent name="$PROJECT_DIR$/programming" />
       <recent name="$PROJECT_DIR$/datascience" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ai" />
+      <recent name="$PROJECT_DIR$/math" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -351,12 +348,13 @@
       <workItem from="1558598978699" duration="3749000" />
       <workItem from="1558660178767" duration="15142000" />
       <workItem from="1558747190803" duration="9000" />
-      <workItem from="1558937033621" duration="3678000" />
+      <workItem from="1558937033621" duration="3853000" />
+      <workItem from="1559093746266" duration="2034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="512155000" />
+    <option name="totallyTimeSpent" value="514364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -385,13 +383,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datascience/episode2/episode2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datascience/episode5/episode4.html" />
     <entry file="file://$PROJECT_DIR$/datascience/episode4/episode4.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -603,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/ai2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/math/math2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
@@ -768,11 +752,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/logisticRegression/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2253">
+        <state relative-caret-position="708">
           <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7424#7465#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/ai2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/knn/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
