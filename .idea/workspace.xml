@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="" />
+    <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ai/crossValidation/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai/dimensionReduction/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai/dimensionReduction/image/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai/lda/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai/regressionSplines/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai/subsetSelection/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/introduction/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/introduction/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/linearRegression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/linearRegression/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/regularization/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/ai/regularization/content.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,20 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ai/ai2.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ai/ai.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="89" column="73" lean-forward="true" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
+            <state relative-caret-position="447">
+              <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ai/knn/content.html">
+        <entry file="file://$PROJECT_DIR$/ai/ai2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="-107">
+              <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ai/ai3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="83" column="78" lean-forward="true" selection-start-line="83" selection-start-column="78" selection-end-line="83" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -42,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>st-ftr</find>
       <find>c-btn_label</find>
       <find>c-btn--contact</find>
       <find>c-btn</find>
@@ -72,6 +91,7 @@
       <find>l-contents</find>
       <find>p-index-kv</find>
       <find>.content</find>
+      <find>交叉验证</find>
     </findStrings>
     <replaceStrings>
       <replace>font-family: 等线，&quot;等线 Light&quot;，&quot;微软雅黑 Light&quot;</replace>
@@ -86,15 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/programming/episode5/episode5.html" />
-        <option value="$PROJECT_DIR$/programming/episode14/episode14.html" />
-        <option value="$PROJECT_DIR$/programming/episode13/episode13.html" />
-        <option value="$PROJECT_DIR$/programming/episode12/episode12.html" />
-        <option value="$PROJECT_DIR$/programming/episode15/episode15.html" />
-        <option value="$PROJECT_DIR$/programming/episode16/episode16.html" />
-        <option value="$PROJECT_DIR$/programming/episode17/episode17.html" />
-        <option value="$PROJECT_DIR$/datascience/episode3/episode3.html" />
-        <option value="$PROJECT_DIR$/programming/episode18/episode18.html" />
         <option value="$PROJECT_DIR$/datascience/episode4/episode4.html" />
         <option value="$PROJECT_DIR$/datascience/episode5/episode5.html" />
         <option value="$PROJECT_DIR$/programming/episode19/episode19.html" />
@@ -104,13 +115,11 @@
         <option value="$PROJECT_DIR$/ai/introduction/episode3.html" />
         <option value="$PROJECT_DIR$/programming/programming.html" />
         <option value="$PROJECT_DIR$/programming/programming2.html" />
-        <option value="$PROJECT_DIR$/ai/introduction/content.html" />
         <option value="$PROJECT_DIR$/articles/articles.html" />
         <option value="$PROJECT_DIR$/ai/densityEstimation/content.html" />
         <option value="$PROJECT_DIR$/ai/monteCarloMethod/content.html" />
         <option value="$PROJECT_DIR$/ai/monteCarloSimulation/content.html" />
         <option value="$PROJECT_DIR$/ai/gradientdescent/content.html" />
-        <option value="$PROJECT_DIR$/ai/regularization/content.html" />
         <option value="$PROJECT_DIR$/ai/featureEngineering/content.html" />
         <option value="$PROJECT_DIR$/ai/linearregression/content.html" />
         <option value="$PROJECT_DIR$/math/unbiasedestimation/content.html" />
@@ -136,16 +145,29 @@
         <option value="$PROJECT_DIR$/math/hypothesisTesting2/content.html" />
         <option value="$PROJECT_DIR$/ai/logisticRegression/content.html" />
         <option value="$PROJECT_DIR$/ai/knn/content.html" />
+        <option value="$PROJECT_DIR$/ai/lda/content.html" />
+        <option value="$PROJECT_DIR$/ai/introduction/content.html" />
+        <option value="$PROJECT_DIR$/ai/crossValidation/content.html" />
+        <option value="$PROJECT_DIR$/ai/subsetSelection/content.html" />
+        <option value="$PROJECT_DIR$/ai/regularization/content.html" />
+        <option value="$PROJECT_DIR$/ai/shrinkageMethods/content.html" />
+        <option value="$PROJECT_DIR$/ai/dimensionReduction/content.html" />
+        <option value="$PROJECT_DIR$/ai/polynomialRegression/content.html" />
+        <option value="$PROJECT_DIR$/ai/linearRegression/content.html" />
+        <option value="$PROJECT_DIR$/ai/regressionSplines/content.html" />
         <option value="$PROJECT_DIR$/ai/ai2.html" />
+        <option value="$PROJECT_DIR$/ai/ai3.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="808" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <showMembers ProjectPane="false" />
@@ -163,6 +185,18 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="newtonMethod" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+              <item name="subsetSelection" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,15 +375,17 @@
       <workItem from="1558660178767" duration="15142000" />
       <workItem from="1558747190803" duration="9000" />
       <workItem from="1558937033621" duration="3853000" />
-      <workItem from="1559093746266" duration="2150000" />
+      <workItem from="1559093746266" duration="7806000" />
+      <workItem from="1559176166085" duration="14326000" />
+      <workItem from="1559275077296" duration="12388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="514480000" />
+    <option name="totallyTimeSpent" value="546850000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="808" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17829457" />
@@ -375,45 +411,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datascience/episode5/episode4.html" />
-    <entry file="file://$PROJECT_DIR$/datascience/episode4/episode4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/oop/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/javaSocket/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="101" column="85" selection-start-line="101" selection-start-column="85" selection-end-line="101" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/pythonDecorator/episode19.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="97" column="35" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/transformation/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1508">
-          <caret line="147" column="14" lean-forward="true" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/bayesian/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
@@ -452,17 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/introduction/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#14;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/gobangAI/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
@@ -494,41 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ai/gradientDescent/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="116" column="209" selection-start-line="116" selection-start-column="209" selection-end-line="116" selection-end-column="209" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/regularization/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/featureEngineering/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/linearRegression/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2599">
-          <caret line="113" column="208" selection-start-line="113" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ai/em/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="686">
@@ -544,45 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="126" column="15" lean-forward="true" selection-start-line="126" selection-start-column="15" selection-end-line="130" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/densityEstimation/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="100" column="71" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#20;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#24;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/loess/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="100" column="76" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#8;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/kernelRegression/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="100" column="74" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#15;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#24;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,27 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="100" column="75" selection-start-line="100" selection-start-column="75" selection-end-line="100" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/ai.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai/newtonMethod/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="99" column="73" lean-forward="true" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -754,15 +645,168 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/knn/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
+        <state relative-caret-position="688">
           <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/bootstrap/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="109" column="85" lean-forward="true" selection-start-line="109" selection-start-column="85" selection-end-line="109" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/lda/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="107" column="178" selection-start-line="107" selection-start-column="178" selection-end-line="107" selection-end-column="178" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#9;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#15;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/kernelRegression/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="131" column="101" selection-start-line="131" selection-end-line="132" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#15;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/crossValidation/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="116" column="134" selection-start-line="116" selection-start-column="134" selection-end-line="116" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/introduction/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="122" column="208" selection-start-line="122" selection-start-column="208" selection-end-line="122" selection-end-column="208" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#14;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/regularization/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="122" column="352" selection-start-line="122" selection-start-column="352" selection-end-line="122" selection-end-column="352" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/densityEstimation/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="123" selection-start-line="123" selection-end-line="127" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#20;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#24;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/dimensionReduction/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="120" column="202" selection-start-line="120" selection-start-column="202" selection-end-line="120" selection-end-column="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/featureEngineering/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="120" column="85" lean-forward="true" selection-start-line="120" selection-start-column="85" selection-end-line="120" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/gradientDescent/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1587">
+          <caret line="115" column="75" selection-start-line="115" selection-end-line="116" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/linearRegression/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="125" column="166" lean-forward="true" selection-start-line="125" selection-start-column="166" selection-end-line="125" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/regressionSplines/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1637">
+          <caret line="117" column="185" selection-start-line="117" selection-start-column="185" selection-end-line="117" selection-end-column="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/loess/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="100" column="76" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="76" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#6;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#8;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/ai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/newtonMethod/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="99" column="73" lean-forward="true" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/subsetSelection/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ai/ai2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="89" column="73" lean-forward="true" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
+        <state relative-caret-position="-107">
+          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai/ai3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="83" column="78" lean-forward="true" selection-start-line="83" selection-start-column="78" selection-end-line="83" selection-end-column="78" />
         </state>
       </provider>
     </entry>

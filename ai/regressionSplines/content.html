@@ -97,36 +97,26 @@
 
       <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">线性回归与多项式回归</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">回归样条</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">线性回归是最简单的一种机器学习算法，可分为一元线性回归和多元线性回归（也就是特征数量不同），这里先主要介绍一元线性回归。举一个简单的例子，有一组带标签样本（xi,yi）,x是特征y是响应变量（标签），认为他们服从线性方程：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_i=a+bx_i+c$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中b是回归系数，a+bxi是回归函数，c则是随机误差。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们之前介绍了线性回归，在面对非线性问题的时候线性回归是行不通的，所以就有了多项式回归，可是多项式回归也有缺点，比如当多项式的幂较高时，可能特征的一个微小变化都会被很大地方法，也就是很容易过拟合，另一方面它是非局部的，也就是说我改变一下训练集上某一点的y值，即使其他离他很远的点也会受到影响。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们要做的就是估计a、b，使得函数对数据尽可能好地拟合，同时也具有较好的泛化能力。虽然实际上我们可以从理论上推导出a、b的最优值，但是既然是机器学习，就应该把这些工作交给计算机完成。按照机器学习的流程，我们首先为ab定义一个初始点（比如（0，0）），然后定义损失函数，这里我们采取最小二乘法，定义每点的误差再相加，得到的函数称为RSS（Residual Sum of squares）：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$RSS = (y_1 - \hat\beta_0 - \hat\beta_1 x_1)^2 + (y_2 - \hat\beta_0 - \hat\beta_1 x_2)^2 + ... + (y_n - \hat\beta_0 - \hat\beta_1 x_n)^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过RSS进一步构建损失函数MSE（均方误差）。得到损失函数和初始点之后，就可以采取梯度下降法，计算梯度，然后得到新的a、b取值，不断重复这个过程，直到最后MSE小于一定值，即可完成对ab的估计。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为了改进多项式回归的缺点，就有了回归样条法（regression splines）（样条指的是一种分段的低阶逼近函数），主要是把训练集不再堪称一个整体，而是把它划分成一个个连续区间，划分的点称为节点（knot），并用单独的模型（线性函数或者低阶多项式函数，一般称为分段函数，piecewise function）来拟合。很明显，节点越多，模型就越灵活。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对更一般的多元线性回归，可把多个变量写成矩阵形式，并得到更一般的回归方程：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x_i) = w^T x_i +b$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然特征变多了，本质上我们还是估计参数，让MSE变小，所以只是改变了输入格式，整个流程还是一样的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">事实上，如果我们只是把数据划分一个个区间然后各自用多项式拟合是不够的，因为根据结果我们会发现函数图像的整体拟合效果一点都不好，第一个问题是节点之间是不连续的，所以我们需要加上一个条件，那就是节点函数值相等。除此之外，还需要节点曲线是平滑的，所以第二个条件是节点一阶导数相等，最后，实验证明，如果节点二阶导数也相等，拟合出来的曲线将会更平滑，也会更接近真实的曲线，所以这就是我们对多项式的一些约束条件。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以扩展一下线性回归，之前假设特征和响应变量之间服从一元一次方程的关系，可是如果遇到一元函数没办法很好拟合数据的情况，就需要多项式回归了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后还有一个问题，那就是对于数据边界（数据的两侧），边界区域的数据是相对较少的，函数曲线往往容易过拟合，这个问题也存在于样条中，为了使得多项式能够更平滑地扩展到边界节点之外，自然样条（在边界区域增加一个线性约束）可以解决这个问题。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">多项式回归主要是加入了特征的更高次项，相当于增加了模型的自由度，或者说增加了模型的复杂度，使得模型可以更好更灵活地拟合数据（正则化里有讲述相关模型复杂度和特征次数的关系）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再简单介绍一下节点怎么决定数量。一种可行的办法是在数据比较剧烈变化的位置设置节点，第二种是在数据变化复杂的地方多设置节点，另外还可以平均分配节点，最后一种则是更常用的，交叉验证，针对不同数量的节点，划分训练集测试集，分析模型性能，得出最好的节点数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假如现在有一个特征，那么多项式回归方程为：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat h = \theta_0 + \theta_1 x^1 + ... + \theta_n x^n$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也可以写成向量形式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat h = X·\theta_0 $$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了向量形式，即使我们考虑多个特征，也可以很简洁地写出来了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后简单说一下多项式回归和回归样条的比较，一般来说，回归样条可以比多项式回归得到更好的输出，因为多项式回归需要更高次的多项式才能得到更好的拟合效果，而回归样条因为它的特性，更容易就能获得更好的拟合效果，而且对局部的分析比多项式回归更好，但是我也认为相对的回归样条缺少了对整体的一种估计，只是一个个局部进行分析。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">事实上，线性回归就是特殊的多项式回归，这很好理解，最后，我想说的是，不考虑过拟合之类的问题，理论上来说，多项式回归应该是可以拟合任何的数据的，因为我们有泰勒定理，任意的函数都可以通过泰勒级数逼近，或许我们构建的多项式过于复杂，有很多项是不需要的（因为多项式回归必须把同一次项的所有情况都要考虑，比如两个特征的三次多项式，只要是特征的幂是三就需要称为多项式的项，而不仅仅是每个特征的一二三次幂），但是我们也要知道，在训练模型的过程中，对数据影响不大的项的参数是会最终趋于零的，所以不考虑计算量、过拟合等问题，哪怕我们只用多项式回归这个方法，也足够拟合任意的数据集了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后的最后，再说一点，回归样条，或者说多样式样条，它确实可以解决很多问题，可是理论和实践都表明直接用最小二乘法求解参数很容易过拟合，为了改进这个过拟合的问题，会在最小二乘函数（损失函数）加上惩罚项，这个就叫做光滑样条（Smoothing Splines）。可是，如果把回归样条应用在机器学习中，这个操作就是很常规的正则化。所以说，模型的名称千千万万种，一点小变动就可以说是一种新模型，最重要的还是要明白这些模型之间的关联，看穿模型的本质。</div>
+
 
             </div>
         </div>

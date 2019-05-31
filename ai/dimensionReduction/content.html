@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">特征降维</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">特征过多会可能出现特征之间具有多重共线性，即相互之间具有关联关系，导致姐空间不稳定，模型泛化能力弱，过多特征也会妨碍模型学习规律，因为诸如此类的问题，一般来说，如果特征过多，我们都会在特征工程里面减少输入的特征，之前介绍了选择特征子集之类的方法，主要是从特征中筛选出保持模型性能最佳的特征子集，但是因为毕竟还是剔除了部分特征，会导致一些信息的丢失，这里再介绍一个方向，特征降维。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，特征降维就是指可以用更少维度的特征替代更高维度的特征，同时保留有用的信息。可以降维的主要原因是数据冗余，包含了一些重复或者无用的信息，例如一张512*512的图片，只有中心的100*100区域内有非0值，这时候我们就可以把这张图片的矩阵降维到100*100。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种特征降维方法是主成分分析，它的核心思想就是降维，把高维空间上的多个特征组合成少数几个无关的主成分，同时包含原数据中大部分的变异信息。举个例子，在二维平面中，如果大部分的点都在一条直线附近，是不是可以直接用这条直线的一维坐标来反映原始数据？在三维空间中，如果大部分的点都在一个平面附近，是不是可以用这个平面来反映数据。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的描述中，有两个关键点，决定我们能不能使用主成分分析找到主成分，一个是有没有存在这个低维空间，是比较接近原始数据的分布的，第二个是找到这个低维空间，把数据投影到这个空间之后，能不能包含原始数据中大部分的变异信息。用数学的语言来说，就是低维空间与原始数据之间的距离（MSE）是不是足够小，原始数据投影到低维空间后方差是不是足够大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以下图为例，我们可以找到一个第一主成分（绿线），它是到各点的距离最接近的直线，同时各点投影到直线上的方差也足够大。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.webp"><img src="image/1.webp" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以进一步寻找第二主成分，首先因为各个主成分之间是相互独立没有关系的，所以是相互正交的，也就是途中的蓝线，但是因为原始数据本身就只有两个特征，我们也没必要找两个主成分了，不然也起不到降维作用，只是单纯的坐标变换了。可是比如针对三维坐标系的点，我们就可以按照这个思路，寻找第二主成分、第三主成分等等，至于我们要寻找多少个主成分，首先当然是比原始特征数量少，然后一般来说，我们会构建不同数量的主成分，然后应用到模型里面，进行交叉验证看看模型的性能如何，挑选性能较好主成分又相对较少的数目。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">主成分分析的具体过程就不介绍了，得到主成分之后我们可以继续进行主成分回归，主成分回归我觉得就是用得到的主成分进行回归分析，比如线性回归逻辑回归之类的，所以不能说是一种新方法，但是要清楚的一点是，主成分之间是相互正交的，所以解决了特征共线性问题</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                [1] https://www.jianshu.com/p/d090721cf501</div>
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

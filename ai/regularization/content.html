@@ -96,7 +96,7 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">正则化</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">正则化与特征缩减技术</h2>
 
 		  
 		   <div class="p-lower-kv">
@@ -112,9 +112,15 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">模型的变化幅度，实际上就是模型各个参数的权重，权重越大，自然参数的微小变化都会导致模型结果的巨大改变，从这个角度来看，一个复杂模型对新数据预测过程中，对误差的包容度是更小的，或者说一个小小的误差在复杂模型下也会被明显的放大，这也正是过拟合的模型泛化能力差的原因。因此，用参数权重来衡量模型复杂度是可行的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说了那么多，其实就是希望把模型复杂度和模型的权重联系上，事实上正则化往往又L1正则化和L2正则化，L1正则化是指权值向量的各个元素的绝对值之和，L2正则化指平方和之和，说到底都是希望权重尽可能小，明白了模型复杂度和权重之间的关系之后，这里的L1L2正则化也很好理解了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说了那么多，其实就是希望把模型复杂度和模型的权重联系上，事实上正则化往往有L1正则化（Lasso）和L2正则化（岭回归）。所谓L1L2其实指的是范数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里先不详细说明L1L2正则化，简单介绍一下他们的区别，首先应为绝对值的缘故，L2正则化计算是比L1正则化简单很多的，而L1在非稀疏向量的计算效率也很低；L1最重要的一个特点是会输出稀疏，会把不重要的特征直接置0，而L2则不会；L2有唯一解，L1不是。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Lasso是指，将系数的L1范数（各个系数的绝对值之和），作为惩罚项加到损失函数上面，Lasso的基本思想是在回归系数的绝对值小于一个常数的约束下，是残差平方和最小化，从而能够产生某些严格等于0的回归系数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">岭回归指将系数的L2范数（各个系数的平方和）作为惩罚项添加到损失函数中，由于L2惩罚项中的系数是二次方的，导致了L2和L1有一些区别，比如L2正则化会让系数的取值变得平均，对于关联特征，这意味着他们能够获得更接近的系数。举个例子，比如Y=X1+X2，X1和X2具有很强的关联，那么用L1正则化，不论学习到的模型是Y=X1+X2还是Y=2X1，都是2，可是对于L2正则化，第一个是2，第二个是4，这就反映了L2和L1的不同取向。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单介绍一下他们的区别，首先应为绝对值的缘故，L2正则化计算是比L1正则化简单很多的，而L1在非稀疏向量的计算效率也很低；L1最重要的一个特点是会输出稀疏，会把不重要的特征直接置0，而L2则不会；L2有唯一解，L1不是。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后想讲一下正则化与特征选择的关系，一般来说，我们是会偏向于用尽可能少的特征构建尽可能好的模型，主要是避免特征之间关联性较大，过多特征造成过拟合等问题，所以在特征工程我们会想办法选择最好的一个特征子集。而这里的正则化，目的是避免模型过于复杂，减少部分影响不明显的参数的权重，其实和剔除无关特征是一个道理，特征对应的参数趋于0，和特征被去除是一样的，所以，L1L2正则化在特征缩减技术中也有介绍，说到底还是同一个东西，同一个目的，只是换个名词，这种现象在机器学习中太常见了，主要是这些模型其实在不同领域都会被应用到，自然不同领域就有不同叫法了。</div>
 
 
             </div>
