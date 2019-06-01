@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">分位数回归</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍分位数回归之前，先重新说一下回归分析，我们之前介绍了线性回归、多项式回归、核回归等等，基本上，都是假定一个函数，然后让函数尽可能拟合训练数据，确定函数的未知参数。尽可能拟合训练数据，一般是通过最小化MSE来进行：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat f(x_i))^2 = E(y - \hat f(x) )^2 $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以得到的y本质上就是一个期望。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据上面的分析，我们可以得到一个结论，我们前面所有回归分析得到的函数，本质上就是一个条件期望函数，在x等于某个值的条件下，根据数据，求y的期望。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">分位数回归提出的原因，就是因为不希望仅仅是研究y的期望，而是希望能探索y的完整分布状况，或者说可能在某些情况下我们更希望了解y的某个分位数。下面再举一个例子，说明分位数回归的作用，假如现在我们有一个如图分布的数据，对其进行普通的回归分析，得到：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.jpeg"><img src="image/2.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从拟合的曲线我们就可以看出问题了，原数据随着x增大，y的分布范围越来越大，可是因为普通的回归分析得到的是条件期望函数，也就是y的期望，所以平均即使y的分布变化了，平均来说y还是以同样的斜率稳定上升，当我们使用0.9分位数回归，重新得出新函数图像：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.jpeg"><img src="image/3.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这次，比起普通的回归分析，就能进一步显示出y的变化幅度其实是增大了。所谓的0.9分位数回归，就是希望回归曲线之下能够包含90%的数据点（y），这也是分位数的概念，分位数回归是把分位数的概念融入到普通的线性回归而已。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/5.jpeg"><img src="image/5.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，我们仅仅得到0.9分位数回归曲线是不够的，进一步的我们可以画出不同的分位数回归曲线，这样才能能更加明显地反映出，随着x的增大，y的不同范围的数据是不同程度地变化的，而这个结论通过以前的回归分析是无法得到的，这就是分位数回归的作用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以最小化以下函数确定分位数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat Q_Y (\tau) = arg min_{ \xi_{\tau} \in R } (\sum_{i:Y_i \ge \xi_tau} \tau |Y_i - \xi_r| + \sum_{i:Y_i < \xi_tau} (1-\tau) |Y_i - \xi_r|)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">本质上，这就是一个加权最小二乘法（虽然形式上有点不一样），给不同的y值（大于分位点和小于分位点的y）不同的权重，比如现在我们有一个数据集是1到10各整数，我们希望求0.7分位数，假设这个0.7分位数是q，然后所有大于q的数都被赋上权重0.7，小于q的赋予权重0.3，我们要最小化函数Q(tau)求分位数，验证一下就可以知道7就是我们要求的分位点。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我想再详细比较这个求分位点的函数和之前求期望的最小二乘法，关于函数Q(tau)，我们可以再改写一下：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat Q_Y (\tau) =\frac{1}{n}(\sum_{i:Y_i \ge \xi_tau} \tau (Y_i - \xi_r)^2 + \sum_{i:Y_i < \xi_tau} (1-\tau) (Y_i - \xi_r)^2)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">写成这个形式就彻底变成我们熟悉的加权最小二乘法了，所以说本质上他们都是一样的，而且最小化这个函数同样可以求出分位点。我们以前用最小二乘法得到均方误差作为回归模型的损失函数，因而得到的结果是条件期望函数，如果我们把损失函数换成这里的加权最小二乘函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$LOSS =\frac{1}{n}(\sum_{i:Y_i \ge \xi_tau} \tau (y_i - \hat f(x_i))^2 + \sum_{i:Y_i < \xi_tau} (1-\tau) (y_i - \hat f(x_i))^2)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到的结果也应该符合分位数的定义，也就是说，比如我们使tau=0.8，那么我们最小化损失函数求参数，得到的回归曲线f，应该有80%的数据在曲线的下方。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以，分位数回归，不能说是一种回归模型，而是一类回归模型，或者说是一种改进思想，我们可以把它应用到线性回归、多项式回归、核回归等等，最根本的就是把损失函数从最小二乘法改成加权最小二乘法，通过不同的分位数得到不同的结果，再根据结果进行分析。</div>
+                
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
