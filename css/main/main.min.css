@@ -1921,6 +1921,7 @@ input::selection, textarea::selection {
 }
 
 .c-fade-in-up.is-shown {
+    animation-delay:2.5s;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
