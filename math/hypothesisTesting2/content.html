@@ -108,50 +108,41 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个是Z检验，它是用于大样本（样本容量大于30）的均值的差异性检验的方法，换句话说就是检查两个平均值之间是否具有显著的差异，这两个平均值一般是样本的均值和总体的期望，当然也可以比较两个样本的均值之间的差异。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">举一个例子来结合说明，假如我们假设总体期望为mu0，样本的均值为\overline x，S是样本方差，n是样本容量，我们可以计算统计量Z值：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z = \frac{\overline X - \mu_0}{S/ \sqrt n}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，比较z值和理论z值（就是显著性水平对应的正态分布的x值），如果z值小于1.96，则不显著，很明显，这个过程，实质上就是像区间估计那样，把样本均值转化成一个pivotal quantities，使它服从标准正态分布，然后和显著性水平(0.05)对比，分析样本能不能显著支撑原假设。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">举一个例子来结合说明，假设我们现在要做假设检验，原假设为样本期望和总体期望没有显著差异，备择假设是有差异。为了进一步进行验证，我们可以构建统计量Z值：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z = \frac{\overline X - \mu_0}{\sigma / \sqrt n}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，总体期望为mu0，样本的均值为x杠，sigma是总体方差，n是样本容量。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是t检验，上面的z检验只在样本容量大的时候才有效，容量小具有一定误差，可能转换的z值就不服从正态分布了，所以对于小样本的情况，我们需要t检验去检测平均值之间的差异。顺带一提，t检验不需要知道总体方差。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为什么我们要这样构建z统计量，为什么它叫z统计量，说到底还是因为中心极限定理：大量独立同分布的随机变量的均值经过标准化后，依概率收敛到标准正态分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">实质上，经过构建的统计量，Z就会服从标准正态分布。我们可以想象一下，样本期望最完美的情况，应该是样本期望的等于总体期望，这时候z就等于0，也就是位于正态分布的中心，也就是期望的位置，这个概率也是最大的，如果样本期望偏离了（样本期望和总体期望之间有差异），这就是我们希望分析的问题。样本期望当然不可能完美等于总体期望，那么偏离的程度怎样，这时候就可以定义显著性水平了，一般来说我们会定义显著性水平为0.05，也就是z所服从的正态分布中，概率为0.05的区域，也就是所谓的拒绝域，也就是样本期望和总体期望相差较大的区域。所以，我们通过定义了拒绝域，再观察统计量z有没有落在拒绝域，就能判断在显著性水平为0.05的情况下，样本期望和总体期望之间有没有显著差异了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再补充一点，一开始我们要求z检验的样本量要足够大，是因为我们在构建z值的时候用到了中心极限定理，它当然需要样本量足够大才能成立。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有一点，我想说明一下p值在z检验中应用在哪里，其实我们在构建了z统计量之后，有两种思路去解决z检验。第一种是根据求出来的z值在正态分布的哪个点，计算正态分布小于那个点的概率，再乘以二得到p值（这里是p值的定义，考虑比样本更极端的情况，因为标准正态分布是对称的所以乘以二），对比p值和0.05的大小。第二种方法就是求出显著性水平为0.05在标准正态分布对应的区域，也就是负无穷到-1.95，1.95到正无穷，这里就是拒绝域，分析z值有没有落在这个区域。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是z检验的基本思路和过程。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是t检验，上面的z检验只在样本容量大的时候才有效，容量小具有一定误差，可能转换的z值就不服从正态分布了，所以对于小样本的情况，我们需要t检验去检测平均值之间的差异。顺带一提，z检验需要知道总体方差，t检验不需要。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">基本过程和Z检验类似，主要是统计量我们换成了t统计量：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$T = \frac{\overline X - \mu_0}{\sqrt {S/(n-1)}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后同样对比t统计量是否小于理论t值，如果小于则差异不明显。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$T = \frac{\overline X - \mu_0}{S/ \sqrt {n}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline X)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说和z检验唯一的区别就是在构建统计量的时候，因为总体方差未知，所以用总体方差的无偏估计代替了它，注意是无偏估计，所以S^2才会除以n-1。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单总结一下，如果我们想要分析样本期望是否能够很好地近似总体期望（或者两个样本的均值是否具有明显差异），根据样本容量可以构建Z统计量或者t统计量，然后和理想值对比，分析有没有显著差异。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单总结一下，如果我们想要分析样本期望是否于总体期望具有显著差异，可以进行假设检验，根据情况选择z检验或者t检验，如果样本量小就选择t检验，如果总体方差未知也选择t检验，事实上，哪怕样本量大，选择t检验效果也挺好的，所以选择t检验总是对的，当然做题的时候如果给出了总体方差，出于解题的角度还是选择z检验比较好，不然就要手算样本方差了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面两个是用于估计均值，自然也会想到有没有检验样本方差和总体方差的差异性呢，答案当然是有的，可是这个检验是叫F检验，而不像区间估计那样叫卡方检验（当然其实也有卡方检验，只是它分析的对象是其他内容）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面两个是分析均值之间的差异的，自然也会想到有没有检验样本方差和总体方差的差异，答案当然是有的，这个检验叫F检验。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">F检验的过程还是和上面的差不多，首先构造F统计量：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F(X) = \frac{S^2}{\sigma_0^2 / (n-1)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">F检验的过程还是和上面的差不多，首先构造统计量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F = \frac{S^2}{\sigma_0^2 / (n-1)}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline X )^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在要探讨的主要问题是为什么需要构建这样一个统计量，他有什么作用，我觉得主要就是我们现在分析样本方差和总体方差的差异，这种差异可以通过两者的差或者两者的商去判断，那么为什么我们构建的统计量F不直接采用两个方差的商，还要乘上一个（n-1）呢，这里就是重点了！因为，我们不知道两者的商服从什么分布，但是！我们来看看服从卡方分布的变量的形式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X = \sum_{i=1}^k Z_i^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再把F检验的统计量转化一下：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F = \frac{S^2}{\sigma_0^2 / (n-1)} = \frac{\sum_{i=1}^n (X_i - \overline X )^2 / (n-1)}{\sigma_0^2 / (n-1)} = \sum_{i=1}^n \frac{(X_i - \overline X )^2}{\sigma_0^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到这里就很清楚了，事实上，我们做的就是想办法让样本方差和总体方差的商服从卡方分布，之所以分母除以一个(n-1)就是为了抵消分子那部分，因为这些都是常数，所以对分析总体方差和样本方差之间的差异没有影响。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，F统计量就是两个卡方统计量相除，也可以说是总体方差除以样本方差，结果还是服从卡方分布，于是其余过程都和z检验、t检验类似了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后总结一下，这里介绍了三种检验：Z检验、T检验、F检验，分别检验了样本期望、方差和总体期望、方差之间的差异程度，过程上是一致的，主要根据样本容量、分析对象选择不同的统计量，计算结果，转换成p值，和显著性水平对比，分析样本能不能显著支撑假设。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面介绍的是和均值方差有关的检验，最后再介绍一个衡量特定条件下的分布是否和理论分布一致的检验，或者说检验相关性的一种检验，卡方检验。这是一种非参数检验，前面的检验是参数检验，也就是说，卡方检验并没有假设样本数据服从正态分布，没有在检验前做任何假设。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如我现在想要检验喝牛奶和感冒发病率之间有没有联系，统计数据得到：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">确实感冒率有区别，但是我们没有充分理由认为这种区别是由于喝牛奶导致的（在这里也想说一下，假设检验是为了解决这样一个问题，如果我们认为两件事物存在差异，那么我们如何量化这种差异，如何从数据角度分析这种差异的大小，所以我们才需要假设检验，并在其中引入显著性水平、p值等概念，虽然这种方法看起来像是强行创造一种方法去证明结论，但正因为这种方法是定量分析的，因而比我单纯下结论更有说服力），所以我们就进行假设检验了，原假设为喝牛奶和感冒没关系。然后我们通过总样本（喝牛奶和不喝牛奶）计算感冒率为28.29%，根据这个概率重新得到理论表格：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个表格是根据我们通过总样本计算出样本的感冒率之后，再代进喝牛奶组和不喝牛奶组计算各自的理想人数，有了理想样本和实际样本，我们就可以计算卡方统计量：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\chi^2 = \sum \frac{(A-T)^2}{T}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">A是实际值，T是理想值，计算那四组数据再求和得到x^2为1.077，然后我们要做的就是根据自由度（251），确定卡方分布，确定显著性水平，把卡方统计量转换为p值，和显著性水平对比，分析结果是样本是否能显著支撑原假设，基本上这个过程也和参数检验一样的了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后总结一下，不论是z检验、t检验还是f检验，说到底，他们就是想分析均值之间的差异或者方差之间的差异，分析差异我们可以通过商或者差分析，可是得到了商或者差之后怎么搞出一个通用的方法，去判断这种差异是否显著，那就是把他们通过适当的方式转化成我们已知的服从一定分布的变量，比如正态分布，比如卡方分布，通过这些分布，我们可以知道差异的分布的具体情况，然后我们就可以通过确定显著性水平，确定差异比较小概率出现的状况，并认为如果这种差异出现了，就可以认为均值或者方差之间的差异足够大了。所以说，假设检验，说到底最关键的还是根据不同情况，选择统计量。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
                 [1]https://blog.csdn.net/ludan_xia/article/details/81737669</div>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/programming.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/math.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../../ai/ai.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/projects.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+      <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Neyman-Pearson Lemma</h2>
+
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍Neyman-Pearson Lemma之前，先从拟合优度，也就是通常所说的R平方说起。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍的R-squared，也叫决定系数，也叫拟合优度，主要反映模型的预测能力，观察点在回归曲线附近的密集程度，最完美的情况就是点全部落在直线上，这时候R平方就是1。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$R^2 = 1 - \frac{\sum (y_i - f_i)^2}{\sum (y_i - \overline y)^2} = \frac{\sum (f_i - \overline y)^2}{\sum (y_i - \overline y)^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">拟合优度的表达式有很多，这里选择其中一种，其中yi是真实值，f是预测值，ybar是真实值的平均值。很明显，分子类似于残差，分母类似于方差。拟合优度可以看成用均值作为误差基准，看预测误差是否大于或者小于它。另一方面，可以看出拟合优度服从卡方分布</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">主要来分析一下拟合优度的表达式为什么写成这样，首先我们可以发现，拟合优度可以看成两个方差的商，分子是预测值的方差（其实不完全是，因为期望采用了真实值的期望），分母是真实值的方差，所以两者的商就反映了模型的理论方差和真实方差的商，然后我们要知道，理论方差一定是小于真实方差的，因为理论值全都在模型的回归线上，分布更集中，现在的问题是，为什么两者越接近，就说数据能更密集地落在模型的回归线上。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以这样考虑，固定样本数据的期望，改变数据的分布（也就是让数据等比例地分布得更散开，可是保持均值不变，就像把图片放大那样），在这种情况下，我们的理论方差是不变的，因为我们的数据分布比例不变，所以得到的模型不变，然而，实际方差变大了，所以拟合优度变小了，这就说明了，样本数据与模型回归线越接近，分布越集中，拟合优度就越好：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/Untitled-1.jpg"><img src="image/Untitled-1.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说完拟合优度再说一下拟合优度检验。拟合优度检验就是用卡方统计量进行的假设检验，所以也叫卡方检验。我们可以利用拟合优度检验去判断我们样本的总体是否服从某一个分布，或者说判断假定的分布和实际分布是否具有显著差异。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么怎么检验？为什么把它叫做拟合优度检验？想一下，拟合优度可以给出模型拟合样本数据的程度，也就是说通过拟合优度我们可以分析出模型的拟合效果，如果说模型的拟合效果很优秀，那么就可以判断说数据就是服从模型的分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们就要原假设：总体X的分布函数为F(x，theta)，参数通过进行最大似然估计得到，然后我们就把总体的取值范围分位k个互不重叠的小区间I1,I2,I3……根据分布函数计算各个区间的理论频数，主要是根据分布函数计算各个区间的概率，再乘以我们的样本数量，最根据我们的样本得到实际的频数，最后计算理论频数和实际频数的偏差平方和：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\chi ^2 = \sum_{i=1}^k \frac{[f_i - np_i(\hat \theta)]^2}{np_i(\hat \theta)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中f是实际频数，n是样本数，p是概率，除以实际频数的目的是避免频数较大的项的影响。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，这个统计量越小，就可以说理论分布和实际分布越接近，我自己感觉，这个表达式和拟合优度的表达式不一样，拟合优度是通过商去表示差异，这里是通过差去表示，但是正如z检验t检验那些假设检验一样，我们的目的还是通过差或者商去表示差异，然后再寻找这个差异的分布，而这里的分布我们选择了卡方分布。所以这种方法检验也叫卡方检验。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">构建了统计量后，可以证明放样本量足够大的时候，统计量服从自由度为k-r-1的卡方分布，其中k是区间个数，r是参数个数。确定了卡方分布之后，剩下的工作也就和其他假设检验差不多了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+
+
+            </div>
+      </div>
+
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

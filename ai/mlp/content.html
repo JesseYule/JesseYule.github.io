@@ -15,15 +15,14 @@
     <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
     <script async="" src="../../css/menu/js"></script>
 
+
+    <meta name="theme-color" content="#ffffff">
     <!-------------------------matjax------------------------------>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
     <!---------------------------------------------------------------->
-
-    <meta name="theme-color" content="#ffffff">
-
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -33,7 +32,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -95,34 +94,48 @@
 
 
 
-
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">交叉验证</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">多层感知器</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在我们训练机器学习模型的时候，为了避免过拟合，检查模型的性能，往往会把训练数据分为三部分：训练集、验证集、测试集，可是这样也会导致一个问题，那就是最终模型和参数的选取会很大程度地以来对训练集和验证集的划分方式，另一方面，我们知道，训练数据越大，得到的模型效果通常会越好，而我们如果把训练数据分成三份，就相当于没有充分利用好我们手头的数据，得到的模型的效果就会受到一定影响。为了解决以上这些问题，就有了交叉验证。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍单层感知器的时候，我们提到对于非线性可分问题，单层感知器是很难解决的，比如下面这个例子：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">很简单的一个分布，但事实上就是无法用直线进行分类，后来就出现了多层感知器，在串联</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种介绍的交叉验证是LOOCV（leave-one-out cross-validation），后续的介绍中为了简化我们暂时只考虑把数据（一共有n个）分为训练集和测试集（也可以理解成事先已经抽了一部分数据出来作为测试集，然后只考虑剩下的数据怎么训练），loocv就是只用一个数据作为测试集，其他数据（n-1个数据）作为训练集，进行一次训练，到第二次，换下一个数据作为测试集，其他数据作为训练集，再进行一次训练，一直这样循环n次，每次训练我们都计算一次mse，最终模型的mse就是这n个mse的均值。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比起单纯把数据划分为训练集和测试集，coolv不受测试集和训练集划分方式的影响，因为每个单独数据都作为测试集被测试过，同时所有数据都被用于训练，保证了模型的bias更小，不过缺点也很明显，那就是计算量过大，特别是数据量大的时候。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二种介绍的交叉验证是k折交叉验证，这个和loocv不同的地方是，每次的测试集不只是一个数据，而是多个，但本质上还是差不多的。我们把数据划分为k份，每次采取不同的k-1份数据作为训练集，剩下的那一份作为测试集，每次使用不同的训练集和测试集重复k次，计算每次的mse，求平均得到模型最终的mse。所以这个方法实际上就是loocv的折中版（loocv就是把n个数据划分为n份）</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后简单讲一下k的选择对模型的影响，其实k的选择主要影响的是bias和variance，k越大，每次训练的数据就越大，模型的bias就越小（训练数据越小就越偏离真实情况，预测的结果就更偏离真实值了），可是k越大，每次训练的数据其实就差异不大，比如最极端的loocv，其实就相当于每次都训练同一个训练集，那么模型的泛化能力，就肯定不如每次在差异较大（k较小）的数据集进行训练得到的模型，所以到头来这还是一个bias和variance之间的平衡。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是交叉验证的两种常用方法，可以看到，交叉验证的交叉就体现在数据不断被重复训练，以达到充分利用的目的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
 
             </div>
-          </div>
-		  
-
-
-
-        </div>
 
         <!-- End to define the main content.-->
       </div>

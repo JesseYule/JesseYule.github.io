@@ -98,22 +98,24 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">线性判别分析（LDA）</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">判别分析</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于分类问题，之前已经介绍了logistic回归，常用于解决二分类问题，多分类当然也可以，但是需要进行一些改进，这里就介绍一个新的算法，解决多分类问题。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于分类问题，之前已经介绍了logistic回归，常用于解决二分类问题，多分类当然也可以，但是需要进行一些改进，这里就介绍一个另外一种新的算法，判别分析，常用于解决多分类问题，因为多分类的情况比较复杂，但也是在二分类的基础上进行改进的，最重要还是理解判别分析的思想。所以这里还是主要介绍判别分析在二分类问题的应用。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">lda的基本思想就是将高维的模式样本投影到最佳鉴别矢量空间，以达到抽取分类信息和压缩特征空间维数的效果，投影后保证模式样本在新的子空间具有最大的类间距离和最小的类内距离，即模式在该空间中具有最佳的可分离性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">判别分析可分为线性判别分析和非线性判别分析，具体的集中判别分析方法有距离判别法、Fisher判别法、Bayes判别法和逐步判别法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是lda应用于最简单的二分类问题，假如简单来说，lda的目的就是把样本的特征降维到只有一维(称该向量为w)，比如下图：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来了解一下距离判别法，这是最简单的判别方法，主要就是根据已知分类的数据，计算出各个分类的重心，再根据新样本到各个分类的重心的距离去判断它属于哪个分类。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后是fisher判别分析，我们主要介绍一下针对二分类的fisher判别分析，它思想非常朴素：给定训练样例集，设法将样例投影到一条直线上，使得同类样例的投影点尽可能接近、不同类样例的投影点尽可能远离。在对新样本进行分类时，将其投影到同样的这条直线上，再根据新样本投影点的位置来确定它的类别。比如下图：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/lda.jpg"><img src="image/lda.jpg" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，原来样本具有两个特征x1和x2，现在投影到w就变成只有x上的一个点了，而对比两幅图，可以看出右图的分类效果更好，虽然看起来是这样，但是我们应该怎么用数学的语言定义效果更好呢。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里有两个类别，两个特征x1和x2，现在投影到w就变成只有x上的一个点了，而对比两幅图，可以看出右图的分类效果更好，虽然看起来是这样，但是我们应该怎么用数学的语言定义效果更好呢。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，有两个方面，第一，两种类别的样本在w上的投影尽可能分离，距离尽可能远，这里我们定义样本的均值（中心点）：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\mu_i = \frac{1}{N_i} \sum_{x \in \omega_i} x$$</section></div>

@@ -15,6 +15,10 @@
     <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
     <script async="" src="../../css/menu/js"></script>
 
+
+    <meta name="theme-color" content="#ffffff">
+
+
     <!-------------------------matjax------------------------------>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/x-mathjax-config">
@@ -22,7 +26,6 @@
 </script>
     <!---------------------------------------------------------------->
 
-    <meta name="theme-color" content="#ffffff">
 
     <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -33,7 +36,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
@@ -61,7 +64,6 @@
           </header>
 
           <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
-
 
 
           <nav class="overlay-navigation" style="color: #eeeeee">
@@ -95,34 +97,45 @@
 
 
 
-
-          <div class="p-lower">
+      <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">交叉验证</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">假设检验实例（续）</h2>
 
-		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在我们训练机器学习模型的时候，为了避免过拟合，检查模型的性能，往往会把训练数据分为三部分：训练集、验证集、测试集，可是这样也会导致一个问题，那就是最终模型和参数的选取会很大程度地以来对训练集和验证集的划分方式，另一方面，我们知道，训练数据越大，得到的模型效果通常会越好，而我们如果把训练数据分成三份，就相当于没有充分利用好我们手头的数据，得到的模型的效果就会受到一定影响。为了解决以上这些问题，就有了交叉验证。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前面介绍的是和均值方差有关的检验，最后再介绍一个衡量特定条件下的分布是否和理论分布一致的检验，或者说检验相关性的一种检验，卡方检验。这是一种非参数检验，前面的检验是参数检验，也就是说，卡方检验并没有假设样本数据服从正态分布，没有在检验前做任何假设。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种介绍的交叉验证是LOOCV（leave-one-out cross-validation），后续的介绍中为了简化我们暂时只考虑把数据（一共有n个）分为训练集和测试集（也可以理解成事先已经抽了一部分数据出来作为测试集，然后只考虑剩下的数据怎么训练），loocv就是只用一个数据作为测试集，其他数据（n-1个数据）作为训练集，进行一次训练，到第二次，换下一个数据作为测试集，其他数据作为训练集，再进行一次训练，一直这样循环n次，每次训练我们都计算一次mse，最终模型的mse就是这n个mse的均值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如我现在想要检验喝牛奶和感冒发病率之间有没有联系，统计数据得到：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">确实感冒率有区别，但是我们没有充分理由认为这种区别是由于喝牛奶导致的（在这里也想说一下，假设检验是为了解决这样一个问题，如果我们认为两件事物存在差异，那么我们如何量化这种差异，如何从数据角度分析这种差异的大小，所以我们才需要假设检验，并在其中引入显著性水平、p值等概念，虽然这种方法看起来像是强行创造一种方法去证明结论，但正因为这种方法是定量分析的，因而比我单纯下结论更有说服力），所以我们就进行假设检验了，原假设为喝牛奶和感冒没关系。然后我们通过总样本（喝牛奶和不喝牛奶）计算感冒率为28.29%，根据这个概率重新得到理论表格：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个表格是根据我们通过总样本计算出样本的感冒率之后，再代进喝牛奶组和不喝牛奶组计算各自的理想人数，有了理想样本和实际样本，我们就可以计算卡方统计量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\chi^2 = \sum \frac{(A-T)^2}{T}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">A是实际值，T是理想值，计算那四组数据再求和得到x^2为1.077，然后我们要做的就是根据自由度（251），确定卡方分布，确定显著性水平，把卡方统计量转换为p值，和显著性水平对比，分析结果是样本是否能显著支撑原假设，基本上这个过程也和参数检验一样的了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比起单纯把数据划分为训练集和测试集，coolv不受测试集和训练集划分方式的影响，因为每个单独数据都作为测试集被测试过，同时所有数据都被用于训练，保证了模型的bias更小，不过缺点也很明显，那就是计算量过大，特别是数据量大的时候。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二种介绍的交叉验证是k折交叉验证，这个和loocv不同的地方是，每次的测试集不只是一个数据，而是多个，但本质上还是差不多的。我们把数据划分为k份，每次采取不同的k-1份数据作为训练集，剩下的那一份作为测试集，每次使用不同的训练集和测试集重复k次，计算每次的mse，求平均得到模型最终的mse。所以这个方法实际上就是loocv的折中版（loocv就是把n个数据划分为n份）</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后简单讲一下k的选择对模型的影响，其实k的选择主要影响的是bias和variance，k越大，每次训练的数据就越大，模型的bias就越小（训练数据越小就越偏离真实情况，预测的结果就更偏离真实值了），可是k越大，每次训练的数据其实就差异不大，比如最极端的loocv，其实就相当于每次都训练同一个训练集，那么模型的泛化能力，就肯定不如每次在差异较大（k较小）的数据集进行训练得到的模型，所以到头来这还是一个bias和variance之间的平衡。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是交叉验证的两种常用方法，可以看到，交叉验证的交叉就体现在数据不断被重复训练，以达到充分利用的目的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://blog.csdn.net/ludan_xia/article/details/81737669</div>
+
+
+
 
             </div>
-          </div>
-		  
+      </div>
 
-
-
-        </div>
 
         <!-- End to define the main content.-->
       </div>
