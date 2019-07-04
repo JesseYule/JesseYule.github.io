@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">后验期望、MCMC与后验众数</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然通过后验分布期望估计参数因为计算复杂不常用，但还是介绍一下可以实现的方法，首先后验期望的表达式为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(θ|y)=\int_θ θp(θ|y)dθ$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对后验概率有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p(θ|y)=\frac{L(θ;y)p(θ)}{\int_θ L(θ;y)p(θ)dθ}=\frac{L(θ;y)p(θ)}{E_θ (L(θ;y))}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以最终有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(θ|y)=\frac{\int_θ θL(θ;y)p(θ)dθ}{E_θ (L(θ;y))}=\frac{E_θ (θL(θ;y))}{E_θ (L(θ;y))}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来，我们就可以随机产生一些服从p(θ)的参数的样本，然后有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_θ (θL(θ;y))\approx \frac{1}{m} \sum_{i=1}^m θ_i L(y;θ_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_θ (L(θ;y))\approx \frac{1}{m} \sum_{i=1}^m L(y;θ_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面两条式子是期望的定义推导出来的，约等于是因为我们通过样本均值去估计总体期望，最后把上式代回原式有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(θ|y)\approx \sum_{i=1}^m θ_i \frac{L(y;θ_i)}{\sum_{i} L(y;θ_i)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于上式，可把θ的右侧看成权重系数，所以后验期望就可以近似表达成随机生成的θ的加权均值，同时，每个θ的权重都可以由似然函数决定。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后总结一下，关于计算后验期望的算法，首先，我们先假设参数θ服从某一种分布，然后根据p(θ)随机生成一系列θ，对每个θ计算权重，最后，根据θ和权重计算后验期望。在实际应用中，计算权重可以用log-likelihood，这样可以减少电脑的计算负担，也不会影响权重的结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可是在有些复杂的情况下，比如似然函数比较复杂，如果我们还要积分算后验期望就很麻烦了，所以就有了结合MCMC算法（马尔可夫链蒙特卡洛算法），生成符合后验分布的随机变量，然后直接计算随机变量的样本期望来估计总体的期望。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先要知道，计算机只能生成符合均匀分布的随机数，如果要生成符合某种分布的随机数，可以利用前面提到的概率论里面的transformation，利用分布函数作变换，把均匀分布转化为其他分布，所以，如果我们已经知道了后验分布的具体形式，可以利用后验分布函数做变换把电脑生成的符合均匀分布的随机变量转化为符合后验分布的随机变量，这是第一种方法，称为Probability integral transform。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种方法是好，可是有时候有些分布的分布函数也很难通过对密度函数积分得到，或者求分布函数的反函数也不容易，所以就有了第二种方法，rejection sampling。这个方法的思想真的很牛逼，主要思想就是用一个容易采样的分布去估计一个不容易采样的分布，见下图：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/rs"><img src="image/rs" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设我们有一个容易采样的分布q(x)，然后我们乘上一个常数，使得它可以完全覆盖我们的函数p(x)，比如说，最简单的情况，用均匀分布的q(x)乘上一个常数m去覆盖p(x)，然后对q(x)随机取样，因为是均匀分布，所以取到什么值都是一样的概率（如果是其他分布，就是不同的概率），然后再计算点满足q(x)的接受概率：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(x) = \frac{p(x)}{mq(x)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了这个点的接受概率后，我们再通过均匀分布再随机生成一个概率，比较这个概率是否小于接受概率，如果是则接受一开始的抽样，否则不接受。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是拒绝采样的基本思路，简单来说就是随机抽一个点，看符不符合接受概率，符合就把这个点作为抽样点，不符合就舍弃，这样不断抽样不断判断，最后就会得到符合我们的分布的样本了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">拒绝采样也有一个缺点，那就是有时候我们很难判断m去什么值才能使得q(x)可以完全覆盖p(x)，这时候就需要第三种方法，weighted bootstrap。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">weighted bootstrap也是一开始利用容易采样的分布（还是以均匀分布为例）生成样本θ，然后计算权重：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i = \frac{p(θ_i)/q(θ_i)}{sum(q_i)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再从离散分布中取样{θ1,…,θn:Pr(θi)=wi},当n趋于无穷，可证明取出来的样本服从后验分布p(x)。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实注意到，如果我们用均匀分布作为例子，甚至再简化一下，我们在区间[0,1]之间取样，那么q(x)恒等于1，那么我们最后求出来的权重，其实就是原来p(x)本身，这里需要n趋于无穷，是因为在计算sum的时候，只有样本大，权重才能趋于真实的p(x)。总的来说就是绕了一圈，但是为什么要这样做，还是一开始的问题，计算机只能生成均匀分布，最多可以利用转换把均匀分布的样本转化成其他简单一点的分布的样本，在这种复杂的情况下，我们只能依靠这些简单的分布生成样本，再进行一些操作，最后找到生成目标分布的样本的方法，而这里，主要就是把原来的复杂分布经过一系列操作变成离散分布，再抽样。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后还有一种针对联合分布采样的方法，Gibbs sampler。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，比如甲只能吃饭学习，时间在上午或下午，天气是晴天或雨天，我们需要一个样本，比如吃饭+上午+晴天，目前，我们不知道他们的联合分布，只知道他们的条件分布，就是固定上午和晴天，甲在学习的概率，诸如此类，gibbs sampler就是通过这些条件概率，对联合分布进行抽样。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体来说，就是在我们确定了条件分布之后，利用前面提到的方法生成样本，对所有的条件分布都这样做一次，最后得到的所有样本，就认为是服从联合分布的样本。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是后验众数，其实就是最大后验估计（MAP），目的就是找一个参数θ，使得logp(θ|y)最大，也就是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$log p(θ|y) = logL(y;θ) + log p(θ)-log p(y)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，因为θ和logp(y)没有关系，所以有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$θ=argmax\{logL(y;θ)+logp(θ)\}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是maximum a posteriori（MAP）方法。它等价于maximum penalized likelihood（MPL）方法，其实就是在似然函数的基础上加上惩罚项j(θ)乘一个平滑系数h（logp(θ)=-h*j(θ)），再应用极大似然估计。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，当logp(θ|y)对θ求导不是线性的，就需要利用newton-raphson求解了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                [1]https://blog.csdn.net/baimafujinji/article/details/51407703</div>
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

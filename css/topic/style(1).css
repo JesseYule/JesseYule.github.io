@@ -1,0 +1,3742 @@
+@charset "UTF-8";
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+
+body {
+    line-height: 1
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+nav ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:after, blockquote:before, q:after, q:before {
+    content: '';
+    content: none
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none
+}
+
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold
+}
+
+del {
+    text-decoration: line-through
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0
+}
+
+input, select {
+    vertical-align: middle
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html {
+    font: 300 62.5% "Roboto", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+}
+
+a {
+    text-decoration: none
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #111;
+    letter-spacing: 0.08em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    width: 100%
+}
+
+header h1 {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    width: 90px;
+    height: 42px
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 {
+        top: 24px;
+        left: 8%;
+        width: 60px;
+        height: 28px
+    }
+}
+
+header h1 .color-black, header h1 .color-white {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+header h1 .color-black .color-inner, header h1 .color-white .color-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90px;
+    height: 42px
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 .color-black .color-inner, header h1 .color-white .color-inner {
+        width: 60px;
+        height: 28px
+    }
+}
+
+header h1 a {
+    display: block;
+    width: 90px;
+    height: 42px
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 a {
+        width: 60px;
+        height: 28px
+    }
+}
+
+header h1 a span {
+    display: none
+}
+
+header h1 .color-black a {
+    background: url(../images/logo.png) no-repeat 0 0;
+    background-size: 90px
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 .color-black a {
+        background-size: 60px
+    }
+}
+
+header h1 .color-white a {
+    background: url(../images/logo.png) no-repeat 0 100%;
+    background-size: 90px
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 .color-white a {
+        background-size: 60px
+    }
+}
+
+header #menu-btn {
+    position: fixed;
+    z-index: 12;
+    top: 40px;
+    right: 60px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn {
+        top: 14px;
+        right: 5%
+    }
+}
+
+header #menu-btn .color-black, header #menu-btn .color-white {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+header #menu-btn .color-black .color-inner, header #menu-btn .color-white .color-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 42px;
+    height: 42px
+}
+
+header #menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    left: 9px;
+    transition: all 0.3s;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    -ms-transition: -ms-transform 0.3s
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn span {
+        width: 20px;
+        height: 2px
+    }
+}
+
+header #menu-btn span:first-child {
+    top: 10px
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn span:first-child {
+        top: 13px
+    }
+}
+
+header #menu-btn span:last-child {
+    bottom: 10px
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn span:last-child {
+        bottom: 13px
+    }
+}
+
+header #menu-btn .color-white span {
+    background-color: #fff
+}
+
+header #menu-btn .color-black span {
+    background-color: #000
+}
+
+header #menu-btn.active span:first-child {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    -moz-transform: translateY(10px) rotate(45deg);
+    -ms-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg)
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn.active span:first-child {
+        -webkit-transform: translateY(7px) rotate(45deg);
+        -moz-transform: translateY(7px) rotate(45deg);
+        -ms-transform: translateY(7px) rotate(45deg);
+        transform: translateY(7px) rotate(45deg)
+    }
+}
+
+header #menu-btn.active span:last-child {
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -moz-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg)
+}
+
+@media only screen and (max-width: 768px) {
+    header #menu-btn.active span:last-child {
+        -webkit-transform: translateY(-7px) rotate(-45deg);
+        -moz-transform: translateY(-7px) rotate(-45deg);
+        -ms-transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-7px) rotate(-45deg)
+    }
+}
+
+body.menu-visible .color-white {
+    display: block !important;
+    opacity: 1 !important;
+    top: 0 !important;
+    height: 100% !important
+}
+
+body.menu-visible .color-white .color-inner {
+    top: 0 !important
+}
+
+body.menu-visible .color-black {
+    display: none !important
+}
+
+#menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-menu.png) no-repeat;
+    background-size: cover;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #menu {
+        text-align: left
+    }
+}
+
+#menu #menu-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 563px;
+    margin: -282px 0 0 -175px;
+    background: url(../images/logo3.png) no-repeat;
+    background-size: 350px
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #menu-logo {
+        width: 135px;
+        height: 209px;
+        background-size: 130px;
+        margin: -105px 0 0 -65px
+    }
+}
+
+#menu a {
+    color: #fff
+}
+
+#menu #gnav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -140px 0 0 -380px
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav {
+        left: 0;
+        width: 100%;
+        margin: -150px 0 0 0
+    }
+}
+
+#menu #gnav h2 {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav h2 {
+        margin: 0 0 6px 8%;
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#menu #gnav ul li a {
+    position: relative
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul li a {
+        display: block
+    }
+}
+
+#menu #gnav ul li a:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul li a:after {
+        background: inherit
+    }
+}
+
+#menu #gnav ul li a:hover:after {
+    bottom: -6px;
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out
+}
+
+#menu #gnav ul:first-of-type {
+    margin-bottom: 60px;
+    font-size: 43px;
+    font-size: 4.3rem;
+    font-weight: 300;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul:first-of-type {
+        margin-bottom: 30px;
+        font-size: 19px;
+        font-size: 1.9rem
+    }
+}
+
+#menu #gnav ul:first-of-type li {
+    margin: 0 15px
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul:first-of-type li {
+        margin: 0 8%;
+        padding: 7px 0;
+        border-bottom: 1px solid #333
+    }
+}
+
+#menu #gnav ul:nth-of-type(2) {
+    font-size: 20px;
+    font-size: 2.0rem;
+    font-weight: 300;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul:nth-of-type(2) {
+        font-size: 13px;
+        font-size: 1.3rem
+    }
+}
+
+#menu #gnav ul:nth-of-type(2) li {
+    margin: 0 10px
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul:nth-of-type(2) li {
+        float: left;
+        width: 38%;
+        margin: 0 4% 0 8%;
+        padding: 7px 0;
+        border-bottom: 1px solid #333
+    }
+
+    #menu #gnav ul:nth-of-type(2) li:nth-child(2n) {
+        margin: 0 8% 0 4%
+    }
+}
+
+#menu #gnav ul li {
+    display: inline-block
+}
+
+@media only screen and (max-width: 768px) {
+    #menu #gnav ul li {
+        display: block
+    }
+}
+
+#tagline .inner {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 180px 0
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner {
+        display: block;
+        padding: 120px 8% 80px
+    }
+}
+
+#tagline .inner .left {
+    width: 30%
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .left {
+        display: none
+    }
+}
+
+#tagline .inner .left span {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .left span {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#tagline .inner .left h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .left h2 {
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+}
+
+#tagline .inner .right {
+    width: 70%
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .right {
+        width: auto
+    }
+}
+
+#tagline .inner .right span {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .right span {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#tagline .inner .right h2 {
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-weight: 100;
+    letter-spacing: 0.082em
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .right h2 {
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+}
+
+#tagline .inner .right h2:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px 0 25px;
+    background: #000
+}
+
+#tagline .inner .right p {
+    font-size: 11px;
+    font-size: 1.1rem
+}
+
+@media only screen and (max-width: 768px) {
+    #tagline .inner .right p {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#video {
+    position: relative;
+    width: 100%;
+    height: 500px
+}
+
+@media only screen and (max-width: 768px) {
+    #video {
+        height: 230px
+    }
+}
+
+#video h1 span {
+    display: none
+}
+
+#manifesto {
+    padding: 0 8%
+}
+
+#manifesto .inner {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 120px 0
+}
+
+@media only screen and (max-width: 768px) {
+    #manifesto .inner {
+        display: block;
+        padding: 60px 0
+    }
+}
+
+#manifesto .inner .left {
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #manifesto .inner .left {
+        width: auto;
+        margin-bottom: 20px
+    }
+}
+
+#manifesto .inner .left span {
+    display: inline-block;
+    margin-bottom: 5px
+}
+
+#manifesto .inner .left h2 {
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-weight: 100;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #manifesto .inner .left h2 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+
+    #manifesto .inner .left h2 br {
+        display: none
+    }
+}
+
+#manifesto .inner .right {
+    width: 50%;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.9
+}
+
+@media only screen and (max-width: 768px) {
+    #manifesto .inner .right {
+        width: auto;
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 1.8
+    }
+}
+
+#manifesto .inner .right p {
+    padding-bottom: 30px
+}
+
+#manifesto .inner .right p:last-child {
+    padding: 0
+}
+
+#methodology {
+    position: relative;
+    padding: 100px 0;
+    background: #111;
+    color: #fff
+}
+
+@media only screen and (max-width: 768px) {
+    #methodology {
+        padding: 60px 8%
+    }
+}
+
+#methodology .inner {
+    position: relative;
+    z-index: 1
+}
+
+#link {
+    padding: 100px 0;
+    text-align: center;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid #ccc
+}
+
+@media only screen and (max-width: 768px) {
+    #link {
+        padding: 80px 0
+    }
+}
+
+#link .text {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-size: 3.0rem;
+    font-weight: 400
+}
+
+@media only screen and (max-width: 768px) {
+    #link .text {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-size: 1.6rem;
+        letter-spacing: 0.1em
+    }
+}
+
+#link .url {
+    display: inline-block;
+    font-size: 15px;
+    font-size: 1.5rem
+}
+
+@media only screen and (max-width: 768px) {
+    #link .url {
+        font-size: 13px;
+        font-size: 1.3rem;
+        letter-spacing: 0.1em
+    }
+}
+
+#link .url a {
+    display: block;
+    padding-right: 26px;
+    color: #000;
+    background: url(../images/arrow-bk.png) no-repeat right 4px;
+    background-size: 18px
+}
+
+@media only screen and (max-width: 768px) {
+    #link .url a {
+        padding-right: 20px;
+        background-size: 14px
+    }
+}
+
+#enterprise {
+    padding-top: 120px
+}
+
+@media only screen and (max-width: 768px) {
+    #enterprise {
+        padding-top: 60px
+    }
+}
+
+#enterprise h3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #enterprise h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#enterprise h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px auto 50px;
+    background: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #enterprise h3:after {
+        margin: 20px auto 30px
+    }
+}
+
+#enterprise ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    text-align: center
+}
+
+#enterprise ul li {
+    position: relative;
+    overflow: hidden;
+    width: 100%
+}
+
+#enterprise ul li.sleepdays {
+    background: #61c1cb
+}
+
+#enterprise ul li.sleepdays .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-sleepdays.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#enterprise ul li.keskin {
+    background: #7fccec
+}
+
+#enterprise ul li.keskin .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-keskin.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#enterprise ul li.barth {
+    background: #111
+}
+
+#enterprise ul li.barth .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-barth.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#enterprise ul li a {
+    position: relative;
+    display: block;
+    height: 380px;
+    color: #fff;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #enterprise ul li a {
+        height: 150px
+    }
+}
+
+#enterprise ul li a h4 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -20px;
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 0.065em
+}
+
+@media only screen and (max-width: 768px) {
+    #enterprise ul li a h4 {
+        margin-top: -12px;
+        font-size: 16px;
+        font-size: 1.6rem;
+        font-weight: 400
+    }
+}
+
+#enterprise ul li:hover .bg {
+    opacity: 0.2;
+    transform: scale(1.08);
+    -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#footer {
+    padding: 60px 5% 70px;
+    color: #fff;
+    background: #111
+}
+
+@media only screen and (max-width: 768px) {
+    #footer {
+        padding: 50px 8%
+    }
+}
+
+#footer a {
+    color: #fff
+}
+
+#footer .inner {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 130px;
+    font-weight: 400
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner {
+        display: block;
+        margin-bottom: 80px
+    }
+}
+
+#footer .inner .left {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .left {
+        width: 100%;
+        margin-bottom: 50px
+    }
+}
+
+#footer .inner .left h1 {
+    width: 150px
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .left h1 {
+        width: 120px
+    }
+}
+
+#footer .inner .left ul {
+    width: 150px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.9;
+    letter-spacing: 0.1em;
+    color: #555;
+    list-style: none
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .left ul {
+        font-size: 13px;
+        font-size: 1.3rem
+    }
+
+    #footer .inner .left ul li:first-child {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#footer .inner .left .menu2 {
+    width: 180px
+}
+
+#footer .inner .left .top {
+    margin-bottom: 16px
+}
+
+#footer .inner .right {
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .right {
+        width: 100%
+    }
+}
+
+#footer .inner .right .contact {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 30px
+}
+
+#footer .inner .right .contact .tel {
+    width: 150px
+}
+
+#footer .inner .right .contact .fax {
+    width: 150px
+}
+
+#footer .inner .right .contact span {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .right .contact span {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#footer .inner .right .contact p {
+    font-size: 14px;
+    font-size: 1.4rem
+}
+
+#footer .inner .right .location span {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .right .location span {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#footer .inner .right .location p {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.8
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .inner .right .location p {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#footer .privacy {
+    float: left
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .privacy {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#footer .copy {
+    float: right
+}
+
+@media only screen and (max-width: 768px) {
+    #footer .copy {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#slider {
+    width: 100%;
+    height: 100vh
+}
+
+@media only screen and (max-width: 768px) {
+    #slider {
+        height: 100%
+    }
+}
+
+#slider li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: none
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li {
+        height: 100%
+    }
+}
+
+#slider li.about {
+    color: #fff;
+    background: #1a2c47
+}
+
+#slider li.about .video {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 563px;
+    margin: -282px 0 0 -175px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .video {
+        width: 130px;
+        height: 209px;
+        margin: -105px 0 0 -65px;
+        background: url(../images/bg-about.jpg) no-repeat center center;
+        background-size: cover
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .video video {
+        display: none
+    }
+}
+
+#slider li.about .video .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/mask.png) no-repeat;
+    background-size: 350px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .video .mask {
+        background-size: 130px
+    }
+}
+
+#slider li.about .inner {
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    left: 10%;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .inner {
+        width: 85%;
+        top: 30%;
+        left: 8%
+    }
+}
+
+#slider li.about .inner a {
+    display: block;
+    color: #fff
+}
+
+#slider li.about .inner a h2 {
+    font-size: 58px;
+    font-size: 4.8rem;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    margin-bottom: 32px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .inner a h2 {
+        font-size: 25px;
+        font-size: 1.8rem;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        margin-bottom: 32px
+    }
+}
+
+#slider li.about .inner a p {
+    margin-top: 32px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-size: 2.0rem;
+    font-weight: 400;
+    letter-spacing: 0.09em
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .inner a p {
+        margin-top: 16px;
+        font-size: 11px;
+        font-size: 1.4rem;
+        letter-spacing: 0.08em
+    }
+}
+
+#slider li.about .inner a .arrow {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background: url(../images/arrow-wh.png) no-repeat bottom;
+    background-size: 44px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.about .inner a .arrow {
+        width: 33px;
+        height: 33px;
+        background-size: 33px
+    }
+}
+
+#slider li.sleepdays {
+    color: #fff;
+    background: #61c1cb
+}
+
+#slider li.sleepdays .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .video {
+        background: url(../images/bg-sleepdays.jpg) no-repeat center center;
+        background-size: cover;
+        border: 1px solid red
+    }
+}
+
+#slider li.sleepdays .video video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .video video {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: -120px;
+        padding: 0 8%
+    }
+}
+
+#slider li.sleepdays .inner .text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: -90px 0 0 0
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .text {
+        position: static;
+        margin: 0 0 20px 0
+    }
+}
+
+#slider li.sleepdays .inner .text a {
+    color: #fff
+}
+
+#slider li.sleepdays .inner .text h2 {
+    font-size: 45px;
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .text h2 {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+}
+
+#slider li.sleepdays .inner .text h2:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 15px 0 30px;
+    background: #fff
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .text h2:after {
+        margin: 15px 0 20px
+    }
+}
+
+#slider li.sleepdays .inner .text p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.8
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .text p {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#slider li.sleepdays .inner .btn {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    width: 300px;
+    margin: -10px 0 0 0;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .btn {
+        position: static;
+        margin: 0;
+        width: 60%
+    }
+}
+
+#slider li.sleepdays .inner .btn a {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff
+}
+
+#slider li.sleepdays .inner .btn a .label {
+    display: inline-block;
+    padding: 17px 30px 17px 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    background: url(../images/arrow-wh.png) no-repeat right;
+    background-size: 22px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.sleepdays .inner .btn a .label {
+        font-size: 14px;
+        font-size: 1.4rem;
+        padding: 10px 20px 10px 0;
+        background-size: 15px
+    }
+}
+
+#slider li.sleepdays .inner .btn a .border-b, #slider li.sleepdays .inner .btn a .border-l, #slider li.sleepdays .inner .btn a .border-r, #slider li.sleepdays .inner .btn a .border-t {
+    background-color: #fff
+}
+
+#slider li.barth {
+    color: #000;
+    background: #fff
+}
+
+#slider li.barth .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .video {
+        background: url(../images/bg-barth.jpg) no-repeat center center;
+        background-size: cover
+    }
+}
+
+#slider li.barth .video video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .video video {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: -120px;
+        padding: 0 8%
+    }
+}
+
+#slider li.barth .inner .text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: -90px 0 0 0
+}
+
+#slider li.barth .inner .text a {
+    color: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .text {
+        position: static;
+        margin: 0 0 20px 0
+    }
+}
+
+#slider li.barth .inner .text h2 {
+    font-size: 45px;
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .text h2 {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+}
+
+#slider li.barth .inner .text h2:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 15px 0 30px;
+    background: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .text h2:after {
+        margin: 15px 0 20px
+    }
+}
+
+#slider li.barth .inner .text p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.8
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .text p {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#slider li.barth .inner .btn {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    width: 300px;
+    margin: -10px 0 0 0;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .btn {
+        position: static;
+        margin: 0;
+        width: 60%
+    }
+}
+
+#slider li.barth .inner .btn a {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    color: #000
+}
+
+#slider li.barth .inner .btn a .label {
+    display: inline-block;
+    padding: 17px 30px 17px 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    background: url(../images/arrow-bk.png) no-repeat right;
+    background-size: 22px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.barth .inner .btn a .label {
+        font-size: 14px;
+        font-size: 1.4rem;
+        padding: 10px 20px 10px 0;
+        background-size: 15px
+    }
+}
+
+#slider li.barth .inner .btn a .border-b, #slider li.barth .inner .btn a .border-l, #slider li.barth .inner .btn a .border-r, #slider li.barth .inner .btn a .border-t {
+    background-color: #000
+}
+
+#slider li.keskin {
+    color: #fff;
+    background: #7fccec
+}
+
+#slider li.keskin .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .video {
+        background: url(../images/bg-keskin.jpg) no-repeat center center;
+        background-size: cover;
+        border: 1px solid red
+    }
+}
+
+#slider li.keskin .video video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .video video {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: -140px;
+        padding: 0 8%
+    }
+}
+
+#slider li.keskin .inner .text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: -90px 0 0 0
+}
+
+#slider li.keskin .inner .text a {
+    color: #fff
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .text {
+        position: static;
+        margin: 0 0 20px 0
+    }
+}
+
+#slider li.keskin .inner .text h2 {
+    font-size: 45px;
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .text h2 {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+}
+
+#slider li.keskin .inner .text h2:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 15px 0 30px;
+    background: #fff
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .text h2:after {
+        margin: 15px 0 20px
+    }
+}
+
+#slider li.keskin .inner .text p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.8
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .text p {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#slider li.keskin .inner .btn {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    width: 300px;
+    margin: -10px 0 0 0;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .btn {
+        position: static;
+        margin: 0;
+        width: 60%
+    }
+}
+
+#slider li.keskin .inner .btn a {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff
+}
+
+#slider li.keskin .inner .btn a .label {
+    display: inline-block;
+    padding: 17px 30px 17px 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    background: url(../images/arrow-wh.png) no-repeat right;
+    background-size: 22px
+}
+
+@media only screen and (max-width: 768px) {
+    #slider li.keskin .inner .btn a .label {
+        font-size: 14px;
+        font-size: 1.4rem;
+        padding: 10px 20px 10px 0;
+        background-size: 15px
+    }
+}
+
+#slider li.keskin .inner .btn a .border-b, #slider li.keskin .inner .btn a .border-l, #slider li.keskin .inner .btn a .border-r, #slider li.keskin .inner .btn a .border-t {
+    background-color: #fff
+}
+
+#slider li .inner .btn {
+    opacity: 0
+}
+
+#slider li .inner .btn a .border-b, #slider li .inner .btn a .border-l, #slider li .inner .btn a .border-r, #slider li .inner .btn a .border-t {
+    position: absolute
+}
+
+#slider li .inner .btn a .border-l {
+    left: -1px;
+    top: 0;
+    width: 1px;
+    height: 0
+}
+
+#slider li .inner .btn a .border-r {
+    right: -1px;
+    bottom: 0;
+    width: 1px;
+    height: 0
+}
+
+#slider li .inner .btn a .border-t {
+    right: 0;
+    top: -1px;
+    width: 0;
+    height: 1px
+}
+
+#slider li .inner .btn a .border-b {
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px
+}
+
+#slider li .inner .btn a:hover .border-l {
+    height: 100%;
+    transition: height .1s ease-out;
+    transition-delay: .2s
+}
+
+#slider li .inner .btn a:hover .border-r {
+    height: 100%;
+    transition: height .1s ease-out;
+    transition-delay: 0s
+}
+
+#slider li .inner .btn a:hover .border-t {
+    width: 100%;
+    transition: width .1s ease-out;
+    transition-delay: .1s
+}
+
+#slider li .inner .btn a:hover .border-b {
+    width: 100%;
+    transition: width .1s ease-out;
+    transition-delay: .3s
+}
+
+#slider li.barth.active .video, #slider li.keskin.active .video, #slider li.sleepdays.active .video {
+    transition: transform 15s linear;
+    transform: scale(1.25)
+}
+
+#slider li.active .inner .btn {
+    opacity: 1;
+    transition: opacity .4s linear;
+    transition-delay: 1s
+}
+
+.slider-nav {
+    position: absolute;
+    right: 71px;
+    top: 50%;
+    width: 10px;
+    margin-top: -50px
+}
+
+@media only screen and (max-width: 768px) {
+    .slider-nav {
+        right: inherit;
+        top: inherit;
+        bottom: 20px;
+        width: 100%;
+        margin-top: 0;
+        text-align: center
+    }
+}
+
+.slider-nav span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: transform .2s linear
+}
+
+@media only screen and (max-width: 768px) {
+    .slider-nav span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 8px 0
+    }
+}
+
+.slider-nav span:first-child {
+    margin-top: 0
+}
+
+.slider-nav span.current {
+    transform: scale(1.5);
+    cursor: default
+}
+
+.slider-nav.nav-black span {
+    background-color: #ffffff
+}
+
+#movements {
+    padding: 140px 0
+}
+
+@media only screen and (max-width: 768px) {
+    #movements {
+        padding: 120px 8%
+    }
+}
+
+#movements h2 {
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #movements h2 {
+        font-size: 21px;
+        font-size: 2.1rem
+    }
+}
+
+#movements nav {
+    margin-bottom: 15px;
+    text-align: center
+}
+
+#movements nav ul {
+    list-style: none
+}
+
+#movements nav ul li {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #movements nav ul li {
+        padding: 5px 3px;
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#movements nav ul li.current-cat a {
+    color: #ccc
+}
+
+@media only screen and (max-width: 768px) {
+    #movements nav ul li.current-cat a {
+        background: #ccc;
+        color: #000
+    }
+}
+
+#movements nav ul li a {
+    color: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #movements nav ul li a {
+        display: block;
+        padding: 5px 8px;
+        background: #000;
+        color: #fff;
+        line-height: 1;
+        border-radius: 5px
+    }
+}
+
+#movements .list {
+    width: calc(100% - 120px);
+    max-width: 1360px;
+    margin: 0 auto;
+    border-top: 2px solid #000;
+    list-style: none
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list {
+        width: 100%
+    }
+}
+
+#movements .list li {
+    border-bottom: 2px solid #000
+}
+
+#movements .list li .title {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title {
+        -webkit-box-lines: multiple;
+        -moz-box-lines: multiple;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px 0
+    }
+}
+
+#movements .list li .title time {
+    width: 8%;
+    min-width: 130px;
+    padding: 28px 0;
+    font-size: 14px;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title time {
+        width: 100%;
+        padding: 0 0 5px 0;
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#movements .list li .title h3 {
+    width: 80%;
+    padding: 28px 0;
+    font-size: 15px;
+    font-size: 1.5rem
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title h3 {
+        width: auto;
+        padding: 0;
+        font-size: 13px;
+        font-size: 1.3rem
+    }
+}
+
+#movements .list li .title .cat {
+    width: 10%;
+    padding-right: 30px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title .cat {
+        position: absolute;
+        top: 18px;
+        right: 0;
+        width: auto;
+        padding: 0;
+        font-size: 11px;
+        font-size: 1.1rem;
+        font-weight: 400
+    }
+}
+
+#movements .list li .title .cat a {
+    display: block;
+    color: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title .cat a {
+        display: inline-block;
+        padding-left: 10px
+    }
+}
+
+#movements .list li .title .arrow {
+    width: 2%;
+    padding: 28px 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1;
+    transform: rotateX(0deg);
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .title .arrow {
+        display: none
+    }
+}
+
+#movements .list li .title .arrow.active {
+    transform: rotateX(-180deg);
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out
+}
+
+#movements .list li .contents {
+    display: none;
+    padding-bottom: 50px;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    word-wrap: break-word
+}
+
+@media only screen and (max-width: 768px) {
+    #movements .list li .contents {
+        font-size: 12px;
+        font-size: 1.2rem
+    }
+}
+
+#movements .list li .contents a {
+    color: #999
+}
+
+#about #concept {
+    position: relative;
+    height: 100vh;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #about #concept {
+        height: auto
+    }
+}
+
+#about #concept .inner {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin: -220px 0 0 0
+}
+
+@media only screen and (max-width: 768px) {
+    #about #concept .inner {
+        position: inherit;
+        top: inherit;
+        margin: 140px 0 120px;
+        padding: 0 8%
+    }
+}
+
+#about #concept .inner h2 {
+    font-size: 44px;
+    font-size: 4.4rem;
+    font-weight: 300;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #about #concept .inner h2 {
+        font-size: 24px;
+        font-size: 2.4rem
+    }
+}
+
+#about #concept .inner h2:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px auto 30px;
+    background: #000
+}
+
+#about #concept .inner .text1 {
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-size: 1.8rem;
+    line-height: 1.9
+}
+
+#about #concept .inner .text1 br.sp {
+    display: none
+}
+
+@media only screen and (max-width: 768px) {
+    #about #concept .inner .text1 {
+        font-size: 15px;
+        font-size: 1.5rem;
+        line-height: 1.8
+    }
+
+    #about #concept .inner .text1 br {
+        display: none
+    }
+
+    #about #concept .inner .text1 br.sp {
+        display: block
+    }
+}
+
+#about #concept .inner .text2 {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.2
+}
+
+@media only screen and (max-width: 768px) {
+    #about #concept .inner .text2 {
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 1.9
+    }
+
+    #about #concept .inner .text2 br {
+        display: none
+    }
+}
+
+#about #principle {
+    padding: 120px 0 140px;
+    color: #fff;
+    background: #111
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle {
+        padding: 60px 8%
+    }
+}
+
+#about #principle .inner {
+    width: 1110px;
+    margin: 0 auto
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner {
+        width: auto
+    }
+}
+
+#about #principle .inner h3 {
+    font-size: 27px;
+    font-size: 2.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#about #principle .inner h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 30px 0 40px;
+    background: #fff
+}
+
+#about #principle .inner .column {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column {
+        display: block
+    }
+}
+
+#about #principle .inner .column dl {
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl {
+        width: auto
+    }
+}
+
+#about #principle .inner .column dl.left {
+    padding-right: 20px
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl.left {
+        padding: 0
+    }
+}
+
+#about #principle .inner .column dl.right {
+    padding-left: 20px
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl.right {
+        padding: 0
+    }
+}
+
+#about #principle .inner .column dl dt {
+    min-height: 36px;
+    margin-bottom: 13px;
+    font-size: 22px;
+    font-size: 2.2rem;
+    letter-spacing: 0.06em;
+    padding-left: 1.26em;
+    text-indent: -1.26em
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl dt {
+        min-height: 26px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+}
+
+#about #principle .inner .column dl dd {
+    margin-bottom: 40px;
+    padding-left: 2.3em;
+    color: #666
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl dd {
+        margin-bottom: 25px;
+        padding-left: 2em;
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#about #principle .inner .column dl dd:nth-of-type(3) {
+    margin: 0
+}
+
+@media only screen and (max-width: 768px) {
+    #about #principle .inner .column dl dd:nth-of-type(3) {
+        margin-bottom: 25px
+    }
+}
+
+#about #lineup {
+    padding-top: 120px
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup {
+        padding-top: 60px
+    }
+}
+
+#about #lineup h3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#about #lineup h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px auto 50px;
+    background: #000
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup h3:after {
+        margin: 20px auto 30px
+    }
+}
+
+#about #lineup ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup ul {
+        -webkit-box-lines: multiple;
+        -moz-box-lines: multiple;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+}
+
+#about #lineup ul li {
+    position: relative;
+    overflow: hidden;
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup ul li {
+        width: 50%
+    }
+}
+
+#about #lineup ul li.sleepdays {
+    background: #61c1cb
+}
+
+#about #lineup ul li.sleepdays .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-sleepdays.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#about #lineup ul li.keskin {
+    background: #7fccec
+}
+
+#about #lineup ul li.keskin .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-keskin.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#about #lineup ul li.barth {
+    background: #111
+}
+
+#about #lineup ul li.barth .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pic-thumb-barth.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#about #lineup ul li a {
+    position: relative;
+    display: block;
+    height: 380px;
+    color: #fff;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup ul li a {
+        height: 150px
+    }
+}
+
+#about #lineup ul li a h4 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -20px;
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 0.065em
+}
+
+@media only screen and (max-width: 768px) {
+    #about #lineup ul li a h4 {
+        margin-top: -12px;
+        font-size: 14px;
+        font-size: 1.4rem;
+        font-weight: 400
+    }
+}
+
+#about #lineup ul li:hover .bg {
+    opacity: 0.2;
+    transform: scale(1.08);
+    -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+#company {
+    padding-bottom: 160px
+}
+
+@media only screen and (max-width: 768px) {
+    #company {
+        padding-bottom: 80px
+    }
+}
+
+#company #hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url(../images/bg-company.jpg) no-repeat center center;
+    background-size: cover
+}
+
+@media only screen and (max-width: 768px) {
+    #company #hero {
+        height: 280px
+    }
+}
+
+#company #hero h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 194px;
+    margin: -97px 0 0 -60px;
+    background: url(../images/logo4.png) no-repeat;
+    background-size: 120px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #hero h2 {
+        width: 60px;
+        height: 97px;
+        background-size: 60px;
+        margin: -48px 0 0 -30px
+    }
+}
+
+#company #hero h2 span {
+    display: none
+}
+
+#company .box {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    padding-top: 130px
+}
+
+@media only screen and (max-width: 768px) {
+    #company .box {
+        display: block;
+        padding: 60px 8% 0
+    }
+}
+
+#company .box:first-of-type {
+    padding-top: 120px
+}
+
+#company .box .column {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 768px) {
+    #company .box .column {
+        display: block
+    }
+}
+
+#company .box .column .left {
+    width: 25%;
+    font-size: 18px;
+    font-size: 1.8rem;
+    letter-spacing: 0.075em
+}
+
+@media only screen and (max-width: 768px) {
+    #company .box .column .left {
+        width: auto;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+}
+
+#company .box .column .left h3 {
+    font-weight: 500
+}
+
+#company .box .column .left:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #000;
+    margin-top: 20px
+}
+
+#company .box .column .right {
+    width: 75%;
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+@media only screen and (max-width: 768px) {
+    #company .box .column .right {
+        width: auto;
+        font-size: 12px;
+        font-size: 1.2rem
+    }
+}
+
+#company #overview .right {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 768px) {
+    #company #overview .right {
+        display: block
+    }
+}
+
+#company #overview .right dl {
+    width: 50%
+}
+
+@media only screen and (max-width: 768px) {
+    #company #overview .right dl {
+        width: auto
+    }
+}
+
+#company #overview .right dl:nth-of-type(2) {
+    padding-left: 25px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #overview .right dl:nth-of-type(2) {
+        padding: 0
+    }
+}
+
+#company #overview .right dl dt {
+    padding-bottom: 8px;
+    font-weight: 700
+}
+
+#company #overview .right dl dd {
+    padding-bottom: 23px
+}
+
+#company #overview .right dl dd .jp {
+    padding-bottom: 5px
+}
+
+#company #overview .right dl dd .en {
+    font-size: 12px;
+    font-size: 1.2rem
+}
+
+#company #access .right {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.6
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right {
+        display: block
+    }
+}
+
+#company #access .right h4 {
+    padding-bottom: 10px
+}
+
+#company #access .right > div.tokyo {
+    width: 50%;
+    padding-right: 25px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right > div.tokyo {
+        width: auto;
+        margin-bottom: 60px;
+        padding: 0
+    }
+}
+
+#company #access .right > div.singapore {
+    width: 50%;
+    padding-left: 25px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right > div.singapore {
+        width: auto;
+        padding: 0
+    }
+}
+
+#company #access .right > div .map {
+    width: 100%;
+    max-width: 410px;
+    height: 260px;
+    margin-bottom: 30px;
+    background: #eee
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right > div .map {
+        width: 100%;
+        margin-bottom: 20px
+    }
+}
+
+#company #access .right > div .jp {
+    margin-bottom: 8px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right > div .jp {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#company #access .right > div .en {
+    font-size: 12px;
+    font-size: 1.2rem
+}
+
+@media only screen and (max-width: 768px) {
+    #company #access .right > div .en {
+        font-size: 10px;
+        font-size: 1.0rem
+    }
+}
+
+#company #recruit h4 {
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-size: 2.1rem;
+    font-weight: 100;
+    line-height: 1.8
+}
+
+@media only screen and (max-width: 768px) {
+    #company #recruit h4 {
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+
+    #company #recruit h4 br {
+        display: none
+    }
+}
+
+#company #recruit .btn a {
+    display: block;
+    width: 160px;
+    padding: 12px 0;
+    border: 2px solid #000;
+    text-align: center;
+    color: #000;
+    background: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out
+}
+
+#company #recruit .btn a:hover {
+    color: #fff;
+    background: #000;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out
+}
+
+#company #contact .right .wpcf7-form .column {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 768px) {
+    #company #contact .right .wpcf7-form .column {
+        display: block
+    }
+}
+
+#company #contact .right .wpcf7-form .column dl {
+    width: 50%
+}
+
+#company #contact .right .wpcf7-form .column dl:first-of-type {
+    padding-right: 25px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #contact .right .wpcf7-form .column dl:first-of-type {
+        padding-right: 0
+    }
+}
+
+#company #contact .right .wpcf7-form .column dl:nth-of-type(2) {
+    padding-left: 25px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #contact .right .wpcf7-form .column dl:nth-of-type(2) {
+        padding-left: 0
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #company #contact .right .wpcf7-form .column dl {
+        width: auto
+    }
+}
+
+#company #contact .right .wpcf7-form .column dl dt {
+    font-size: 13px;
+    font-size: 1.3rem;
+    margin-bottom: 8px
+}
+
+@media only screen and (max-width: 768px) {
+    #company #contact .right .wpcf7-form .column dl dt {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#company #contact .right .wpcf7-form .column dl dd {
+    margin-bottom: 28px
+}
+
+#company #contact .right .wpcf7-form .column dl dd input {
+    width: 100%;
+    padding: 10px;
+    background: #eee;
+    border: none;
+    font-size: 14px;
+    font-size: 1.4rem;
+    border-radius: 0
+}
+
+#company #contact .right .wpcf7-form .column dl dd input:focus {
+    outline: none
+}
+
+#company #contact .right .wpcf7-form .column dl dd input.wpcf7-submit {
+    margin-top: 40px;
+    display: block;
+    background: #000;
+    font-family: "Roboto";
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #fff;
+    cursor: pointer;
+    -webkit-appearance: none
+}
+
+#company #contact .right .wpcf7-form .column dl dd textarea {
+    width: 100%;
+    height: 230px;
+    padding: 12px;
+    background: #eee;
+    border: none;
+    font-size: 14px;
+    font-size: 1.4rem;
+    border-radius: 0
+}
+
+#company #contact .right .wpcf7-form .column dl dd textarea:focus {
+    outline: none
+}
+
+#sleepdays #video {
+    overflow: hidden
+}
+
+#sleepdays #video .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-sleepdays-sp.jpg) no-repeat center center;
+    background-size: cover;
+    display: none
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #video .bg {
+        display: block
+    }
+}
+
+#sleepdays #video video {
+    width: 100%;
+    min-width: 904px;
+    height: auto
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #video video {
+        display: none
+    }
+}
+
+#sleepdays #video h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 321px;
+    height: 84px;
+    margin: -42px 0 0 -160px;
+    background: url(../images/logo-sleepdays.png) no-repeat;
+    background-size: 321px
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #video h1 {
+        width: 160px;
+        height: 42px;
+        margin: -21px 0 0 -80px;
+        background-size: 160px
+    }
+}
+
+#sleepdays #methodology {
+    text-align: center
+}
+
+#sleepdays #methodology .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-sleepdays.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.12
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #methodology .bg {
+        background-attachment: inherit
+    }
+}
+
+#sleepdays #methodology h3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #methodology h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#sleepdays #methodology h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px auto 25px;
+    background: #fff
+}
+
+#sleepdays #methodology p {
+    margin-bottom: 50px;
+    letter-spacing: 0.1em
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #methodology p {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #sleepdays #methodology img {
+        max-width: 100%;
+        height: auto
+    }
+}
+
+#sleepdays #link .text a {
+    position: relative;
+    color: #61c1cb
+}
+
+#sleepdays #link .text a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61c1cb;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15 ease-out
+}
+
+#sleepdays #link .text a:hover:after {
+    width: 96%;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15s ease-out
+}
+
+#keskin #video {
+    overflow: hidden
+}
+
+#keskin #video .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-keskin-sp.jpg) no-repeat center center;
+    background-size: cover;
+    display: none
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #video .bg {
+        display: block
+    }
+}
+
+#keskin #video video {
+    width: 100%;
+    min-width: 904px;
+    height: auto
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #video video {
+        display: none
+    }
+}
+
+#keskin #video h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 246px;
+    height: 115px;
+    margin: -57px 0 0 -123px;
+    background: url(../images/logo-keskin.png) no-repeat;
+    background-size: 246px
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #video h1 {
+        width: 123px;
+        height: 58px;
+        margin: -29px 0 0 -62px;
+        background-size: 123px
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology {
+        text-align: center
+    }
+}
+
+#keskin #methodology .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-keskin.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.12
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .bg {
+        background-attachment: inherit
+    }
+}
+
+#keskin #methodology .inner {
+    display: table;
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner {
+        display: block
+    }
+}
+
+#keskin #methodology .inner .left {
+    display: table-cell;
+    vertical-align: middle
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .left {
+        display: block
+    }
+}
+
+#keskin #methodology .inner .left h3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .left h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#keskin #methodology .inner .left h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px 0 25px;
+    background: #fff
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .left h3:after {
+        margin: 20px auto 25px
+    }
+}
+
+#keskin #methodology .inner .left p {
+    margin-bottom: 50px;
+    letter-spacing: 0.1em
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .left p {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+#keskin #methodology .inner .right {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .right {
+        display: block;
+        text-align: center
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #keskin #methodology .inner .right img {
+        position: relative;
+        right: -15px;
+        max-width: 80%;
+        height: auto
+    }
+}
+
+#keskin #link .text a {
+    position: relative;
+    color: #7fccec
+}
+
+#keskin #link .text a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #7fccec;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15s ease-out
+}
+
+#keskin #link .text a:hover:after {
+    width: 96%;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15s ease-out
+}
+
+#barth #video {
+    overflow: hidden
+}
+
+#barth #video .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-barth-sp.jpg) no-repeat center center;
+    background-size: cover;
+    display: none
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #video .bg {
+        display: block
+    }
+}
+
+#barth #video video {
+    width: 100%;
+    min-width: 904px;
+    height: auto
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #video video {
+        display: none
+    }
+}
+
+#barth #video h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 280px;
+    height: 84px;
+    margin: -42px 0 0 -140px;
+    background: url(../images/logo-barth.png) no-repeat;
+    background-size: 280px
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #video h1 {
+        width: 140px;
+        height: 42px;
+        margin: -21px 0 0 -70px;
+        background-size: 140px
+    }
+}
+
+#barth #methodology {
+    text-align: center
+}
+
+#barth #methodology .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-barth.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.12
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #methodology .bg {
+        background-attachment: inherit
+    }
+}
+
+#barth #methodology h3 {
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.08em
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #methodology h3 {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+#barth #methodology h3:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    margin: 20px auto 25px;
+    background: #fff
+}
+
+#barth #methodology p {
+    margin-bottom: 50px;
+    letter-spacing: 0.1em
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #methodology p {
+        font-size: 11px;
+        font-size: 1.1rem
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #barth #methodology img {
+        max-width: 100%;
+        height: auto
+    }
+}
+
+#barth #link .text a {
+    position: relative;
+    color: #ccc
+}
+
+#barth #link .text a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ccc;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15s ease-out
+}
+
+#barth #link .text a:hover:after {
+    width: 96%;
+    -webkit-transition: width 0.15s ease-out;
+    transition: width 0.15s ease-out
+}
+
+#privacy {
+    padding: 140px 0
+}
+
+@media only screen and (max-width: 768px) {
+    #privacy {
+        padding: 120px 8%
+    }
+}
+
+#privacy h2 {
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #privacy h2 {
+        font-size: 21px;
+        font-size: 2.1rem
+    }
+}
+
+#privacy .contents {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    line-height: 1.8
+}
+
+#privacy .contents p {
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+#privacy .contents section {
+    padding-top: 30px
+}
+
+#privacy .contents section h4 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-size: 1.4rem
+}
+
+#privacy .contents section ul {
+    font-size: 13px;
+    font-size: 1.3rem;
+    list-style: none
+}
+
+#privacy .contents section ul li {
+    margin-left: 1em;
+    text-indent: -1em
+}
+
+.effect-fadein-up {
+    opacity: 0;
+    transform: translate(0px, 50px)
+}
+
+.active .effect-fadein-up {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: opacity 1s linear, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.effect-fadein {
+    opacity: 0
+}
+
+.active .effect-fadein {
+    opacity: 1;
+    transition: opacity 1s linear, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.active .effect-delay-0 {
+    transition-delay: 0s
+}
+
+.active .effect-delay-100 {
+    transition-delay: 0.1s
+}
+
+.active .effect-delay-200 {
+    transition-delay: 0.2s
+}
+
+.active .effect-delay-300 {
+    transition-delay: 0.3s
+}
+
+.active .effect-delay-400 {
+    transition-delay: 0.4s
+}
+
+.active .effect-delay-500 {
+    transition-delay: 0.5s
+}
+
+.active .effect-delay-600 {
+    transition-delay: 0.6s
+}
+
+.active .effect-delay-700 {
+    transition-delay: 0.7s
+}
+
+.active .effect-delay-800 {
+    transition-delay: 0.8s
+}
+
+.active .effect-delay-900 {
+    transition-delay: 0.9s
+}
+
+.active .effect-delay-1000 {
+    transition-delay: 1s
+}
+
+.active .effect-delay-1100 {
+    transition-delay: 1.1s
+}
+
+.active .effect-delay-1200 {
+    transition-delay: 1.2s
+}
+
+.active .effect-delay-1300 {
+    transition-delay: 1.3s
+}
+
+.active .effect-delay-1400 {
+    transition-delay: 1.4s
+}
+
+.active .effect-delay-1500 {
+    transition-delay: 1.5s
+}
+
+.active .effect-delay-1600 {
+    transition-delay: 1.6s
+}
+
+.active .effect-delay-1700 {
+    transition-delay: 1.7s
+}
+
+.active .effect-delay-1800 {
+    transition-delay: 1.8s
+}
+
+.active .effect-delay-1900 {
+    transition-delay: 1.9s
+}
+
+.active .effect-delay-2000 {
+    transition-delay: 2s
+}
+
+.active .effect-delay-2100 {
+    transition-delay: 2.1s
+}
+
+.active .effect-delay-2200 {
+    transition-delay: 2.2s
+}
+
+.active .effect-delay-2300 {
+    transition-delay: 2.3s
+}
+
+.active .effect-delay-2400 {
+    transition-delay: 2.4s
+}
+
+.active .effect-delay-2500 {
+    transition-delay: 2.5s
+}
+
+.active .effect-delay-2600 {
+    transition-delay: 2.6s
+}
+
+.active .effect-delay-2700 {
+    transition-delay: 2.7s
+}
+
+.active .effect-delay-2800 {
+    transition-delay: 2.8s
+}
+
+.active .effect-delay-2900 {
+    transition-delay: 2.9s
+}
+
+.active .effect-delay-3000 {
+    transition-delay: 3s
+}
+
+.active .effect-delay-3100 {
+    transition-delay: 3.1s
+}
+
+.active .effect-delay-3200 {
+    transition-delay: 3.2s
+}
+
+.active .effect-delay-3300 {
+    transition-delay: 3.3s
+}
+
+.active .effect-delay-3400 {
+    transition-delay: 3.4s
+}
+
+.active .effect-delay-3500 {
+    transition-delay: 3.5s
+}
+
+.active .effect-delay-3600 {
+    transition-delay: 3.6s
+}
+
+.active .effect-delay-3700 {
+    transition-delay: 3.7s
+}
+
+.active .effect-delay-3800 {
+    transition-delay: 3.8s
+}
+
+.active .effect-delay-3900 {
+    transition-delay: 3.9s
+}
+
+.active .effect-delay-4000 {
+    transition-delay: 4s
+}
+
+.active .effect-delay-4100 {
+    transition-delay: 4.1s
+}
+
+.active .effect-delay-4200 {
+    transition-delay: 4.2s
+}
+
+.active .effect-delay-4300 {
+    transition-delay: 4.3s
+}
+
+.active .effect-delay-4400 {
+    transition-delay: 4.4s
+}
+
+.active .effect-delay-4500 {
+    transition-delay: 4.5s
+}
+
+.active .effect-delay-4600 {
+    transition-delay: 4.6s
+}
+
+.active .effect-delay-4700 {
+    transition-delay: 4.7s
+}
+
+.active .effect-delay-4800 {
+    transition-delay: 4.8s
+}
+
+.active .effect-delay-4900 {
+    transition-delay: 4.9s
+}
+
+.active .effect-delay-5000 {
+    transition-delay: 5s
+}
+
+.fade-in-up {
+    opacity: 0;
+    -webkit-animation: fade-in-up 0.8s ease-out forwards;
+    -moz-animation: fade-in-up 0.8s ease-out forwards;
+    animation: fade-in-up 0.8s ease-out forwards
+}
+
+.fade-in-down {
+    opacity: 0;
+    -webkit-animation: fade-in-down 0.8s ease-out forwards;
+    -moz-animation: fade-in-down 0.8s ease-out forwards;
+    animation: fade-in-down 0.8s ease-out forwards
+}
+
+.bg-zoom {
+    -webkit-animation: bg-zoom 0.8s ease-out forwards;
+    -moz-animation: bg-zoom 0.8s ease-out forwards;
+    animation: bg-zoom 0.8s ease-out forwards
+}
+
+.menu-scale {
+    -webkit-animation: menu-scale 0.3s ease-out forwards;
+    -moz-animation: menu-scale 0.3s ease-out forwards;
+    animation: menu-scale 0.3s ease-out forwards
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 50px)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px)
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -50px)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px)
+    }
+}
+
+@keyframes . bg-zoom {
+    0% {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(1.2)
+    }
+}
+
+@keyframes menu-scale {
+    0% {
+        transform: scale(1.05)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+#notice {
+    padding: 140px 0
+}
+
+@media only screen and (max-width: 768px) {
+    #notice {
+        padding: 120px 8%
+    }
+}
+
+#notice h2 {
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+    #notice h2 {
+        font-size: 21px;
+        font-size: 2.1rem
+    }
+}
+
+#notice .contents {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    line-height: 1.8
+}
+
+#notice .contents p {
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+#notice .contents section {
+    padding-top: 30px
+}
+
+#notice .contents section h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-size: 1.6rem
+}
+
+#notice .contents section ul {
+    font-size: 13px;
+    font-size: 1.3rem;
+    list-style: none
+}
+
+#notice .contents section ul li {
+    margin-left: 1em;
+    text-indent: -1em
+}

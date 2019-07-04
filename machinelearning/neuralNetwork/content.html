@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">神经网络</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前从单个感知器介绍到多层感知器，也介绍了反向传播算法，总的来说这些就是神经网络的基础内容，所以现在就来总结一下神经网络的知识点。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据前面的介绍我们已经知道，神经网络就是由神经元构成的网络，神经元实际上和广义线性模型是非常相似的，举个例子，逻辑回归就是一种广义线性模型，它和线性回归的区别就在于对输入变量的加权组合加上了一个link function（sigmoid函数），使得输入变量的输出不再是线性的，而对于一个神经元，如果我们采用sigmoid函数作为激活函数，实质上他就是一个逻辑回归模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据上面的结论，进一步的，可以说，对于使用sigmoid函数作为激活函数的神经网络，实质上就是由一个个逻辑回归模型通过串联和并联构成的一个网络结构。其中，串联的神经元之间相互没有影响，它们的输出会作为输入传递到下一层神经元，也就是和他们并联的神经元，这种结构，其实整个模型的输出表达式中也可以看出。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我想重点分析，为什么神经网络可以以任意精度拟合任意复杂度的函数，或者说，为什么逻辑回归通过网络结构连接后，就能够实现非线性拟合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">回想一下，逻辑回归本身也只是一种线性回归模型，它的决策边界是线性的。这样说的原因是，重新考虑一下，如果我们选择阈值为0.5，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y = \frac{1}{1+e^{-z}} = 0.5$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$e^{-z} = 1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$-z = wx + \theta = 0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，到头来我们还是通过变量x和权重w的线性组合去判断分类结果，而sigmoid函数仅仅是改变了这个结果的输出，使它限制在[0，1]的范围内，避免了离群点（特征过于明显的数据）的影响。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因此，当我们的神经网络只有一层神经元，事实上是没有拟合非线性函数的，因为本质上他就是一堆线性模型的线性组合，到头来还是线性的。可是如果加多一层神经元又会有什么变化呢，这里看一下之前推导的两个神经元组成隐藏层、一个神经元构成输出层的神经网络的输出的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31} F_1(x_1, x_2) + w_{32} F_2(x_1, x_2) +\theta _3}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31}  \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}} + w_{32} \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}} +\theta _3}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果我们再按照之前的思路，把神经网络看成一个逻辑回归模型，假定阈值为0.5：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$e^{w_{31}  \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}} + w_{32} \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}} +\theta _3} = 1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{31}  \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}} + w_{32} \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}} +\theta _3 = 0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里权重与输入变量之间已经不再是单纯的线性关系了，因而得到的决策边界也不再是一条直线了。进一步的，基于sigmoid函数形状和以上的分析结果，我会分析为什么神经网络可以拟合任意函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以简化一下，在上述的神经网络的输出层不添加激活函数，直接把上一层的输出的线性组合作为模型的输出，也就是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ output = w_{31}  \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}} + w_{32} \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}} +\theta _3$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从这里可以看出，模型的输出就变成sigmoid函数的线性组合。再回想一下，我们在进行密度估计的时候曾经用过直方图做近似：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">把sigmoid函数改成单位阶跃函数，把单位阶跃函数看成直方图的一个个矩阵，再把密度函数看成我们要拟合的任意复杂度的函数，就能得出结论，只要隐藏层的神经元足够多，那么用于拟合的矩阵就足够多，拟合的精度就足够细，到最后，即使我们只使用了一层隐藏层，也可以充分地拟合一个十分复杂的函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺便再补充一下，关于神经网络中的sigmoid函数，它的形状和位置是十分灵活的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ sigmoid = \frac{1}{1+e^{z}} = \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，sigmoid函数中的z是x和w的线性组合，这就意味着，即使是对于只包含一个自变量x，sigmoid函数也可以在x轴上自由移动，形状随着权重w变得平缓或者陡峭，这种高度的灵活性就使得神经网络仅仅使用少数的隐藏层和神经元也可以高效地拟合复杂的函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过以上的分析，基本上就可以明白神经网络比线性回归、逻辑回归更强大的原因，在于它通过线性模型、非线性函数的嵌套组合构成一个非线性的复杂网络结构，从而通过学习，调整参数，实现对任意复杂度的函数的拟合。归根到底，我们谈及人工智能，通过计算机去实现各式各样的任务，都是在拟合函数，再通过得到的函数进一步得出结果。</div>
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">EM算法</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">EM算法（Expectation-Maximization）用于存在缺失数据的ML或者MAP参数估计，比如说，现在我们进行最大似然估计，寻找θ使得p(y_obs|θ)最大，但是有部分数据没有被观察到y_mis,EM算法的思路就是：首先，定义条件期望：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Q(θ|θ^{(k)})=E(logp(y_{obs},y_{mis}|θ)|y_{obs},θ^{(θ)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这一步是E-step，接下来是M-step，更新θ：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$θ^{(k+1)}=argmaxQ(θ|θ^{(k)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">不断重复这两个步骤，直到收敛。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说实话，我是看不懂上面的算法，所以还是从最简单的例子开始慢慢理解它。假设现在有硬币AB，要估计他们抛到正面的概率，试验过程可以是ab轮流抛一定次数，然后根据试验结果进行极大似然估计，这个应用以前的方法就能做到，顺带一提，因为AB独立，其实怎么抛都没关系。之所以要举例有两枚硬币，主要就是为了考虑这样一种情况，假如现在我们抛十次，只有五次观察到，后面五次不确定抛的是A还是B，那么我们怎么办，难道之前用观察到的前五次进行计算吗，EM算法就给出了解决办法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">主要的思路就是，随机给出AB抛到正面的概率，比如A是0.2B是0.4，然后再分析缺失数据，计算在这个前提下AB分别抛到每次数据缺失的试验（比如三正二反）的概率，根据这个概率再假设这次试验就是B（或者A，这个情况是B）来抛的，逐个猜测每个缺失的数据到底是A还是B。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">猜测完了，我们就得到完整的数据集了，就可以利用老方法计算参数了，最后算出了参数，还没完，因为这是根据我们一开始的假设求出来的参数，我们需要把这个求出来的参数作为新的假设，重复上述步骤，再猜测每次缺失的试验是A还是B做的，然后再用极大似然求参数，不断重复，直到最后两次估计的参数之间的差异足够少（也就是收敛），就认为这个参数就是我们要求的结果了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在有一个问题，我们随便找了一个概率作为AB的估计概率，那么它最后收敛的一定就是真实值吗，答案是不一定的，具体来说，迭代过程会使得参数不断接近真实值，但是不一定最后的结果就是真实值，有可能是在达到全局最优之前就碰上了局部最优无法逃脱，所以初始点很重要。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有一个问题，在原算法中我们求的是条件期望，为什么？这涉及到对我们上面介绍的例子的改进。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的例子中，在估计缺失的数据到底是A还是B抛的时候，我们应用了极大似然估计，根据结果分析出A抛出试验数据的概率和B抛出试验数据的概率，然后选择概率较大的那个认为本轮试验就是它做的。但是，我们可以进一步利用这个两个概率，认为本轮试验有a%的可能是A做的，有b%的可能是B做的，这样做的意义是什么？首先，就是可以充分利用数据，因为上面的做法如果我们选择了A就抛弃了B的数据，这里我们则把全部数据都利用起来，第二，我们因为利用全部数据，所以不需要比较A还是B更接近试验数据，简化了过程。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体来说，就是根据极大似然估计计算每一次试验AB抛出试验结果的概率a%和b%（实际上就是1-a%），然后，我们也会有AB抛正面的概率，根据这些概率，就能得到每次试验，抛出来的正面和反面，来自AB的概率，下图会更容易理解：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/em.jpeg"><img src="image/em.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">图中的数据和我描述的有点不一样，但本质都是一样的，它列出抛中的正面和反面根据概率是来自AB的次数，所以可以看到，每一次试验抛十次，五次正面五次反面，根据概率其中2.2次正面来自A，2.8次正面来自B，2.2次反面来自A，2.8次反面来自B，加起来就是总数10，对每一次试验都算出这个值，最后计算期望，通过期望反映A抛中正面的概率是多少，B抛中正面的概率是多少。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再总结一下，改进的方法和原来的方法有什么不一样。最主要的，就是简化版本，我们首先随机找一个参数初始值，上面这个例子就是AB抛到正面的概率，然后现在试验数据缺少了到底是A还是B抛的，所以就根据这个概率，和试验的实际情况，猜测这次试验是谁抛的，说实话，比如抛十次八次正面，然后猜测A抛到正面的概率比B高，直接就可以认为是A抛的都不用做什么计算了，可能其他情况需要吧，但是这里猜测了，就可以填充数据，最后就正常的用极大似然估计估计参数，用新参数替换初始值，继续重复直到收敛。这个方法的问题就是我们猜测了是A抛之后，就不要B的数据了，所以就有人想到，还不如AB的数据都要，换成用概率或者说比例表示，每次试验，正面反面分别有多少来自于AB，每次试验都这样算，最后就得到一个总的结果，算期望，其实就是做一个归一化处理，把结果归一化到[0,1]区间内，这样做，因为充分利用了所有数据，所以就比一开始的简化版本，在每一次迭代得到的参数估计更接近真实参数值，不得不说，想到这种方法的人真的厉害。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是EM算法的思路分析，基本上已经讲的挺透彻了，虽然这个算法用于数据缺失的情况，但是感觉还是有一定的限制，比如这里就主要用在极大似然估计，而且数据还不是一组数据全部信息都缺失了，只是缺失了其中一个，主要根据这组数据的其他信息补全这个缺失的信息，所以还是挺科学的，但是如果整组数据都没了，能不能通过其他组数据补充，暂时我不知道，但是说实话，既然整组数据都没了，应该也没必要想办法估计出来了吧，本身就是估计就不准确了，即使估计出来，最后也会影响模型的结果吧。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                [1]https://www.jianshu.com/p/1121509ac1dc<br>
+                [2]https://blog.csdn.net/v_july_v/article/details/81708386</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

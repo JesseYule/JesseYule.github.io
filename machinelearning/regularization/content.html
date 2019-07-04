@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">正则化与特征缩减技术</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在机器学习的概述中就提到过，我们可以划分训练集、验证集、测试集避免在训练过程中的过拟合影响了我们对模型的评价，这种策略的目的是避免了训练对测试集的影响，但是并没有真正解决过拟合这个问题，所以其实就这样做，仍然有可能对验证集过拟合，然后在测试集测试的效果不好，那这时候，我们应该怎么改进模型，难道重新训练吗，可是重新训练我们又再怎么确定训练多少次数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为了解决过拟合这个问题，必须从根本上进行分析，为什么会出现过拟合，回到模型的层面，什么叫训练模型，其实就是一次次的迭代，让损失函数不断下降，最简单的例子，一个近似线性的数据集，我们最初训练出来的模型是一条直线，慢慢的它会有点弯曲，因为它认为弯曲一点可以更好地拟合数据，这时候是正确的，可是如果我们不停止模型，继续训练，它的形状就可能越来越奇怪，越来越复杂，变成一大团，甚至说变成一条能够穿过所有点的曲线，这样损失函数当然最少了，可是并没有意义，因为它的泛化能力一定是很差的，从这个过程看来，过拟合，其实也可以认为是模型企图拟合所有数据而导致结构变得过于复杂。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">既然过拟合可以看成模型过于复杂，那么我们是不是可以追求一种平衡，既能够使得模型能更好地拟合数据，也使得模型的结构不会过于复杂，这就是正则化做的事情了，具体来说，就是在原来的损失函数上引入正则项，我们最小化损失函数，就必须同时考虑最小化损失，和最小化模型复杂度了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体怎么定义损失项，这就涉及到怎么定义模型复杂度。模型复杂度可以理解为模型假设空间的大小，高维模型、多节点的树模型，这些模型可能的函数值更多，假设空间更大，模型更复杂。或者说，想象一下，一个很复杂的函数，它的图像也是很复杂的，主要表现在变化幅度很大，这样，当我们把模型限制在一个相同的区间内，复杂模型的假设空间（或者说模型覆盖的空间）就会比简单模型更大。因此，从这个角度来说，或许用模型的变化幅度来衡量模型的复杂度是一个可行的办法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">模型的变化幅度，实际上就是模型各个参数的权重，权重越大，自然参数的微小变化都会导致模型结果的巨大改变，从这个角度来看，一个复杂模型对新数据预测过程中，对误差的包容度是更小的，或者说一个小小的误差在复杂模型下也会被明显的放大，这也正是过拟合的模型泛化能力差的原因。因此，用参数权重来衡量模型复杂度是可行的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说了那么多，其实就是希望把模型复杂度和模型的权重联系上，事实上正则化往往有L1正则化（Lasso）和L2正则化（岭回归）。所谓L1L2其实指的是范数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Lasso是指，将系数的L1范数（各个系数的绝对值之和），作为惩罚项加到损失函数上面，Lasso的基本思想是在回归系数的绝对值小于一个常数的约束下，是残差平方和最小化，从而能够产生某些严格等于0的回归系数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">岭回归指将系数的L2范数（各个系数的平方和）作为惩罚项添加到损失函数中，由于L2惩罚项中的系数是二次方的，导致了L2和L1有一些区别，比如L2正则化会让系数的取值变得平均，对于关联特征，这意味着他们能够获得更接近的系数。举个例子，比如Y=X1+X2，X1和X2具有很强的关联，那么用L1正则化，不论学习到的模型是Y=X1+X2还是Y=2X1，都是2，可是对于L2正则化，第一个是2，第二个是4，这就反映了L2和L1的不同取向。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单介绍一下他们的区别，首先应为绝对值的缘故，L2正则化计算是比L1正则化简单很多的，而L1在非稀疏向量的计算效率也很低；L1最重要的一个特点是会输出稀疏，会把不重要的特征直接置0，而L2则不会；L2有唯一解，L1不是。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后想讲一下正则化与特征选择的关系，一般来说，我们是会偏向于用尽可能少的特征构建尽可能好的模型，主要是避免特征之间关联性较大，过多特征造成过拟合等问题，所以在特征工程我们会想办法选择最好的一个特征子集。而这里的正则化，目的是避免模型过于复杂，减少部分影响不明显的参数的权重，其实和剔除无关特征是一个道理，特征对应的参数趋于0，和特征被去除是一样的，所以，L1L2正则化在特征缩减技术中也有介绍，说到底还是同一个东西，同一个目的，只是换个名词，这种现象在机器学习中太常见了，主要是这些模型其实在不同领域都会被应用到，自然不同领域就有不同叫法了。</div>
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

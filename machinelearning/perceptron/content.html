@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">感知器</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在正式介绍神经网络之前，首先来了解一下神经网络的前身，MCP模型（McCulloch-Pitts模型），简单来说他就是一个神经元的建模。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/575a6855e1200.png"><img src="image/575a6855e1200.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图是生物意义上的神经元，也是我们要建模去模拟的神经元，根据生物的定义，我们建立的MCP模型主要简化成：接受多个输入，得到两种输出（1或者0），表示神经元的激活和抑制状态。用更数学的语言表达，就是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$input = w_1 x_1 + w_2 x_2 + ... + w_n x_n$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$output = f(input)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">f是激活函数，这里采用单位阶跃函数（也可以用分段线性函数、sigmoid函数等等），简单来说就是input满足一定条件输出就会为1，否则为0。以上就是基本型MCP模型，重复一遍整个模型的工作过程：当前神经元将同一个神经网络的若干个其他神经元的输出作为输入，然后对这些输入进行加权求和，如果结果小于阈值，则当前神经元的状态为抑制，输出为0，否则状态为兴奋，输出为1。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果对基本型MCP模型进行适当的修改，比如把输出改为任意实数等等，就能得到增强型MCP模型，简单来说就是更一般的模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">介绍完MCP模型，就可以进一步介绍感知器（perceptron）。感知器就是单个MCP模型，也可以说是只包含一个神经元的神经网络，更多应用于二分类问题。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">感知器的具体实现过程如下：首先初始化权值向量，对每个向量赋初始值，然后把轮流每一个训练数据代进感知器模型得到输出，如果分类正确就训练下一个数据，分类出错的时候就对权值向量进行更新：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w' = w + \eta (Y - y)x_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里注重讲解一下这个参数（权值向量）的迭代更新原理。因为我们模型的输出只有0和1，如果模型分类错误就是说把1分类为0或者相反，假如说模型现在把0分类为1，那么为了修改模型，我们其实就是希望减少wx（输入与权值向量的向量积），使他小于阈值，就能被正确分类了，可是因为x是固定的，所以其实我们能减小的只有w，看回我们的迭代公式，Y=0（数据的真实标签），y=1（模型的预测标签），如果我们按照迭代公式求得新的w再计算wx，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w'x_i= (w + \eta (Y - y)x_i)x_i = wx_i - \eta x_i ^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，因为x是平方，所以新的wx一定比原来更小，符合我们的预期，至于小多少就由学习率来决定。同样的，如果我们分析另一种分类错误的情况也能得到同样的结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我打算讨论一下它和逻辑回归的关系，因为这两种都是分类算法，算法上具有不少接近的地方，比如两者都是接受输入，把输入乘上权重，再代进一个函数里，从而决定所属分类。主要的区别是他们代进的函数不同，对逻辑回归来说代进的函数是logistic函数（sigmoid函数），输出是0到1之间的实数，然后再根据我们规定的阈值去进行分类，而使用单位跃阶函数的感知器，则是直接根据wx是大于0还是小于0得出输出为0或者1。所以，从另一个角度来说，逻辑回归就是用logistic函数作为激活函数的感知器。除此之外，我们也能看出对于分类问题，不像回归问题那样可以使用MSE作为比较通用的损失函数，根据具体的情况会有不同的选择。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">介绍完单个感知器，就轮到多个感知器的组合了，首先是单层感知器，主要是因为感知器无法解决多分类问题而出现的，</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，单层感知器就是多个感知器并列在一起构成一层，重点为什么是多个感知器就能解决多分类问题，首先我们来回顾一下，单个感知器就能得到一个分类边界（超平面），从而实现二分类，如果两个感知器就能得到两个超平面，以此类推，m个感知器能获得最少不少于m+1个，最多不大于2^m个彼此不重叠的被超平面划分开的凸区域</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/Screen Shot 2019-07-01 at 6.49.22 pm.png"><img src="image/Screen%20Shot%202019-07-01%20at%206.49.22%20pm.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从上图就可以看出，利用三个感知器得到三条分类边界，划分出七个凸区域，实现了三分类。实际上，三个感知器分别是针对三个类别的，对每一个感知器，主要是划分是否属于某个类别，所以三分类就需要三个感知器，然后，划分出的七个区域，除了我们目标的三个分类区域外，还包括了不属于类别12的区域、不属于类别23的区域、不属于类别13的区域和不属于类别123的区域，因此一共有7个区域。用这个例子想说明的除了多个感知器能够解决多分类问题之外，还想说明其实我们划分了那么多个区域不等于就是每个区域都代表着一个分类。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后还想说明一个问题，我们上面的例子都是（多）线性可分问题，如果两种类别的数据混杂在一起，即使是单层感知器也无法解决这种分类问题，但是现实中很多问题都涉及到非线性可分性，这就极大地限制了单层感知器的应用范围。</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

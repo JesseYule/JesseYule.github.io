@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../datascience/datascience.html">Data Science</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">非参数回归之loess</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，两个变量之间的关系是十分微妙的，仅仅采用简单的直线、曲线参数方程去描述是不够的，所以这时候就需要非参数回归。还记得非参数和参数方法的区别，就是在分析之前有没有对预测做一些限制，比如认为特征和变量之间具有线性关系，可以通过线性方程拟合，我们只需要求出方程的系数就是参数方法，如果直接从数据出发进行分析就是非参数方法。正正因为没有限制，所以非参数方法拟合得到的曲线可以更好地描述变量之间的关系，不管是多么复杂的曲线关系都能拟合得到。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种介绍的非参数方法是loess（locally weighted regression），它主要是把样本划分成一个个小区间，对区间中的样本进行多项式拟合，不断重复这个过程得到在不同区间的加权回归曲线，最后再把这些回归曲线的中心连在一起合成完整的回归曲线，具体过程如下<br>
+                · 决定拟合点的数量和位置<br>
+                · 以拟合点为中心，确定k个最接近的点<br>
+                · 通过权重函数计算这k个点的权重<br>
+                · 通过加权线性回归进行多项式拟合（一次或者二次）<br>
+                · 对所有拟合点重复以上步骤</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于权重的确定，这里需要说明一下，首先它需要确定区间内的点到拟合的点的距离，这个距离指x轴的距离，我们还要找到区间内最大的距离，然后对其他距离做归一化处理：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i(x_0) = W(\frac{|x_0 - x_i|}{\Delta (x_0)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后这个权重实际上，是离拟合点的距离越近就越小，所以我们就需要做一个转化，比如用tricube weight function：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$W(u) = (1 - u^3)^3$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">指数可以选择二次（B函数）或三次（W函数），三次方对周围权值的降速更快，平滑效果更好，切适用于大多数分布，但增加了残差的方差，一般来说，第一次迭代会更多实用W函数，第二次迭代会选择B函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于对区间内的散点进行加权线性回归拟合直线，之所以我们这里采取加权线性回归而不是普通的线性回归，是因为考虑到对拟合点，它附近的点的取值对拟合线的影响应该更大，远一点的点的影响更小，所以我们要定义损失函数的时候，应该优先降低附近的点与拟合直线的误差，这也就是我们对普通的最小二乘法要加上权重的原因：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$J(a,b) = \frac{1}{N} \sum_{i=1}^N w_i(y_i -ax_i -b)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，损失函数加上权重之后，我们在最小化损失函数时，就会更多地考虑权重大的点，希望他们更优，这样拟合出来的结果，自然就更加偏向权重大的点了，也就是说，距离拟合点更近距离的散点，对拟合直线的影响更大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是loess的基本思路。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
+                [1]https://blog.csdn.net/longgb123/article/details/79520982<br>
+                [2]https://blog.csdn.net/longgb123/article/details/79079434</div>
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
