@@ -1824,7 +1824,7 @@ body.menu-visible .color-black {
     height: 8px;
     margin-top: 20px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #fff;
     cursor: pointer;
     transition: transform .2s linear
 }
@@ -1848,7 +1848,7 @@ body.menu-visible .color-black {
 }
 
 .slider-nav.nav-black span {
-    background-color: #ffffff
+    background-color: #ffffff;
 }
 
 #movements {
