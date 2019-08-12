@@ -2,114 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/LinuxForMe/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/LinuxForMe/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/aboutThisBlog/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/aboutThisBlog/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/afterInstallLinux/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/afterInstallLinux/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/dataScienceStudyPlan/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/dataScienceStudyPlan/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/databaseIntro/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/databaseIntro/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/mavenIntro/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/mavenIntro/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/programmingStudyPlan/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/programmingStudyPlan/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/servlet/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/servlet/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/whyChooseMac/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/whyChooseMac/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main/analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/main/analytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main/gtm.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/main/gtm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/main/main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/menu/analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/menu/analytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/submenu/js/anime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/submenu/js/anime.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/analytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/css" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/jquery-migrate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/jquery-migrate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/jquery.form.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/jquery.form.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/style(1).css" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/style(1).css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/topic/top.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/topic/top.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/backPropagation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/backPropagation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/bayesian/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/bayesian/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/cnn/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/cnn/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/convolution/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/convolution/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/crossValidation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/crossValidation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/densityEstimation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/densityEstimation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/dimensionReduction/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/dimensionReduction/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/dl1.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/dl1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/em/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/em/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/featureEngineering/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/featureEngineering/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/glm/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/glm/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/gradientDescent/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/gradientDescent/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/introduction/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/introduction/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/kernelRegression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/kernelRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/knn/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/knn/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/lda/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/lda/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/linearEvaluate/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/linearEvaluate/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/linearRegression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/linearRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/loess/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/loess/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/logisticRegression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/logisticRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/ml1.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/ml1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/machinelearning/ml2.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/ml2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/ml3.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/ml3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/mlp/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/mlp/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/modelEvaluate/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/modelEvaluate/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/monteCarloMethod/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/monteCarloMethod/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/neuralNetwork/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/neuralNetwork/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/newtonMethod/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/newtonMethod/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/nnAdvantage/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/nnAdvantage/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/perceptron/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/perceptron/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/postiorior/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/postiorior/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/quantileRegression/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/quantileRegression/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/rbfnn/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/rbfnn/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/regressionSplines/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/regressionSplines/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/regularization/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/regularization/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/rnn/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/rnn/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/subsetSelection/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/subsetSelection/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/aboutFractal/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/aboutFractal/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/bootstrap/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/bootstrap/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/centralLimitTheorem/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/centralLimitTheorem/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/chebyshev/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/chebyshev/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/confidenceIntervals/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/confidenceIntervals/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/gammaAndBeta/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/gammaAndBeta/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/generatingFunction/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/generatingFunction/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/hypothesisTesting/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/hypothesisTesting/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/hypothesisTesting2/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/hypothesisTesting2/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/hypothesisTesting3/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/hypothesisTesting3/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/maxLikelihood/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/maxLikelihood/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/neymanPearsonLemma/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/neymanPearsonLemma/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/parameterEstimation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/parameterEstimation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/samplingDistribution/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/samplingDistribution/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/stats1/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/stats1/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/stats2/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/stats2/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/stats3/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/stats3/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/transformation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/transformation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/unbiasedestimation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/unbiasedestimation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturallanguage/bow/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/bow/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturallanguage/ngram/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/ngram/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturallanguage/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/XML/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/XML/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/arrayAndLinkedlist/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/arrayAndLinkedlist/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/bigO/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/bigO/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/binaryTree/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/binaryTree/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/hashTable/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/hashTable/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaEncapsulation/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaEncapsulation/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaException/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaException/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaExtends/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaExtends/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaIo/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaIo/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaList/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaList/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaMultithreading/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaMultithreading/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaPolymorphism/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaPolymorphism/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaReflection/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaReflection/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaSocket/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaSocket/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaStatic/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaStatic/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaStudyPlan/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaStudyPlan/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaWeb/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaWeb/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/oop/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/oop/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/pythonDecorator/episode19.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/pythonDecorator/episode19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/stackAndQueue/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/stackAndQueue/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/topic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/stats2.html" beforeDir="false" afterPath="$PROJECT_DIR$/math/stats2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programming/java2.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/java2.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -122,36 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/topic.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="120" selection-start-line="120" selection-end-line="120" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/naturallanguage/topic.html">
+        <entry file="file://$PROJECT_DIR$/programming/java2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="152" column="18" lean-forward="true" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="158">
+              <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -256,25 +126,25 @@
         <option value="$PROJECT_DIR$/machinelearning/quantileRegression/content.html" />
         <option value="$PROJECT_DIR$/machinelearning/dl1.html" />
         <option value="$PROJECT_DIR$/machinelearning/ml1.html" />
-        <option value="$PROJECT_DIR$/machinelearning/ml2.html" />
         <option value="$PROJECT_DIR$/machinelearning/ml3.html" />
         <option value="$PROJECT_DIR$/machinelearning/topic.html" />
         <option value="$PROJECT_DIR$/math/aboutFractal/content.html" />
         <option value="$PROJECT_DIR$/math/stats1.html" />
-        <option value="$PROJECT_DIR$/math/stats2.html" />
         <option value="$PROJECT_DIR$/naturallanguage/bow/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/ngram/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html" />
         <option value="$PROJECT_DIR$/programming/arrayAndLinkedlist/content.html" />
         <option value="$PROJECT_DIR$/programming/algorithm.html" />
         <option value="$PROJECT_DIR$/programming/java1.html" />
-        <option value="$PROJECT_DIR$/programming/java2.html" />
         <option value="$PROJECT_DIR$/programming/python1.html" />
         <option value="$PROJECT_DIR$/naturallanguage/topic.html" />
+        <option value="$PROJECT_DIR$/math/stats2.html" />
+        <option value="$PROJECT_DIR$/machinelearning/ml2.html" />
+        <option value="$PROJECT_DIR$/programming/java2.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
     <option name="y" value="42" />
     <option name="width" value="1440" />
@@ -289,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,18 +170,12 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="naturallanguage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="projects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -542,14 +407,15 @@
       <workItem from="1565605590615" duration="1233000" />
       <workItem from="1565608532124" duration="880000" />
       <workItem from="1565609595518" duration="1151000" />
+      <workItem from="1565612801225" duration="74000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="717464000" />
+    <option name="totallyTimeSpent" value="717538000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="42" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19943622" />
@@ -767,20 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/ml2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/ml3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="34" selection-start-line="34" selection-end-line="49" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/articles/articles.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -825,13 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/stats2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="42" column="55" lean-forward="true" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -898,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programming/java2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programming/python1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -925,7 +763,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/topic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="2760">
           <caret line="120" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -935,19 +773,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="1886">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/naturallanguage/topic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="152" column="18" lean-forward="true" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
+          <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math/stats2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/ml2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/ml3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="34" selection-start-line="34" selection-end-line="49" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programming/java2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
         </state>
       </provider>
     </entry>
