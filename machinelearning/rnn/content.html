@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../naturallanguage/topic.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">循环神经网络</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果说卷积神经网络是为了解决图像识别而提出的，那么循环神经网络（Recurrent Neural Network）就是为了解决自然语言处理而提出的，当然实际上这两种神经网络的用途很广，但是从自然语言处理的角度去看待循环神经网络可以更容易理解它的特性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自然语言处理（Natural Language Processing），简单来说就是让计算机理解人类的语言，从而解决相关的问题，比如现在有一句话"我上班迟到了，老板批评了__"，如果要填入最后一个词，我们很容易就能猜出是"我"，可是怎么让计算机也能解答同样的问题，这就是自然语言处理要研究的。一般来说，我们判断最后一个词是什么，是根据前面给出的句子来判断的，循环神经网络为了解决这类问题，就提出可以把整个句子看成一个离散时序序列，先对句子进行分词，然后按顺序输入到模型中，最后根据前面的输入判断应该得到的输出，为了满足让后续的输入在分析过程中能够"记住"前面的输入，循环神经网络在一般多层感知器的基础上，在隐层添加了虚神经元表示缓存空间，用于缓存上一时刻的隐层的输出。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的描述的就是最简单的一种循环神经网络，单向RNN，可以看出，实质上它和卷积神经网络是一样，都是为了解决某类问题，而在多层感知器的基础上添加了一些结构实现更多的功能，现在来详细看一下单向RNN的结构：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图左方是循环神经网络的结构，右方则是根据时序数据而展开的结构，实质上，虚神经元起到的作用就是在下一个时序数据输入时，能够同时把上一个隐层输出输入到当前的隐层，使得隐层能同时接收上一时刻隐层的输出以及当前的时序数据，同时进行分析，这样就使得RNN在某一时刻的输出不仅与该时刻的输入有关，还与该时刻之前所有时刻的输入有关，达到了记忆的目的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从公式的角度，也可以这样看，对某一个时刻，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(Vs_{(t)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$s_{(t)} = f(U x_{(t)} + W s_{(t-1)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">进一步展开，我们就能看到当前输出与历史输入的关系：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V s_{(t)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V f(U x_{(t)} + W s_{(t-1)}))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V f(U x_{(t)} + W f(U x_{(t-1)} + W s_{(t-2)})))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样一直展开，我们就能看出历史所有输出对于当前输出都有影响。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">明白了循环神经网络的基本结构之后，我们继续分析一下它的细节，第一是模型的输入，我们输入的是单词，一般采取独热矢量，根据单词在语料库中的位置进行输入（比如"我"排在语料库的第二位，那么它的矢量就表示为[0,1,0...]，所以，这也意味着模型的输出是语料库中的单词，而不会模型自己制造出新的词，比如现在我们有一个大小10000的语料库，那么就意味着输入层有10000个神经元，输出层有10000个神经元。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是关于模型的输出，一般来说，我们为了让模型输出是一个概率的形式（也就是说输出显示为语料库各个词的概率），我们会对输出做归一化处理，这种处理主要通过使用softmax函数作为输出层神经元激活函数来解决：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_i = g_i(net) = \frac{e^{net_i}}{\sum_{k=1}^L e^{net_k}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三是模型的训练过程，完整输入一个句子为一个训练样本，而不是输入一个单词，这就意味着一次训练中会包含了多个输入，多个输出，而各个参数在这个过程中是不变的，在计算训练误差时，也是计算一次训练各个时刻的训练误差之和。我们进行的是有监督学习，所以每一个单词的输入都会有一个理想的输出的，比如用之前的例子，一开始先输入一个开始符，理想输出是"我"，接下来输入一个"我"，那么它的理想输出就是"今天"，下一个输入是"上班"，它的理想输出就是"迟到了"，直到最后输入一个结束符，结束一个训练样本的训练。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上述的训练过程，和用智能拼音打字是相似的，一般来说我们打了几个字智能拼音就会预测接下来我们可能希望打的词，随着你使用智能拼音的时间越多，它的预测会越来越符合你的习惯，其实这就是一个训练的过程，同样，循环神经网络也是通过不断的训练，得到一个模型，它通过训练数据能够"记住"语料库中的词之间的搭配，以及句子的表达，归根到底就是通过大量数据获得一个概率模型，而不是真的达到一种智能，真的掌握了一门语言。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再次回到我们的模型，第四个需要关注的是模型的损失函数，因为我们的输出层使用了softmax函数作为激活函数，相应的一般会使用交叉熵误差函数作为模型的损失函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_{(t)} = r(y_{(t)}) = -\sum_{i=1}^L \hat y_{(t),i}ln(y_{(t)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是一个十分经典的损失函数，首先要明确式子中期望输出和实际输出的乘积是对应元素相乘再求和，比如：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = [0.1, 0.2, 0.3, 0.4]$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat y_{(t)} = [0,0,1,0]$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat y_{(t)}ln(y_{(t)}) = 0*ln(0.1)+0*ln(0.2)+1*ln(0.3)+0*ln(0.4)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat y_{(t)}ln(y_{(t)}) = 1*ln(0.3)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，这样相乘实际上计算期望输出对应的概率的对数，比如说期望输出是"我"，而模型计算得到的输出中"我"的概率是0.3，训练误差就是ln(0.3)，所以它的概率越接近1训练误差就会越接近0。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，我们还需要了解模型的学习算法，其实本质上还是梯度下降，只是需要适当修改一下，在这里称为BPTT(Back Propagation Through Time),很多文章花费很多篇幅推导这个算法，我并不打算这样做，因为本质上他就是梯度下降法，就是需要求偏导而已，主要是循环神经网络的结构导致求偏导的时候会比之前的情况更加复杂：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如说我现在想求损失函数对w的偏导，根据链式法则：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{\partial E_3}{\partial W} = \frac{\partial E_3}{\partial y_3} \frac{\partial y_3}{\partial s_3} \frac{\partial s_3}{\partial W}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可是问题是，s3依赖于s2，s2又依赖于s1和w，于是对w求导就不能把s3看成常量，而要分别应用链式法则：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{\partial E_3}{\partial W} = \sum_{k=0}^3 \frac{\partial E_3}{\partial y_3} \frac{\partial y_3}{\partial s_3} \frac{\partial s_3}{\partial s_k} \frac{\partial s_k}{\partial W}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再注意一下，上图是循环神经网络的展开图，只是同一个模型不同时刻的状态，所以w只有一个，不会出现不同时刻有不同的参数。另一方面，这种模型在不同时刻共用同一个参数的现象，称为共享参数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过上面的介绍，我们了解了循环神经网络的基本结构、它的输入输出、损失函数以及学习算法，但上面提到的模型是最基础的单向循环神经网络，为了解答另一类问题，我们还会有双向循环神经网络。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">考虑这样一类问题，"我上班__，老板批评了我"，这个例子和之前差不多，但是我们要推断的是句子中间的内容，这种情况需要根据句子前后的内容去理解，才能猜出答案，为了解决这一类的问题，就提出了双向循环神经网络：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">双向循环神经网络的训练过程，首先是通过前向神经元进行前向计算，就是正常的单向循环神经网络，之后，模型会通过反向神经元进行一次反向计算，两次计算的输出会作为输出层神经元的输入，再合并成每个时刻的输出。所以双向RNN和单向RNN的改进就是在隐层中加入多一个反向神经元，每一时刻的输出由前向计算和反向计算的输出决定。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从另一个角度也可以说双向循环神经网络就是把时序数据按照反序输入训练多一遍，达到让模型能够充分从句子的整体内容进行推导。</div>
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

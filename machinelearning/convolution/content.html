@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                          <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/topic.html">Programming</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/topic.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../naturallanguage/topic.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../topic.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../projects/topic.html">Projects</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/articles.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">卷积运算与图像处理</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍卷积神经网络之前，我们需要先了解以下卷积运算和互相关运算。很多时候，我们都说卷积神经网络在图像处理方面具有很大的优势，主要原因就在于卷积运算，所以接下来就主要从图像处理和卷积的联系入手进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">卷积运算在概率统计中关于随机变量的和的计算中也有出现，从数学上的定义来看，当我们有两个随机变量分别服从密度函数f和g，如果需要求它们的和t的概率密度，那么就有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$s(t) = f*g = \int _{-\infty} ^{\infty} f(x) g(-x+t)dx$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是一维的情况，对于二维，我们可以进一步推广：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$s(u,v) =  f*g = \int _{-\infty} ^{\infty} \int _{-\infty} ^{\infty} f(x,y) g(-x+u, -y+v)dxdy$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">与卷积运算非常相似的还有互相关运算：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$r (t) = f \bigodot g = \int _{-\infty} ^{\infty} f_u (x) f_v (x+t)dx $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">二维形式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$r (u,v) = f \bigodot g = \int _{-\infty} ^{\infty} \int _{-\infty} ^{\infty} f_u (x,y) f_v (x+u, y+v)dxdy $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对比卷积运算和互相关运算公式，就可以发现它们形式上是多么相似，唯一的区别只是正负号，这个区别导致卷积运算涉及到函数翻转而互相关运算不涉及的原因，但这里不细说，而是把重点放在分析为什么这种形式的运算会和图像处理产生联系。在运用卷积神经网络进行图像处理时，原则上既可以使用卷积运算也可以使用互相关运算，两者的效果可以做到完全等同只是算法的细节处理上有所不同，而实际上出于简便性的考虑一般会采用互相关运算，所以接下来的分析主要从互相关运算入手，而后文提到的卷积实际上也是指互相关运算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先关于图像处理，我们来看这样一个例子，现在我们有一副黑白图像，用矩阵表示，黑色像素点为1，白色像素点为0：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    0 & 0 & 0 & 0 \\
+                    0 & 1 & 0 & 0 \\
+                    0 & 1 & 0 & 0 \\
+                    0 & 1 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果我们现在想要检测这幅图像有没有一条垂直的直线，应该怎么做，这里有一个方法，那就是构建一个反映特征的矩阵，或者说一个具有明显特征的图像矩阵：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    0 & 1 & 0 \\
+                    0 & 1 & 0 \\
+                    0 & 1 & 0 \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后，我们就可以把原图划分成一个个小块，对比是否具有类似我们分析的特征的区域，这个构成，也像我们人类观察的过程，比如我们找一幅图里面有没有眼镜，我们也需要一处处仔细观察，而不能一下子就看完整张图片。那么从数学的角度，这个过程就是原图的矩阵分成和特征矩阵同等大小的一个个小矩阵，比如从左上角开始划分，得到第一个小矩阵：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    0 & 0 & 0 \\
+                    0 & 1 & 0 \\
+                    0 & 1 & 0 \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">用它和特征矩阵按对应元素相乘得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    0 & 0 & 0 \\
+                    0 & 1 & 0 \\
+                    0 & 1 & 0 \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$r(1,1) = 2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">按照这样遍历整副图像，最后把每次计算的结果写成矩阵形式，得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    2 & 0  \\
+                    3 & 0  \\
+                    2 & 0  \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据这个矩阵，我们可以确定阈值为3，达到阈值就认为原图像存在特征，然后就可以判断在原图像中间偏左的位置存在一条垂直直线。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的这个过程，其实就是卷积神经网络的核心思想，也是反映了卷积运算和图像处理的关系，其中，反映特征的矩阵称为卷积核，图像就是我们的输入，两者相乘得到的结果称为特征映射图。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得一开始说过，互相关运算反映了函数的平移，这种平移就体现在上面提到的卷积核对输入图像遍历过程中的移动，而互相关运算中的两个函数相乘就反映了输入图像和卷积核相乘，最后积分的步骤就反映了卷积核对输入图像的遍历，所以一次遍历得到一个输出结果，作为特征映射图的一个点的值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
