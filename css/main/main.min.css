@@ -318,7 +318,7 @@ Version: 1.0.0
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP, 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -508,7 +508,7 @@ html {
 body {
     min-height: 100%;
     overflow-y: scroll;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -763,7 +763,7 @@ input::selection, textarea::selection {
 }
 
 .l-gf__navi {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300
 }
@@ -1154,7 +1154,7 @@ input::selection, textarea::selection {
         margin-top: 28px;
         text-align: center;
         color: #fff;
-        font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+        font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
         font-weight: 300;
         letter-spacing: .2em;
@@ -1294,7 +1294,7 @@ input::selection, textarea::selection {
 .l-page {
     overflow: hidden;
     visibility: visible;
-    background-color: #323638;
+    background-color: #ffffff;
     color: #eeeeee;
 }
 
@@ -1342,7 +1342,7 @@ input::selection, textarea::selection {
     color: #222;
     border-style: solid;
     border-width: 0.1px;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em;
@@ -1430,7 +1430,7 @@ input::selection, textarea::selection {
     background-position: top 50% right 22px;
     background-repeat: no-repeat;
     color: #222;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family:YakuHanJP, 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em;
@@ -2452,7 +2452,7 @@ input::selection, textarea::selection {
 }
 
 .c-red-hyphen-head__label {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family:YakuHanJP, 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -2607,7 +2607,7 @@ input::selection, textarea::selection {
 }
 
 .p-breadcrumb {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     letter-spacing: .2em;
     line-height: 1
@@ -2706,7 +2706,7 @@ input::selection, textarea::selection {
 }
 
 .p-category-name {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -2772,7 +2772,7 @@ input::selection, textarea::selection {
         margin-bottom: 35px;
         font-size: 12px;
         font-size: .75rem;
-        font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+        font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
         font-weight: 300;
         letter-spacing: .2em;
@@ -2866,12 +2866,12 @@ input::selection, textarea::selection {
 }
 
 .p-lower__title-en {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em;
     line-height: 1;
-    color: #d0d0d0;
+    color: #0e1624;
 }
 
 @media all and (min-width: 1025px) {
@@ -2922,7 +2922,7 @@ input::selection, textarea::selection {
 }
 
 .p-lower__title-s {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -3060,7 +3060,7 @@ input::selection, textarea::selection {
 }
 
 .p-lower-kv__name {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em;
@@ -3195,7 +3195,7 @@ input::selection, textarea::selection {
     font-weight: 300;
     letter-spacing: .2em;
     line-height: 2;
-    color: #d0d0d0;
+    color: #0e1624;
 }
 
 @media all and (min-width: 1025px) {
@@ -3334,7 +3334,7 @@ input::selection, textarea::selection {
     top: 0;
     left: 0;
     text-align: center;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -3482,7 +3482,7 @@ input::selection, textarea::selection {
     .p-copyright-pc__in {
         font-size: 12px;
         font-size: .75rem;
-        font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+        font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
         font-weight: 300;
         letter-spacing: .2em;
@@ -3692,7 +3692,7 @@ input::selection, textarea::selection {
 .p-global-navi__item {
     position: relative;
     z-index: 1010;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     letter-spacing: .2em;
     text-decoration: none;
@@ -3803,7 +3803,7 @@ input::selection, textarea::selection {
     .p-global-navi__contact-label {
         position: relative;
         z-index: 1010;
-        font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+        font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
         font-weight: 300;
         letter-spacing: .2em;
@@ -4141,7 +4141,7 @@ input::selection, textarea::selection {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em;
@@ -4653,7 +4653,7 @@ input::selection, textarea::selection {
 
 .p-index-kv__scroll-label {
     text-align: center;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -5660,7 +5660,7 @@ input::selection, textarea::selection {
 }
 
 .p-index-lower-section__name {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -5717,7 +5717,7 @@ input::selection, textarea::selection {
     margin-top: 0;
     margin-bottom: 0;
     color: #000;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em;
@@ -6179,7 +6179,7 @@ input::selection, textarea::selection {
     padding: 40px 0 0;
     line-height: 1.8;
     letter-spacing: .2em;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     text-align: center
 }
@@ -7745,7 +7745,7 @@ input::selection, textarea::selection {
 }
 
 .p-recruit-local-navi__title {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em;
@@ -7861,7 +7861,7 @@ input::selection, textarea::selection {
 }
 
 .p-recruit-local-navi__item-title {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em;
@@ -7914,7 +7914,7 @@ input::selection, textarea::selection {
 }
 
 .p-recruit-local-navi__item-text {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em
@@ -8600,7 +8600,7 @@ input::selection, textarea::selection {
 }
 
 .p-recruit-index-section__title-en {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em;
@@ -10171,7 +10171,7 @@ input::selection, textarea::selection {
 
 .p-progressstory-detail-kv__point-title {
     color: #d93a09;
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 300;
     letter-spacing: .2em;
@@ -10786,7 +10786,7 @@ input::selection, textarea::selection {
 }
 
 .p-sitemap__category-name {
-    font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
+    font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
     font-weight: 100;
     letter-spacing: .2em

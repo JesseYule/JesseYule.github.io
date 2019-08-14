@@ -1,0 +1,439 @@
+@charset "UTF-8";
+
+/* ----------------------------------------
+
+	スマートフォン対応共通
+	トップページ
+	下層ページ共通
+	製品・サービス (product)
+	活用事例 (case)
+	技術解説 (technology)
+	企業情報(company)
+	ニュースリリース (news)
+	インフォメーション (information)
+
+---------------------------------------- */
+
+/* ===========================================================================
+
+	スマートフォン対応共通
+
+=========================================================================== */
+/* PCで非表示（共通） */
+.forpc { display:block; }
+.forsp { display:none; }
+
+/* PCで非表示 */
+.slider_sp { display: none; }
+
+/* iframeのサイズきりかえ */
+.forsp_iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  /* phone */
+  #wrapper {
+    width: 100%;
+  }
+
+  /* スマホ用共通パーツ
+  -------------------------------------------------- */
+  /* PCとの出し分け */
+  .forpc { display: none; }
+  .forsp { display: block; }
+
+  /* textlink */
+  .textlink {
+    position: static;
+  }
+
+  /* 画像左右floatを、SP表示の際は解除 */
+  #contents_main .imagel.forsp_floatnone {
+    float: none;
+    margin: 0 0 0 0;
+    text-align: center;
+  }
+  #contents_main .imager.forsp_floatnone {
+    float: none;
+    margin: 0 0 0 0;
+    text-align: center;
+  }
+
+  /* header
+  -------------------------------------------------- */
+
+  /* ===========================================================================
+
+      トップページ
+
+  =========================================================================== */
+
+  /* slide
+  -------------------------------------------------- */
+  /* 設定 */
+  .container {width: 100%; height: 100%; overflow-x: hidden; padding: 0 0 40px;}
+  .slide_all {width: 300%; margin: 0 auto; height: 100%; position: relative;}
+  .slide_wrap {width: 100%; position: relative; left: 0; margin-left: 0;}
+  .slide_body {width: 100%;}
+  .slide {}
+  .slide img {width: 100%; vertical-align: bottom;}
+
+  /* コントローラー */
+  .bx-controls-direction,.bx-pager {text-align: center;height: 25px;}
+  .bx-controls-direction a,.bx-pager-item {display: inline-block;}
+  .bx-pager-item a{display: block; height: 10px; width: 10px; text-indent: -9999px; background: #000; border-radius: 10px; margin:10px 2px 0 2px;}
+  .bx-pager-item a.active {opacity: 0.3;}
+  .bx-controls-direction a{text-decoration: none; color: #000; padding:0 5px;}
+  .bx-controls {position: absolute;bottom: -25px;z-index: 100;width: 33%;}
+
+  /* SP用 */
+  #slider {
+    display: none;
+  }
+  .slider_sp {
+    display: block;
+  }
+  .slider_sp img { width: 100%; }
+
+  /* TOPページ
+  -------------------------------------------------- */
+  .slider_sp .slide_mov{
+    position:inherit;
+    margin:1em 1em 0;
+  }
+
+  /* 製品情報
+  -------------------------------------------------- */
+  .home .product_bg {
+    display: none;
+  }
+  /*
+  .home .product_bg {
+      background: none;
+      top: 0;
+  }
+  .home .product_wrap {
+      width: 100%;
+      padding: 0 0 0;
+  }
+  .home .product_wrap .inner {
+      margin: 0 0;
+      padding: 0 0 0 0;
+      background: none;
+      border-radius: 0;
+  }
+  .home .product_box {
+      float: none;
+      width: 100%;
+      margin: 0 0 0 0;
+      background: none;
+      border-bottom: #ccc 1px solid;
+      text-align: center;
+  }
+  .home .product_box .mark {
+      display: block;
+      padding: 16px 0 12px;
+      background: none;
+  }
+  */
+
+  /* ニュース部分
+  -------------------------------------------------- */
+  .home .news_wrap .inner {
+    width: 100%;
+  }
+  .home .event_area h3 img,
+  .home .news_area h3 img {
+    width: 100%;
+  }
+  .home .event_area,
+  .home .news_area {
+    float: none;
+    width: 100%;
+    margin: 0 0 0 0;
+  }
+  .home .event_area .event_box,
+  .home .news_area .news_box {
+    padding: 10px 10px;
+    background: transparent url("../img/common/line_dot_gray.gif") repeat-x scroll center bottom;
+  }
+  /* ピックアップ */
+  .home .topics_area {
+    float: none;
+    width: 100%;
+  }
+
+  /* バナー部分
+  -------------------------------------------------- */
+  .home .case_wrap,
+  .home .technology_wrap,
+  .home .banner_wrap {
+    display: none;
+  }
+
+
+
+  /* ===========================================================================
+
+      下層ページ共通
+
+  =========================================================================== */
+
+  /* パンくずリスト
+  -------------------------------------------------- */
+  #breadcrumb {
+    background: none;
+  }
+  #breadcrumb ul {
+    width: 95%;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+  #breadcrumb ul li,
+  #breadcrumb ul li:first-child {
+    margin: 0 8px 0 0;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  /* タイトル
+  -------------------------------------------------- */
+  /* h1タイトル */
+  #contents_main h1,
+  #contents_main .style_h1 {
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+  #contents_main h1 span,
+  #contents_main .style_h1 span {
+    padding: 5px 5px 5px 10px;
+    background: #eee url("../img/common/ttl_h2_line.gif") no-repeat top left;
+  }
+
+  /* h2タイトル */
+  #contents_main h2,
+  #contents_main .style_h2 {
+    margin: 20px 0 5px 0;
+    padding: 5px 5px;
+    background: #4cb1d8 url("../img/common/ttl_h3_bg.gif") repeat-x top;
+    font-size: 14px;
+  }
+  #contents_main .inner h2:nth-child(2),
+  #contents_main h2.first,
+  #contents_main .inner .style_h2:nth-child(2) {
+    margin: 0 0 10px 0;
+  }
+  /* h3タイトル */
+  #contents_main h3 {
+    margin: 20px 0 5px 0;
+    padding: 10px 10px 8px 13px;
+    background: #EEE url("../img/common/ttl_h2_line.gif") no-repeat top left;
+    font-size: 14px;
+  }
+
+  /* h4タイトル */
+  #contents_main h4 {
+    margin: 20px 0 5px 0;
+    padding: 0 0 10px 0;
+    font-size: 14px;
+  }
+
+  /* contents
+  -------------------------------------------------- */
+  .container_bg {
+    width: 100%;
+    padding: 0 0 0;
+    background: none;
+  }
+  #container {
+    width: 100%;
+    background: none;
+  }
+  #contents_main {
+    float: none;
+    margin: 10px auto 0;
+    width: 95%;
+  }
+  #contents_main .inner {
+    padding: 0 0 0 0;
+  }
+
+  /* contents_sub */
+  #contents_sub {
+    float: none;
+    margin: 20px auto 0;
+    padding: 0 0 0 0;
+    width: 100%;
+  }
+  #contents_sub .inner {
+    padding: 0 0 0 0;
+  }
+  #contents_sub ul.nav {
+    width: 100%;
+  }
+  #contents_sub h3 {
+    background: linear-gradient(#01538c 0%, #0090c8 100%);
+  }
+  #contents_sub .contact_area,
+  #contents_sub .banner_area {
+    display: none;
+  }
+
+
+
+  /* ===========================================================================
+
+      製品・サービス (product)
+
+  =========================================================================== */
+
+  /* 製品・サービス一覧
+  -------------------------------------------------- */
+  .ancestor_product .list_box .image {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .ancestor_product .list_box .caption {
+    float: none;
+    width: 100%;
+  }
+
+  /* 導入をお考えの方へ
+  -------------------------------------------------- */
+  .product_guide_flow_wrap {
+    margin: 20px 0 0;
+  }
+  .product_guide_flow_box_ttl {
+    float: none;
+    padding: 0 0 0 0;
+    text-align: center;
+  }
+  .product_guide_flow_box_text {
+    overflow: auto;
+  }
+  #contents_main .product_guide_flow_box_text p {
+    margin: 10px 0 20px;
+    font-size: 13px;
+  }
+  .product_guide_flow_box_text.step01 { background: url("../img/product/guide/flow_01_ico.png") no-repeat center center; }
+  .product_guide_flow_box_text.step02 { background: url("../img/product/guide/flow_02_ico.png") no-repeat center center; }
+  .product_guide_flow_box_text.step03 { background: url("../img/product/guide/flow_03_ico.png") no-repeat center center; }
+  .product_guide_flow_box_text.step04 { background: url("../img/product/guide/flow_04_ico.png") no-repeat center center; }
+  .product_guide_flow_box_text.step05 { background: url("../img/product/guide/flow_05_ico.png") no-repeat center center; }
+
+
+
+  /* ===========================================================================
+
+      活用事例 (case)
+
+  =========================================================================== */
+
+  /* 導入事例一覧
+  -------------------------------------------------- */
+  .casestudies_list_text {
+    float: none;
+    width: 100%;
+  }
+  .casestudies_list_thumb {
+    float: none;
+    width: 100%;
+  }
+
+
+
+  /* ===========================================================================
+
+      ニュースリリース (news)
+
+  =========================================================================== */
+
+  /* トピックス
+  -------------------------------------------------- */
+  .post_date {
+    margin: 5px 0 0 0;
+  }
+
+
+
+  /* ===========================================================================
+
+      インフォメーション (information)
+
+  =========================================================================== */
+
+  /* お問い合わせ
+  -------------------------------------------------- */
+  .contact_area {
+    width: 100%;
+    margin: 0 0 0;
+  }
+  .contact_area dl {
+    display: block;
+    width: 100%;
+    border-bottom: none;
+  }
+  .contact_area .contact_label {
+    display: block;
+    width: 100%;
+    padding: 10px 0 5px;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+  .contact_area .contact_label.first { padding: 0 0 5px; }
+
+  .contact_area .contact_input {
+    display: block;
+    width: 100%;
+    padding: 0px 0 15px;
+    margin: 0;
+    line-height: 1.8;
+  }
+  /* 必須 */
+  .contact_area .contact_label .require {
+    top: 12px;
+    right: 0;
+  }
+  .contact_area dl input[type="text"],
+  .contact_area dl textarea,
+  .contact_area dl select {
+    width: 100%;
+    font-size: 16px;
+  }
+  /* ボタン */
+  .contact_area .contact_btn {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+  /* 確認画面へ進むボタン用 */
+  .mw_wp_form_input .contact_btn_send input {
+    margin: 0 0 0 0;
+    background:url("../img/contact/btn_input.png") no-repeat;
+    width:280px;
+    height:48px;
+  }
+  /* 送信ボタン用 */
+  .mw_wp_form_confirm .contact_btn_send input {
+    margin: 0 0 0 0;
+    background:url("../img/contact/btn_confirm.png") no-repeat;
+    width:280px;
+    height:48px;
+  }
+  /* 戻るボタン用 */
+  .mw_wp_form_confirm .contact_btn_back input {
+    margin: 0 0 0 0;
+    background:url("../img/contact/btn_back.png") no-repeat;
+    width:280px;
+    height:35px;
+  }
+
+
+
+  /* 以下削除しない */
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                 <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/python1.html">Python</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/all1.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Python装饰器与@property</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">装饰器主要是为了给已经存在的对象，提供额外的功能，比如插入日志、性能测试等等，这些功能和函数本身的功能无关，可是有时候很多函数都需要用到，于是就可以把这些功能抽离出来放到一个叫装饰器的东西里，什么时候哪个对象需要用到，就给他们。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，我们可以写一个函数，它需要传入另一个函数作为参数（这是python的一个特点），然后在里面，可以先执行一些功能（比如打印日志），然后再执行原来的函数，这样，我们只要把每次调用原来的函数，稍微改一下格式，就能实现原函数加上修饰器的功能了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个方法麻烦的地方，就在于每次调用的不是原来的方法（比如foo（）），装饰器方法（use_logging（foo）），实际上，我们可以利用语法糖，使得对原代码的改动更少。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">什么是语法糖，从定义上来说，就是一个构件，去掉这个构件不会影响语言的功能和表达能力，在python里面就是常见的@……，比如@property，细节就不细说了，结合语法糖，我们可以在原来的方法调用前，加上一句@use_logging，就达到了把原函数改成use_logging（foo）的效果，而且代码读起来也更简洁。在其他需要用到logging的函数，也是同样加上这个语法糖，就能达到同样的效果。而不需要对函数进行任何的修改。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">装饰器不仅仅可以作用域函数，还可以是类，很明显类装饰器的灵活性更大，使用类装饰器主要依靠类的__call__方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说到语法糖，就顺便说一下@property这个属性函数，也是非常常见的代码，主要的作用有：将类方法转换为只读属性，重新实现一个属性的getter和setter方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，通过@property，可以把一个方法变成一个属性，比如有一个fullname（）方法，它返回实例的名字，如果在这个方法前面加上@property，就可以像调用属性那样调用它class.fullname，这样的作用就是它就像属性，可是我们又不能像属性那样修改他（class.fullname = "a"），这是无法执行的，因为fullname是class的一个方法，所以这就达到了一种限制，当然事实上只要我们知道代码的细节我们依然可以进行修改，python没有绝对的办法防止我们修改属性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">利用@property，我们可以做到的是用一个方法名parameter，就能同时实现getter、setter方法，只需要在getter的方法体前面加上@property，在setter方法体前面加上@parameter.setter，而他们的方法名都可以是parameter，这样的好处就是，我们既可以像获取属性、修改属性那样操作parameter，同时也可以在方法体内追加一些条件，使得参数不能随意被获取或修改，达到和getter、setter同样的效果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料<br>
+                [1]https://foofish.net/python-decorator.html</div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

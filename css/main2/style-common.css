@@ -1,0 +1,673 @@
+@charset "utf-8";
+
+/* ----------------------------------------
+
+	Reset
+	Header
+	Footer
+	Contents
+
+---------------------------------------- */
+
+/* ===========================================================================
+
+	Reset
+
+=========================================================================== */
+
+/*body {*/
+  /*font-size: 13px;*/
+  /*font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;*/
+  /*text-rendering: optimizeLegibility;*/
+/*}*/
+
+/*body, header, footer, div, article, section,*/
+/*h1, h2, h3, h4, h5,*/
+/*a, img, p, ul, li, dl, dt, dd, ol {*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  /*line-height: 1.0em;*/
+  /*color: #333;*/
+  /*font-size: 1.0em;*/
+/*}*/
+
+/*h1, h2, h3, h4, h5 {*/
+  /*font-weight: normal;*/
+/*}*/
+
+/*div {*/
+  /*font-size: 13px;*/
+/*}*/
+
+/*p {*/
+  /*font-size: 13px;*/
+  /*line-height: 1.5;*/
+/*}*/
+
+/*ul {*/
+  /*list-style-type: none;*/
+/*}*/
+
+/*a {*/
+  /*color: #01538c;*/
+/*}*/
+
+/*a:hover {*/
+  /*color: #0090c8;*/
+  /*text-decoration: none;*/
+/*}*/
+
+/*!******************   text   ******************!*/
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.ls1 {
+  letter-spacing: 1px;
+}
+
+/*strong {*/
+  /*color: #b94746;*/
+/*}*/
+
+/*!*****************   margin   *****************!*/
+
+.m0 {
+  margin: 0px;
+}
+
+.m2 {
+  margin: 2px;
+}
+
+.m3 {
+  margin: 3px;
+}
+
+.m4 {
+  margin: 4px;
+}
+
+.m5 {
+  margin: 5px;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.m15 {
+  margin: 15px;
+}
+
+.m20 {
+  margin: 20px;
+}
+
+.mt2 {
+  margin-top: 2px;
+}
+
+.mt3 {
+  margin-top: 3px;
+}
+
+.mt4 {
+  margin-top: 4px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+
+.mt1em {
+  margin-top: 1em;
+}
+
+.mb2 {
+  margin-bottom: 2px;
+}
+
+.mb3 {
+  margin-bottom: 3px;
+}
+
+.mb4 {
+  margin-bottom: 4px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+/*!*****************   space   *****************!*/
+
+.space2 {
+  height: 2px;
+}
+
+.space3 {
+  height: 3px;
+}
+
+.space4 {
+  height: 4px;
+}
+
+.space5 {
+  height: 5px;
+}
+
+.space10 {
+  height: 10px;
+}
+
+.space15 {
+  height: 15px;
+}
+
+.space20 {
+  height: 20px;
+}
+
+.space25 {
+  height: 25px;
+}
+
+.space30 {
+  height: 30px;
+}
+
+.space35 {
+  height: 35px;
+}
+
+.space40 {
+  height: 40px;
+}
+
+.space45 {
+  height: 45px;
+}
+
+.space50 {
+  height: 50px;
+}
+
+.space2, .space3, .space4, .space5, .space10, .space15,
+.space20, .space25, .space30, .space35, .space40, .space45, .space50 {
+  line-height: 0;
+  font-size: 0;
+  clear: both;
+  display: block;
+}
+
+/*!******************   float   ******************!*/
+
+.floatl {
+  float: left;
+}
+
+.floatr {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.overflow {
+  overflow: hidden;
+/ zoom: 1;
+}
+
+/*!******************   line-height   ******************!*/
+
+.lh1 {
+  line-height: 1;
+}
+
+.lh12 {
+  line-height: 1.2;
+}
+
+.lh14 {
+  line-height: 1.4;
+}
+
+.lh15 {
+  line-height: 1.5;
+}
+
+.lh16 {
+  line-height: 1.6;
+}
+
+.lh18 {
+  line-height: 1.8;
+}
+
+.lh20 {
+  line-height: 2.0;
+}
+
+/*!* ===========================================================================*/
+
+	/*Header*/
+
+/*=========================================================================== *!*/
+
+/*header {*/
+  /*width: 100%;*/
+  /*height: 160px;*/
+  /*background: #fff;*/
+/*}*/
+
+/*!* global_header*/
+/*-------------------------------------------------- *!*/
+/*header #global_header {*/
+  /*height: 90px;*/
+  /*background: #0090c8 url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_header_bg.gif") repeat-x;*/
+/*}*/
+
+/*header #global_header .inner {*/
+  /*width: 1000px;*/
+  /*margin: 0 auto;*/
+/*}*/
+
+/*header #global_header .logo {*/
+  /*float: left;*/
+  /*width: 171px;*/
+  /*margin: 26px 0 0 0;*/
+/*}*/
+
+/*header #global_header .name {*/
+  /*float: left;*/
+  /*width: 249px;*/
+/*}*/
+
+/*header #global_header .name .name_company {*/
+  /*margin: 35px 0 6px;*/
+  /*color: #fff;*/
+  /*font-size: 11px;*/
+  /*font-weight: bold;*/
+  /*line-height: 1;*/
+/*}*/
+
+/*header #global_header .name .name_description {*/
+  /*color: #fff;*/
+  /*font-size: 11px;*/
+  /*font-weight: normal;*/
+  /*line-height: 1;*/
+/*}*/
+
+/*header #global_header .info {*/
+  /*float: left;*/
+  /*width: 580px;*/
+/*}*/
+
+/*header #global_header .info .info_nav {*/
+  /*s*/
+/*}*/
+
+/*!* link_txt*/
+/*-------------------------------------------------- *!*/
+/*header #global_header .info .info_nav ul.link_txt {*/
+  /*float: right;*/
+/*}*/
+
+/*header #global_header .info .info_nav ul.link_txt li {*/
+  /*float: left;*/
+  /*margin: 12px 15px 0 0;*/
+  /*padding: 0 0 0 7px;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/ico_arrow_white.gif") no-repeat left center;*/
+  /*font-size: 12px;*/
+/*}*/
+
+/*header #global_header .info .info_nav ul.link_txt a {*/
+  /*color: #fff;*/
+  /*text-decoration: none;*/
+/*}*/
+
+/*header #global_header .info .info_nav ul.link_txt a:hover {*/
+  /*text-decoration: underline;*/
+/*}*/
+
+/*!* link_btn *!*/
+/*header #global_header .info .info_nav ul.link_btn {*/
+  /*float: right;*/
+/*}*/
+
+/*header #global_header .info .info_nav ul.link_btn li {*/
+  /*float: left;*/
+/*}*/
+
+/*header #global_header .info .info_tel {*/
+  /*margin: 16px 0 0 0;*/
+  /*text-align: right;*/
+/*}*/
+
+/*!* global_nav*/
+/*-------------------------------------------------- *!*/
+/*header #global_nav {*/
+  /*width: 100%;*/
+  /*border-bottom: 1px solid #ccc;*/
+/*}*/
+
+/*header #global_nav .inner {*/
+  /*width: 1000px;*/
+  /*height: 69px;*/
+  /*margin: 0 auto;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_bg.gif") no-repeat;*/
+/*}*/
+
+/*header #global_nav #nav {*/
+  /*margin: 0 0 0 7px;*/
+/*}*/
+
+/*!* メニュー画像設定 *!*/
+/*header #global_nav .nav {*/
+  /*display: block;*/
+  /*width: 197px;*/
+  /*height: 69px;*/
+  /*text-indent: -9999px;*/
+/*}*/
+
+/*header #global_nav .product {*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_product.gif") no-repeat;*/
+/*}*/
+
+/*header #global_nav .case {*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_case.gif") no-repeat;*/
+/*}*/
+
+/*header #global_nav .technology {*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_technology.gif") no-repeat;*/
+/*}*/
+
+/*header #global_nav .company {*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_company.gif") no-repeat;*/
+/*}*/
+
+/*header #global_nav .news {*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/global_nav_news.gif") no-repeat;*/
+/*}*/
+
+/*!* 親ページが取得できる場合は「ancestor_○○」、シングルページの場合は「single-○○」 *!*/
+/*.ancestor_product header #global_nav .product,*/
+/*.ancestor_case header #global_nav .case,*/
+/*.single-casestudies header #global_nav .case,*/
+/*.ancestor_technology header #global_nav .technology,*/
+/*.single-column header #global_nav .technology,*/
+/*.ancestor_company header #global_nav .company,*/
+/*.ancestor_news header #global_nav .news,*/
+/*.single-topics header #global_nav .news {*/
+  /*background-position: 0 -69px;*/
+/*}*/
+
+/*!* ドロップダウンメニュー*/
+/*-------------------------------------------------- *!*/
+/*#nav {*/
+  /*position: relative;*/
+  /*line-height: 1;*/
+  /*z-index: 9999;*/
+/*}*/
+
+/*#nav li {*/
+  /*position: relative;*/
+  /*float: left;*/
+/*}*/
+
+/*#nav ul {*/
+  /*display: none;*/
+  /*position: absolute;*/
+  /*top: 67px;*/
+  /*left: 14px;*/
+/*}*/
+
+/*#nav ul li {*/
+  /*float: none;*/
+/*}*/
+
+/*#nav ul {*/
+  /*width: 168px;*/
+  /*border-top: 2px solid #0090c8;*/
+  /*border-left: 1px solid #ccc;*/
+  /*border-right: 1px solid #ccc;*/
+/*}*/
+
+/*#nav ul a {*/
+  /*display: block;*/
+  /*padding: 10px 8px 10px 14px;*/
+  /*background: #fff url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/ico_arrow_blue.gif") no-repeat 7px center;*/
+  /*border-bottom: 1px solid #ccc;*/
+  /*color: #333;*/
+  /*font-size: 11px;*/
+  /*line-height: 1;*/
+  /*text-decoration: none;*/
+  /*transition: 0.3s;*/
+/*}*/
+
+/*#nav ul a.hover {*/
+  /*background: #eee url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/ico_arrow_blue.gif") no-repeat 9px center;*/
+/*}*/
+
+/*!* ===========================================================================*/
+
+	/*Footer*/
+
+/*=========================================================================== *!*/
+
+/*footer {*/
+  /*margin: 0;*/
+  /*width: 100%;*/
+/*}*/
+
+/*!* footer_nav*/
+/*-------------------------------------------------- *!*/
+/*footer #footer_nav {*/
+  /*width: 100%;*/
+  /*margin: 0;*/
+  /*padding: 0 0 25px 0;*/
+  /*background: #0090c8 url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/footer_bg.gif") repeat-x;*/
+/*}*/
+
+/*footer #footer_nav .footer_bg {*/
+  /*width: 100%;*/
+  /*padding: 35px 0 0 0;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/bg_frame_bottom.png") no-repeat top center;*/
+/*}*/
+
+/*footer #footer_nav .inner {*/
+  /*width: 1000px;*/
+  /*margin: 0 auto;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/footer_line.png") repeat-y right;*/
+/*}*/
+
+/*footer #footer_nav h4 {*/
+  /*margin: 0 0 0 15px;*/
+  /*padding: 0 0 3px;*/
+  /*color: #FFF;*/
+  /*font-size: 13px;*/
+  /*font-weight: bold;*/
+/*}*/
+
+/*footer #footer_nav .column {*/
+  /*float: left;*/
+  /*width: 200px;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/footer_line.png") repeat-y;*/
+/*}*/
+
+/*footer #footer_nav ul {*/
+  /*margin: 0 0 0 15px;*/
+/*}*/
+
+/*footer #footer_nav ul li {*/
+  /*margin: 8px 0 0 0;*/
+  /*padding: 0 0 0 7px;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/ico_arrow_white.gif") no-repeat left center;*/
+  /*font-size: 11px;*/
+/*}*/
+
+/*footer #footer_nav a {*/
+  /*color: #FFF;*/
+  /*text-decoration: none;*/
+/*}*/
+
+/*footer #footer_nav a:hover {*/
+  /*text-decoration: underline;*/
+/*}*/
+
+/*!* footer_info*/
+/*-------------------------------------------------- *!*/
+/*footer #footer_info {*/
+  /*width: 1000px;*/
+  /*margin: 0 auto;*/
+  /*font-size: 12px;*/
+/*}*/
+
+/*footer #footer_info .footer_info_address {*/
+  /*float: left;*/
+  /*margin: 35px 0 0;*/
+  /*padding: 0 0 35px; !* for IE7 *!*/
+/*}*/
+
+/*footer #footer_info .address {*/
+  /*padding: 0 0 6px;*/
+/*}*/
+
+/*footer #footer_info .address span {*/
+  /*font-weight: bold;*/
+/*}*/
+
+/*footer #footer_info .footer_info_logo {*/
+  /*float: left;*/
+  /*margin: 35px 20px 0 0;*/
+/*}*/
+
+/*.footer_info_pmark {*/
+  /*float: right;*/
+  /*margin: 10px 0 0 0;*/
+/*}*/
+
+/*!* pagetop*/
+/*-------------------------------------------------- *!*/
+/*!* フッター上部ページトップ *!*/
+/*.footer_pagetop {*/
+  /*width: 100%;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/bg_frame_bottom_pagetop.png") no-repeat top center;*/
+/*}*/
+
+/*.footer_pagetop .inner {*/
+  /*width: 1000px;*/
+  /*margin: 0 auto;*/
+  /*text-align: right;*/
+/*}*/
+
+/*.footer_pagetop a {*/
+  /*margin: 0 10px 0 0;*/
+/*}*/
+
+/* 右下固定ページトップ */
+/*#pagetop {*/
+  /*position: fixed;*/
+  /*bottom: 20px;*/
+  /*right: 20px;*/
+  /*z-index: 9999;*/
+  /*text-indent: -9999px;*/
+/*}*/
+
+/*#pagetop a {*/
+  /*display: block;*/
+  /*width: 40px;*/
+  /*height: 40px;*/
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/pagetop.gif");*/
+  /*outline: none;*/
+  /*transition: 0.5s;*/
+/*}*/
+
+/*#pagetop a:hover {*/
+  /*opacity: 0.6;*/
+/*}*/
+
+/* ===========================================================================
+
+	Contents
+
+=========================================================================== */
+
+/* 下層ページ */
+.container_bg {
+  width: 100%;
+  padding: 10px 0 0 0;
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/bg_frame_top.png") no-repeat top center;*/
+}
+
+#container {
+  width: 1000px;
+  margin: 0 auto;
+  /*background: url("http://www.vext.co.jp/wp/wp-content/themes/vext-theme/img/common/bg_centerline.gif") repeat-y left center;*/
+}
+
+#contents_main {
+  float: right;
+  width: 720px;
+}
+
+#contents_main .inner {
+  padding: 0 20px 0 0;
+}
+
+#contents_sub {
+  float: left;
+  width: 250px;
+}
+
+#contents_sub .inner {
+  padding: 0 0 0 20px;
+}
