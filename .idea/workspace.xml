@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main2/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main2/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/css/demo2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/css/demo3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/css/demo4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/css/demo5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/css/demo6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo1.js" beforeDir="false" afterPath="$PROJECT_DIR$/css/background/js/demo1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background/js/demo6.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programming/javaStatic/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/programming/javaStatic/content.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,12 +30,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="303" column="38" lean-forward="true" selection-start-line="303" selection-start-column="38" selection-end-line="303" selection-end-column="38" />
+            <state relative-caret-position="553">
+              <caret line="458" column="36" lean-forward="true" selection-start-line="458" selection-start-column="36" selection-end-line="458" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#section#1;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -69,10 +77,10 @@
       <find>.overlay-navigation</find>
       <find>htmll</find>
       <find>background-im</find>
-      <find>dot</find>
       <find>content__subtitle</find>
       <find>color</find>
       <find>f2f7fd</find>
+      <find>dot</find>
     </findStrings>
     <replaceStrings>
       <replace>font-family: 等线，&quot;等线 Light&quot;，&quot;微软雅黑 Light&quot;</replace>
@@ -95,6 +103,7 @@
       <dir>$PROJECT_DIR$/math</dir>
       <dir>$PROJECT_DIR$/naturallanguage</dir>
       <dir>$PROJECT_DIR$/programming</dir>
+      <dir>$PROJECT_DIR$/css/background</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
@@ -104,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/machinelearning/topic.html" />
         <option value="$PROJECT_DIR$/naturallanguage/ngram/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html" />
         <option value="$PROJECT_DIR$/programming/algorithm.html" />
@@ -151,16 +159,17 @@
         <option value="$PROJECT_DIR$/programming/python1.html" />
         <option value="$PROJECT_DIR$/math/all1.html" />
         <option value="$PROJECT_DIR$/programming/javaStatic/content.html" />
-        <option value="$PROJECT_DIR$/css/background/js/demo1.js" />
         <option value="$PROJECT_DIR$/css/background/css/demo1.css" />
         <option value="$PROJECT_DIR$/css/main2/app.css" />
+        <option value="$PROJECT_DIR$/css/background/js/demo2.js" />
+        <option value="$PROJECT_DIR$/css/background/js/demo1.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
-    <option name="y" value="129" />
+    <option name="x" value="349" />
+    <option name="y" value="62" />
     <option name="width" value="1440" />
     <option name="height" value="808" />
   </component>
@@ -190,7 +199,7 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="main2" type="462c0819:PsiDirectoryNode" />
+              <item name="background" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -435,17 +444,19 @@
       <workItem from="1565769653087" duration="100000" />
       <workItem from="1565777443370" duration="792000" />
       <workItem from="1565779271027" duration="2242000" />
+      <workItem from="1565781775791" duration="442000" />
+      <workItem from="1565791741019" duration="592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="741619000" />
+    <option name="totallyTimeSpent" value="742653000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="129" width="1440" height="808" extended-state="0" />
+    <frame x="349" y="62" width="1440" height="808" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18816067" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -487,17 +498,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/machinelearning/backPropagation/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="29" column="88" lean-forward="true" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/mainmenu/menu.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -734,13 +734,6 @@
     <entry file="file://$PROJECT_DIR$/css/background/img/dotTexture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/background/js/demo1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/background/css/demo1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -755,14 +748,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/background/js/demo2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/background/js/demo1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="303" column="38" lean-forward="true" selection-start-line="303" selection-start-column="38" selection-end-line="303" selection-end-column="38" />
+        <state relative-caret-position="553">
+          <caret line="458" column="36" lean-forward="true" selection-start-line="458" selection-start-column="36" selection-end-line="458" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#section#1;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
