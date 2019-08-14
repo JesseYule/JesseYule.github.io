@@ -3462,7 +3462,7 @@ body {
     display: block;
     width: calc(100% - 36px);
     height: 100%;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -4257,7 +4257,7 @@ body {
     display: block;
     width: calc(100% - (100% - 1042px) / 2);
     height: 100%;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 .section-case-study__button {
@@ -4354,7 +4354,7 @@ body {
     display: block;
     width: calc(100% - (100% - 1042px) / 2);
     height: 100%;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -4434,7 +4434,7 @@ body {
 .section-contact__content {
     display: block;
     padding: 70px 0 40px;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -4528,7 +4528,7 @@ body {
     max-width: 1120px;
     margin: 0 auto;
     padding: 0 0 64px;
-    background-color: #f2f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -6312,7 +6312,7 @@ body {
     content: "";
     width: calc(100% - (100% - 1040px) / 2);
     height: 100%;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 .about-page__strength__item__content--margin {
@@ -6484,7 +6484,7 @@ body {
     display: block;
     width: calc(100% - (100% - 1040px) / 2);
     height: 100%;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 .about-page__ai__media.js-scroll-show:after {
@@ -6588,7 +6588,7 @@ body {
     width: 940px;
     margin: 94px auto 0;
     padding: 49px 0 59px;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -7363,7 +7363,7 @@ body {
 
 .partnership-page__sales-partner {
     margin: 28px auto 0;
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     padding: 68px 109px 73px
 }
 
@@ -7475,7 +7475,7 @@ body {
 }
 
 .partnership-page__definition-flow {
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     margin-top: 70px
 }
 
@@ -7882,7 +7882,7 @@ body {
     border: 4px solid #b5c9ee;
     width: 212px;
     height: 220px;
-    background-color: #f3f7fd;
+    background-color: #ffffff;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -8194,7 +8194,7 @@ body {
 }
 
 .consulting-page__graph {
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     margin-top: 93px;
     padding: 49px 49px 67px
 }
@@ -8876,7 +8876,7 @@ body {
 
 .voiceminer-page__services-batch-type-bg {
     height: 358px;
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     margin-top: 8px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -9292,7 +9292,7 @@ body {
     display: block;
     width: calc(100% - (100% - 1040px) / 2);
     height: 100%;
-    background-color: #f2f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -11258,7 +11258,7 @@ body {
     content: "";
     width: calc(100% - (100% - 1040px) / 2);
     height: 100%;
-    background-color: #f3f7fd;
+    background-color: #ffffff;
     -webkit-transition: -webkit-transform .5s ease;
     transition: -webkit-transform .5s ease;
     transition: transform .5s ease;
@@ -13581,7 +13581,7 @@ body {
 
 .archive-case__content {
     width: 100%;
-    background-color: #f2f7fd
+    background-color: #ffffff
 }
 
 .archive-case__content--margin {
@@ -13921,7 +13921,7 @@ a.list-card__item__inner {
 
 .single__case-card {
     padding: 22px 0;
-    background-color: #f2f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -15000,7 +15000,7 @@ a.list-card__item__inner {
     flex: 1;
     margin: 0 0 0 50px;
     padding: 26px 34px;
-    background-color: #f3f7fd
+    background-color: #ffffff
 }
 
 @media screen and (max-width: 767px) {
@@ -15020,7 +15020,7 @@ a.list-card__item__inner {
     display: block;
     width: 0;
     height: 0;
-    border-color: transparent #f3f7fd transparent transparent;
+    border-color: transparent #ffffff transparent transparent;
     border-style: solid;
     border-width: 0 34px 26px 0
 }
@@ -15255,7 +15255,7 @@ a.list-card__item__inner {
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #f2f7fd
+    background-color: #ffffff
 }
 
 .archive-multiple__main--bg .archive-multiple__main__inner {

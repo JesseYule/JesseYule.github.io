@@ -2,6 +2,19 @@
 <!-- saved from url=(0023)https://www.vext.co.jp/ -->
 <html lang="ja">
 <head>
+
+    <link rel="stylesheet" type="text/css" href="css/background/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/background/css/demo1.css" />
+    <link rel="stylesheet" type="text/css" href="css/background/pater/pater.css" />
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
+
+
+
+
+
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
@@ -40,27 +53,8 @@
 
 
     <!-- This site is optimized with the Yoast SEO plugin v11.4 - https://yoast.com/wordpress/plugins/seo/ -->
-    <meta name="description"
-          content="ベクストは、700社以上の導入実績をもつテキストマイニング ツール「VextMiner」を中核とし、「営業活動の生産性向上」や「コールセンターの業務効率化」をサポートします。">
-    <link rel="canonical" href="https://www.vext.co.jp/">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:type" content="website">
-    <meta property="og:title"
-          content="ベクスト株式会社（Vext Inc.） | ベクストは、700社以上の導入実績をもつテキストマイニング ツール「VextMiner」を中核とし、「営業活動の生産性向上」や「コールセンターの業務効率化」をサポートします。">
-    <meta property="og:description"
-          content="ベクストは、700社以上の導入実績をもつテキストマイニング ツール「VextMiner」を中核とし、「営業活動の生産性向上」や「コールセンターの業務効率化」をサポートします。">
-    <meta property="og:url" content="https://www.vext.co.jp/">
-    <meta property="og:site_name" content="ベクスト株式会社（Vext Inc.）">
-    <meta property="og:image" content="https://www.vext.co.jp/wp-content/uploads/2019/06/vext_ogp.png">
-    <meta property="og:image:secure_url" content="https://www.vext.co.jp/wp-content/uploads/2019/06/vext_ogp.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description"
-          content="ベクストは、700社以上の導入実績をもつテキストマイニング ツール「VextMiner」を中核とし、「営業活動の生産性向上」や「コールセンターの業務効率化」をサポートします。">
-    <meta name="twitter:title"
-          content="ベクスト株式会社（Vext Inc.） | ベクストは、700社以上の導入実績をもつテキストマイニング ツール「VextMiner」を中核とし、「営業活動の生産性向上」や「コールセンターの業務効率化」をサポートします。">
-    <meta name="twitter:image" content="https://www.vext.co.jp/wp-content/uploads/2019/06/vext_ogp.png">
+
+
     <script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{
         "@context": "https://schema.org",
         "@graph": [
@@ -230,90 +224,125 @@
 
             <div class="mv">
 
+                <div class="content">
+                    <canvas class="scene scene--full" id="scene"></canvas>
+                    <script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+				</script>
+                    <script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+				</script>
+                    <div class="content__inner">
+                        <h2 class="content__subtitle">Data Science</h2>
+                        <h2 class="content__subtitle">Machine Learning</h2>
+                        <h2 class="content__subtitle">Tensorflow</h2>
+                        <h2 class="content__subtitle">Deep Learning</h2>
+                        <h2 class="content__subtitle">Pytorch</h2>
+                        <h2 class="content__subtitle">Map Reduce</h2>
+
+                    </div>
+                </div>
+
 
             </div>
 
 
 
+            <div class="archive-case">
 
-            <section class="section-case-study section-case-study--margin js-scroll-show is-show">
-                <div class="section-case-study__title">
-                    <h2 class="heading js-heading-animation is-set is-animation">
-                        <div class="heading__main"><span style="transition-delay: 0s;">B</span><span
-                                style="transition-delay: 0.0208333s;">a</span><span
-                                style="transition-delay: 0.0416667s;">s</span><span
-                                style="transition-delay: 0.0625s;">i</span><span
-                                style="transition-delay: 0.0833333s;">c</span><span
-                                style="transition-delay: 0.104167s;"> </span><span
-                                style="transition-delay: 0.125s;">T</span><span
-                                style="transition-delay: 0.145833s;">h</span><span style="transition-delay: 0.166667s;">e</span><span
-                                style="transition-delay: 0.1875s;">o</span><span
-                                style="transition-delay: 0.208333s;">r</span><span style="transition-delay: 0.229167s;">y</span>
-                        </div>
-                        <div class="heading__sub">基础知识</div>
-                    </h2>
-                </div>
 
-                <div class="section-case-study__content">
-                    <div class="slide-cards">
-                        <div class="swiper-container js-section-case-studies">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide">
-                                    <article class="slide-cards__item">
-                                        <a href="programming/java1.html" class="slide-cards__item__inner">
-                                            <div class="slide-cards__item__media ">
-                                                <img src="image/java.jpg"
-                                                     alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"
-                                                     class="slide-cards__item__media__image">
-                                            </div>
-                                            <p class="slide-cards__item__group">Java基础</p>
-                                            <h3 class="slide-cards__item__title">
-                                                Java是一门经典的面向对象语言，即使现在python十分流行也有必要学习一下java</h3>
-                                        </a>
-                                    </article>
-                                </div>
-                                <div class="swiper-slide">
-                                    <article class="slide-cards__item">
-                                        <a href="programming/python1.html" class="slide-cards__item__inner">
-                                            <div class="slide-cards__item__media ">
-                                                <img src="image/python.jpg"
-                                                     alt="金融業界コールセンターの導入事例をご紹介：導入支援コンサルサービス"
-                                                     class="slide-cards__item__media__image">
-                                            </div>
-                                            <p class="slide-cards__item__group">python基础</p>
-                                            <h3 class="slide-cards__item__title">不论是数据科学还是机器学习领域，毫无疑问python都是最火的选择</h3>
-                                        </a>
-                                    </article>
-                                </div>
-                                <div class="swiper-slide">
-                                    <article class="slide-cards__item">
-                                        <a href="math/all1.html" class="slide-cards__item__inner">
-                                            <div class="slide-cards__item__media ">
-                                                <img src="image/math.jpeg"
-                                                     alt="会話のリアルタイムテキスト化と分析により応対品質を向上"
-                                                     class="slide-cards__item__media__image">
-                                            </div>
-                                            <p class="slide-cards__item__group">数学基础</p>
-                                            <h3 class="slide-cards__item__title">单纯掌握编程语言是无法深入学习机器学习的，数学才是理论的基础</h3>
-                                        </a>
-                                    </article>
-                                </div>
+                <div class="archive-case__category archive-case__category--margin">
+
+                    <div class="section-case-study__title">
+                        <br><br><br>
+                        <h2 class="heading js-heading-animation is-set is-animation">
+                            <div class="heading__main"><span style="transition-delay: 0s;">B</span><span
+                                    style="transition-delay: 0.0208333s;">a</span><span
+                                    style="transition-delay: 0.0416667s;">s</span><span
+                                    style="transition-delay: 0.0625s;">i</span><span
+                                    style="transition-delay: 0.0833333s;">c</span><span
+                                    style="transition-delay: 0.104167s;"> </span><span
+                                    style="transition-delay: 0.125s;">T</span><span
+                                    style="transition-delay: 0.145833s;">h</span><span style="transition-delay: 0.166667s;">e</span><span
+                                    style="transition-delay: 0.1875s;">o</span><span
+                                    style="transition-delay: 0.208333s;">r</span><span style="transition-delay: 0.229167s;">y</span>
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-                        </div>
+                            <div class="heading__sub">基础知识</div>
+                        </h2>
+                    </div>
 
+                    <div class="archive-case__content archive-case__content--margin">
+                        <div class="list-card list-card--margin">
+                            <article class="list-card__item">
+                                <a class="list-card__item__inner" href="programming/java1.html">
+                                    <div class="list-card__item__media"><img
+                                            src="image/Java2.png"
+                                            alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"></div>
+                                    <div class="list-card__item__content">
+                                        <p class="list-card__item__content__name">Java基础</p>
+                                        <h3 class="list-card__item__content__title">Java是一门经典的面向对象语言，即使现在python十分流行也有必要学习一下java</h3>
+                                        <ul class="list-card__item__content__category">
+                                            <li class="list-card__item__content__category__item list-card__item__content__category__item--text-mining">了解更多</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="list-card__item">
+                                <a class="list-card__item__inner" href="programming/python1.html">
+                                    <div class="list-card__item__media"><img
+                                            src="image/python.jpg"
+                                            alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"></div>
+                                    <div class="list-card__item__content">
+                                        <p class="list-card__item__content__name">python基础</p>
+                                        <h3 class="list-card__item__content__title">不论是数据科学还是机器学习领域，毫无疑问python都是最火的选择</h3>
+                                        <ul class="list-card__item__content__category">
+                                            <li class="list-card__item__content__category__item list-card__item__content__category__item--text-mining">了解更多</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="list-card__item">
+                                <a class="list-card__item__inner" href="math/all1.html">
+                                    <div class="list-card__item__media"><img
+                                            src="image/math.jpeg"
+                                            alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"></div>
+                                    <div class="list-card__item__content">
+                                        <p class="list-card__item__content__name">数学基础</p>
+                                        <h3 class="list-card__item__content__title">单纯掌握编程语言是无法深入学习机器学习的，数学才是理论的基础</h3>
+                                        <ul class="list-card__item__content__category">
+                                            <li class="list-card__item__content__category__item list-card__item__content__category__item--text-mining">了解更多</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="archive-case__pager">
+                        <div class="archive-pagination archive-pagination--margin">
+
+
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!--<div class="section-case-study__button js-scroll-show is-show">-->
-                <!--<a class="button " href="https://www.vext.co.jp/case/">-->
-                <!--<span class="button__text">浏览更多</span>-->
-                <!--</a>-->
-                <!--</div>-->
-            </section>
+
 
 
             <section class="section-product section-product--margin">
@@ -507,6 +536,11 @@
 <script src="css/main2/app.js"></script>
 <script type="text/javascript" defer=""
         src="css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+<script src="css/background/js/demo.js"></script>
+<script src="css/background/js/three.min.js"></script>
+<script src="css/background/js/TweenMax.min.js"></script>
+<script src="css/background/js/demo1.js"></script>
 
 
 </body>
