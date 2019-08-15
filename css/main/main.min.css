@@ -2868,7 +2868,7 @@ input::selection, textarea::selection {
 .p-lower__title-en {
     font-family: YakuHanJP,等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC, serif, Calibri, sans-serif;
 
-    font-weight: 100;
+    font-weight: bold;
     letter-spacing: .2em;
     line-height: 1;
     color: #0e1624;

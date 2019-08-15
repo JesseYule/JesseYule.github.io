@@ -20,7 +20,7 @@
 }
 
 .content__subtitle {
-	font-size: 2em;
+	font-size: 1.2em;
 	background: var(--color-subtitle-bg);
 	color: var(--color-subtitle);
 	padding: 0.45em 0.5em;
@@ -28,8 +28,7 @@
 	margin: 0;
 	letter-spacing: 0.5em;
 	text-indent: 0.5em;
-	font-weight: bold;
-	text-transform: uppercase;
+	font-weight: lighter;
 }
 
 @media screen and (max-width: 55em) {

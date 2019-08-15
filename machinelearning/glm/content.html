@@ -97,28 +97,58 @@
 
       <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">广义线性模型</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">从线性回归到广义线性模型</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">广义线性模型，或者说更广泛意义上的线性模型，主要就是把线性回归、逻辑回归等等线性模型的公共特征抽取出来，构建一种更抽象的模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么对最常见的线性回归和逻辑回归来说，他们的公共特征是什么呢，这里直接给出答案，那就是它们的输出（response variable）都属于指数族分布（exponential family），先从线性回归开始分析：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y|x;\theta \sim N(\mu, \sigma^2)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，线性回归的输出是服从正态分布的，要说清楚这个结论，还是从头推导一次比较好。首先，我们还记得线性模型可以表达为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_i = a_0 + a_1 X_i + e_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Yi和Xi表示每个数据点，ei是随机误差项，表示数据的误差，因为再完美的线性模型，也不可能穿过每个数据点，不然这种数据就太理想化了。然后我们再来看一下我们的损失函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (a_0 + a_1 X_i - Y_i)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在线性回归中，我们就是让这个损失函数变成0（或者接近0）从而估计出参数a0和a1，从公式的角度来看，其实损失函数可以表示为随机误差项之和：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (e_i)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，这只是公式上的关系，从本质上来说，随机误差产生的原因是随机因素导致数据不可能完美地落在模型上，而误差函数则是衡量数据和模型之间的距离（差异程度），所以两者有一定联系，但不能说完全等价。但是我们可以从公式的形式上思考一下，我们的模型参数是基于损失函数接近0而得到的，那么换句话说，是不是可以理解成在随机误差项之和接近0的情况下，我们的参数的估计效果最好（无偏）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们再来举一个更详细的例子来理解一下上面的内容，现在我们基于数据做线性回归得到一个模型：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lr.jpg"><img src="image/lr.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在分位数回归中也提到这种数据，他们的分布越越来越分散，虽然基于线性回归的算法我们也可以得到一个结果，但不能说这种结果是好的，因为从公式上来说并没有反映出数据的这种特征，所以我们才需要分位数回归。那么这种数据分布和随机误差项有什么联系呢，一开始提到随机误差项表征数据因随机误差无法完美落在回归曲线上，假如我们基于这个数据集和我们得到的线性模型，画出随机误差项的分布，就可以得到：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lrerror.jpg"><img src="image/lrerror.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图主要大概画出了两个范围的随机误差的分布状况（鼠标画得有点丑别介意），可以看出，他们的分布是偏向左侧的，这就说明了随机误差的分布不是正态分布，那么我们再想象一下，如果随机误差项服从正态分布，数据会是什么样的，得到的模型和数据之间的关系又会是什么样的，相信这个结果不难想象。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的讨论，主要想说明，如果希望线性回归的效果好，那么从一开始我们就需要一个前提，那就是随机误差服从正态分布，可是这个结论依然不足以说明响应变量服从正态分布。我们再来回忆一下，之前曾提到过对线性回归的实质就是求条件期望函数，这里，我不再搞太多公式的推导，直接用一个我认为十分清晰的例子说明一下：回忆一下knn的思想，假如现在要估计某一个x的y值，knn的思想就是分析这一点附近的其他y值，然后取平均，这样得到的y值，到附近其他点的距离之和肯定都是最小的：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/e.jpg"><img src="image/e.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">图中红线表示我们要求的点x，黄线表示附近的y值的均值，交叉点就是我们对y的估值。这个过程是不是主要就是计算附近的点的期望使得得到的y值与其他y值距离之和最小，这种思想和最小二乘法十分相似，另一方面，我们先确定某一点的位置，然后再求附近的点的均值，学术一点来说是不是就是求条件期望：在已知点的位置下求附近的点的期望。所以就得到我们的结论，对求一个点来说，最小二乘法的思想本质上就是通过求条件期望求解，然后把最小二乘应用到求多个点从而求出回归直线的线性回归，就可以理解成是求条件期望函数了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说了那么多终于得到另一个结论了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x_i) = a_0 + a_1 x_i = E(Y|X=x_i)$$</section></div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">综合上式，再重写一下线性回归最初的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_i = E(Y|X=x_i) + e_i$$</section></div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为随机误差项的存在，我们可以把yi看成随机变量，假设随机误差服从均值为0方差为s的正态分布，这时候就可以求它取值的分布：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p(y_i|x_i） = N(E(Y|X=x_i),s)$$</section></div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里再详细解释一下，首先我们虽然得到了一个线性回归模型，但是模型的输出只是我们的预测，"真实值"因为各种因素的存在肯定会有偏差，于是我们引入了随机误差项。因为随机误差项，模型的输出就不再是一个确定的值，而可以看成是一个随机变量，服从一定的分布，那么这个分布是什么呢，首先我们假定了随机误差项服从正态分布时线性回归才能有好的效果，于是进行线性回归的前提是随机误差项服从正态分布，同时对得到的模型来说，比如我们要预测x点的输出y值，我们得到的预测结果是基于条件期望得到的，也就是最大概率的值，于是实际的真实值，就由这个模型输出加上随机误差构成，模型输出是固定的，所以"真实值"就变成在这个模型输出模型随机分布的随机变量了，基于上面的描述，就可以认为这种分布服从正态分布了，其中期望为模型输出，方差为随机误差方差。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">不知道会不会说得太啰嗦，希望能说清楚就好。</div>
+
+
+
 
 
             </div>
