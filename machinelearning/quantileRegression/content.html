@@ -102,11 +102,15 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍分位数回归之前，先重新说一下回归分析，我们之前介绍了线性回归、多项式回归、核回归等等，基本上，都是假定一个函数，然后让函数尽可能拟合训练数据，确定函数的未知参数。尽可能拟合训练数据，一般是通过最小化MSE来进行：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat f(x_i))^2 = E(y - \hat f(x) )^2 $$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以得到的y本质上就是一个期望。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍分位数回归之前，想先说明一下，我们前面所有回归分析得到的函数，本质上就是一个条件期望函数，在x等于某个值的条件下，根据数据，求y的期望。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据上面的分析，我们可以得到一个结论，我们前面所有回归分析得到的函数，本质上就是一个条件期望函数，在x等于某个值的条件下，根据数据，求y的期望。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里我不想搞太多公式的推导，直接用一个我认为十分清晰的例子说明一下：回忆一下knn的思想，假如现在要估计某一个x的y值，knn的思想就是分析这一点附近的其他y值，然后取平均，这样得到的y值，到附近其他点的距离之和肯定都是最小的：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/e.jpg"><img src="image/e.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">图中红线表示我们要求的点x，黄线表示附近的y值的均值，交叉点就是我们对y的估值。这个过程是不是主要就是计算附近的点的期望，使得得到的y值与其他y值距离之和最小，这种思想和最小二乘法十分相似，另一方面，我们先确定某一点的位置，然后再求附近的点的均值，学术一点来说是不是就是求条件期望：在已知点的位置下求附近的点的期望。所以就得到我们的结论：对求一个点来说，最小二乘法的思想本质上就是通过求条件期望求解，然后把最小二乘应用到求多个点从而求出回归直线的线性回归，就可以理解成是求条件期望函数了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">分位数回归提出的原因，就是因为不希望仅仅是研究y的期望，而是希望能探索y的完整分布状况，或者说可能在某些情况下我们更希望了解y的某个分位数。下面再举一个例子，说明分位数回归的作用，假如现在我们有一个如图分布的数据，对其进行普通的回归分析，得到：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">

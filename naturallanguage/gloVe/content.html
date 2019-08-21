@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/python1.html">Python</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/all1.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">GloVe</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了word2vec模型，简单来说，它就是通过一个个句子去发掘出词与词之间的关系，再通过向量去表示出这种关系。而现在将要介绍的GloVe，我觉得它的思想也是和word2vec接近的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">word2vec是通过一个个句子去分析词与词之间的关系，而GloVe是通过整个语料库所有的句子去分析词与词之间的关系，在具体说明之前，首先介绍一下共现矩阵（co-occurrence matrix）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">共现矩阵主要统计了语料库中单词i的上下文中单词j的次数，和word2vec一样，这里的上下文通过指定滑动窗口（context window）大小确定单词数量，比如我们有一个语料库："he is a boy. He is smart."假设滑动窗口大小为2（也就是分析目标词前后的两个词），可得到共现矩阵：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                      & He & is & a & boy & smart \\
+                    He     & 0 & 2 & 1 & 1 & 1 \\
+                    is     & 2 & 0 & 1 & 2 & 1 \\
+                    a      & 1 & 1 & 0 & 1 & 0 \\
+                    boy    & 1 & 2 & 1 & 0 & 0 \\
+                    smart  & 1 & 1 & 0 & 0 & 0 \\
+
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到了语料库的共现矩阵，接下来就是GloVe的核心思想了，首先，GloVe定义了概率：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P_{ij} = P(j|i) = \frac{x_{ij}}{x_i}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个概率表示单词i的前后文中出现单词j的概率，然后，GloVe认为，比起这个概率，更有意义的是概率的ratio：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Ratio = \frac{P_{ik}}{P_{jk}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来理解就是，如果两个单词ij，以十分接近的概率出现在单词k的上下文，那么就可以认为ij之间具有较大的某种联系。但是要分析这种关系有需要依赖于单词k，所以针对单词i、j、k，GloVe提出了以下公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F(w_i, w_j, w_k) = \frac{P_{ik}}{P_{jk}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上公式的意思就是，如果我们能够用一个合理的向量表示这三个单词，那么它们经过一个函数的处理后，应该反映出它们之间的关系（ratio）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来的问题就剩下如何确认这个函数的具体形式了（因为ratio是可以通过共现矩阵计算出来的一个标量，是确定的，所以主要研究左边的函数形式）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一步，ratio是通过i和k的关系以及j和k的关系推断出i和j的关系，因而i和j的关系亲疏通过作差去表示；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F(w_i, w_j, w_k) = F((w_i-w_j)^T, w_k) = \frac{P_{ik}}{P_{jk}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二步，因为ratio是一个标量，ij作差后还是向量，k也是一个向量，因此GloVe就通过两个向量求内积把向量转化为标量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F((w_i-w_j)^T w_k) = F(w_i^T w_k - w_j^T w_k) = \frac{P_{ik}}{P_{jk}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三步，因为左边是差，右边是商，所以最后通过指数函数把两个联系起来：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$exp(w_i^T w_k - w_j^T w_k) = \frac{exp(w_i^T w_k)}{exp(w_j^T w_k)} = \frac{P_{ik}}{P_{jk}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">本来，我们只需要让对应的分子分母相等就可以了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$exp(w_i^T w_k) = P_{ik}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i^T w_k = log P_{ik} = log(X_{ik}) - log(X_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">等式左边两个词向量相乘对顺序是不敏感的，可是右边不一样，所以会出现问题：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_k^T w_i = log(X_{ki}) - log(X_k)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_k^T w_i = w_i^T w_k$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$log(X_{ki}) - log(X_k) \neq log(X_{ik}) - log(X_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以在原式引入偏置项（网上很多文章对这个偏置项的推导不算太详细，我这里具体写一下）：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_k^T w_i + b_i = log(X_{ki}) - log(X_k)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i^T w_k + b_k = log(X_{ik}) - log(X_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们知道：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$log(X_{ki}) = log(X_{ik}) $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i^T w_k  = w_k^T w_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以其实：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$b_i - b_k = - log(X_k) + log(X_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，偏置项主要和X_k、X_i有关，我们把两式相加：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i^T w_k +  w_k^T w_i + b_k +  b_i = log(X_{ik}) + log(X_{ki}) - log(X_i)  - log(X_k)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$2*w_i^T w_k+ b_k +  b_i = 2*log(X_{ik}) - log(X_i)  - log(X_k)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为偏置项和X_k、X_i有关，所以可以进一步简化，消去log(X_i)、log(X_k)，其实就是把它们包含在b_i、b_k里面，然后再简化一下式子得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i^T w_k+ b_k +  b_i = log(X_{ik})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">终于得到了最终的结果，这个结果是基于最完美的词向量得到的，所以，接下来的步骤，就是定义损失函数，通过训练神经网络，从初始向量开始求出这些最完美的词向量：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (w_i^T w_k+ b_k +  b_i - log(X_{ik}))^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时，GloVe也考虑到两个词共同出现的次数越多，那么在这两个词在损失函数的影响就应该更大，所以可以根据两个词共同出现的次数设计一个权重来对损失函数中的每一项进行加权：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum f(X_{ik}) (w_i^T w_k+ b_k +  b_i - log(X_{ik}))^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于这个权重这里我就不再详细说明。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是关于GloVe的详细推导过程，可以看到，GloVe的思想和word2vec的思想接近，但是GloVe是从全局的角度出发，构建一个共现矩阵，每一次的训练都是基于整个语料库进行分析的，所以它才叫Global Vector，而word2vec则是从一个个句子出发，但我认为重点都在于通过句子去分析词与词之间的联系。</div>
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
