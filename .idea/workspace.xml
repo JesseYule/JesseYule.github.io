@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/image/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/image/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/image/3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/image/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/bptt/image/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/machinelearning/lstm/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/naturallanguage/ESIM/content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/naturallanguage/seq2seq/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/glm/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/glm/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/lr2glm/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/lr2glm/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/rnn/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/rnn/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturallanguage/all1.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/all1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/all4.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/all4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/dl1.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/dl1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +17,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="304" column="45" selection-start-line="304" selection-start-column="40" selection-end-line="304" selection-end-column="45" />
+            <state relative-caret-position="285">
+              <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/machinelearning/lstm/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="106" column="144" selection-start-line="106" selection-start-column="144" selection-end-line="106" selection-end-column="144" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="377" column="38" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="377" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/machinelearning/all4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="694">
+              <caret line="366" column="28" selection-start-line="366" selection-start-column="28" selection-end-line="366" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/machinelearning/bptt/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="98" column="65" selection-start-line="98" selection-start-column="65" selection-end-line="98" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -129,9 +154,7 @@
         <option value="$PROJECT_DIR$/machinelearning/all2.html" />
         <option value="$PROJECT_DIR$/articles/all1.html" />
         <option value="$PROJECT_DIR$/machinelearning/all3.html" />
-        <option value="$PROJECT_DIR$/machinelearning/all4.html" />
         <option value="$PROJECT_DIR$/machinelearning/ml1.html" />
-        <option value="$PROJECT_DIR$/machinelearning/dl1.html" />
         <option value="$PROJECT_DIR$/programming/java1.html" />
         <option value="$PROJECT_DIR$/programming/java2.html" />
         <option value="$PROJECT_DIR$/programming/javaee.html" />
@@ -162,6 +185,8 @@
         <option value="$PROJECT_DIR$/naturallanguage/textMatchingWithESIM/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/ESIM/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/all1.html" />
+        <option value="$PROJECT_DIR$/machinelearning/dl1.html" />
+        <option value="$PROJECT_DIR$/machinelearning/all4.html" />
       </list>
     </option>
   </component>
@@ -187,6 +212,23 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
+              <item name="bptt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
+              <item name="lstm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -451,15 +493,16 @@
       <workItem from="1567061202888" duration="3317000" />
       <workItem from="1567125261890" duration="9246000" />
       <workItem from="1567376637933" duration="5137000" />
-      <workItem from="1567561877308" duration="7104000" />
+      <workItem from="1567561877308" duration="7683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="818860000" />
+    <option name="totallyTimeSpent" value="819439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24383369" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -503,9 +546,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/about/about2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -545,20 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="352" column="38" lean-forward="true" selection-start-line="330" selection-start-column="27" selection-end-line="352" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="354" lean-forward="true" selection-start-line="354" selection-end-line="354" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/all4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="342" lean-forward="true" selection-start-line="259" selection-start-column="27" selection-end-line="342" />
         </state>
       </provider>
     </entry>
@@ -793,24 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/bptt/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="127" column="254" selection-start-line="127" selection-start-column="254" selection-end-line="127" selection-end-column="254" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/logisticRegression/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="115" selection-start-line="115" selection-end-line="119" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/lstm/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="106" column="144" selection-start-line="106" selection-start-column="144" selection-end-line="106" selection-end-column="144" />
         </state>
       </provider>
     </entry>
@@ -860,17 +872,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="304" column="45" selection-start-line="304" selection-start-column="40" selection-end-line="304" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/naturallanguage/sentenceClassificationwithCNN/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="104" column="75" selection-start-line="104" selection-start-column="75" selection-end-line="104" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/lstm/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="106" column="144" selection-start-line="106" selection-start-column="144" selection-end-line="106" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/bptt/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="98" column="65" selection-start-line="98" selection-start-column="65" selection-end-line="98" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="377" column="38" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="377" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/all4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="366" column="28" selection-start-line="366" selection-start-column="28" selection-end-line="366" selection-end-column="28" />
         </state>
       </provider>
     </entry>
