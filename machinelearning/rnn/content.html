@@ -102,9 +102,9 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果说卷积神经网络是为了解决图像识别而提出的，那么循环神经网络（Recurrent Neural Network）就是为了解决自然语言处理而提出的，当然实际上这两种神经网络的用途很广，但是从自然语言处理的角度去看待循环神经网络可以更容易理解它的特性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果说卷积神经网络是为了解决图像识别而提出的，那么循环神经网络（Recurrent Neural Network）就是为了解决自然语言处理（序列数据）而提出的，当然实际上这两种神经网络的用途很广，但是从自然语言处理的角度去看待循环神经网络可以更容易理解它的特性。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自然语言处理（Natural Language Processing），简单来说就是让计算机理解人类的语言，从而解决相关的问题，比如现在有一句话"我上班迟到了，老板批评了__"，如果要填入最后一个词，我们很容易就能猜出是"我"，可是怎么让计算机也能解答同样的问题，这就是自然语言处理要研究的。一般来说，我们判断最后一个词是什么，是根据前面给出的句子来判断的，循环神经网络为了解决这类问题，就提出可以把整个句子看成一个离散时序序列，先对句子进行分词，然后按顺序输入到模型中，最后根据前面的输入判断应该得到的输出，为了满足让后续的输入在分析过程中能够"记住"前面的输入，循环神经网络在一般多层感知器的基础上，在隐层添加了虚神经元表示缓存空间，用于缓存上一时刻的隐层的输出。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自然语言处理（Natural Language Processing），简单来说就是让计算机理解人类的语言，从而解决相关的问题，比如现在有一句话"我上班迟到了，老板批评了__"，如果要填入最后一个词，我们很容易就能猜出是"我"，可是怎么让计算机也能解答同样的问题，这就是自然语言处理要研究的。一般来说，我们判断最后一个词是什么，是根据前面给出的句子来判断的，循环神经网络为了解决这类问题，就提出可以把整个句子看成一个离散时序序列，先对句子进行分词，然后按顺序输入到模型中，最后根据前面的输入判断应该得到的输出，为了满足让后续的输入在分析过程中能够"记住"前面的输入，循环神经网络在一般多层感知器的基础上，在隐层添加了多一个神经元作为缓存单位，用于保存该时刻隐层的输出，这样在下一个时刻，隐层就能读取该神经元的数据，达到分析历史数据的效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的描述的就是最简单的一种循环神经网络，单向RNN，可以看出，实质上它和卷积神经网络是一样，都是为了解决某类问题，而在多层感知器的基础上添加了一些结构实现更多的功能，现在来详细看一下单向RNN的结构：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
@@ -112,7 +112,7 @@
                         <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图左方是循环神经网络的结构，右方则是根据时序数据而展开的结构，实质上，虚神经元起到的作用就是在下一个时序数据输入时，能够同时把上一个隐层输出输入到当前的隐层，使得隐层能同时接收上一时刻隐层的输出以及当前的时序数据，同时进行分析，这样就使得RNN在某一时刻的输出不仅与该时刻的输入有关，还与该时刻之前所有时刻的输入有关，达到了记忆的目的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图左方是循环神经网络的结构，右方则是根据时序数据而展开的结构，可以看出，上一个时刻的隐层的输出，既输出到输出层，也输出到下一个时刻的隐层，这样对一个时刻的隐层来说，它就同时分析了历史数据以及当前数据，使得RNN在某一时刻的输出不仅与该时刻的输入有关，还与该时刻之前所有时刻的输入有关，达到了记忆的目的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">从公式的角度，也可以这样看，对某一个时刻，有：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(Vs_{(t)})$$</section></div>
@@ -121,7 +121,7 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V s_{(t)})$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V f(U x_{(t)} + W s_{(t-1)}))$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{(t)} = g(V f(U x_{(t)} + W f(U x_{(t-1)} + W s_{(t-2)})))$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样一直展开，我们就能看出历史所有输出对于当前输出都有影响。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样一直展开，我们就能看出历史所有输出对于当前输出都有影响。同时注意一下，在f中包含了f自身，也就是这是一个递归，所以RNN也叫递归神经网络。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">明白了循环神经网络的基本结构之后，我们继续分析一下它的细节，第一是模型的输入，我们输入的是单词，一般采取独热矢量，根据单词在语料库中的位置进行输入（比如"我"排在语料库的第二位，那么它的矢量就表示为[0,1,0...]，所以，这也意味着模型的输出是语料库中的单词，而不会模型自己制造出新的词，比如现在我们有一个大小10000的语料库，那么就意味着输入层有10000个神经元，输出层有10000个神经元。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
@@ -140,16 +140,8 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat y_{(t)}ln(y_{(t)}) = 1*ln(0.3)$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，这样相乘实际上计算期望输出对应的概率的对数，比如说期望输出是"我"，而模型计算得到的输出中"我"的概率是0.3，训练误差就是ln(0.3)，所以它的概率越接近1训练误差就会越接近0。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，我们还需要了解模型的学习算法，其实本质上还是梯度下降，只是需要适当修改一下，在这里称为BPTT(Back Propagation Through Time),很多文章花费很多篇幅推导这个算法，我并不打算这样做，因为本质上他就是梯度下降法，就是需要求偏导而已，主要是循环神经网络的结构导致求偏导的时候会比之前的情况更加复杂：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如说我现在想求损失函数对w的偏导，根据链式法则：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{\partial E_3}{\partial W} = \frac{\partial E_3}{\partial y_3} \frac{\partial y_3}{\partial s_3} \frac{\partial s_3}{\partial W}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可是问题是，s3依赖于s2，s2又依赖于s1和w，于是对w求导就不能把s3看成常量，而要分别应用链式法则：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{\partial E_3}{\partial W} = \sum_{k=0}^3 \frac{\partial E_3}{\partial y_3} \frac{\partial y_3}{\partial s_3} \frac{\partial s_3}{\partial s_k} \frac{\partial s_k}{\partial W}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于模型的学习算法，会在BPTT中继续详细描述。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再注意一下，上图是循环神经网络的展开图，只是同一个模型不同时刻的状态，所以w只有一个，不会出现不同时刻有不同的参数。另一方面，这种模型在不同时刻共用同一个参数的现象，称为共享参数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过上面的介绍，我们了解了循环神经网络的基本结构、它的输入输出、损失函数以及学习算法，但上面提到的模型是最基础的单向循环神经网络，为了解答另一类问题，我们还会有双向循环神经网络。</div>

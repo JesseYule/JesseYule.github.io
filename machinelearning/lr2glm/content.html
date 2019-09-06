@@ -103,36 +103,52 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在谈及广义线性模型是什么之前，我想先分析一下线性回归模型有什么限制。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在谈及广义线性模型是什么之前，我想先分析一下线性回归模型有什么限制。在这里先说明一点，以下分析的线性回归模型，是考虑了随机误差项的完整的线性回归模型，这就意味着，我们可以假设模型的输出是能够完美拟合观察数据的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，线性回归的输出是需要服从正态分布的，要说清楚这个结论，还是从头推导一次比较好。首先，我们还记得线性模型可以表达为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我想说明一下关于响应变量的分布，以及响应变量解释变量之间的关系的区别。在线性回归中，往往我们会认为响应变量服从正态分布、响应变量和解释变量之间服从线性关系，这时候我们使用线性回归才能得到好的效果，那么我们应该怎么理解这两者呢，首先来看一下图：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lr0.png"><img src="image/lr0.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是一个很经典的线性分布的数据，可以看到随着x增大y也增大，所以我们说x和y之间有线性关系。如果我们只看y的数据，也就是说把这个二维图降维到只有y轴：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/y.png"><img src="image/y.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图就相当于把最初的图的点投影到y轴上，这时候没有了x，反映的就是y的数据的分布状况。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">明白了什么是响应变量的分布之后，就开始正式讨论线性回归的局限性。首先，正如一开始说的，线性回归的响应变量需要服从正态分布，这是基于高斯-马尔可夫定理得到的：在线性回归模型中，如果误差满足零均值、同方差且互不相关，则回归系数的最佳线性无偏估计就是普通最小二乘法估计。或者简单来说说，这时候使用最小二乘法的线性回归的估计效果最好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">要说清楚这个结论，还是从头推导一次比较好。首先，我们还记得线性回归模型可以表达为：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_i = a_0 + a_1 X_i + e_i$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Yi对应真实的输出，a_0 + a_1 X_i对应线性回归模型的输出，e_i对应随机误差，整个表达式的意思就是线性回归的输出不一定对应真实值，因为存在随机误差，但是我们要做的就是让我们的模型输出尽可能接近各个真实值。然后我们再来看一下我们的损失函数：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (a_0 + a_1 X_i - Y_i)^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在线性回归中，我们就是让这个损失函数变成0（或者接近0）从而估计出参数a0和a1，从公式的角度来看，其实损失函数可以表示为随机误差项之和：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">a_0、a_1是非随机但不可观察的参数，X_i是非随机且可观察的一般变量，e_i是不可观察的随机变量，因此Yi是可观察的随机变量。对于一个把随机误差也考虑的完整的线性回归模型，模型的输出并不等于回归方程的输出，还需要加上随机误差项。响应变量因为考虑了随机误差而被看作随机变量。我们基于数据拟合一个线性回归模型，其实只是求出a_0、a_1这两个参数，主要是基于最小化损失函数（最小二乘法）得到的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (a_0 + a_1 X_i - Y_i')^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Y_i'是真实数据（观察数据），因为模型考虑了随机误差，所以这里可以假设，观察数据等于我们训练完成后的线性回归模型的输出，所以，当我们最小化了损失函数，我们就可以得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum ((a_0 + a_1 X_i) - (a_0' + a_1' X_i + e_i))^2$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (e_i)^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，这只是公式上的关系，从本质上来说，随机误差产生的原因是随机因素导致数据不可能完美地落在模型上，而误差函数则是衡量数据和模型之间的距离（差异程度），所以两者有一定联系，但不能说完全等价。但是我们可以从公式的形式上思考一下，我们的模型参数是基于损失函数接近0而得到的，那么换句话说，是不是可以理解成在随机误差项之和接近0的情况下，我们的参数的估计效果最好（无偏）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的式子说明了，即使响应变量和解释变量确实服从线性关系，即使模型已经训练完成，因为随机误差的存在，损失函数也不可能等于0。在这里我们可以得到一个结论，对于一个训练完成的线性回归模型，它的损失函数和随机误差项是相关了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们再来举一个更详细的例子来理解一下上面的内容，现在我们基于数据做线性回归得到一个模型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们再看另一个例子，现在我们基于数据做线性回归得到一个模型：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/lr.jpg"><img src="image/lr.jpg" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在分位数回归中也提到这种数据，他们的分布越越来越分散，虽然基于线性回归的算法我们也可以得到一个结果，但不能说这种结果是好的，因为从公式上来说并没有反映出数据的这种特征，所以我们才需要分位数回归。那么这种数据分布和随机误差项有什么联系呢，一开始提到随机误差项表征数据因随机误差无法完美落在回归曲线上，假如我们基于这个数据集和我们得到的线性模型，画出随机误差项的分布，就可以得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在分位数回归中也提到这种数据分布，分布会随着x的增大越来越分散，也就是说方差变大，虽然基于线性回归的算法我们也依然可以得到一条回归直线，但不能说回归效果很好，因为它并没有反映出数据越来越分散的特征，所以我们才需要分位数回归。那么这种数据分布和随机误差项有什么联系呢，一开始提到随机误差项表征数据因随机误差无法完美落在回归曲线上，假如我们基于这个数据集和我们得到的线性模型，针对两个小范围的x的数据，画出随机误差项的分布，就可以得到：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/lrerror.jpg"><img src="image/lrerror.jpg" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图主要大概画出了两个范围的随机误差的分布状况（鼠标画得有点丑别介意），可以看出，他们的分布是偏向左侧的，这就说明了随机误差的分布不是正态分布，那么我们再想象一下，如果随机误差项服从正态分布，同时均值为0，数据会是什么样的，得到的模型和数据之间的关系又会是什么样的，相信这个结果不难想象。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图大概画出了两个范围的随机误差的分布状况（它们的均值都为0），可以看出，第一，随机误差的分布不是正态分布，第二，随机误差的分布的方差不是同一个数值。那么我们再想象一下，真正理想的数据分布，应该是数据对称地分布在回归曲线两侧，同时分散程度是接近的，也就是随机误差项服从正态分布，且独立同分布。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">综上所述，我们可以得到一个结论，如果希望线性回归的结果合理，那么就要求随机误差项是服从正态分布的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，我们还需要注意，在我们进行线性回归的时候，其实一开始就假设了解释变量和响应变量之间是服从线性关系的，假设他们之间不服从线性分布（以上图的数据分布为例），而我们依然采用线性回归，那么他们的残差就被模型认为是随机误差造成的，这也就导致了随机误差不服从正态分布。再回想一下，其实响应变量因为随机误差的存在才被认为是随机分布的，当随机误差不服从正态分布，响应变量也就不服从正态分布了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们再来分析一下线性回归的输出，为什么说响应变量可以看成是随机变量，就是因为它不是完美落在回归曲线上，而是因为随机误差而随机分布在曲线的四周，再看回响应变量的表达式，就不能知道，在随机误差项服从均值为0方差为s的情况下，响应变量服从均值为a_0 + a_1 X_i方差为s正态分布。换句话说，就是响应变量在回归曲线附近随机分布，但越接近回归曲线，响应变量落在这个区域的概率就越高。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的结论也说明了，虽然响应变量的分布和响应变量解释变量之间的关系是两回事，但是它们之间是相互联系的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面主要分析了线性回归要求响应变量服从正态分布才能有好的回归效果，这是第一个限制，第二个很明显就是要求响应变量和解释变量之间是线性关系的，因为这两个限制条件，就导致了线性回归模型在有些情况下是不适用的，于是就有了我们的广义线性模型，它主要改进了线性回归的两个限制：不要求响应变量服从正态分布以及响应变量和解释变量之间可以服从非线性关系。</div>
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面主要分析了线性回归要求响应变量服从正态分布才能有好的回归效果，这是第一个限制，第二个是要求响应变量和解释变量之间是线性关系，因为这两个限制条件，就导致了线性回归模型在有些情况下是不适用的，于是就有了我们的广义线性模型，它主要改进了线性回归的两个限制：不要求响应变量服从正态分布以及响应变量和解释变量之间可以服从非线性关系。</div>
 
             </div>
         </div>
