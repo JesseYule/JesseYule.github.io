@@ -96,38 +96,52 @@
 
         <div class="p-lower">
             <div class="c-red-line c-slide-in u-animdel-100"></div>
-            <h2 class="p-lower__title-en c-slide-in u-animdel-100">径向基函数神经网络</h2>
+            <h2 class="p-lower__title-en c-slide-in u-animdel-100">概率图模型</h2>
 
 
             <div class="p-lower-kv">
                 <div class="p-lower-kv__text">
                     <div class="p-lower-kv__subtitle"> </div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">径向基函数神经网络是不同于BP神经网络的另一种的前馈神经网络，由输入层、一层非线性隐层（径向基层）和线性输出层组成的。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">概率图模型是一类用图来表示变量之间的关系的概率模型，把一个个变量看成图中的一个个节点，变量之间如果存在关系就用线连起来，根据线的有向和无向，可以进一步划分为有向图模型和无向图模型：</div>
                     <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                         <picture>
-                            <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                            <source media="(max-width: 568px)" srcset="image/1.jpg"><img src="image/1.jpg" alt="ポジショニングマップ">
                         </picture>
                     </div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于径向基函数神经网络，首先要介绍一个定理，cover定理，对于一个复杂的在低维空间表现为非线性可分的模型分类问题，当我们从该低维空间由某种非线性变换而得到的高维空间来看待时，原来的问题就可能转化为一个简单的线性可分的模式分类问题。再看回径向基函数神经网络的结构，它只有一层隐层，而且隐层的神经元数量是多于输入层的，所以就可以看成经过隐层的处理后，原来的输入特征由n维变成了更高的n+k维。这就是径向基函数神经网络的核心思想。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">所谓有向无向就是指变量之间到底是单向的依赖还是互相依赖，具体来说，就是如何求一系列变量发生的联合概率P(x1,x2,...,xn)。</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们首先从BP神经网络和径向基函数神经网络的区别入手，分析径向基神经网络的一些优点。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于有向图来说，联合概率的求法是：</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(x_1, ..., x_n) = \prod_{i=0} P(x_i |\pi (x_i)) $$</section></div>
+                    <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                        <picture>
+                            <source media="(max-width: 568px)" srcset="image/2.jpg"><img src="image/2.jpg" alt="ポジショニングマップ">
+                        </picture>
+                    </div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如对于上图，就可以这样计算联合概率：</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(x_1, ..., x_5) = P(x_1)*P(x_2 |x_1)*P(x_3 |x_2)*P(x_4 |x_2)*P(x_5 |x_3,x_4) $$</section></div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，BP神经网络的隐节点（隐层神经元）采用输入变量与权向量的内积作为激活函数的自变量，激活函数采用sigmoid函数，我们知道，在训练过程中，BP算法会根据样本数据不断反向调整参数（权向量），使得最后得到的模型能够尽可能拟合所有数据（或者说模型损失函数尽可能小），也就是说，所有数据对于模型参数的调整都有同等重要的地位，这种现象就称为全局逼近。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于无向图，在了解怎么求它的联合概率之前，先定义几个概念。</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">而RBF神经网络则是采用输入变量与基函数中心的距离（如欧氏距离）作为激活函数的自变量，同时激活函数采用径向基函数，采用输入变量与中心的距离作为激活函数的自变量和核回归的思想是相似的，也就是说，远离各个中心的数据，对于模型参数调整的影响是较小的，真正起主要作用的是靠近中心变量的样本数据，所以这就属于局部逼近。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，因为无向图不像有向图那样定义了节点之间的拓扑顺序，所以无法用链式法则对p(x)逐一分解，无向图模型的联合概率一般通过全连通子图为单位进行分解，而无向图中的一个全连通子图就称为团：</div>
+                    <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                        <picture>
+                            <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                        </picture>
+                    </div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体来说，全连通子团里的所有节点之间都是相连的，比如上图中的：{x1,x2}、{x1,x2,x3}等等</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对BP神经网络和RBF神经网络的区别，就可以推导出，RBF神经网络比起BP神经网络的优点主要在于计算速度，因为RBF只有一层隐层，BP可能有多层隐层，同时BP是全局逼近而RBF是局部逼近，这些都会影响计算速度。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果一个团不能被其他团包含，这个团就是一个最大团，比如图中蓝色那部分，为什么这是一个最大团，因为x1无法和它构成一个更大的团（在这里x1没有和x4相连）。</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">明确了RBF神经网络的优点后，再来具体介绍RBF神经网络的过程。BP神经网络要求解的只有权向量，而RBF神经网络需要求解的参数有基函数的中心、方差以及隐层到输出层的权值。首先关于中心，其实和样条回归的节点、loess的拟合点是一个东西，通过一组中心将原来的样本数据集划分到不同区间，再局部进行拟合，所以中心变量的数量和位置对于最后拟合得到的函数的精度和形状影响很大。所以REF神经网络可以分为两个过程，第一个是确定基函数的中心和方差，然后才是确定权值。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于以上的概念，无向图的联合概率定义为一系列的最大团上的非负函数的乘积。</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于基函数的中心选取方法有很多，第一种是直接计算法，其实就是随机选取中心；第二种是自组织学习选取中心，主要采用K-均值聚类法来选择中心；第三种是通过梯度下降法这类有监督学习方法来选取中心，除此之外还有很多不同的方法，但目前为止也没有通用的较好的策略去决定中心，或多或少会存在计算量大、收敛速度较慢等问题，所以目前针对这些问题，也有提出了一种更复杂的基于合作性协同进化的RBF学习算法，去分析出最优的隐层神经元数量以及基函数中心、方差。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">Hammersley-Clifford定理：如果一个分布p(x)>0满足无向图G中的局部马尔可夫性质，当且仅当p(x)可以表示为一系列定义在最大团上的非负函数的乘积形式，即</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p(x) = \frac{1}{Z} \prod _{c \in C} \phi_c (x_c)$$</section></div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中C为G中的是最大团集合，phi是定义在团c上的势能函数，Z是配分函数，用来将乘积归一化为概率形式：</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z = \sum_{x} \prod_{c \in C} \phi_c (x_c)$$</section></div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于这个势能函数，针对不同的模型有不同的定义，这里暂不详细说明。</div>
                     <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">确定了基函数的中心和方差之后，我们就能进一步得到模型的输出表达式（以高斯函数作为径向基函数为例）：</div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$R(x_p - x_i) = exp(\frac{1}{-2\delta ^2} ||x_p - x_i ||^2)$$</section></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_i = \sum_{i=1}^h \omega_{ij} exp(\frac{1}{-2\delta ^2} ||x_p - x_i ||^2)$$</section></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，根据实际的情况（回归还是分类问题），选择适当的损失函数，按照常规的方法去求解最优权值。</div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，RBF神经网络可以看成是一种基于局部逼近思想而改进的神经网络，理论上和BP神经网络相比计算效率更高，可是另一方面，我认为BP神经网络的各个步骤是十分明确的，可以一步步推导的，而RBF神经网络在确定径向基函数相关参数时，根据不同的样本数据分布或许会有更好的计算方法，很难确定一种通用的最优的求解方法，这种不确定性就变成了RBF神经网络的一大局限。</div>
+                    <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是对概率图模型的简单介绍，简单来说，这是一种通过图结构来描述多元随机变量之间条件独立关系的概率模型，可以看到，其实它作了一个很重要的假设，独立性假设，认为k个随机变量可以分解为k个条件概率的乘积，大大减少了整个模型的参数，不然如果考虑所有情况，这样模型的参数量将十分巨大，计算机很难计算。</div>
+
 
                 </div>
 
