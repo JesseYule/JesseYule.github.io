@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naturallanguage/all1.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/all1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1498">
-              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="594">
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#2107#2111#0" expanded="true" />
@@ -36,10 +36,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="357" column="50" selection-start-line="357" selection-start-column="50" selection-end-line="357" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/hmm/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="971">
+            <state relative-caret-position="2898">
               <caret line="126" column="136" selection-start-line="126" selection-start-column="136" selection-end-line="126" selection-end-column="136" />
             </state>
           </provider>
@@ -48,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/viterbi/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="913">
+            <state relative-caret-position="3289">
               <caret line="143" column="174" selection-start-line="143" selection-start-column="174" selection-end-line="143" selection-end-column="174" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#div#21;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -65,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/crf/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
+            <state relative-caret-position="2231">
               <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
             </state>
           </provider>
@@ -193,13 +202,13 @@
         <option value="$PROJECT_DIR$/machinelearning/viterbi/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/crf/content.html" />
         <option value="$PROJECT_DIR$/machinelearning/all4.html" />
-        <option value="$PROJECT_DIR$/naturallanguage/all1.html" />
         <option value="$PROJECT_DIR$/naturallanguage/all2.html" />
         <option value="$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/all1.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="96" />
     <option name="y" value="160" />
     <option name="width" value="1440" />
@@ -231,12 +240,6 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="naturallanguage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="naturallanguage" type="462c0819:PsiDirectoryNode" />
-              <item name="probabilistifcGraphicalModel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -499,14 +502,15 @@
       <workItem from="1567561877308" duration="21817000" />
       <workItem from="1568111580580" duration="19081000" />
       <workItem from="1568183637716" duration="889000" />
+      <workItem from="1568184735971" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="853543000" />
+    <option name="totallyTimeSpent" value="853558000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="96" y="160" width="1440" height="808" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="808" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24383369" />
@@ -850,35 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="352" column="47" selection-start-line="352" selection-start-column="47" selection-end-line="352" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/viterbi/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="913">
-          <caret line="143" column="174" selection-start-line="143" selection-start-column="174" selection-end-line="143" selection-end-column="174" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#21;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#22;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/crf/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/neuralNetwork/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1933" />
@@ -898,17 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/hmm/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="126" column="136" selection-start-line="126" selection-start-column="136" selection-end-line="126" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1498">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="594">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#2107#2111#0" expanded="true" />
@@ -921,6 +889,42 @@
             <element signature="n#style#0;n#section#0;n#div#22;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#0;n#div#24;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/hmm/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2898">
+          <caret line="126" column="136" selection-start-line="126" selection-start-column="136" selection-end-line="126" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/viterbi/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="143" column="174" selection-start-line="143" selection-start-column="174" selection-end-line="143" selection-end-column="174" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#21;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#22;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/crf/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2231">
+          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="357" column="50" selection-start-line="357" selection-start-column="50" selection-end-line="357" selection-end-column="50" />
         </state>
       </provider>
     </entry>
