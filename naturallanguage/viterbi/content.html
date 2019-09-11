@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/python1.html">Python</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/all1.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+              <div class="c-red-line c-slide-in u-animdel-100"></div>
+              <h2 class="p-lower__title-en c-slide-in u-animdel-100">维特比算法</h2>
+
+
+              <div class="p-lower-kv">
+                  <div class="p-lower-kv__text">
+                      <div class="p-lower-kv__subtitle"> </div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到HMM有三类问题，这里主要针对第二类问题：根据观测序列分析隐藏状态序列，算法主要是维特比算法。</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如还是以hmm中的天气和活动作为例子，现在我们观察到一系列活动，需要分析每个活动对应的天气，这时候，每个活动都对应着三种可能的天气，假设观测序列长度为n，那么天气状态序列就有3^n种可能性，我们就需要从中找出答案。</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">这类问题可以认为是最优路径问题，最简单的方法就是穷举法，把所有可能都计算一遍，看看谁最优，可是这样就要计算3^n次，明显不现实，另一方面也可以采取贪心算法，每次只选择最优的路径，也就是每次都选择活动对应概率最大的天气，虽然效果更好但是往往还是和真实情况有所不同，所以就有了beam search，每次只选择最好的前n条路径。</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">beam search和贪心算法的区别，一个是前n个最优一个是当前最优，举个例子，现在我们通过贪心算法，分析出第一个状态是雨天，对应的概率是0.6，第二个概率是0.5，那么这段序列发生的概率就是0.3，如果我们采用维特比算法，同时分析两个状态，可能发现第一个状态选择晴天（0.5），第二个选择晴天（0.7），得到的结果比贪心算法更优，主要的原因就是贪心算法只考虑当前最优而舍弃了其他可能性，没办法从整体上进行考虑，当然贪心算法的计算效率是非常好的。而beam search随着beam width（前n条路径的n）变大，计算复杂度也会变大，而beam width小了分析得到的模型又可能出问题，所以这个算法也并不是完美的。</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后就是这次要重点介绍的维特比算法，它的思路是从开始状态后的每一步，都记录下到该状态的所有路径的概率最大值，以此作为基准继续向后推进，这样说还是比较抽象，还是结合例子说明，比如现在有三个盒子装了红球白球，观测的是球的颜色，状态集合是盒子的号码：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$V = {red, white}$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Q = {box_1, box_2, box_3}$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">初始状态分布：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\prod = (0.2, 0.4, 0.4)^T$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">状态转移概率：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                          \begin{matrix}
+                          0.5 & 0.2 & 0.3 \\
+                          0.3 & 0.5 & 0.2  \\
+                          0.2 & 0.3 & 0.5  \\
+                          \end{matrix}
+                          $$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">观测状态概率分布矩阵为：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                          \begin{matrix}
+                          0.5 & 0.5 \\
+                          0.4 & 0.6 \\
+                          0.7 & 0.3 \\
+                          \end{matrix}
+                          $$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">观测序列为：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$O = {red, white, white}$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们需要计算第一个时刻三个隐藏状态各自的概率：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_1(1) = \pi_1 b_1(o_1) = 0.2*0.5 = 0.1$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_1(2) = \pi_2 b_2(o_1) = 0.4*0.4 = 0.16$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_1(3) = \pi_3 b_3(o_1) = 0.4*0.7 = 0.28$$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里的意思就是根据初始概率以及每个箱子抽到红球的概率计算的，然后就是计算第二时刻的概率：</div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_2(1) = max_{1\leq j\leq 3}[\delta_1(j)a_{j1}] b_1(o_2) = max[0.1*0.5, 0.16*0.3, 0.28*0.2]*0.5 = 0.028 $$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_2(2) = max_{1\leq j\leq 3}[\delta_1(j)a_{j2}] b_2(o_2) = max[0.1*0.2, 0.16*0.5, 0.28*0.3]*0.5 = 0.0504 $$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\delta_2(3) = max_{1\leq j\leq 3}[\delta_1(j)a_{j3}] b_3(o_2) = max[0.1*0.3, 0.16*0.2, 0.28*0.5]*0.5 = 0.042 $$</section></div>
+                      <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的计算就是主要的迭代过程了，仔细看一下，简单来说就是根究上一个时刻计算出来的各个状态的概率，再乘以转移概率，记得该时刻下各个状态的最大概率，这样一致计算下去，最终就可以得到结果。</div>
+
+                  </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

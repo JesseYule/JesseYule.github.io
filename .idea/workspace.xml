@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bebced-8f52-4afa-93cb-a1b50d0bbe27" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/machinelearning/all5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naturallanguage/all2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naturallanguage/crf/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naturallanguage/hmm/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naturallanguage/viterbi/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/machinelearning/all4.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/all4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/dl1.html" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/dl1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naturallanguage/all1.html" beforeDir="false" afterPath="$PROJECT_DIR$/naturallanguage/all1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,46 +24,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="869">
+              <caret line="122" column="302" selection-start-line="122" selection-start-column="302" selection-end-line="122" selection-end-column="302" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2107#2111#0" expanded="true" />
+                <element signature="e#2243#2247#0" expanded="true" />
+                <element signature="e#2252#2256#0" expanded="true" />
+                <element signature="e#2263#2267#0" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#18;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/machinelearning/lstm/content.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="106" column="144" selection-start-line="106" selection-start-column="144" selection-end-line="106" selection-end-column="144" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="377" column="38" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="377" selection-end-column="38" />
+            <state relative-caret-position="252">
+              <caret line="352" column="47" selection-start-line="352" selection-start-column="47" selection-end-line="352" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/machinelearning/all4.html">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/all2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="366" column="28" selection-start-line="366" selection-start-column="28" selection-end-line="366" selection-end-column="28" />
+            <state relative-caret-position="455">
+              <caret line="272" column="64" lean-forward="true" selection-start-line="272" selection-start-column="64" selection-end-line="272" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/machinelearning/bptt/content.html">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/hmm/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="98" column="65" selection-start-line="98" selection-start-column="65" selection-end-line="98" selection-end-column="78" />
+            <state relative-caret-position="2898">
+              <caret line="126" column="136" selection-start-line="126" selection-start-column="136" selection-end-line="126" selection-end-column="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/viterbi/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3289">
+              <caret line="143" column="174" selection-start-line="143" selection-start-column="174" selection-end-line="143" selection-end-column="174" />
+              <folding>
+                <element signature="n#style#0;n#section#0;n#div#21;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#22;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naturallanguage/crf/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3657">
+              <caret line="159" column="248" selection-start-line="159" selection-start-column="248" selection-end-line="159" selection-end-column="248" />
             </state>
           </provider>
         </entry>
@@ -136,13 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/catogory.html" />
-        <option value="$PROJECT_DIR$/index_past.html" />
-        <option value="$PROJECT_DIR$/machinelearning/backPropagation/content.html" />
-        <option value="$PROJECT_DIR$/css/menu/common.css" />
-        <option value="$PROJECT_DIR$/programming/python.html" />
-        <option value="$PROJECT_DIR$/articles/article1.html" />
-        <option value="$PROJECT_DIR$/machinelearning/ml.html" />
         <option value="$PROJECT_DIR$/math/stats1.html" />
         <option value="$PROJECT_DIR$/articles/aboutThisBlog/content.html" />
         <option value="$PROJECT_DIR$/articles/afterInstallLinux/content.html" />
@@ -180,13 +206,20 @@
         <option value="$PROJECT_DIR$/machinelearning/bptt/content.html" />
         <option value="$PROJECT_DIR$/machinelearning/rnn/content.html" />
         <option value="$PROJECT_DIR$/machinelearning/lstm/content.html" />
-        <option value="$PROJECT_DIR$/naturallanguage/attentionMechanism/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/seq2seq/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/textMatchingWithESIM/content.html" />
         <option value="$PROJECT_DIR$/naturallanguage/ESIM/content.html" />
-        <option value="$PROJECT_DIR$/naturallanguage/all1.html" />
         <option value="$PROJECT_DIR$/machinelearning/dl1.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/attentionMechanism/content.html" />
+        <option value="$PROJECT_DIR$/machinelearning/all5.html" />
+        <option value="$PROJECT_DIR$/machinelearning/probabilistifcGraphicalModel/content.html" />
+        <option value="$PROJECT_DIR$/machinelearning/hmm/content.html" />
+        <option value="$PROJECT_DIR$/machinelearning/viterbi/content.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/crf/content.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html" />
         <option value="$PROJECT_DIR$/machinelearning/all4.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/all1.html" />
+        <option value="$PROJECT_DIR$/naturallanguage/all2.html" />
       </list>
     </option>
   </component>
@@ -221,18 +254,6 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
-              <item name="bptt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
-              <item name="lstm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="naturallanguage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -250,19 +271,19 @@
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/articles" />
-      <recent name="$PROJECT_DIR$/machinelearning" />
-      <recent name="$PROJECT_DIR$/ai" />
-      <recent name="$PROJECT_DIR$/ai/subsetSelection" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/naturallanguage" />
       <recent name="$PROJECT_DIR$/machinelearning" />
       <recent name="$PROJECT_DIR$/machinelearning/quantileRegression/image" />
       <recent name="$PROJECT_DIR$/math" />
       <recent name="$PROJECT_DIR$/articles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/naturallanguage" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/articles" />
+      <recent name="$PROJECT_DIR$/machinelearning" />
+      <recent name="$PROJECT_DIR$/ai" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -493,12 +514,14 @@
       <workItem from="1567061202888" duration="3317000" />
       <workItem from="1567125261890" duration="9246000" />
       <workItem from="1567376637933" duration="5137000" />
-      <workItem from="1567561877308" duration="7683000" />
+      <workItem from="1567561877308" duration="21817000" />
+      <workItem from="1568111580580" duration="19081000" />
+      <workItem from="1568183637716" duration="239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="819439000" />
+    <option name="totallyTimeSpent" value="852893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -546,112 +569,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/about/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="162" column="91" lean-forward="true" selection-start-line="162" selection-start-column="91" selection-end-line="162" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articles/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="251" column="115" lean-forward="true" selection-start-line="251" selection-start-column="106" selection-end-line="251" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2347">
-          <caret line="247" column="26" selection-start-line="247" selection-start-column="26" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/all2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="352" column="38" lean-forward="true" selection-start-line="258" selection-start-column="28" selection-end-line="352" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/ml1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="522" selection-start-line="522" selection-end-line="522" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/all3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="352" column="38" lean-forward="true" selection-start-line="330" selection-start-column="27" selection-end-line="352" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/java1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="354" lean-forward="true" selection-start-line="247" selection-start-column="27" selection-end-line="354" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/javaee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="390" column="38" selection-start-line="390" selection-start-column="38" selection-end-line="390" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/java2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="317" column="38" lean-forward="true" selection-start-line="295" selection-start-column="28" selection-end-line="317" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/javaweb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="269" column="38" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/python1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="249" column="105" lean-forward="true" selection-start-line="249" selection-start-column="105" selection-end-line="249" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2787">
-          <caret line="248" column="59" selection-start-line="248" selection-start-column="59" selection-end-line="248" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programming/javaStatic/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="92" column="76" lean-forward="true" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/background/js/OrbitControls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/background/img/dotTexture.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -710,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/cnn/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="118" column="22" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="118" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/bayesian/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-837">
@@ -754,13 +664,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/naturallanguage/word2vecDetail/content.html" />
-    <entry file="file://$PROJECT_DIR$/machinelearning/convolution/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="111" column="141" lean-forward="true" selection-start-line="111" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/naturallanguage/word2vec/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -795,13 +698,6 @@
             <element signature="e#11555#11596#0" expanded="true" />
             <element signature="e#11895#11936#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/glm/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="108" column="94" selection-start-line="108" selection-start-column="94" selection-end-line="108" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -847,54 +743,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/seq2seq/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1019">
-          <caret line="117" column="104" lean-forward="true" selection-start-line="117" selection-start-column="104" selection-end-line="117" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/attentionMechanism/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="111" column="139" lean-forward="true" selection-start-line="111" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/ESIM/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#32;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/sentenceClassificationwithCNN/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="104" column="75" selection-start-line="104" selection-start-column="75" selection-end-line="104" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/sentenceClassificationwithCNN/content.html" />
     <entry file="file://$PROJECT_DIR$/naturallanguage/simplifiedTextClassification/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2291" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/lstm/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="106" column="144" selection-start-line="106" selection-start-column="144" selection-end-line="106" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="353" column="38" lean-forward="true" selection-start-line="353" selection-start-column="38" selection-end-line="353" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -905,17 +770,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/dl1.html">
+    <entry file="file://$PROJECT_DIR$/naturallanguage/seq2seq/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="377" column="38" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="377" selection-end-column="38" />
+        <state relative-caret-position="511">
+          <caret line="114" column="142" selection-start-line="114" selection-start-column="126" selection-end-line="114" selection-end-column="142" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/attentionMechanism/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="129" column="187" selection-start-line="129" selection-start-column="126" selection-end-line="129" selection-end-column="187" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/ESIM/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="139" column="178" lean-forward="true" selection-start-line="139" selection-start-column="126" selection-end-line="139" selection-end-column="178" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#32;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/featureEngineering/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="109" column="92" lean-forward="true" selection-start-line="109" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/regularization/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1972" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/regressionSplines/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2280" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/gradientDescent/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2457" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/glm/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="108" column="94" selection-start-line="108" selection-start-column="94" selection-end-line="108" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/em/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="123" selection-start-line="123" selection-end-line="127" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/rbfnn/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="125" column="84" selection-start-line="125" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/cnn/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1106">
+          <caret line="118" column="22" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="118" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/convolution/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="117" selection-start-line="117" selection-end-line="125" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/hmm/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2898">
+          <caret line="126" column="136" selection-start-line="126" selection-start-column="136" selection-end-line="126" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/viterbi/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="143" column="174" selection-start-line="143" selection-start-column="174" selection-end-line="143" selection-end-column="174" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#21;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#22;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#23;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#25;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#26;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#27;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/crf/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3657">
+          <caret line="159" column="248" selection-start-line="159" selection-start-column="248" selection-end-line="159" selection-end-column="248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/all2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7323">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/all3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8478" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/all4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="366" column="28" selection-start-line="366" selection-start-column="28" selection-end-line="366" selection-end-column="28" />
+        <state relative-caret-position="417">
+          <caret line="359" column="108" selection-start-line="359" selection-start-column="108" selection-end-line="359" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/all5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="269" column="38" lean-forward="true" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/probabilistifcGraphicalModel/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="869">
+          <caret line="122" column="302" selection-start-line="122" selection-start-column="302" selection-end-line="122" selection-end-column="302" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2107#2111#0" expanded="true" />
+            <element signature="e#2243#2247#0" expanded="true" />
+            <element signature="e#2252#2256#0" expanded="true" />
+            <element signature="e#2263#2267#0" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#18;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#19;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/all1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="352" column="47" selection-start-line="352" selection-start-column="47" selection-end-line="352" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naturallanguage/all2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="272" column="64" lean-forward="true" selection-start-line="272" selection-start-column="64" selection-end-line="272" selection-end-column="64" />
         </state>
       </provider>
     </entry>
