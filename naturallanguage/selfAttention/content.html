@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/python1.html">Python</a></li>
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/all1.html">Machine Learning</a></li>
+
+                          <li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">self attention</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">self attention是注意力机制中的一种，也是transformer中的重要组成部分，本文先重新回归一下注意力机制，再做进一步介绍。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">正如之前说的，注意力机制的目的是根据我们的目标，去关注部分细节，而不是基于全局进行分析，所以核心就是如何基于目标确定我们要关注的部分，以及在找到这部分细节之后进一步进行分析。这里先以文本匹配作为例子进行介绍。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设我们要分析两个文本是不是重复的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$I\quad am\quad a\quad student$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$You\quad and\quad me\quad are\quad students$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以结合BiLSTM和注意力机制进行分析，首先做word embedding，然后用BiLSTM处理分析上下文，得到新的词向量，再进入注意力机制部分，主要计算两个句子之间词与词的相似度，归一化后作为权重，并通过权重以及另一个句子的各个词向量，结合起来得到用另一个句子表示的该词的词向量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">比如我们现在分析I，也就是我们的目标是I，那么我们如何根据这个目标确定要关注的部分呢，那就是计算相似度，用I的词向量，和you、and、me等词向量相乘，得到相似度（这是词向量的特征，一般来说，两个词向量的意思越接近，距离和夹角就越小，所以乘积也会越大），对相似度做归一化得到权重，再用权重和you、and、me等词向量相乘，最后相加，就得到了用第二句话根据I而构建的词向量。像这样不断用第二句话表示第一句话的每个词，最后通过对比得到的新句子和原来的句子的差异程度，分析两句话是否重复，这就是注意力机制在文本重复度检测的应用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么self attention是什么意思呢，上面我们把注意力机制应用到两句话的分析，假如两句话都一样，或者说计算自己对自己的权重，那就是self attention了。这样做的目的，往往是为了充分考虑句子之间不同词语之间的语义以及语法联系，所以，这样重新计算得到的词向量，它就更进一步地考虑了上下文之间的联系了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在来更具体地描述这个过程</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">图中x1、x2就是句子中的一个个词向量，然后我们有三个矩阵：WQ、WK、WV，通过把词向量和这三个矩阵相乘，得到新的三个向量，但是，这三个向量都是基于原先的词向量x生成的，比如我们可以把基于x1生成的qkv称为x1一号、x1二号、x1三号。关于为什么要基于一个向量生成三个新向量，我会在接下来的过程说一下我自己的理解。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">下一步就是计算词与词之间的相似度，我们可以看一下下图，在计算thinking这个词和machines的相似度的时候，使用q1乘k2，这也是注意力机制中计算相似度的方法，其实都是通过向量相乘，那么为什么不像原来那样，直接就通过x1乘x2来计算相似度呢，我自己是这样理解的，q这个向量我觉得更多是为了保留单词本身的意思，也就是在不考虑上下文的情况下单单它一个单词的意思，而k则是为了在计算相似度的时候，能够放大词与词之间的异同而构建的新向量，或者说能够根据实际需求起到更多作用的向量，举个简单的例子，在分析相似性的时候，按道理一个单词和自己的相似度应该是最大的，可是在计算不同向量x的乘积也可能出现更大的相似度，这就不符合我们的假设了，而现在我们通过新向量qk相乘来计算相似度，通过模型的训练学习就可以避免这种情况，所以其实比起原来一个个词向量相乘，我们通过构建新的向量q和k，在计算相似度的时候灵活性会更大，效果会更好。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同样的，我觉得也是为了让模型更灵活，所以在计算相似度并转化为权重之后，并没有乘以原来的x或者q，而是又构建了一个新向量v，通过加权求和得到最终的输出z：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后得到的z1、z2，就是我们的一个个词向量x1、x2，在分析了前后文之后，得到的新向量。其实也可以看出，self attention在这里和BiLSTM在处理词向量时候的目的都是一致的，那就是为原来割裂的词向量带来上下文的信息，那么self attention和BiLSTM相比有什么优点呢，第一，BiLSTM虽然确实比RNN改进了很多，但对于过长的序列依然没法很好地传输序列起点的信息，但是self attention并没有依赖词与词之间的顺序，而是通过计算词与词之间的相似度去挖掘信息，所以就不存在这种信息丢失的情况；第二，BiLSTM这种处理序列的模型，如果不计算出前一个时刻的结果，就没法计算下一个时刻的结果，所以就造成了无法并行计算，但是self attention因为计算相似度也是不存在这种依赖现象，所以可以很好地进行并行计算，大大提高了计算效率。可以说，BiLSTM成也序列败也序列啊。</div>
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

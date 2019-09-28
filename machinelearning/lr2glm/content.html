@@ -103,15 +103,15 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在谈及广义线性模型是什么之前，我想先分析一下线性回归模型有什么限制。在这里先说明一点，以下分析的线性回归模型，是考虑了随机误差项的完整的线性回归模型，这就意味着，我们可以假设模型的输出是能够完美拟合观察数据的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在谈及广义线性模型是什么之前，我想先分析一下线性回归模型有什么限制。在这里先说明一点，以下分析的线性回归模型，是考虑了随机误差项的完整的线性回归模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我想说明一下关于响应变量的分布，以及响应变量解释变量之间的关系的区别。在线性回归中，往往我们会认为响应变量服从正态分布、响应变量和解释变量之间服从线性关系，这时候我们使用线性回归才能得到好的效果，那么我们应该怎么理解这两者呢，首先来看一下图：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我想说明一下关于响应变量（y）的分布，以及响应变量和解释变量（x）之间的关系的区别。在线性回归中，往往我们会认为响应变量服从正态分布（且方差不变）、响应变量和解释变量之间服从线性关系，这时候我们使用线性回归才能得到好的效果，那么我们应该怎么理解这两者呢，首先来看一下图：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/lr0.png"><img src="image/lr0.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是一个很经典的线性分布的数据，可以看到随着x增大y也增大，所以我们说x和y之间有线性关系。如果我们只看y的数据，也就是说把这个二维图降维到只有y轴：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是一个很经典的线性分布的数据，可以看到随着x增大y也增大，而且两个的关系能够用一条直线近似表达，所以我们说x和y之间有线性关系。如果我们只看y的数据，也就是说把这个二维图降维到只有y轴：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/y.png"><img src="image/y.png" alt="ポジショニングマップ">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图就相当于把最初的图的点投影到y轴上，这时候没有了x，反映的就是y的数据的分布状况。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">明白了什么是响应变量的分布之后，就开始正式讨论线性回归的局限性。首先，正如一开始说的，线性回归的响应变量需要服从正态分布，这是基于高斯-马尔可夫定理得到的：在线性回归模型中，如果误差满足零均值、同方差且互不相关，则回归系数的最佳线性无偏估计就是普通最小二乘法估计。或者简单来说说，这时候使用最小二乘法的线性回归的估计效果最好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">明白了什么是响应变量的分布之后，就开始正式讨论线性回归的局限性。首先，正如一开始说的，线性回归的响应变量需要服从正态分布，这是基于高斯-马尔可夫定理得到的：在线性回归模型中，如果误差满足零均值、同方差且互不相关，则回归系数的最佳线性无偏估计就是普通最小二乘法估计。或者简单来说，这时候使用最小二乘法的线性回归的估计效果最好。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">要说清楚这个结论，还是从头推导一次比较好。首先，我们还记得线性回归模型可以表达为：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_i = a_0 + a_1 X_i + e_i$$</section></div>
@@ -128,7 +128,7 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Y_i'是真实数据（观察数据），因为模型考虑了随机误差，所以这里可以假设，观察数据等于我们训练完成后的线性回归模型的输出，所以，当我们最小化了损失函数，我们就可以得到：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum ((a_0 + a_1 X_i) - (a_0' + a_1' X_i + e_i))^2$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Loss = \sum (e_i)^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的式子说明了，即使响应变量和解释变量确实服从线性关系，即使模型已经训练完成，因为随机误差的存在，损失函数也不可能等于0。在这里我们可以得到一个结论，对于一个训练完成的线性回归模型，它的损失函数和随机误差项是相关了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的式子说明了，即使响应变量和解释变量确实服从线性关系，即使模型已经训练完成，因为随机误差的存在，损失函数也不可能等于0。在这里我们可以得到一个结论，对于一个训练完成的线性回归模型，它的损失函数和随机误差项是相关的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们再看另一个例子，现在我们基于数据做线性回归得到一个模型：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
@@ -142,13 +142,17 @@
                         <source media="(max-width: 568px)" srcset="image/lrerror.jpg"><img src="image/lrerror.jpg" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图大概画出了两个范围的随机误差的分布状况（它们的均值都为0），可以看出，第一，随机误差的分布不是正态分布，第二，随机误差的分布的方差不是同一个数值。那么我们再想象一下，真正理想的数据分布，应该是数据对称地分布在回归曲线两侧，同时分散程度是接近的，也就是随机误差项服从正态分布，且独立同分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图大概画出了两个范围的随机误差的分布状况（它们的均值都为0），可以看出，第一，随机误差的分布不是正态分布，第二，随机误差的分布的方差不是同一个数值。那么我们再回想一下，对于一开始提到的理想的数据分布，应该是数据对称地分布在回归曲线两侧，同时分散程度是接近的，这也就意味着，随机误差项服从正态分布，且独立同分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">经过上面的论述，我们就知道随机误差项服从正态分布时模型的效果最好，而因为响应变量的随机性主要受到随机误差的影响，所以可以认为响应变量也服从正态分布：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_i \sim N(a_0 + a_1 X_i, \sigma^2)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，期望等于回归函数的输出（假设随机误差的期望为0），方差等于随机误差的方差</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，我们还需要注意，在我们进行线性回归的时候，其实一开始就假设了解释变量和响应变量之间是服从线性关系的，假设他们之间不服从线性分布（以上图的数据分布为例），而我们依然采用线性回归，那么他们的残差就被模型认为是随机误差造成的，这也就导致了随机误差不服从正态分布。再回想一下，其实响应变量因为随机误差的存在才被认为是随机分布的，当随机误差不服从正态分布，响应变量也就不服从正态分布了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面的结论也说明了，虽然响应变量的分布和响应变量解释变量之间的关系是两回事，但是它们之间是相互联系的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面主要分析了线性回归要求响应变量服从正态分布才能有好的回归效果，这是第一个限制，第二个是要求响应变量和解释变量之间是线性关系，因为这两个限制条件，就导致了线性回归模型在有些情况下是不适用的，于是就有了我们的广义线性模型，它主要改进了线性回归的两个限制：不要求响应变量服从正态分布以及响应变量和解释变量之间可以服从非线性关系。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面主要分析了线性回归要求响应变量服从正态分布才能有好的回归效果，这是第一个限制，第二个是要求响应变量和解释变量之间是线性关系，因为这两个限制条件，就导致了线性回归模型在有些情况下是不适用的，于是就有了我们的广义线性模型，它主要改进了线性回归的两个限制：不要求响应变量服从正态分布，以及响应变量和解释变量之间可以服从非线性关系。</div>
 
             </div>
         </div>
