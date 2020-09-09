@@ -98,59 +98,58 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析教程（一）：基本性质</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机过程（一）：马尔可夫链</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">时间序列分析，其实就是和自然语言处理一样对序列数据进行分析，只是这里的序列数据是关于时间的序列，而自然语言处理是关于语言的序列。另一方面，时间序列也没有自然语言处理那样有很多分析目标，一般来说会有三种目标：描述历史数据的动态变化，分析数据变化的规律以及预测未来数据的变化趋势。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">随机过程是数学专业非常经典的一门课，在很多领域都有应用，之前谈论过的时间序列分析也和这门课息息相关，没想到这学期又遇上了，趁着期末复习简单总结一下，只是整理一下概念，所以就不深入进行推导了。因为教材是英文的，所以部分术语会用英文，免得翻译不准确，当然一些大家都知道的术语还是用中文，毕竟打字比较方便。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我会介绍一下时间序列的几个特征：平稳性、趋势性、季节性、周期性，一般来说，会希望时间序列具有其中一种或者几种特征的组合，这样的话就比较好分析，也有相应的模型，如果数据十分复杂，对数据进行转化等操作也不能显示出上述的特征，那么目前的时间序列模型就比较难分析了，或许就需要借助深度学习的模型了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然学数学就应该用数学的语言去理解和表达，但是这样写文章一方面打字确实很费时间，另一方面我也只是想整理一下概念和概念之间的联系，所以很多地方都说得比较通俗，最终我们还是应该以标准的文献资料为准。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是最重要的平稳性（stationary），这也是最理想的性质，主要是假设随机变量的基本特征（统计性质）在未来的一个长时期内是保持不变，和过去一样的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有一点想说的是，随机过程理论完善的过程是一个非常有趣的过程，从最开始一个简单的定义、理想的情况开始，不断抽象、联想，不断进行推演，最终发展成完整的一个理论，从中就可以感受到数学的那种充满逻辑的魅力。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，我们想一下天气预报这个问题，我们应该怎么对天气的变化进行分析预测？数学家就提出，把天气看成一个随机变量X，和时间t一起构建一个随机变量族，这个随机变量族{X,T}就称为一个随机过程。这是一个简单的定义，也是一切的起源。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">定义是为了更方便、规范地进行描述，可是要分析复杂的天气变化依然很难，所以数学家就想着从最简单的情况开始，假设今天的天气只和前一天有关，这个假设就称为马尔科夫性，更规范地说，就是对一个随机变量族{X,T}，假设tn的状态x只和tn-1的状态有关，和tn-2等历史数据都没有关系。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Pr(X-t \in A | X_{S_1} = x_{S_1}, ..., X_{S_n} = x_{S_n},X_s = x) = Pr(X_t \in A | X_S = x)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">用通俗的话来说，就是今天下不下雨只和昨天下不下雨有关，和前天大前天的天气都没有关系。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里，天气的状况、时间（天数）都是离散的，所以我们就称这样的一个具有马尔科夫性、具有离散时间离散状态的随机过程为马尔科夫链，除了离散时间离散状态当然还会有连续的时间和连续的状态，不过我们还是需要循序渐进，先从最简单的马尔科夫链开始说起。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">马尔可夫链因为时间状态都是离散的，所以最好分析。为了描述一个马尔可夫链，我们引出几个新概念，第一个是状态转移概率，比如说今天下雨明天晴天的概率为0.1，这就是一个状态转移概率。由状态转移概率可以构成一个转移矩阵，转移矩阵描述了所有状态之间的转移概率，比如矩阵的一行二列就表示状态一转移到状态二的概率，当然这个概率是单步演变的概率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，还有转移图，它是根据转移矩阵画出来的有向图结构，毕竟不是每个状态之间都能相互转移的，所以我们就能通过有向图直观地表示状态与状态之间的转移情况。</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">严格来说，如果对一个序列，对任意t都满足：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_{X_{t_1}, X_{t_2},...,x_{t_n}}(x_1, x_2,..., x_n)=F_{X_{t_1+k}, X_{t_2+k},...,x_{t_n+k}}(x_1, x_2,..., x_n)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式子的意思就是即使有一个时间t的滑动，联合分布依然保持不变，以上称为强平稳。还有一种弱平稳：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(x_{t_1}) = E(x_{t_1+k}) = constant$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cov(x_{t_1},x_{t_2}) = Cov(x_{t_1+k},x_{t_2+k})$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们看看强平稳和弱平稳，从公式来看，强平稳的条件更严格，但不能说满足强平稳就一定弱平稳。我个人觉得，强平稳就是一种很理想的情况，在这种情况下进行时间序列分析结果会很好，可是实际数据很难满足这种要求，所以才在强平稳的基础上提出条件稍微没那么严苛的弱平稳。但本质上来说，不论是强平稳还是弱平稳，都是在描述时间序列的统计性质关于时间平移的不变性。强平稳要求所有统计性质都是关于时间平移不变的，而弱平稳只要求期望和协方差是不变的。通过判断数据是否满足这些要求，就能分析出统计性质是否会在未来发生变化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了初始概率分布和转移矩阵是不是就能描述出整个马尔科夫链呢，也不一定，因为转移矩阵可能会随着时间改变，所以我们这里也可以进一步假设转移矩阵是不变的，同时定义这样的马尔科夫链为Time-homogeneous Markov chains。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P_{ij}(n,n+1)=p_{ij}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$where \quad P_{ij}(n,n+1) = Pr(X_{n+1} = j | x_n = i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以到目前为止，我们就得到了最最简单的随机过程：具有马尔科夫性、时间状态都是离散的、转移矩阵不随时间改变的随机过程。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，强平稳太过理想，所以我们都是尝试把数据都转化为满足弱平稳条件再进行分析的。至于有哪些操作可以让原本不满足弱平稳条件的数据转化为满足弱平稳条件，后面会详细介绍。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于Time-homogeneous Markov chain我们可以分析总结它的一些性质，从而根据这些性质对它进行进一步的分类。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于平稳性，还可以引出两个函数，用于评价数据弱平稳的强度有多少，或者说有多接近强平稳，它们就是自相关函数（ACF）和偏自相关函数 (PACF)，基于这两个函数，基于他们，我们甚至可以分析出一段序列中，哪一部分对预测未来最有用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个性质是不可约性Irreducibility，如果马尔可夫链的状态空间只有一个连通类，也就是说状态之间可以随意转换，这个马尔可夫链就具有不可约性。比如说穷和富这两个状态，相互可以自由转换，这样构成的一个转移矩阵就是不可约的，而健康和死亡这两个状态则不一样，一旦从健康转换到死亡，就无法回到健康状态，所以死亡这个状态也成为吸收态。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自相关函数用来度量时间序列中每隔 k 个时间单位（yt 和 yt–k）的观测值之间的相关性。统计中的相关性指的就是两个变量之间的相关程度，而这里则是指同一个序列中的两个不同的时间段的相关性，个人觉得和自注意力机制十分相似，对于一个弱平稳序列，有自相关函数：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\rho = Corr(X_t,  X_{t+k}) = \frac{Cov(X_t, X_{t+k})}{\sqrt{Var(X_t)}\sqrt{Var(X_{t+k})}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">是不是看着有点熟悉，因为本质上它就是皮尔逊相关系数：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\rho_{X,Y} = \frac{Cov(X, Y)}{\sigma_X \sigma_Y}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为自相关函数分析的是不同时间段的序列的相关性，不同时间段之间的滞后时间可能会对分析带来影响，偏自相关函数就是先剔除这些因素的干扰再分析相关性，这里先暂不细说。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是重现性（recurrence），如果马尔可夫链到达一个状态后还能反复回到这个状态，则该状态具有重现性，如果永远都回不去，就说它具有瞬变性（transience）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果时间序列满足平稳性就可以很好地利用现有的时间序列模型进行分析了，可是不满足就不能进行分析了吗，当然不是，如果说序列不满足平稳性，但是满足趋势性、季节性或者周期性，那么我们还是有模型进行分析的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个是周期性（periodicity），如果马尔可夫链可以按一定周期，不断重现一个状态，那么这个状态就具有周期性。举个例子，从状态i出发，只在n为偶数的情况下才有可能返回状态i，就称这个状态具有周期为2的周期性。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先第一个是趋势性，可分为确定性趋势和随机性趋势。确定性趋势就是指序列的趋势可以用一条趋势线拟合，想办法剔除掉这种趋势后，序列就变成平稳序列了。另一种随机性趋势则是无法通过单一的趋势线分析的，在不同时间趋势是随机变化的。在后续的讨论中，我们主要是讨论确定性趋势，包括介绍如何剔除这种趋势进行建模分析。</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二种是季节性，像一年四季那样循环变化：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3"><img src="image/3" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有一种是周期性，和季节性一样也是循环的变化，但是变化的周期没有十分精确，是可以变化的，比如我们可以说一段序列每三个循环一次，它具有季节性，另外有一段序列，有时候三个月循环一次，有时候五个月循环一次，虽然看得出它有循环，但是循环周期不断变化，这就是周期性。为了简化问题，后续的讨论中主要分析季节性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第四个是遍历性（ergodicity），简单来说就是任意取一个时间段，所有状态都有出现的可能。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对现实数据来说，序列不是说有趋势性就没有季节性，而是往往平稳性、趋势性、季节性叠加在一起：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z_t = T_t + S_t + X_t$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">T_t表示确定性趋势变化，S_t表示确定性季节变化，X_t就是满足平稳性的时间序列。所以，我们才可以通过一些手段去掉趋势性和季节性，让序列变平稳再进行分析。</div>
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据这些性质我们可以对马尔科夫链进行进一步的分析，分析的内容有很多，这里主要针对stationary distribution说一下。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先什么是stationary distribution，</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\pi = \pi P$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">pi是状态的概率分布，也就是说状态经过一次变化，状态的概率分布也不会变化，举个最简单的例子，现在有一个转移矩阵，富人变穷人、穷人变富人、富人保持原状、穷人保持原状的概率都是0.5，穷人富人的概率分布也都是0.5，那么算一下就知道经过一次转移，下一时刻穷人富人的概率分布各自都还是0.5，这时候这个状态概率分布就是stationary的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，我们如果要求出stationary distribution，其实就是求解方程解出pi，至于有没有解其实是和转移矩阵P相关联的，再联想到前面的不可约性、重现性之类的性质，其实就是用来对P进行分析从而帮助判断pi的存在性唯一性之类的问题的。比如说一个具有有限状态的马尔科夫链，如果他具有不可约性，那么他就有唯一的stationary distribution。诸如此类的定理可以查阅文献详细看看，这里就暂时不说了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了stationary distribution，我们还会对马尔科夫链的long-term behaviour比较感兴趣，比如说当n趋于无穷的时候，状态概率分布会不会趋于稳定，比如说像人，随着年纪增大死的概率也会变大，到了一两百岁死的概率基本上可以等于1，这就是一个极限分布。除了概率分布，如果转移矩阵随着时间改变的话，也可以研究转移矩阵是否存在一个极限，所以其实会有很多问题值得研究的。</div>
 
 
             </div>

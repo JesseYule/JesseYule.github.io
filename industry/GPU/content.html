@@ -96,37 +96,29 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">强化学习综述</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习训练环境</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近在实习，发现其实深度学习在工业界的应用和学术界做研究还是区别很大的，当然和自学自己做研究就区别更大了，最明显的一点，学术界会为了提高模型的准确度提出各式各样的模型，模型可能会非常复杂，但结果只是提高了几个百分点的准确度，而工业界则更注重模型能不能落地、稳不稳定、能不能产生利益，所以我就打算出一个专题，介绍一下工业界深度学习模型落地涉及到的各个方面，当然我也只是一个初学者，说到底也只是把现学的知识分享一下，给大家一个初步的了解，可能有不准确的地方，欢迎交流。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先想说一下模型的训练需要一个什么样的环境。以前我自学的时候，都是拿一台macbook，装了anaconda和python就足够了，这样的设备跑一些简单的模型当然没问题，复杂的模型跑个几分钟也行，跑久一点电脑风扇一直转也不忍心了。而在实际的工作中，要训练出一个满意的模型肯定就需要花一定的时间，总不能还是用macbook一直跑吧，所以这时候就需要一台专门用来训练模型的机器了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有些公司可能自己本身就配置了主机用来训练，而我们则选择了华为云（当然阿里云、谷歌云什么的也行，只是因为项目原因用到华为云），像这种云服务器有什么优点呢，不说太多虚的，最直观一点，你在网站上选择好配置，给钱，然后就有一个完善的环境给你了，你就可以直接开发了，而且后续也不需要对机器检查维护，一切交给华为，省心省时间，而且，如果后期发现机器的配置不够好，还可以随时升级，说到底，只要有钱，一切都是那么的方便。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在选择服务器的规格的时候，我会比较关注几个点，第一个当然是系统，我是因为项目需要必须选择ubuntu的系统（关于这个项目以后有机会也会介绍一下），当然其实一般来说linux都是比windows更好，比如说可能有些python库根本就不支持windows等等（现在不知道这种情况还常不常见，反正以前总是遇到，所以后来就换成mac了）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个我会关注GPU，也就是选择服务器规格的时候，不是选择通用计算型，也不是通用计算增强型，而是GPU加速型，为什么这个GPU如此重要，这个就可以慢慢说了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">GPU这个概念是Nvidia公司1999年提出的，它是显卡上的一块芯片，就像cpu是主板上的一块芯片，关于他们的区别，有一个比喻很形象，cpu就像一个大学生，他能力很强，可以计算很复杂的数学题，但是依然没办法在十分钟内完成1000道百位数的加法；gpu则像100个小学生，虽然做不出复杂的题，但是他们可以一起在十分钟内完成1000道计算。而神经网络往往就是需要进行大量的简单矩阵运算，所以gpu就比cpu更适合咯。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">提到gpu，就不得不提cuda，cuda（通用并行计算架构）是一种计算平台，利用cuda，可以改编我们的程序，实现并行化，再扔到cpu和gpu上面跑，没有cuda这个开发工具，就没法充分发挥GPU强大的并行计算能力。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之所以要说到cuda，并不是因为要学习cuda如何加速gpu，只是想说选择gpu最好选择支持cuda加速的gpu，也就是Nvidia的GPU（不确定其他牌子会不会有），也要注意即使是Nvidia的显卡也不是全都支持cuda加速的，所以必须要了解清楚。关于GPU和cuda还有很多可以深入了解的地方，这里就不细说了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面说了那么多，其实就是给了一个选择深度学习训练环境的建议，最后再给出我自己挑选的华为云规格：一张NVIDIA T4加上Ubuntu 16.04 server系统。说起来简单，但这真的很贵，贵得恐怖，所以以前自己学习的时候根本就不会想过了解gpu、cuda是什么，因为我根本没这个钱去接触这些东西。</div>
 
             </div>
 

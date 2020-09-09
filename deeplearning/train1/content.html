@@ -96,30 +96,32 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">反向传播算法</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习建模训练心得（一）：如何开始训练</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到神经网络在训练过程中需要根据预测输出和实际输出去调整权重和阈值，但是没有具体说明这个过程，在回归模型中我们往往会采用梯度下降法，这里介绍一种神经网络比较常用的方法，反向传播算法，本质上我觉得它还是梯度下降法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以前都是侧重于看算法看模型，没有真正从零开始写一个模型然后训练它，最近开始自己写模型训练，发现很多东西都值得探讨一下，比如到底不同的模型有什么本质上的区别、神经元数量和神经层数量的不同有什么影响、如何选择激活函数、写好一个模型后怎么训练、训练有没有一个系统的流程等等，所以我就打算尽可能都了解一下，记录一下收获的东西。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们采用实际输出矢量（actual output vector）和期望输出矢量（desired output vector）的欧式距离作为损失函数（一个简单例子）：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_p = \frac{1}{M} \sum_{j=1}^M (y_{dpj} - y_{apj})^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们考虑一种最简单的情况，激活函数使用sigmoid函数，神经网络的隐藏层只有一层，包含两个神经元，最后就是一个包含一个神经元的输出层，再假设输入层有两个神经元（两个输入）：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们把两个隐藏层的神经元的表达式都写出来：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_1(x_1, x_2) = \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_2(x_1, x_2) = \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后把两个神经元的输出作为输出层神经元的输入，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31} F_1(x_1, x_2) + w_{32} F_2(x_1, x_2) +\theta _3}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后我们得到了神经网络的输出的完整表达式，其中包含了输入x1、x2，以及各个权重w，事实上，这个比较复杂的表达式已经完整了表示了整个神经网络结构，如果我们把这个表达式代进损失函数里，就能得到一个包含了所有权重的损失函数的表达式，这时候，我们就可以利用梯度下降法的思想，通过损失函数对权重求偏导，得到权重的迭代公式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{ij} ^{new} = w_{ij} ^{old} - \eta \frac{\partial E_p}{\partial w_{ij}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">只要我们通过这个表达式更新权重，那么损失函数就会不断降低了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">作为这个系列第一篇文章，我想讨论一下，当你写好一个模型之后，应该如何开始训练。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先第一点，我认为应该使用小数据集训练，看模型能否过拟合。我自己遇过很多次，写好模型之后马上训练，然后发现模型无法收敛，损失降到一定数值就降不下去了，然后就想办法加深层数，用各种各样的技巧，模型还是无法收敛，最后却发现原来是某条公式写错了，所以还不如一开始就是用小数据集测试，看模型能都过拟合，如果模型连小数据集都无法过拟合，那么肯定是代码细节出了问题了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺便我也可以说一下，一般如果代码出问题导致模型损失无法下降，一般都是出在数据的预处理或者模型的输出附近位置，举个例子，做分类问题，判断图片是猫还是狗，有可能在数据预处理的时候，把猫狗的图片都标记成狗，这样最后训练出来的模型损失就会降到0.5就降不下去（而且还是完美的0.5，别看这个操作好像很傻，我还真试过几次，导致后来看到损失降到0.5就知道肯定是数据有问题），至于模型的输出出问题也很正常，比如目标检测问题，模型得到了输出之后还要对输出处理一下，公式不小心打错了模型就死活无法收敛了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二点，当你检查过模型可以过拟合，就可以正式训练了，训练的过程中我一般会调整两个参数，一个是学习率，一个是batch size，一般来说，一开始我会希望模型能收敛得快点，我会把学习率调高一点，batch size调低一点，学习率的意思就不用说太多了，主要是batch size，这个batch size又会涉及到随机梯度下降、mini batch梯度下降、批量梯度下降，我自己的简单理解就是每次训练用到的batch size大小。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步说明之前，先回顾一下epoch和batch的关系，我的理解是，每个epoch，模型都会学习所有的数据，比如我现在有1000个数据，设置了batch size为100，那么每个epoch，模型就需要学习10次才能遍历所有数据，如果设置了epoch为1000，这个过程就会重复1000次，所以在pytorch的代码中一般可以看到两个循环，一个是针对epoch的循环，一个是针对batch的循环。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了epoch和batch size之后，再来看，假如我设置epoch size为1000和100，区别就在于每次epoch模型的学习次数，或者说反向传播次数，当batch size小时，模型就会学习更多次，但是相对的，因为每次学习的数据只是所有数据的一部分，所以学习的方向不准确，是比较随机的，但毕竟我们会重复这个过程epoch次，所以总的来说损失还是能下降，而且因为学习次数多，下降得比较快，所以，在模型训练的开始阶段，我更喜欢设置小的batch size。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到了后期，如果还是设置小batch，因为小batch导致模型每次学习的方向都比较随机，这就会导致损失会波动变化，所以才需要设置大的batch size，让模型能基于数据整体分析应该学习的方向。当然，还需要设置小的学习率，不然模型无法收敛。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上这个流程虽然比较简单，但我觉得只要模型结构合理，一般都能收敛到比较满意的水准了，如果这时候模型还是无法收敛，或许就需要从模型的结构入手改进了，这部分的内容以后会继续更新。</div>
+
+
+
 
 
 

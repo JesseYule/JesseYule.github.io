@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0029)https://carrac.co.jp/service/ -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jesse Yule's Blog</title>
     <meta name="viewport" content="width=device-width">
@@ -41,7 +41,7 @@
       &lt;/iframe&gt;
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <div class="l-page" data-page-id="service">
       <!-- Start to define the global header.-->
       <div class="l-gh"></div>
@@ -98,13 +98,13 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（四）：AR模型详细分析（公式推导）</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析教程（四）：AR与MA模型详细分析（公式推导，慎入）</h2>
 
-		  
+
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前从比较浅的角度介绍了AR、MA、ARMA等模型，最近在课堂上发现其实还有很多细节可以深究。如果只是想要简单了解这些模型然后应用，我个人觉得之前的文章已经足够了，而如果有兴趣更深入地了解AR模型，这里会更多地从数学的角度进行分析展示。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前从比较浅的角度介绍了AR、MA、ARMA等模型，最近在课堂上发现其实还有很多细节可以深究。如果只是想要简单了解这些模型然后应用，我个人觉得之前的文章已经足够了，而如果有兴趣更深入地了解AR和MA模型，这里会更多地从数学的角度，分析一下它们的表达式、期望方差以及平稳的条件。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先介绍一下滞后算子（Backward shift operator）和差分算子（difference operator）。对一段时间序列，滞后算子为：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$BX_t = B(X_t) = X_{t-1}$$</section></div>
@@ -117,37 +117,61 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，滞后算子和差分算子存在关系：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\bigtriangledown  =  1 - B$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来先分析AR模型，之前介绍过它的公式可以表达为：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + ... + \beta_p Y_{t-p} + e_t$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">改写beta_0：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\beta_0 = \mu - \beta_1 \mu - \beta_2 \mu - ... - \beta_p \mu $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \alpha_0 + \alpha_1 X_{t-1} + \alpha_2 X_{t-2} + ... + \alpha_p X_{t-p} + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">改写alpha_0：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\alpha_0 = \mu - \alpha_1 \mu - \alpha_2 \mu - ... - \alpha_p \mu $$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">以下就是见证奇迹的时刻了：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t -  \beta_0 - \beta_1 Y_{t-1} - \beta_2 Y_{t-2} - ... - \beta_p Y_{t-p} = e_t$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$(Y_t - \mu) - \beta_1 (Y_{t-1}-\mu) - \beta_2 (Y_{t-2}-\mu) - ... - \beta_p (Y_{t-p}-\mu) = e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t -  \alpha_0 - \alpha_1 X_{t-1} - \alpha_2 X_{t-2} - ... - \alpha_p X_{t-p} = e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$(X_t - \mu) - \alpha_1 (X_{t-1}-\mu) - \alpha_2 (X_{t-2}-\mu) - ... - \alpha_p (X_{t-p}-\mu) = e_t$$</section></div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ \phi (B) (Y_t-\mu) = e_t$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ where \quad \phi (B) = 1 - \beta_1 B - \beta_2 B^2 - ... - \beta_p B^p$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ \phi (B) (X_t-\mu) = e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ where \quad \phi (B) = 1 - \alpha_1 B - \alpha_2 B^2 - ... - \alpha_p B^p$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是引入了滞后算子的AR模型表达式。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于AR模型的表达式，再看看AR模型的均值和方差，首先看看一阶AR模型：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(Y_t) = \mu + \beta_1 ^t (E(Y_0) - \mu)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(Y_t) = \beta_1^{2t}[Var(Y_0)-\frac{\sigma^2}{1-\sigma^2}] + \frac{\sigma^2}{1-\sigma^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于AR模型的表达式，再看看AR模型的均值和方差，首先来看看一阶AR模型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \mu + \alpha(X_{t-1} - \mu) + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \mu + \alpha(\mu + \alpha(X_{t-2} - \mu) + e_{t-1} - \mu) + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \mu + \alpha^2 (X_{t-2} - \mu) + \alpha e_{t-1} + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$......$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \mu + \alpha^t (X_{0} - \mu)  + \sum_{j=0}^{t-1} \alpha^j e_{t-j}$$</section></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再看看他们的期望方差：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(X_t) = \mu + \alpha ^t (E(X_0) - \mu)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(X_t) = \alpha^{2t}[Var(X_0)-\frac{\sigma^2}{1-\alpha^2}] + \frac{\sigma^2}{1-\alpha^2}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中sigma是白噪声的标准差。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体的推导过程这里为了不引起读者反感就省略了，有兴趣的可以在网上搜索相关资料，接下来，我们就可以通过期望方差公式，引出一阶AR模型平稳的条件：序列长度无穷以及beta1的绝对值小于1，我们可以看一下这种条件下期望和方差的表达式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(Y_t) = \mu $$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(Y_t) = \frac{\sigma^2}{1-\sigma^2}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">两者都是常数，满足平稳的条件。因此这就是一阶AR模型的平稳条件。那么对于高阶的AR模型呢，事实上没有那么简单，这里直接给出判别条件：AR模型是平稳的当且仅当以下方程的根z_i(i=1,2,...,p)的绝对值都大于1：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi(z) = 1 - \beta_1 z - \beta_2 z^2 - ... - \beta_p z^p = 0$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，所有解都落在解平面的单位圆外。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体的推导过程这里为了不引起读者反感就省略了，有兴趣的可以在网上搜索相关资料，接下来，我们就可以通过期望方差公式，引出一阶AR模型平稳的条件：序列长度无穷以及alpha的绝对值小于1，我们可以看一下这种条件下期望和方差的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(X_t) = \mu $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(X_t) = \frac{\sigma^2}{1-\sigma^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">两者都是常数，满足平稳的条件。因此这就是一阶AR模型的平稳条件。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果用这个定理判断一阶AR模型，如果z的绝对值大于1，就以为这beta_1的绝对值小于1，故模型是平稳的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上讨论的是一阶AR模型，实际上更高阶的模型是用其他方法判断是否平稳的，万幸的是，我们可以通过一条通用公式（characteristic equation ）对任意阶的AR模型进行判断：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi(z) = 1 - \alpha_1 z - \alpha_2 z^2 - ... - \alpha_p z^p = 0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当方程的所有p个根zj的绝对值都大于1，那么AR模型就是平稳的，也就是说，所有解都落在解平面的单位圆外，当p=1时：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi(z) = 1 - \alpha_1 z  = 0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$|z|  > 1 \Leftrightarrow | \alpha_1| < 1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这也是之前推导的一阶AR模型的平稳条件。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">讨论完AR模型，接下来再看看MA模型，放心，MA模型的内容要简单点，而且能坚持看到这里的人，想必也不会害怕继续推公式的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们还是引入滞后算子，重新改写一下MA模型的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$X_t = \mu + \theta(B) e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta(B) = 1 + \beta_1 B + ... + \beta_q B^q$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于MA模型的期望，因为白噪声的期望为0，所以MA模型的期望就是一个常数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(X_t) = E(\mu) + E(\theta(B) e_t) = \mu$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">MA模型的方差同样也是一个常数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(X_t) = Cov(X_t, X_t) = \sigma^2 \sum_{j=0}^q \beta_j^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，sigma是白噪声的标准差，所以MA模型一定是平稳的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">恭喜你，到这里本文就结束了，向每一个看完本文的人致敬。</div>
+
 
 
 
 
             </div>
           </div>
-		  
+
 
 
 

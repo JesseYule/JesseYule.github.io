@@ -98,36 +98,58 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">非参数回归之loess</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100"> 泊松回归</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，两个变量之间的关系是十分微妙的，仅仅采用简单的直线、曲线参数方程去描述是不够的，所以这时候就需要非参数回归。还记得非参数和参数方法的区别，就是在分析之前有没有对预测做一些限制，比如认为特征和变量之间具有线性关系，可以通过线性方程拟合，我们只需要求出方程的系数就是参数方法，如果直接从数据出发进行分析就是非参数方法。正正因为没有限制，所以非参数方法拟合得到的曲线可以更好地描述变量之间的关系，不管是多么复杂的曲线关系都能拟合得到。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">泊松回归是广义线性回归模型中的一种，除了泊松回归广义线性模型还有负二项、逻辑、gamma等等，之所以这里主要把泊松回归拿出来讲，是最近发现它的变型还挺多的，而且用得也比较多。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一种介绍的非参数方法是loess（locally weighted regression），它主要是把样本划分成一个个小区间，对区间中的样本进行多项式拟合，不断重复这个过程得到在不同区间的加权回归曲线，最后再把这些回归曲线的中心连在一起合成完整的回归曲线，具体过程如下<br>
-                · 决定拟合点的数量和位置<br>
-                · 以拟合点为中心，确定k个最接近的点<br>
-                · 通过权重函数计算这k个点的权重<br>
-                · 通过加权线性回归进行多项式拟合（一次或者二次）<br>
-                · 对所有拟合点重复以上步骤</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来谈谈泊松回归的定义，从GLM的角度来说，泊松回归就是针对服从泊松分布的响应变量进行回归分析。泊松分布描述的是某段时间内事件发生次数的概率，既然是次数就说明了响应变量是整数，也就是说，只要我们看到响应变量是整数，就可以考虑泊松分布建模（其实还有负二项分布），这就是泊松分布比较常用的原因。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(X=k)=\frac{e^\lambda \lambda^k}{k!}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">泊松分布有一个特点，那就是期望和方差都为lambda，换句话说，假如我们用泊松回归，就假设了随着数据量增大，数据的均值和方差会越来越接近。实际上，响应变量观察到的方差很可能比泊松分布预测的方差要大，这就导致了一种称为过度离势（over dispersion）的问题，同时也催生出泊松回归的第一种变型，over-dispersed poisson model，或者说类泊松分布。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于权重的确定，这里需要说明一下，首先它需要确定区间内的点到拟合的点的距离，这个距离指x轴的距离，我们还要找到区间内最大的距离，然后对其他距离做归一化处理：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i(x_0) = W(\frac{|x_0 - x_i|}{\Delta (x_0)})$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后这个权重实际上，是离拟合点的距离越近就越小，所以我们就需要做一个转化，比如用tricube weight function：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$W(u) = (1 - u^3)^3$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">指数可以选择二次（B函数）或三次（W函数），三次方对周围权值的降速更快，平滑效果更好，切适用于大多数分布，但增加了残差的方差，一般来说，第一次迭代会更多实用W函数，第二次迭代会选择B函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里暂不谈论太多过度离势的原因，就说一个很严重的后果，假如在存在过度离势我们仍然使用泊松回归，就无法对变量的p值进行正确的判断，比如下图是我用泊松回归（左）和类泊松回归（右）分析得到的结果：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">主要关注几点，第一，不论是泊松还是类泊松，参数估计的结果都是一样的，第二，类泊松的参数方差、p值等是改变的，这里或许还不够明显，但有时候p值会变得过大，这时候我们就不能在模型中继续使用这个变量了（详情可查看之前写的用GLM进行数据分析系列文章）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于对区间内的散点进行加权线性回归拟合直线，之所以我们这里采取加权线性回归而不是普通的线性回归，是因为考虑到对拟合点，它附近的点的取值对拟合线的影响应该更大，远一点的点的影响更小，所以我们要定义损失函数的时候，应该优先降低附近的点与拟合直线的误差，这也就是我们对普通的最小二乘法要加上权重的原因：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$J(a,b) = \frac{1}{N} \sum_{i=1}^N w_i(y_i -ax_i -b)^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，损失函数加上权重之后，我们在最小化损失函数时，就会更多地考虑权重大的点，希望他们更优，这样拟合出来的结果，自然就更加偏向权重大的点了，也就是说，距离拟合点更近距离的散点，对拟合直线的影响更大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在应用泊松分布，除了过度离势问题，还有一个值得注意的问题，就是0点有过多数值：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过上图可以看出，大量数据的取值为0，只时候我们用了泊松回归得到的效果也一点都不好，所以就有了第二种变型，zero-inflated poisson distribution（中文翻译貌似是零膨胀泊松分布）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是loess的基本思路。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所谓的零膨胀模型，其实就是针对那些在零点占很大比重的数据进行分析的模型。主要是假设零计数数据和服从泊松分布的计数数据各占一定比例，共同构成一个混合分布。以zip（zero-inflated poisson）为例：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P(Y_i = y_i) =
+                    \begin{cases}
+                    p + (1-p)f(0) & \text{y_i=0}\\
+                    (1-p)f(y_i) & \text{y_i>0}
+                    \end{cases}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，f就是泊松分布：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(y_i) =\frac{\lambda_i^{y_i}}{y_i !}exp(-\lambda_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式中p越大就说明数据中0的比例越大，当p=0，分布就变成正常的泊松分布。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
-                [1]https://blog.csdn.net/longgb123/article/details/79520982<br>
-                [2]https://blog.csdn.net/longgb123/article/details/79079434</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在我们已经知道了响应变量的分布，下一步要做的就是分析响应变量和解释变量之间的关系，这里直接给出答案，只要是通过分布中的p和lambda分别和解释变量构成联系的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$log \mu_i = \beta x_{i1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$log \frac{\pi_i}{1-\pi_i} = \gamma x_{i2}$$</section></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，xi1和xi2都是取自解释变量的一部分或全部，可能相同也可能不同。整个建模过程，可以看成是首先估计出p和mu的取值，使得响应变量的分布能尽可能接近观测值，然后，再用解释变量去拟合这两个参数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，用零膨胀泊松模型去重新分析一下，得到的结果就明显比之前好很多了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+
+
 
             </div>
           </div>

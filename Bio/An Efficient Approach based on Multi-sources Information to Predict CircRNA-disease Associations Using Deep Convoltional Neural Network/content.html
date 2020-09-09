@@ -96,37 +96,74 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Gradient Agreement as an Optimization</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">An Efficient Approach based on Multi-sources Information to Predict CircRNA-disease Associations Using Deep Convoltional Neural Network</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">MAML尝试学习模型的初始化参数，使得这些参数对各类任务的梯度都是敏感的，这样针对某一特定任务甚至新的任务只需进行少数几次的梯度下降，就能取得较好的效果，可是因为这个过程中使用了二阶微分计算，增大了计算开销。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近开始做生物方面的研究，主要打算构建一个circRNA-miRNA-disease网络。目前来说，其实circRNA与深度学习结合的研究非常少，在pubmed上搜索到的文章就那几篇，当然原因有很多，个人认为主要还是生物领域的一些特殊性，导致不能像分析其他问题那样直接构建一个深度学习模型就能取得很好的效果，但也正因为如此，挑战起来才更有意思。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Reptile在MAML的原理上进行改进，省略了二阶微分计算的过程，同时也避免模型的性能显著下降，在性能和计算开销之间都取得较好的平衡。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我打算做一系列的论文阅读笔记，当然我感觉我搜索到的文章还是不完整，但就先慢慢做吧。再说一句题外话，有些文章在我看来就是灌水，当然我也不会说明具体是哪些，但既然大部分都是发在sci二区的，或许从生物的角度看来会有一些值得借鉴学习的地方吧。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，MAML和Reptile都是在想办法找到一个点，到各类任务的最优点的距离之和最小，但是其实两者都默认了各类任务对于寻求最优初始点的贡献是一样的，从MAML的公式就可以明显看出这一点：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta_{new} = \theta - \beta \nabla_{\theta} \sum L  (f_{\theta '_i})$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式中的损失函数只是各个任务的损失函数之和，不同的损失函数拥有相同的权重。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在有一种情况就是假如有n个任务，n-1个任务都倾向于同一个梯度下降方向，而还有一个任务则倾向于另一个完全相反的方向，这时候这个任务就阻止了模型朝着最优方向前进了，或者说，在这种情况下，模型更倾向于抛弃最后一个任务，通过降低那个任务的性能来优化更多的任务。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以MAML为例来看看Gradient Agreement是如何进行改进的，首先也是随机抽取不同任务的N个样本，对每个样本进行梯度下降：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta_i = \theta - \alpha_{inner} \nabla L_{\tau_i} (f_\theta)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$g_i = \theta - \theta_i$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是Gradient Agreement的重点，计算每个任务的权重了：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i = \frac{\sum_{j \in T} (g_i^T g_j)}{\sum_{k \in T}  |\sum_{j \in T} (g_k^T g_j) |}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的意思就是，假如现在有五类任务，每类任务有五个样本，对于第一类任务的权重，分子等于第一类任务五个样本和所有样本之间的乘积之和，分母等于任意这二十五个样本任意两个的乘积之和的绝对值。简单来说，如果某类样本的梯度更新方向和其他样本的梯度更新方向比较接近，就会得到更高的权重，相反就更低。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">计算出每类任务的权重之后，就可以继续进行分析，对MAML，就是：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _{new} = \theta - \alpha_{outer} \sum_i w_i \nabla L_{\tau_i}(f_{\theta_i})$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对Reptile：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _{new} = \theta + \alpha_{outer} \sum_i w_i (\theta_i - \theta)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，Gradient Agreement的创新点就是针对不同的任务引入不同的权重，使得模型的能准确地朝着对初始参数进行优化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一篇文章是circRNA和疾病的关联分析，模型的结构如下</div>
 
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先做一个简单介绍，circRNA是一种环状的RNA，目前从生物的角度来看，它可以吸附miRNA，使其没办法正常发挥功能，而miRNA参与了很多重要的调控，所以如果circRNA、miRNA处于一个平衡的状态还好，万一circRNA失衡了，就有可能影响到miRNA，最终导致一些疾病的发生。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">目前因为实验耗时、开销大等原因，关于circRNA的相关数据其实并不多，CircR2Disease是一个挺好的数据库，它整理了网上发表的论文，收集了目前已经证实了661种circRNA与100种疾病共739条关系数据，而本文一方面基于这个数据库的数据，另一方面基于假设，相似的circRNA会导致表现型相似的疾病，从而进一步进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于CircR2Disease的数据，文章构建了一个矩阵M，有661行100列，对应circRNA和disease，如果两者有关联，则对应的元素为1，否则为0。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">模型一开始主要分析了不同circRNA之间的相似度和不同疾病之间的相似度。首先来看看怎么计算疾病之间的相似度，文章为了计算疾病的相似度，用了另一个数据集MeSH(Medical Subject Headings)，这是一个对disease进行专业分类的数据集，比如下图是Stomach Neoplasms在该数据集中的分类结果：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面是树状图，如果你下载数据下来，会看到两列数据，一列是disease名，一列是唯一的ID。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Disease名在meshtrees中可以是重复的，但是ID是唯一的，ID反映了Disease之间的关系，比如Stomach Neoplasms的ID有四个，其中一个是C06.301.371.767，从这个ID我们可以知道Stomach Neoplasms属于Gastrointestinal Neoplasms（C06.301.371），而Gastrointestinal Neoplasms则属于Digestive System Neoplasms（C06.301），Digestive System Neoplasms属于Digestive System Disease（C06）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">整个MeSH数据集就像一个目录，指明了不同疾病之间的从属关系，而因为disease名是可以重复的，所以整个MeSH数据之间就相互连接起来，构成了一个网络。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对数据有了初步的了解之后，可以看看文章是怎么计算相似度的，主要提出了两个模型，首先是Disease Semantic Similarity Model 1。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从对MeSH的介绍可以看出，如果两个disease属于同一个疾病的分支，那么他们就应该拥有更高的相似度，所以Model 1 从这里出发，定义了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$DAG_d = (d, N_d, E_d)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">实际上，就是把一个disease所有上游的疾病都找出来，并构成一个属于他的集合，比如Stomach Neoplasms，就把它的四个分支的所有上游疾病找出来放在一起。然后计算这个集合里面每个病对于Stomach Neoplasms的contribution：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$D_d(e) = 1, \quad if \quad e = d$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$D_d(e) = max \{ \epsilon * D_d(e') | e' \in children \quad of \quad e \}, \quad if \quad e \neq d$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式子的意思就是先设定一个epsilon，比如0.8，对Stomach Neoplasms本身设定contribution为1，对每一个上级迭代乘0.8，比如Gastrointestinal Neoplasms对Stomach Neoplasms的contribution为0.8，Digestive System Neoplasms对Stomach Neoplasms的contribution为0.64等等。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">计算contribution的主要目的是为了计算不同disease之间的相似度：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$DV(d) = \sum_{e \in N_d} D_d(e)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$SV_1(d(i), d(j)) = \frac{\sum_{e \in N_d(i) \bigcap N_d(j)} (D_{d(i)} (e) +  D_{d(j)} (e))}{ DV(d(i) )+ DV(d(j))}$$</section></div>
 
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说就是利用两种disease都有的上游disease的contribution去计算两种疾病之间的相似度。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来看看model2，Model 1 有一个缺点，就是没有考虑到对于部分罕见的上游疾病，应该给予他们更大的contribution。所以model 2就是基于这个不足提出的。Model 2 的主要变化在于contribution的计算：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$D'_d(e) = -log (\frac{num(DAG_s(e)}{num(disease)})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上提出的model1和model2可以帮助我们计算MeSH中的disease之间的相似度，但是因为有部分疾病是CIRCR2Disease特有的，所以需要第三种模型去计算disease之间的相似度进行补充。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Gaussian Interaction Profile Kernel Similarity不仅可以帮助我们计算disease之间的相似度，还可以计算circRNA之间的相似度。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们基于CIRCR2Disease数据集构建了矩阵M，每行表示某个circRNA和100种disease的关系，每列表示某个disease和661种circRNA的关系。我们可以使用矩阵的列向量表示每个disease，使用矩阵的行向量表示每个circRNA，得到了disease和circRNA的向量表示之后，就可以利用下式计算相似度：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$GR(c(i), c(j)) = exp(-\theta _c || V(c(i)) - V(c(j)) || ^2 )$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _c = \frac{1}{n} \sum ^n _{i=1} ||V(C(i))||^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">实际计算后发现，由于661种circRNA和100种disease中只有很少一部分有关联，所以计算得到的矩阵十分稀疏，最后得到的相似度普遍过于接近，作用不大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前计算了disease之间的相似度以及circRNA之间的相似度，其实只用Gaussian Interaction Profile Kernel Similarity对CIRCR2Disease数据集进行分析也足够计算CIRCR2Disease中的disease之间的相似度，但是实际上计算得到的相似度不理想，所以才需要借助MeSH数据集精确分析disease之间的相似度。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以最后我们需要融合这几种相似度计算，第一个步骤是结合model 1和model 2，只需要求均值即可，第二步是找出CIRCR2Disease中能在MeSH找到的disease，用MeSH的相似度更新原来计算的相似度，比如对于CIRCR2Disease中的Trachoma和Ehrlichiosis，这一对disease也存在于MeSH，计算得到的相似度为0.5，就用0.5替换原来用Gaussian Interaction Profile Kernel Similarity计得的0.4。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是因为命名格式的不统一，实际计算过程中会发现，很难找到同时出现在CIRCR2Disease和MeSH的disease对。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">整个模型的重点其实就是前面这部分，模型每次分析一个circRNA和一个疾病，输入是该circRNA的相似度向量（相似度矩阵的一行）和该疾病的相似度向量拼接起来，然后利用CNN进行特征提取，最后利用ELM得到二分类的输出，从而判断该circRNA和disease是否有联系。</div>
 
 
 

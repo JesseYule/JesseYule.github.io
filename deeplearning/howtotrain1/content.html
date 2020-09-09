@@ -96,33 +96,37 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">反向传播算法</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">如何训练神经网络</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到神经网络在训练过程中需要根据预测输出和实际输出去调整权重和阈值，但是没有具体说明这个过程，在回归模型中我们往往会采用梯度下降法，这里介绍一种神经网络比较常用的方法，反向传播算法，本质上我觉得它还是梯度下降法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近论文进入到建模和训练的环节，所以也想着正式研究一下如何训练一个模型，其实我觉得这包括很多问题，比如到底不同模型、不同的技巧之间有什么区别，比如应该如何分析模型的现状从而进行改进。这个系列我打算记录我的分析思路，最后再总结出一套可行的系统训练流程。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们采用实际输出矢量（actual output vector）和期望输出矢量（desired output vector）的欧式距离作为损失函数（一个简单例子）：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_p = \frac{1}{M} \sum_{j=1}^M (y_{dpj} - y_{apj})^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们考虑一种最简单的情况，激活函数使用sigmoid函数，神经网络的隐藏层只有一层，包含两个神经元，最后就是一个包含一个神经元的输出层，再假设输入层有两个神经元（两个输入）：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们把两个隐藏层的神经元的表达式都写出来：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_1(x_1, x_2) = \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_2(x_1, x_2) = \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后把两个神经元的输出作为输出层神经元的输入，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31} F_1(x_1, x_2) + w_{32} F_2(x_1, x_2) +\theta _3}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后我们得到了神经网络的输出的完整表达式，其中包含了输入x1、x2，以及各个权重w，事实上，这个比较复杂的表达式已经完整了表示了整个神经网络结构，如果我们把这个表达式代进损失函数里，就能得到一个包含了所有权重的损失函数的表达式，这时候，我们就可以利用梯度下降法的思想，通过损失函数对权重求偏导，得到权重的迭代公式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{ij} ^{new} = w_{ij} ^{old} - \eta \frac{\partial E_p}{\partial w_{ij}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">只要我们通过这个表达式更新权重，那么损失函数就会不断降低了。</div>
-
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先先简单说一下问题，现在我的目标是训练一个模型，输入是miRNA的独热编码，输出是一行向量，长度等于疾病的数量，相对应有关联的疾病元素为1，其他为0，目前一共有1204种miRNA，894种疾病。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始训练的时候，我发现loss很小，主要因为输出是01的向量，而且1的数量很小，那时候我就担心</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始，我想着输入输出都是一维向量，向量不同元素之间也没有关联，所以就是用了全连接层，写了大概十来层，发现模型的loss都没有降下去，所以我就做了第一步分析，用小数据集看看模型能否过拟合</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 
 
 

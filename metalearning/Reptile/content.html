@@ -96,28 +96,43 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">元学习介绍</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Reptile</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">人类最强大的一个能力就是可以通过少量的例子就能快速学习新概念新知识，而事实上，这个过程是通过重新利用过去已经学习的其他领域的知识，利用自身的学习能力实现的，比如你学会了加法，很容易就能学会减法，甚至有些聪明的小孩子可以从加法推导出减法，但是现在大部分算法模型还不能做到，如果要让它"学会"减法，那么我们就需要给他和训练学习加法同样数量的数据，所以就有人提出，能不能让计算机也领悟到人类的这种强大的学习能力呢。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">MAML主要就是学习一个网络的初始化参数，这个参数对梯度是敏感的，使得它在针对特定任务进行fine tuning时，只需要少数几次的训练就能达到较好的效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，我们可以用公式表示meta learning：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$minimize \ E_{\tau}(L_{\tau} (U_{\tau}^k(\phi)))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">整条公式所有的数据都来自于tau，最里面的U表示参数phi经过k次训练进行更新，然后再计算模型的损失函数L，我们的目的就是最小化这个损失函数L的期望E。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于MAML，主要的改变就是参数更新和计算损失函数时用到的数据不同：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$minimize \ E_{\tau}(L_{\tau,B} (U_{\tau,A} ^k(\phi)))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">MAML的效果不错，主要问题是它需要进行两次求导，所以有很多改进模型都是针对这个问题出发的，比如接下来要介绍的Reptile。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先想一下，为什么MAML需要计算两次求导，第一次求导是针对各个任务分别进行参数更新，第二次求导是针对模型总的损失函数的求导从而更新模型的初始参数，目的就是使得模型对各个任务都有较好的效果，又不会过于偏向于某个特定任务，所以本质上，MAML的目的就是确定初始化参数，使得模型在各类任务都能取得较好效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">个人理解，MAML是直接朝着相对各个任务都较优的方向进行梯度下降，而Reptile则是朝着各个任务的最优方向逐个梯度下降，最后近似逼近相对各个任务都较优的位置。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，Reptile会从数据中随机抽样，然后进行k次SGD或者ADAM，原文没有详细解释这里是怎样进行k次SGD，个人理解应该是对同一类任务抽取k个样本进行SGD，不然对同一个样本做k次SGD就很容易过拟合了，当然也可以理解成抽取k个不同任务的样本，但是考虑到每一次迭代都会随机抽取不同的任务，所以总的来说，不论具体是哪种方式，其实区别都不大：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\widetilde \phi = U_\tau ^k (\phi)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样就完成了一次参数更新，可是实际上Reptile还更进一步，对梯度下降的方向使用像Adam这种自适应算法：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi \leftarrow \phi + \epsilon (\widetilde \phi - \phi)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式中通过新旧参数之差求出参数更新的方向，个人觉得这样做的目的是调整学习率，避免在后期模型已经接近最优初始点了，还保持着较大的学习率，使得模型一直无法更进一步逼近最优初始点。接下来，就可以继续下一轮的学习。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，我们还可以每次针对n个任务进行训练，只需要每轮迭代抽取n个任务的数据：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\widetilde \phi _i = U_{\tau _i} ^k (\phi)$$</section></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi \leftarrow \phi + \epsilon \frac{1}{n} \sum_{i=1}^n (\widetilde \phi _i - \phi)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于为什么Reptile可行，虽然可以从数学公式进行推导，但我画了一幅图像尝试从更简单的角度去分析他的可行性：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从图像可以看出，MAML从对各个任务同时优化的角度进行梯度下降，当然每一步的迭代都是逼近最优初始参数的，但是像Reptile那样，虽然每次都是朝着某个任务前进，但是总的来说也慢慢逼近了最优初始参数。当然结果上可能没有MAML好，但是优势在于避免了二次求导使得运算量大大降低。</div>
 
 
 

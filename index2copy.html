@@ -1,529 +1,163 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)https://www.vext.co.jp/ -->
 <html lang="ja">
 <head>
-
-    <link rel="stylesheet" type="text/css" href="css/background/css/base.css" />
-    <link rel="stylesheet" type="text/css" href="css/background/css/demo1.css" />
-    <link rel="stylesheet" type="text/css" href="css/background/pater/pater.css" />
-    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-
-
-
-
-
-
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-    <link rel="stylesheet" href="css/menu/common.css" media="all">
-    <link rel="stylesheet" href="css/menu/home.css" media="all">
-    <script type="text/javascript" async="" src="css/menu/analytics.js"></script>
-    <script async="" src="css/menu/js"></script>
-
-
-
-    <script type="text/javascript" async="" src="css/main2/analytics.js"></script>
-    <script async="" src="css/main2/gtm.js"></script>
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PLTDDQK');</script>
+    <meta charset="UTF-8">
+    <title>Jesse Yule's Blog</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PLTDDQK');</script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="css/main2/viewport-extra.min.js"></script>
     <script>new ViewportExtra(375)</script>
-    <link rel="shortcut icon" href="https://www.vext.co.jp/wp-content/themes/vext-corp-2019/assets/images/favicon.ico">
-    <link rel="apple-touch-icon-precomposed"
-          href="https://www.vext.co.jp/wp-content/themes/vext-corp-2019/assets/images/apple-touch-icon-precomposed.png">
-    <link rel="stylesheet" href="css/main2/lib.css">
-    <link rel="stylesheet" href="css/main2/app.css">
+    <link rel="stylesheet" href="css/newmain/lib.css">
+    <link rel="stylesheet" href="css/newmain/app.css">
 
 
-    <!-- This site is optimized with the Yoast SEO plugin v11.4 - https://yoast.com/wordpress/plugins/seo/ -->
 
-
-    <script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Organization",
-                "@id": "https://www.vext.co.jp/#organization",
-                "name": "",
-                "url": "https://www.vext.co.jp/",
-                "sameAs": []
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://www.vext.co.jp/#website",
-                "url": "https://www.vext.co.jp/",
-                "name": "\u30d9\u30af\u30b9\u30c8\u682a\u5f0f\u4f1a\u793e\uff08Vext Inc.\uff09",
-                "publisher": {
-                    "@id": "https://www.vext.co.jp/#organization"
-                },
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://www.vext.co.jp/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                }
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://www.vext.co.jp/#webpage",
-                "url": "https://www.vext.co.jp/",
-                "inLanguage": "ja",
-                "name": "\u30d9\u30af\u30b9\u30c8\u682a\u5f0f\u4f1a\u793e\uff08Vext Inc.\uff09 | \u30d9\u30af\u30b9\u30c8\u306f\u3001700\u793e\u4ee5\u4e0a\u306e\u5c0e\u5165\u5b9f\u7e3e\u3092\u3082\u3064\u30c6\u30ad\u30b9\u30c8\u30de\u30a4\u30cb\u30f3\u30b0 \u30c4\u30fc\u30eb\u300cVextMiner\u300d\u3092\u4e2d\u6838\u3068\u3057\u3001\u300c\u55b6\u696d\u6d3b\u52d5\u306e\u751f\u7523\u6027\u5411\u4e0a\u300d\u3084\u300c\u30b3\u30fc\u30eb\u30bb\u30f3\u30bf\u30fc\u306e\u696d\u52d9\u52b9\u7387\u5316\u300d\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u307e\u3059\u3002",
-                "isPartOf": {
-                    "@id": "https://www.vext.co.jp/#website"
-                },
-                "about": {
-                    "@id": "https://www.vext.co.jp/#organization"
-                },
-                "description": "\u30d9\u30af\u30b9\u30c8\u306f\u3001700\u793e\u4ee5\u4e0a\u306e\u5c0e\u5165\u5b9f\u7e3e\u3092\u3082\u3064\u30c6\u30ad\u30b9\u30c8\u30de\u30a4\u30cb\u30f3\u30b0 \u30c4\u30fc\u30eb\u300cVextMiner\u300d\u3092\u4e2d\u6838\u3068\u3057\u3001\u300c\u55b6\u696d\u6d3b\u52d5\u306e\u751f\u7523\u6027\u5411\u4e0a\u300d\u3084\u300c\u30b3\u30fc\u30eb\u30bb\u30f3\u30bf\u30fc\u306e\u696d\u52d9\u52b9\u7387\u5316\u300d\u3092\u30b5\u30dd\u30fc\u30c8\u3057\u307e\u3059\u3002"
-            }
-        ]
-    }</script>
-    <!-- / Yoast SEO plugin. -->
-
-    <link rel="dns-prefetch" href="https://s.w.org/">
-    <script type="text/javascript">
-        window._wpemojiSettings = {
-            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/",
-            "ext": ".png",
-            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/",
-            "svgExt": ".svg",
-            "source": {"concatemoji": "https:\/\/www.vext.co.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}
-        };
-        !function (a, b, c) {
-            function d(a, b) {
-                var c = String.fromCharCode;
-                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0);
-                var d = k.toDataURL();
-                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0);
-                var e = k.toDataURL();
-                return d === e
-            }
-
-            function e(a) {
-                var b;
-                if (!l || !l.fillText) return !1;
-                switch (l.textBaseline = "top", l.font = "600 32px Arial", a) {
-                    case"flag":
-                        return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b);
-                    case"emoji":
-                        return b = d([55358, 56760, 9792, 65039], [55358, 56760, 8203, 9792, 65039]), !b
-                }
-                return !1
-            }
-
-            function f(a) {
-                var c = b.createElement("script");
-                c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
-            }
-
-            var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d");
-            for (j = Array("flag", "emoji"), c.supports = {
-                everything: !0,
-                everythingExceptFlag: !0
-            }, i = 0; i < j.length; i++) c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]);
-            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {
-                c.DOMReady = !0
-            }, c.supports.everything || (h = function () {
-                c.readyCallback()
-            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () {
-                "complete" === b.readyState && c.readyCallback()
-            })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji)))
-        }(window, document, window._wpemojiSettings);
-    </script>
-    <script src="css/main2/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
-    <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-    </style>
-    <link rel="stylesheet" id="wp-block-library-css" href="css/main2/style.min.css" type="text/css" media="all">
-    <link rel="stylesheet" id="old-theme-style-common-css" href="css/main2/style-common.css" type="text/css"
-          media="all">
-    <link rel="stylesheet" id="old-theme-style-contents-css" href="css/main2/style-contents.css" type="text/css"
-          media="all">
-    <link rel="stylesheet" id="old-theme-style-sp-css" href="css/main2/style-sp.css" type="text/css"
-          media="all">
-    <link rel="https://api.w.org/" href="https://www.vext.co.jp/wp-json/">
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.vext.co.jp/xmlrpc.php?rsd">
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-          href="https://www.vext.co.jp/wp-includes/wlwmanifest.xml">
 </head>
 
-<body class="home blog">
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLTDDQK"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+<body class="page-template-default page page-id-194">
 
 
-<nav class="overlay-navigation" style="color: #eeeeee;font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all">
-    <div class="overlay-navigation__inner m-row">
-        <div class="overlay-navigation__block">
-            <ul class="sitemap m-row m-row--fw--wrap">
 
-                <li class="sitemap__unit"><a href="index.html">Home</a></li>
+<div class="partnership-page">
 
-                <li class="sitemap__unit"><a href="about/about.html">About</a></li>
 
-                <li class="sitemap__unit"><a href="programming/java1.html">Java</a></li>
 
-                <li class="sitemap__unit"><a href="math/all1.html">Mathematics</a></li>
+    <div class="single">
+        <div class="single__multiple-header">
 
-                <li class="sitemap__unit"><a href="naturallanguage/all1.html">Natural Language</a></li>
+            <h1 class="single__multiple-header__title"><br></h1>
 
-                <li class="sitemap__unit"><a href="machinelearning/ml1.html">Machine Learning</a></li>
+            <h1 class="single__multiple-header__title">Junjie Yu（Jesse Yule）</h1>
+        </div>
 
-                <li class="sitemap__unit"><a href="articles/all1.html">Others</a></li>
+        <div class="single__content single__content--margin-multiple js-single__content">
 
+
+
+
+            <p>本科毕业于华南农业大学数学与应用数学专业，研究生毕业于悉尼麦考瑞大学精算专业，目前主要研究深度学习与自然语言处理。</p>
+            <ul>
+                <li>主邮箱：Jesse.Junjie.Yu@foxmail.com</li>
+                <li>副邮箱：jesseyulejunjie@gmail.com</li>
+                <li>github：JesseYule</li>
+                <li>csdn: JessssseYule</li>
             </ul>
-
-        </div>
-        <div class="sns"><h2 class="overlay-navigation__siteID"><img src="css/menu/img_siteID-m.svg"
-                                                                     alt=""></h2></div>
-    </div>
-</nav>
+            <p><br></p>
 
 
 
-<div class="wrap js-wrap">
-    <main data-barba="wrapper" id="barba-wrapper" class="main js-main" aria-live="polite">
-        <div data-barba="container" data-barba-namespace="page-home" id="js-page-container" class="barba-container"
-             data-group="page-home">
+            <h2>研究项目</h2>
 
-            <div class="mv">
+            <h4>基于Transformer的增强型序列推断模型（ESIM）</h4>
 
-                <div class="content">
-                    <canvas class="scene scene--full" id="scene"></canvas>
-                    <script type="x-shader/x-vertex" id="wrapVertexShader">
-					attribute float size;
-					attribute vec3 color;
-					varying vec3 vColor;
-					void main() {
-						vColor = color;
-						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-						gl_PointSize = size * ( 350.0 / - mvPosition.z );
-						gl_Position = projectionMatrix * mvPosition;
-					}
-				</script>
-                    <script type="x-shader/x-fragment" id="wrapFragmentShader">
-					varying vec3 vColor;
-					uniform sampler2D texture;
-					void main(){
-						vec4 textureColor = texture2D( texture, gl_PointCoord );
-						if ( textureColor.a < 0.3 ) discard;
-						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
-						gl_FragColor = color;
-					}
-				</script>
-                    <div class="content__inner">
-                        <h1 class="content__title" >Data Science</h1>
+            <p><strong>项目简介</strong>
+            </p>
+            <ul>
 
-                        <h2 class="content__subtitle" style="background-color: #0e192d; color: #ffffff">by Jesse Yule</h2>
+                <ul>
+                    <li>Transformer作为特征提取器，与RNN（LSTM）、CNN相比，不存在长期依赖问题，可高效并行计算，且不须构建过深的网络也能取得较好的效果</li>
+                    <li>主要思路：1. 以判断重复文本为例，两个输入序列依次通过预训练的glove词向量、Transformer的Encoder结构进行两次Embedding；2. 利用注意力机制计算两个句子词与词之间的相似度，以此构建权重，进一步对句子间相似度进行局部推断得到信息向量；3. 利用Transformer的Encoder结构对信息向量进行特征提取和降维；4.进行平均池化和最大池化，确保不同长度的序列转化为同样尺寸的向量； 5. 利用全连接层做分类，判断是否重复</li>
+                    <li>模型不足： 在其他应用场景，如问答系统，注意力机制会带来大量运算量，目前亦有提出一种动态注意力机制提高运算效率</li>
+                    <li><a href="https://github.com/JesseYule/DuplicatedQuestionDetection" target="_blank" rel="noopener noreferrer">github项目地址</a></li>
 
-                    </div>
-                </div>
+                </ul>
 
+                <!--<ul class="list">-->
+                <!--<li><a href="https://github.com/JesseYule/DuplicatedQuestionDetection" target="_blank" rel="noopener noreferrer">github项目地址</a></li>-->
+                <!--</ul>-->
 
-            </div>
-
-
-
-            <div class="archive-case">
-
-
-                <div class="archive-case__category archive-case__category--margin">
-
-                    <div class="section-case-study__title">
-                        <br><br><br>
-                        <h2 class="heading js-heading-animation is-set is-animation">
-                            <div class="heading__main"><span style="transition-delay: 0s;">B</span><span
-                                    style="transition-delay: 0.0208333s;">a</span><span
-                                    style="transition-delay: 0.0416667s;">s</span><span
-                                    style="transition-delay: 0.0625s;">i</span><span
-                                    style="transition-delay: 0.0833333s;">c</span><span
-                                    style="transition-delay: 0.104167s;"> </span><span
-                                    style="transition-delay: 0.125s;">T</span><span
-                                    style="transition-delay: 0.145833s;">h</span><span style="transition-delay: 0.166667s;">e</span><span
-                                    style="transition-delay: 0.1875s;">o</span><span
-                                    style="transition-delay: 0.208333s;">r</span><span style="transition-delay: 0.229167s;">y</span>
-                            </div>
-                            <div class="heading__sub">基础知识</div>
-                        </h2>
-                    </div>
-
-                    <div class="archive-case__content archive-case__content--margin">
-                        <div class="list-card list-card--margin">
-                            <article class="list-card__item">
-                                <a class="list-card__item__inner" href="programming/java1.html">
-                                    <div class="list-card__item__media"><img
-                                            src="image/Java2.png"
-                                            alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"></div>
-                                    <div class="list-card__item__content">
-                                        <p class="list-card__item__content__name">Java基础</p>
-                                        <h3 class="list-card__item__content__title">Java是一门经典的面向对象语言，即使现在python十分流行也有必要学习一下java</h3>
-                                        <ul class="list-card__item__content__category">
-                                            <li class="list-card__item__content__category__item list-card__item__content__category__item--text-mining">了解更多</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </article>
-
-                            <article class="list-card__item">
-                                <a class="list-card__item__inner" href="math/all1.html">
-                                    <div class="list-card__item__media"><img
-                                            src="image/math.jpeg"
-                                            alt="お客様に新たな気付きを提供するとともに「言葉の分析力」で新たなビジネスを展開"></div>
-                                    <div class="list-card__item__content">
-                                        <p class="list-card__item__content__name">数学基础</p>
-                                        <h3 class="list-card__item__content__title">单纯掌握编程语言是无法深入学习机器学习的，数学才是理论的基础</h3>
-                                        <ul class="list-card__item__content__category">
-                                            <li class="list-card__item__content__category__item list-card__item__content__category__item--text-mining">了解更多</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-                    </div>
-
-                    <div class="archive-case__pager">
-                        <div class="archive-pagination archive-pagination--margin">
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!--<ul class="list">-->
+                <!--<li><a href="projects/DuplicatedQuestionDetection/content.html" target="_blank" rel="noopener noreferrer">项目详细介绍</a></li>-->
+                <!--</ul>-->
 
 
 
 
-            <section class="section-product section-product--margin">
 
-                <div class="section-product__title">
-                    <h2 class="heading js-heading-animation is-set is-animation">
-                        <div class="heading__main"><span style="transition-delay: 0s;">A</span><span
-                                style="transition-delay: 0.0357143s;">I</span>
-                        </div>
-                        <div class="heading__sub">人工智能</div>
-                    </h2>
-                </div>
+                <h4>基于RNN卷积核的Network in Network模型</h4>
 
-                <div class="section-product__cards section-product__cards--margin">
-                    <article class="section-product__cards__item js-scroll-show is-show" data-hook=".7"
-                             data-hook-sp=".7">
-                        <div class="section-product__cards__item__bg">
-                            <div class="section-product__cards__item__bg__inner">
-                                <div class="section-product__cards__item__bg__image"
-                                     style="background-image: url(image/ml.jpg);"></div>
-                                <div class="section-product__cards__item__bg__mask">
-                                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-product__cards__item__content">
-                            <p class="section-product__cards__item__status">
-                                <span class="section-product__cards__item__status__number">01</span>
-                                <span class="section-product__cards__item__status__name">机器学习与深度学习</span>
-                            </p>
-                            <h1 class="section-product__cards__item__title">ML&DL</h1>
-                            <div class="section-product__cards__item__message">
-                                <p>主要介绍各种机器学习和深度学习的模型，<br>从数学的角度出发进行推导，<br>同时尽可能简明地对模型原理进行分析。</p></div>
-                            <div class="section-product__cards__item__button">
-                                <a class="button button--small" href="machinelearning/all1.html">
-                                    <span class="button__text">了解更多</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-
-                    <article class="section-product__cards__item js-scroll-show is-show" data-hook=".7"
-                             data-hook-sp=".7">
-                        <div class="section-product__cards__item__bg">
-                            <div class="section-product__cards__item__bg__inner">
-                                <div class="section-product__cards__item__bg__image"
-                                     style="background: url(image/nlp.png); background-size: 100% 100%"></div>
-                                <div class="section-product__cards__item__bg__mask">
-                                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-product__cards__item__content">
-                            <p class="section-product__cards__item__status">
-                                <span class="section-product__cards__item__status__number">02</span>
-                                <span class="section-product__cards__item__status__name">自然语言处理</span>
-                            </p>
-                            <h1 class="section-product__cards__item__title">NLP</h1>
-                            <div class="section-product__cards__item__message">
-                                <p>自然语言处理是现在机器学习的一个研究方向，<br>主要有信息提取、文本分类、情感分析等应用。</p></div>
-                            <div class="section-product__cards__item__button">
-                                <a class="button button--small" href="naturallanguage/all1.html">
-                                    <span class="button__text">了解更多</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-            </section>
-
-
-            <section class="section-seminar section-seminar--margin js-scroll-show is-show">
-                <div class="section-seminar__title">
-                    <h2 class="heading-center js-heading-animation is-set is-animation">
-                        <div class="heading-center__main"><span style="transition-delay: 0s;">O</span><span
-                                style="transition-delay: 0.0166667s;">t</span><span
-                                style="transition-delay: 0.0333333s;">h</span><span
-                                style="transition-delay: 0.05s;">e</span><span
-                                style="transition-delay: 0.0666667s;">r</span>
-                        </div>
-                        <div class="heading-center__sub">其他文章</div>
-                    </h2>
-                </div>
-
-                <div class="section-seminar__content section-seminar__content--margin">
-
-                    <div class="section-seminar__content__inner">
-                        <div class="seminar-info">
-                            <article class="seminar-info__item">
-                                <a href="articles/LinuxForMe/content.html" class="seminar-info__item__inner">
-                                    <div class="seminar-info__item__label">杂文</div>
-                                    <div class="seminar-info__item__nav">
-                                        <time class="seminar-info__item__nav__date" datetime="2019-10-10">2018.9.20
-                                        </time>
-                                    </div>
-                                    <h3 class="seminar-info__item__title">
-                                        我眼中的Linux</h3>
-
-                                </a>
-                            </article>
-
-                            <article class="seminar-info__item">
-                                <a href="articles/dataScienceStudyPlan/content.html" class="seminar-info__item__inner">
-                                    <div class="seminar-info__item__label">杂文</div>
-                                    <div class="seminar-info__item__nav">
-                                        <time class="seminar-info__item__nav__date" datetime="2019-09-12">2018.11.26
-                                        </time>
-                                    </div>
-                                    <h3 class="seminar-info__item__title">
-                                        数据科学学习路线</h3>
-
-                                </a>
-                            </article>
-
-                            <article class="seminar-info__item">
-                                <a href="articles/programmingStudyPlan/content.html" class="seminar-info__item__inner">
-                                    <div class="seminar-info__item__label">杂文</div>
-                                    <div class="seminar-info__item__nav">
-                                        <time class="seminar-info__item__nav__date" datetime="2019-08-08">2018.9.16
-                                        </time>
-                                    </div>
-                                    <h3 class="seminar-info__item__title">
-                                        编程基础学习计划</h3>
-
-                                </a>
-                            </article>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="section-seminar__button section-seminar__button--margin js-scroll-show is-show">
-                    <a class="button " href="articles/all1.html">
-                        <span class="button__text">更多</span>
-                    </a>
-                </div>
-
-            </section>
-
-        </div><!-- /.barba-container -->
-    </main><!-- / #barba-wrapper.main -->
-
-    <aside class="section-contact section-contact--margin">
-        <div class="section-contact__title">
-            <h2 class="heading-center ">
-                <div class="heading-center__main">About</div>
-                <div class="heading-center__sub">关于本网站</div>
-            </h2>
-        </div>
-
-        <div class="section-contact__content section-contact__content--margin">
-            <div class="section-contact__message">
-                <p>本网站是我出于个人兴趣建立的网站<br class="u-hidden-inline-sp">主要分享我个人学习机器学习和自然语言处理过程中的一些心得体会<br>希望能与各位交流学习。
+                <p><strong>项目简介</strong>
                 </p>
-            </div>
 
-            <div class="section-contact__button">
-                <a href="about/about.html" class="button-plate ">
-                    <div class="button-plate__inner">
-                        <p class="button-plate__text">
-                            <span class="button-plate__text__icon"><svg class="svg-sprite svg-sprite-mail" role="img"><use
-                                    xlink:href="https://www.vext.co.jp/wp-content/themes/vext-corp-2019/assets/svg/sprite.svg#sprite-mail"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></span>
-                            关于我
-                        </p>
-                        <span class="button-plate__arrow"><svg class="svg-sprite svg-sprite-arrow" role="img"><use
-                                xlink:href="https://www.vext.co.jp/wp-content/themes/vext-corp-2019/assets/svg/sprite.svg#sprite-arrow"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></span>
-                    </div>
-                </a>
-            </div>
+                <ul>
+                    <li>和LeNet（传统CNN）相比，Network in Network模型用微型网络（MLP）作为卷积核，增强了卷积核提取非线性特征的能力（原始卷积核只能提取线性特征）</li>
+                    <li>在自然语言处理领域，考虑到位置信息对文本数据的重要性，首次提出使用RNN作为卷积核，与MLP相比可保留位置信息之余，卷积核尺寸较小解决了RNN的长期依赖问题，卷积运算的特性使得RNN可进行并行计算</li>
+                    <li>主要思路：1. 通过遮掩掉序列的部分词向量，针对不同时刻生成不同子序列（每段子序列可看作包含各个时刻的词向量，不同子序列包含的范围不同）；2. 对上一子序列的输出和当前子序列进行线性变换及求和，进行卷积运算得到当前子序列的输出；3. 线性变换采用大小为1的卷积核进行卷积运算，可大大减少参数量</li>
+                    <li><a href="https://github.com/JesseYule/NetworkInNetwork-RNNKernel-" target="_blank" rel="noopener noreferrer">github项目地址</a></li>
 
-            <div class="section-contact__bottom">
-                <p class="section-contact__bottom__detail">E-mail1：jesseyulejunjie@gmail.com</p>
-                <p class="section-contact__bottom__detail">E-mail2：1014880520@qq.com</p>
+                </ul>
 
-            </div>
+                <!--<ul class="list">-->
+                <!--<li><a href="https://github.com/JesseYule/NetworkInNetwork-RNNKernel-" target="_blank" rel="noopener noreferrer">github项目地址</a></li>-->
+                <!--</ul>-->
+
+                <!--<ul class="list">-->
+                <!--<li><a href="projects/NetworkInNetwork-RNNKernel-/content.html" target="_blank" rel="noopener noreferrer">项目详细介绍</a></li>-->
+                <!--</ul>-->
+
+
+
+
+                <h2>个人博客</h2>
+
+                <p>主要内容包括统计推断、数据科学、深度学习、自然语言处理等等，主要记录了在学习过程中的思考和总结</p>
+
+                <!--<aside class="link-card link-card&#45;&#45;margin">-->
+
+                <!--<ul class="link-card__lists">-->
+                <!--<li class="link-card__lists__item">-->
+                <!--<a href="https://www.vext.co.jp/about/" class="link-card__lists__item__inner">-->
+                <!--<p class="link-card__lists__item__title">about Vext</p>-->
+                <!--<p class="link-card__lists__item__text">ベクストについて</p>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="link-card__lists__item">-->
+                <!--<a href="https://www.vext.co.jp/case/" class="link-card__lists__item__inner">-->
+                <!--<p class="link-card__lists__item__title">Case Studies</p>-->
+                <!--<p class="link-card__lists__item__text">導入事例</p>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="link-card__lists__item">-->
+                <!--<a href="https://www.vext.co.jp/seminar/" class="link-card__lists__item__inner">-->
+                <!--<p class="link-card__lists__item__title">Seminer / Event</p>-->
+                <!--<p class="link-card__lists__item__text">セミナー・イベントのご案内</p>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+
+                <!--</aside>-->
+
+
+                <p><a class="button button--large-sp button--center"
+                      href="index2.html" target="_blank"
+                      rel="noopener noreferrer"><span class="button__text">浏览博客</span></a><br>
+
+                </p>
+
         </div>
-    </aside>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 </div><!-- /.wrap -->
-<div id="js-switch-mask" class="switch-mask">
-    <div class="switch-mask__inner"></div>
-</div>
-<script type="text/javascript" src="css/main2/wp-embed.min.js"></script>
-<script crossorigin="anonymous" src="css/main2/polyfill.min.js"></script>
-<script src="css/main2/app.js"></script>
-<script type="text/javascript" defer=""
-        src="css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
-
-<script src="css/background/js/demo.js"></script>
-<script src="css/background/js/three.min.js"></script>
-<script src="css/background/js/TweenMax.min.js"></script>
-<script src="css/background/js/demo1.js"></script>
-
 
 </body>
 </html>

@@ -96,27 +96,76 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">边缘场景的模型落地与Atlas 500</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">tensorflow架构</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前也提到了，学术界的深度学习和工业界的深度学习区别还是挺大的，这次就来谈一下工业界的模型是如何落地的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上次谈tensorflow算子修改已经是几个月之前的事了，这几个月华为开源了mindspore深度学习框架，全面更新了mindstudio，不得不称赞华为确实一直在踏踏实实地做事。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来回顾一下，项目的目的是对加油站的监控视频做实时分析，看有没有危险行为，就像之前所说的，在加油站部署一个GPU不现实，第一耗电量大，第二机器未必能稳定运行，可能不小心被人撞了一下就断电了，第三那么多加油站每个加油站配一个GPU也是一笔大开销，除了GPU在云端跑数据的传输也是问题，毕竟我们还是讲究一个实时性，所以应该怎么办呢，华为的Atlas 500为我们提供的解决方案。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">新的mindspore深度学习框架，从介绍上来看，它的开发体验更简单，支持云、边缘、手机的快速部署，或许就意味着如果用mindspore写模型，就能直接部署在atlas500上，不用像tensorflow那样一直改算子了，有兴趣的可以深入了解一下。当然，本文的重点还是tensorflow。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所谓Atlas 500就是一个性能强大、能在边缘进行实时处理的边缘计算产品，能提供足够的算力跑模型，同时功耗也低，还稳定，能够在极其严苛的环境下工作。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前修改算子的时候，说实话因为老板一直催，很多东西，包括tensorflow的架构都没有深入了解，所以最近就花时间重新了解一下，有了一些新的认识和体会，现在就简单总结一下。不过要完整把tensorflow的架构说清楚需要很长的篇幅，这次就打算侧重于算子的角度，介绍相关的内容。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我不知道有多少人知道这个Atlas 500，反正我是第一次接触，说实话，刚上手的时候真的有点混乱，所以，本文的目的会偏向于简单介绍Atlas的各个产品，以及我是怎么把模型部署到Atlas 500上面的，如果你不需要用到Atlas 500，那么有些内容可能对你来说作用不大，当然，你也可以当故事看看，看看我到底掉进了多少个坑，这个部署的过程是多么艰辛。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我想提出两个问题，第一，我们之前说的修改算子，到底改的是什么东西？第二，我们可以怎么修改，应该怎么修改？大家可以结合着这两个问题继续阅读下文。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果你搜索一下华为的Atlas人工智能计算平台，点进华为的官网你会看到Atlas900、Atlas500、Atlas200还有一些处理器，简单来说，我的理解就是Atlas 900 AI集群、Atlas 800 Ai服务器算力最强，可以用来训练模型，也可以用来做模型的推理，而Atlas 500智能小站只能用来做推理，不能用来训练模型，Atlas 500中有一个Atlas 200AI加速模块，我简单地把它看成Atlas 500的CPU或者GPU的存在，反正Atlas 500能这么高效地进行推理计算，就是因为有这么一个Atlas 200AI加速模块。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们可以看看tensorflow的最根本概念，数据流图（data flow graph），我们用tensorflow写模型，实际上就是定义一个数据流图，决定图中有哪些节点，每个节点的细节是什么，节点之间是怎么连接的，数据从哪里流入。定义好一个数据流图后，还需要往图中输入数据，然后就可以得到输出了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面就是一个简单得不能再简单的例子，但是也有齐一个数据流图的基本概念了：节点和边，事实上，在这里，节点就是x、y、"+"，边就是那几条线。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">硬件方面大概就这样，那么我们怎么部署我们的模型呢，简单来说，就是我们训练好一个模型，把模型结构、参数保存起来，然后用华为提供的mind studio进行离线模型的转化，转化成Atlas 500支持的离线模型格式之后再传到Atlas 500上面，然后就可以调用模型进行推理了，之后模型输出的结果就会保存在Atlas 500上面或者传送回本地。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于节点，我说一下我自己的理解。有些地方把节点等价于算子，我更偏向于认为，节点有两类，第一类表示运算的节点，叫operation，这就是我们之前所说的算子，它主要负责对输入的张量进行特定的数学运算或控制操作，比如图中的"+"。还有一种是表示数据的节点，包含constant、variable、placeholder，constant就是表示一个常数，variable表示变量，一般是模型的参数，placeholder是模型的输入，往placeholder传入我们的输入数据，它们就会流经整个计算图，最后得到输出，这就是数据流图的推理过程。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这样说好像也不难，但是第一，华为只支持caffe或者tensorflow写的模型，而且它还只是支持tensorflow的部分算子，所以说，假如你用pytorch，直接就无缘atlas 500了，从中就可以看出tensorflow在工业界的重要性了，另一方面，如果你的tensorflow用的算子太新，atlas也不支持，所以怎么才能用华为支持的算子去写一个tensorflow模型，就变成了整个部署阶段最痛苦的过程。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">至于边，就是用来连接节点的，指定数据是怎么流动的，或者一些操作运算的顺序，这里暂不展开。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">后期我会再详细说明怎么分析转化离线模型出现的问题、怎么修改tensorflow的算子，这次主要还是简单介绍一下Atlas 500这个边缘计算平台。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">好了，现在我们明白了什么是节点，什么是边，然后就可以继续思考一个问题，我们用tensorflow写了一个模型，比如一个简单的神经网络，为什么它既可以在cpu上训练也可以在gpu上训练？这就引出了tensorflow的第三个概念，kernel。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">算子其实是一种对某个操作的统称，比如加法这个操作，我们有对应的ADD算子，但是具体怎么做，是由kernel来实现的，也就是说，在一个算子ADD之下，对应着多个kernel，比如ADD的cpu版本、ADD的gpu版本。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面说了一个算子对应多个kernel，事实上一个api也可能对应着多个算子，比如说tf.add()，它在旧版本的tensorflow对应的算子是ADD，新版本则是ADDv2，这样做的原因主要是算子被改进了，但是如果每改一次都要增加一个api就太麻烦了，所以还不如在新版本的tensorflow把api对应的算子换掉。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里先总结一下，比如说我们现在调用了tf.add，这是一个python的API，它对应着ADD这个算子，然后底层对应着不同的kernel，以便在不同的环境下运作。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <!--<div class="p-lower-kv__outline p-lower-kv__outline&#45;&#45;col2">在这里，先回到最初的第一个问题，改算子改的到底是什么，我认为什么都改不了，起码你没办法改算子的实现方式，也就是把kernel改了，因为华为是不支持这个算子，而不是不支持这个算子实现过程中的某一个过程，所以说，华为说支持就是支持，不支持就是不支持。那难道说华为说不支持这个算子我们就没办法了吗，限于篇幅问题，下一篇我再说一下我的看法。</div>-->
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面我们提到了api、算子这些名词，接下来就结合tensorflow的架构看看：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们从最底层看起，最底层有网络通信层，和分布式计算相关，还有设备层，和tensorflow在cpu、gpu上的实现有关。上一层是一些基础操作的具体实现，也就是kernel。再上一层是和tensorflow的图计算相关的。继续往上看就是api层，也就是我们写代码时调用的那些函数了，不过他也划分了一下，把tf.add这些基础的api划分到python client，然后还有一些tf.nn.conv2d之类的，一句话就搞出一层网络，这些比较高级的api和所属的库就划分到training libraries那里。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到目前为止，我们简单了解了tensorflow的一些基本概念和架构，接下来就用一个具体的例子，来看看当我们调用一个api的时候，到底发生了什么事，我们可以看看tensorflow-1.15的tf.nn.leaky_relu的源码：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/6.png"><img src="image/6.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当我们调用tf.nn.leaky_relu的时候，其实就是调用了上图的函数，函数最后调用了gen_nn_ops.py这个文件中的leaky_relu()这个方法，gen_nn_ops.py是在编译（安装时）tensorflow时生成的，位于site-packages/tensorflow/python/ops/gen_nn_ops.py，随后又调用了tensorflow/tensorflow/core/kernels/下面的核函数实现。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">整个过程就是这样一层一层地调用，从最上层的api开始，一直调用到对应的kernel，所以这时候，假如华为说不支持LeakyRelu这个算子，应该怎么改？答案是改不了，因为它不支持这个算子，就意味着底层的kernel全都不支持，现在不是不支持kernel实现过程中的某个步骤，而是整个算子所有的kernel都不支持，所以根本改不了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是我们可以换一种方法实现LeakyRelu这个激活函数，也就是自定义一个方法：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/7.png"><img src="image/7.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里，我主要利用Maximum、Mul等算子，实现了原来LeakyRelu的功能，从而把LeakyRelu算子拆分成几个算子，让华为能够支持它们，从最后模型的结构上来看，也确实如此：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/8.png"><img src="image/8.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然从结果上来看是一样的，但是从运行的过程，单一一个LeakyRelu的运行速度肯定比几个算子组合起来更快，不然它都不需要提出这样一个算子了。当然，我们也顾不了那么多。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是最常用的一种改算子的方法，用支持的算子组合实现不支持的算子的功能。除此之外，新版本的算子，比如ADDv2这种改进版算子，华为可能不支持，这时候用回旧版本的tensorflow就好。但是还有最后一种情况，比如说，我没办法用支持的算子实现LeakyRelu的功能，那怎么办？答案是，目前我也没办法，比如non_max_suppression这个算子，华为不支持，我也改不了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再回到最初的问题，所以我们说的改算子，到底改的是什么，答案是什么也不能改，算子由kernel实现，我们总不能把那么底层的东西改了，即使有能力改，华为说的是不支持这个算子，不是不支持kernel中的某一步，所以不支持就是不支持，就只能放弃这个算子了。但是或许我们可以用其他支持的算子实现这个不支持的算子的功能，这才是我们所说的改算子时应该做也是唯一能做的事情。</div>
 
 
 

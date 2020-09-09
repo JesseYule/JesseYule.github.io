@@ -98,62 +98,78 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">用GLM进行数据分析（上）</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">用逻辑回归（logistic regression）进行数据分析</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里，我通过我的作业来介绍一下如何用GLM进行数据分析（这里主要用R进行分析），不过还没拿到答案，所以也不确定结果是否正确，不论怎样，介绍一下整个分析的思路也足够了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">网上用逻辑回归做分析的例子不少，但很多都是建了一个逻辑回归模型就结束了，这里将展示一个完整的分析过程，包括建模之后的分析和改进，我觉得这些过程有时候甚至比建一个模型重要，也要花费更多的时间。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来看一下问题，主要是分析一个人年薪能不能达到十万和什么因素有关（wage_status），响应变量是就是能不能达到年薪十万，解释变量就是年龄、婚姻状况等等：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上是数据的一些介绍，简单来说就是分析急诊室就诊次数和一些变量之间的关系吧，首先我们来分析一下这些数据的大致情况：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一步，我们可以探索一下数据，变量主要有数值型的变量和分类变量，先来看看数值变量，也就是年份和年龄，我们可以用回归样条画出两个变量和年薪十万的关系：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，一大堆变量，包括响应变量都是右偏的，一般来说这时候我们就可以对他们应用log transformation（这里需要注意，因为变量具有较多的0值，所以采取log（x+1）做变换，这也是一个小技巧）来缓和这种现象，我们可以通过直方图来观察转换前后的状况，同时也观察有没有需要剔除极端数据。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从左图可以看出，随着时间迁移，十万年薪的人确实慢慢增多了，而从年龄来说，四十到六十岁年薪十万的人是最多的，这个规律也很符合现实。同时也可以做一下wald检验，看看变量是否显著：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">p足够小，说明可以用这两个变量进行建模。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在观察直方图的过程中，也发现了complication这个变量其实是严重的不平衡。一般来说，对这种数据有很多处理方法，我可能比较极端一点，喜欢直接剔除它，当然，也不是说不要就不要的，主要还是要分析complication对于0和1这两种情况，我们的ER_visits有没有明显的区别，所以我们可以通过图表画出来：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，0和1的ER_visits其实分布都比较接近，也就是说不会因为complication的不同取值而导致响应变量有明显变化，所以我这里选择剔除这个变量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于类别变量，主要分析一下frequency table和卡方检验，这里就暂不细说了。而上述的分析，主要还是看一下变量对结果的影响是否显著，通过检验分析出都是显著的，所以我们可以用所有的变量进行建模。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，我们还注意到对于drug和comorbidities这两个变量，即使使用了log变换，结果还是右偏：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/4.png"><img src="image/4.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这种情况下，我选择直接对他们进行二分类，把大于0的数据分为一类，用1表示，等于0的用0表示。然后，我们再重新观察数据：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">经过初步处理，数据的分布就比一开始好很多了。我们也可以隐约看出ER_visits和total_cost、age之间的正比关系，但是，也要注意到，这时候total_cost和interventions之间的相关系数较大，也就是说，在构建模型的时候，我们只能保留两者其中之一。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，正如前面用GLM进行数据分析那样，可以用全部变量建模，不等于就要用全部变量，因为变量越多，越容易过拟合，所以这里还是通过AIC，在模型的准确度和过拟合的问题之间进行权衡，选择合适的变量进行建模。关于这部分的内容，感兴趣的也可以看回之前的文章，这里的重点还是放在模型的分析和改进，最后得到的结果是选择年龄、教育、婚姻状况、健康进行建模。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上主要是针对数值数据的预处理，接下来是对类别数据的预处理，首先我们通过表格观察数据是否严重不平衡：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">用逻辑回归建模，得到：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
-                        <source media="(max-width: 300px)" srcset="image/6.png"><img src="image/6.png" alt="ポジショニングマップ">
+                        <source media="(max-width: 568px)" srcset="image/4.png"><img src="image/4.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在这里没有特别需要处理的数据，然后我们可以通过箱线图，初步探索一下各个变量和响应变量之间的关系：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/7.png"><img src="image/7.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到目前为止，我们就基本完成了数据的预处理了，接下来，就可以正式构建一个GLM模型了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">怎么看这个结果呢，首先我们可以写出模型的式子：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{p_i}{1-p_i} = -3.447604+0.023796x_{i1}+0.734779x_{i2}+1.612006x_{i3}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$+2.300224x_{i4}+3.073950x_{i5}+1.209961x_{i6}+0.735556x_{i7}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$+0.582525x_{i8}+0.376384x_{i9}+0.385290x_{i10}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，xi1表示年纪，xi2表示教育是否为高中毕业，是就是1，否则0，其他类别变量也是像这样定义。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于如何解释这些参数，首先要知道模型默认（reference）的对象就是一个教育水平低于高中毕业、从未结婚、健康为good的人，年龄作为数值型参数，每大一岁，那么年薪十万的概率就是增加exp(0.023796)-1=2.4%，如果他是高中毕业，那么年薪十万的概率就乘以exp(0.734779)=2.09，具体为什么是这样算，可以看看逻辑回归的公式推导一下。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基本上参数就是这样解释，可以看出，教育水平越高，年薪十万概率越大，结婚人群年薪十万的概率也最大，越健康年薪十万的概率也越大，这样看来这个结果还是挺合理的。</div>
 
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时，我们也可以借助ROC曲线来分析模型的能力：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">ROC曲线越往接近左上角越好，从这个角度来说模型还是不错的，起码比乱猜一个人有没有年薪十万好很多。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">目前来说模型的结果还是可以接受的，但是还是有一个点可以改进的，那就是从一开始年龄和年薪十万的关系图像可以看出，其实年龄和年薪十万之间并不是简单的线性关系，注意一下，虽然逻辑回归用了link function，但本质上还是一个线性模型，因为因变量都是一次幂，而且他们之间服从线性关系，所以接下来，我们可以尝试一下在模型中引入关于年龄的非线性变换。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">方法有很多，比如直接引入年龄的二次项、三次项，这里则直接使用GAM，用回归样条对年龄进行处理：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/6.png"><img src="image/6.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参数这时候已经有了变化，特别是年龄关于模型更显著了，当然，我们还是要通过AIC去比较这两个模型：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/7.png"><img src="image/7.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">pb是R的回归样条的函数，所以从结果就可以看出，对年龄处理过之后，模型还是有一定提升的。</div>
 
 
             </div>

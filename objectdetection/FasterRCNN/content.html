@@ -96,38 +96,45 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Fast R-CNN</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Faster R-CNN</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得R-CNN有一个很严重的缺点，那就是要进行大量的CNN计算，主要原因是它需要分析出RoI（region of interest），再对每个候选框进行CNN计算，为什么不计算一次CNN得到一个特征图之后，再根据RoI选择特征图相对应的部分呢，这就是Fast R-CNN对R-CNN的改进思路了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Fast R-CNN已经改进了很多R-CNN的缺点了，但还是有一个局限导致模型的速度无法进一步提升，那就是region proposals的生成，如果还是用selective search的方法对每个图像挑选两千个region proposals，那么模型始终还是无法得到改进的。而Faster R-CNN就针对这个问题，提出了region proposal network。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来回顾一下selective search，它综合了图像层次纹理、大小、形状进行分割与合并，筛选出region proposals，个人觉得这种方法更像传统的机器学习算法，引入大量的先验理论来辅助分析，最大的问题就是先验知识可能并不完整，即可能应用这种方法在某些情况下分析得到的region proposals并不准确，所以我们才需要生成大量region proposals，再进一步判断。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">而Region Proposal Network，个人觉得就是深度学习在生成region proposals的应用，简单来说，就是通过神经网络分析每一幅图像的ground truth bounding box，模型分析的数据足够多，它就可以慢慢学习，或者说记住对于不同种类的图像，判断哪些是它的前景，哪些是它的背景：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来开始详细分析RPN。首先我们要知道什么是anchor：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">anchor其实可以看成候选框，它有九种不同的大小尺寸（左上图），覆盖在整副图像中（右图的红色部分就是anchor的覆盖范围），其实就是生成九种anchor，然后再想办法计算每个位置的不同anchor的分类得分（判断是不是前景）以及计算对应的边界框回归结果。但是，理解是这样理解，千万不能认为实际上真的遍历生成那么多个anchor，然后计算CNN，不然这个模型就比R-CNN的效率还要低了，我们来看看它的具体过程：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以通过上图来了解这个过程。要注意的是上图只是展示了RPN的过程，而最初输入的图片会经过CNN进行处理，通过用更高维的向量表示每个位置的特征，使得原图尺寸大大减小，所以可以看到RPN的输入比原图尺寸小了很多，但是有1024个通道。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在RPN的最初也会利用CNN降维，然后，我们需要在每个位置分析9个（其他数量也行，一般是9个）不同尺寸的anchor，但是我们回想一下，我们在分析anchor的时候，其实本质上就是想计算出每个anchor的分类得分以及边界框回归值，所以，比如现在来做分类，那么feature map有两个尺寸（w/16，h/16）不变，而512则变成（9，2），这里的意思就是模型利用每个位置512维的特征向量，计算出9个anchor的两个分类得分（判断是背景还是前景，一定要注意这里只是二分类）。同样道理，在另一个head，模型计算出9个anchor的4个边界框回归值。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/4"><img src="image/4" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是Region Proposal Network的基本思想，然后我们来看看完整的Faster R-CNN，也就是最初的图，我们来看看整个模型的训练过程，数据就是一幅幅图像，加上它们的标注数据，标注数据就是分类结果加上边界框的坐标和宽高。一开始输入一副图像，经过CNN的处理，在CNN的中间层把feature map扔到RPN，用之前提到的过程计算分类得分和边界框回归值，然后挑选出具有最大IoU或者与ground truth边界框超出重叠阈值的候选边界框，然后利用非极大抑制（Non-maximum suppression）去除那些重叠重复的候选边界框，筛选出最终的候选边界框，得到了候选边界框之后，其实其余的过程就和Fast R-CNN一样了，所以Faster R-CNN和Fast R-CNN最大的不同就是提出了RPN。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
-
-
-
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">更多的细节强烈建议看这个博客：http://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/</div>
 
             </div>
 

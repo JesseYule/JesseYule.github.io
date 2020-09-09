@@ -98,45 +98,27 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机过程（三）：连续时间的马尔可夫链</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机过程（二）：Markov Jump</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们介绍了离散时间离散状态的马尔可夫链，这次就主要来谈一下连续时间的马尔可夫链，有时候也称为Markov Jump。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们介绍了离散时间离散状态的马尔可夫链，这次就主要来谈一下连续时间的马尔可夫链，也就是所谓的Markov Jump。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在开始之前，先说明对于齐次马尔可夫链，因为转移概率不会随着时间变化，所以有一种简化的写法：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m) = p_{ij}(0，m)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们谈马尔可夫链的时候还没有讲它的计算，我把它放到这里来讲，就可以对比一下离散时间和连续时间的马尔可夫链在计算上的区别了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">连续时间和离散时间，带来最大的区别就在于转移概率，这就有点像速度这个概率，你可以用一秒一米表示速度，可是如果时间是一瞬间，应该怎么表示速度呢，答案是微分，对于转移概率也是一样。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">计算马尔可夫链的状态转移，如果是一次演变，那么在转移矩阵直接找对应的概率就行，假如是两次演变，就需要注意一下了，因为我们只需要经过两次演变从状态i到达状态j，至于第一次到达哪里是没关系的，所以我们需要考虑所有的情况，把概率加起来：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{k \in S} p_{ik}(m,m+1) p_{kj}(m+1,n)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中n=m+2，对于n>m+2的情况，有：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{i_1,...,i_l \in S} p_{i,i_1}(m,m+1)...p_{i_l,j}(n-1,n)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的意思就是其实就是把m到n中每一步所有可能的状态转移都计算一遍最后再加起来，而这条公式也就是Chapman-Kolmogorov equation。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这部分还是很好理解的，接下来我们就来看看时间连续的情况，其实时间连续带来最大的不同就是我们不能像之前那样定义某一时刻到下一时刻的转移概率，因为现在时间的间隔是无穷小，所以就引出了一系列新概念。注意，为了不展开太多，下面的讨论都是假设状态i不等于状态j。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个是transition rate：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过对转移概率进行微分，就引出了transition rate：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\mu _{ij} = lim_{h \to 0} \frac{p_{ij}(h)}{h}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出transition rate就是对原来的转移概率的求导，类似于速度和速率之间的关系，可以看成瞬时转移概率的一个反映，由transition rate进一步可构建出intensity matrix：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">由transition rate进一步可构建出intensity matrix：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$A(t) = ( \mu_{ij}(t))_{k*k}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面两个概念都是转移概率和转移矩阵在连续时间的马尔可夫链的引申。可以看出，当时间连续的时候，我们的定义、计算都应该调整为瞬时，也就是进行微分，所以对于Chapman-Kolmogorov equation也是如此，我们定义，Kolmogorov’s forward differential equation：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} p_{ik}(t) \mu _{kj}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时也有Kolmogorov’s backward differential equation：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} \mu _{ik} p_{kj}(t) $$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出形式上还是Kolmogorov equation，主要在于对前面的p还是后面的p微分。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面两个概念都是转移概率和转移矩阵在Markov Jump的引申。可以看出，当时间连续的时候，我们的定义、计算都应该调整为瞬时，也就是进行微分。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">解这个方程有几种方法，Triangularisation、Matrix eigenvalues and eigenvectors、Linear differential equations，这里暂不详细说了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于连续时间的马尔可夫链，还有一些内容值得探讨。第一个是occupancy probability：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了以上这些基本的概念，Markov Jump还有一些其他内容值得探讨，而这些内容其实都是由状态会在瞬间发生变化这个特点引申的一些思考。第一个是occupancy probability，状态可能瞬间改变，也可能保持在同一个状态一段时间，那么一直保持当前状态的概率是多少呢，occupancy probability研究的就是这个问题：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{\overline {ii}}(x, x+t) = Pr(Y_{x+s} = i:0\leq s \leq t | Y_x = i) = e ^{\int _x ^{x+t} \mu_{ii}(s)ds}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从公式上来看occupancy probability表示在时间t内一直状态i的概率。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是residual holding time：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是residual holding time，表示从当前开始在时间段t内状态保持不变的概率：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Pr(R_x > t| Y_x = i) = p_{\overline{ii}}(x, x+t)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Rx表示从时间x到下一次状态转移的时间间隔。这个等式也不难理解，一直保持这状态i可以理解成状态一直没有发生转移，即Rx不可能小于等于t，从极限的角度来看，比如说t=1，保持状态i的概率等于1，那么发生下一次状态转移的时间大于t=1就是一个必然的事件，也就是概率等于1等于时间t内保持状态i的概率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Rx表示从时间x到下一次状态转移的时间间隔。等式左边表示发生状态转移所需要的时间大于t的概率，等式右边表示在时间t内保持状态不变的概率，所以两者是相等的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个是holding（waiting） time：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Pr(W_x(i) > t| Y_x = i) = p_{\overline{ii}}(x, x+t)$$</section></div>
@@ -146,13 +128,28 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\widetilde Y_n = Y_{W_1 + W_2 + ... + W_n}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里也不难理解，其实就是把发生状态转移的时刻抽出来，和状态一起构成一个新的随机变量族，这时候这个随机过程过程就变成了离散时间的马尔科夫链，并称他为jump chain，值得注意的是，这是针对time-homogeneous Markov jump process做的转换。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面都是一些比较基本的内容，最后再说一下Chapman-Kolmogorov equation，它主要用来计算状态i经过多次转移到达状态j的概率，分为离散和连续两种情况讨论，假设我们讨论的是Time-homogeneous Markov chain，也就是转移矩阵不随时间改变，对于Time-homogeneous Markov chain的转移概率定义一种简化的写法：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m) = p_{ij}(0，m)$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先看看离散的情况下怎么计算状态i经过多次状态转移到达状态j的概率：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{k \in S} p_{ik}(m,m+1) p_{kj}(m+1,n)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中n=m+2，对于n>m+2的情况，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{i_1,...,i_l \in S} p_{i,i_1}(m,m+1)...p_{i_l,j}(n-1,n)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的意思就是其实就是把m到n中每一步所有可能的状态转移都计算一遍最后再加起来，而这条公式也就是Chapman-Kolmogorov equation。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">看着复杂，其实真的很简单，我们只需要随便写一个初始概率分布，比如一个1*3的矩阵，写一个3*3的转移矩阵，做乘法会得到新的概率分布（依然是一个1*3的矩阵），其中状态一的概率，其实就是等于状态一、二、三的分布概率乘以它们转移到状态一的概率的和，说着拗口，算一下就知道的了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">重复上述的步骤，其实我们就能算出未来每个时刻的概率分布状况。所以回到最初的问题，怎么预测天气，如果转移矩阵假设保持不变，然后初始化概率分布，让今天的天气对应的概率为1，其他为0，然后不断乘以转移概率，就能陆续得到接下来每一天的天气了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于连续的情况，我们有两条方程。Kolmogorov’s forward differential equation：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} p_{ik}(t) \mu _{kj}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时也有Kolmogorov’s backward differential equation：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} \mu _{ik} p_{kj}(t) $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体的推导是从离散的形式进行微分得到的，这里暂不展开了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于Kolmogorov differential equation的求解有几种方法，Triangularisation、Matrix eigenvalues and eigenvectors、Linear differential equations，有兴趣的可以深入了解一下。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是随机过程的一些基本内容，我们学习的时候，其实会更加注重对马尔科夫链的性质的分析、Kolmogorov differential equation的求解等等，除此之外，还有一些实例的分析，比如泊松过程，如果想要深入学习随机过程，最好还是找本教材看看。</div>
 
 
 

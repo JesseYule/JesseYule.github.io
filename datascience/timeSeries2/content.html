@@ -98,13 +98,13 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（二）：移动平均与指数平滑</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析教程（二）：移动平均与指数平滑</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了时间序列的基本概念，现在就正式介绍一些模型方法，第一个是移动平均法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了时间序列的基本概念和性质，现在就正式介绍一些处理时间序列的模型方法，第一个是移动平均法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">移动平均法很简单，就是用最近的数据预测未来短时间内的数据。有简单移动平均法，真的很简单，就是用最近的一组数据，去平均，作为下一时刻的预测：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i = (x_{i-1} + x_{i-2} + ...+ x_{i-n})/n$$</section></div>
@@ -116,7 +116,7 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i = \alpha * x_i + (1-\alpha)S_{i-1}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中S_i是时刻t的预测值，x_i是时刻t的真实值，S_i-1是时刻t-1的预测值，a是平滑常数。一次指数平滑的预测公式是：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_{i+k} = s_i$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一次指数平滑可以看成通过结合过去信息和当前信息进行预测，结合的方式就是通过合适的权重进行加权求和，得到的结果是一条直线，所以在序列没有明显趋势的时候才适用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一次指数平滑可以看成通过结合过去信息和当前信息进行预测，结合的方式就是通过合适的权重进行加权求和，得到的结果是一条直线，所以在序列没有明显趋势的时候才适用（即具有平稳性）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果序列具有线性趋势变化，就可以使用二次指数平滑，二次指数平滑的基本公式是：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i= \alpha *x_i + (1-\alpha)(S_{i-1} + t_{i-1})$$</section></div>

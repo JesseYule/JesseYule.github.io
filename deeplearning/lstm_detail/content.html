@@ -108,7 +108,7 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">LSTM的做法是计算一个同样尺寸的1*10000的矩阵，数值只为[0,1]，按位相乘决定什么信息需要被遗忘，以及遗忘多少：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f_t = \sigma (W_f [h_{t-1}, x_t]+b_f)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上述公式的含义，就是对当前时刻和上一时刻的输入做线性变换，得到一个1*10000的矩阵，并通过sigmoid函数把结果缩放到[0,1]，最后把这个结果和长期记忆矩阵按位相乘，就遗忘了相对应的信息了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上述公式的含义，就是分别对当前时刻和上一时刻的输入做线性变换，并相加得到一个1*10000的矩阵，并通过sigmoid函数把结果缩放到[0,1]，最后把这个结果和长期记忆矩阵按位相乘，就遗忘了相对应的信息了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们可以用类似的方式，计算当前的信息中有什么值得被长期记忆。首先也是用类似的方法计算信息保留程度：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$i_t = \sigma (W_i [h_{t-1}, x_t]+b_i)$$</section></div>

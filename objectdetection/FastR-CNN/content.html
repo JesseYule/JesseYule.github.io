@@ -120,11 +120,11 @@
                 </div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图也可以更清晰地反映出空间金字塔池化的思想，一般来说，我们会对特征图进行多个划分，比如1*1、2*2、4*4，这样就可以计算出21个特征值，如果想要更多的特征值，就进行更多的划分。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">空间金字塔池化会对一个输入进行不同尺度的池化，而ROI（region of interest）池化，本质上就是空间金字塔池化的简化版本，只进行单一尺度的池化。实验证明，其实多个尺度的池化带来的模型效果的提升并不显著，所以目前更多偏向于使用ROI池化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">空间金字塔池化会对一个输入进行不同尺度的池化，而ROI（region of interest）池化，本质上就是空间金字塔池化的简化版本，只进行单一尺度的池化（比如只使用2*2划分）。实验证明，其实多个尺度的池化带来的模型效果的提升并不显著，所以目前更多偏向于使用ROI池化。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第二个缺点，其实我们只需要改一下计算顺序就能解决了，也就是说，先对输入图像计算CNN得到特征图（feature map），再根据region proposals挑选出特征图对应的部分，因为特征图比原输入尺寸变小了，所以要注意region proposals坐标也要进行相应的缩放，之后，再利用前面的ROI池化层，把提取出来的局部特征图进行池化处理统一尺寸，最后再进行分类和边界框回归。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第三个缺点，也就是模型包含多阶段训练，目前来看就是在模型的最后要分别利用SVM进行分类以及边界框回归，针对这个问题的解决方案就是用MLP对CNN的输出进行处理，同时输出分类结果以及边界框回归结果：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第三个缺点，也就是模型包含多阶段训练，多阶段训练最大的缺点就是特征复用，原来R-CNN中，最后我们用CNN的feature map做完分类又做边界框回归，这就叫特征复用，而在fast r-cnn中则提出，直接用一个mlp对feature map进行处理，在mlp中再分为两个分支进行分类和边界框回归：</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 300px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图可以更清晰地反映出，ROI池化层后接多层神经网络，神经网路中途分成两个分支，一部分通过softmax处理计算分类结果，另一部分进行边界框回归，所以模型的损失函数是一个多任务损失函数（multi-task loss）：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$L(p,u,t^u,v)=L_{cls}(p,u) + \lambda[u \leq 1] L_{loc}(t^u,v)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说到底不论是分类还是边界框回归，得到的结果也是一堆数值，所以像这样把两个问题的结果融合到一个模型中进行训练也是确实可行的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说到底不论是分类还是边界框回归，得到的结果也是几个数值（分类得分加上边界框回归值），所以像这样把两个问题的结果融合到一个模型中进行训练也是确实可行的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面提到的所有内容，就构成了Fast R-CNN。</div>
 

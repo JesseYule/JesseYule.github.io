@@ -98,35 +98,35 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（四）：Box-Jenkins方法</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">具有相关关系的数据处理：线性混合模型与广义线性混合模型</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">进行数据分析时，会发现有时候一个模型中的变量之间可能具有相关性（correlation），比如面积和长度就具有高度的相关性，如果同时对这些参数建模，就存在共线性问题，所以一般是只针对其中一个参数建模。而这种相关性，其实还存在于数据之中，比如时间序列数据，在不同的时间，同一个对象的数据之间就是相互有联系的，那么我们应该怎么对这些具有相关性的数据进行建模分析呢。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步分析之前，再次强调一下，这里分析的是相关数据，因为一开始我自己也搞混了，所以这里再举多几个例方便理解。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个例子是婴儿体重的变化数据，假设我们要测量不同婴儿出生后一年的体重变化，我们就得到不同婴儿一年内体重的变化数据，数据可以分为不同的对象（婴儿），以及同一对象不同时刻的数据（体重），对同一对象来说，数据是相关的，对不同对象来说，数据是独立的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个例子是分析几所高中学生三年成绩的变化情况，一般来说，学习有好坏，好的学生进好的学校，好的学校给学生更好的教育，所以一般来说同一间学校的学生成绩会比较接近，具有相关性，不同的学校成绩可能就差距比较大，所以可以看成是独立的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">像以上这类既包含不同对象，也包含同一对象不同阶段的数据，可以称为纵向数据（longitudinal data）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">既然以前的模型，没有考虑到不同学校之间的这种差异性，那么我们在模型中引入这种差异性不就好了，具体怎么引入呢，这里尝试对不同的学校，采取不同的参数，我们以前的模型是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_{i} = \beta + \gamma X_i + \epsilon _{i}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Yi表示某个学生的成绩，Xi表示考虑的变量（这里直接用一个向量表示），比如学习时间年级等等，这个模型认为所有学生服从同一个模型描述，忽略了实际上有部分学生平均水平更好，一部分学生平均水平更差。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果采用不同的参数，则可得到模型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_{ki} = \beta_{k} + \gamma_{k} X_ki + \epsilon _{ki}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">公式中的k表示某一间学校，也就是说对不同的学校，参数beta、gamma、epsilon都是不同的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在我们来考虑一个问题，如果单纯对不同的学校用不同的参数建模，那还不如直接把数据根据不同的学校进行划分，那还不更简单，但如果要分析一个城市的学生水平呢，总不能划分了数据再进行分析吧，所以这里就引入了另一个重点，不同的学校的参数之间是否从某一个分布的（比较常用正态分布），这时候，我们的模型其实就可以改写为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_{ki} = (\beta_0 + \gamma_0 X_i) +  (\beta_{k}+ \gamma_{k} Z_ki + \epsilon _{ki})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以把模型看成两部分，一个是固定效应（fixed effect），一个是随机效应（random effect），Z是X的一个子集，这样的原因是因为可能有一部分参数不会随着学校不同而发生显著变化。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上，就是混合模型的基本思路推理过程。所以什么是线性混合模型什么是广义线性混合模型，本质上就是在原本的线性模型和广义线性模型中加入随机效应。</div>
 
 
 

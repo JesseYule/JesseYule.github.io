@@ -96,34 +96,36 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">卷积神经网络</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">GoogLeNet</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们知道了卷积运算和图像处理的关系，接下来将会进一步推导卷积神经网络的一般结构。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们知道如果想检测图像中是否存在1，可以通过输入图像和核函数（特征核）进行卷积运算进行进一步分析，同样的，如果我们要分析一副图像中是否存在人脸，为了简化，直接认为可以通过三个核函数判断，分别是表示左眼、右眼和嘴巴的特征，然后，我们就用输入图像和这三个核函数分别进行卷积，从而得到三个特征映射图，之后，还会利用激活函数对这三个特征映射图进行非线性处理。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在得到处理过的特征映射图后，下一步就是利用池化函数进行池化处理，我认为池化处理的作用很多，根据选择的池化函数不同有不同的意义，比如我们选择最大池化，就是使用图像中某个位置和周边相邻位置的取值的最大值来代替该位置的取值，假设我们选择池化尺寸为2*2，过程和计算特征映射图差不多，只是把核函数改为池化函数，经过这个过程我们就能同时达到压缩特征映射图的尺寸以及尽可能保留图像特征信息的作用。除此之外，我们还能利用平均池化对图像进行平滑处理，所以选择不同的池化函数会有不同的作用。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面这些步骤，可以说就是卷积神经网络最核心的过程，它把输入图像经过处理后保留了我们希望分析的关键特征，并以数据的形式展示，所以接下来，我们就可以矩阵展开成一维数组，把其作为普通的神经网络的输入了。比如，经过处理得到的输入是一个7*7的矩阵，一共有三个，所以输入层神经元就有7*7*3=147个，把其输入到BP神经网络中，假设隐层只有一层，有五个神经元，最后输出层有一个神经元，判断图像中是否带有人脸，有则输出1，没有则输出0，以上所有的过程，就称为卷积神经网络。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对卷积神经网络的简单结构，首先是输入图像与核函数的卷积运算得到特征映射图，这部分结构称为卷积级，然后是对特征映射图通过激活函数进行非线性处理，这部分结构称为探测级，最后是进行池化处理，这部分称为池化级，卷积级、探测级、池化级合起来就是卷积层。进一步的，卷积层可以进行拓展，得到卷积神经网络的一般结构：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，一个一般的卷积神经网络就是由若干个卷积层和一个一般的神经网络（MLP）构成。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后需要补充说明的是，一般情况下，我们训练卷积神经网络主要是针对MLP中的权重进行训练，在一些特殊的情况下才需要对卷积层中的权重进行训练。除此之外，卷积神经网络的一些属于使用也为规范统一，特别是这里提到的结构中的探测级，可能在其他文献资料中包含在卷积层中。</div>
-
-
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 
 
 

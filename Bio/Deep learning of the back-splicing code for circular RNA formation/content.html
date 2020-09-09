@@ -96,34 +96,52 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">对话系统综述</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Deep learning of the back-splicing code for circular RNA formation</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">初看对话系统，感觉涉及到的知识理论比较广，所以这里特意整理一下，当然限于篇幅我也只能简单谈一下，没办法做到面面俱到，也可能有所不足，欢迎交流。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">感觉现在写的这些生物信息的内容越来越偏门了，但毕竟我也不想做流量博主，还是希望能多分享一些别人少写的内容，帮助有需要的人。另外我也不是学生物的，所以或许会有一些知识性错误，欢迎指出。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，对话系统一般可以分为任务导向型对话系统和非任务导向型对话系统，任务导向型最经典的例子就是订票系统，除此之外，知识问答系统、乃至推荐系统我觉得都可以归类到任务导向型，因为他们都有一定的目标，提供了相关的功能，而非任务型对话系统最常见的例子就是聊天机器人。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这次阅读的论文主要研究的是circRNA的反向剪接，事实上，circRNA就是RNA（一般指pre-mRNA）在剪接时，外显子的50和30末端通过反向剪接共价连接形成circRNA的</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">并非所有外显子都能参与反向剪接，有多种因素会影响到circRNA的形成，或者简单来说，就是你不能说一个片段头尾能碱基互补配对就能形成circRNA，可能还会受到其他片段的调控，所以我们才需要深度学习进行分析，判断哪些片段能进行反向剪接，哪些不能。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">数据方面，主要是从CircRNADB和CircBase中获取外显子circRNA，对于每个circRNA，都有两个剪接位点的基因组位置，从两个剪接位点各提取前后50nt的序列得到总长度为200的序列作为positive数据，对于negative数据，则是选择相同转录本中但未包括在positive数据中的另一对剪接位点进行数据的提取，这样，我们就得到了长度为200的输入序列了，然后再对AUCG进行独热编码，得到模型的输入。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当我们在谈论对话系统的时候，一般都在讨论任务导向型对话系统，因为我们搞一个系统出来目的还是要有一定的功能，要能帮助到我们的，而不只是为了和人类吹吹水，所以接下来就主要谈一下任务导向型对话系统。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实从模型的结构图就可以看出，整个模型挺简单的，仅仅只是用了两个卷积层，加上最大池化，就展开用全连接层做分类了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">任务导向型对话系统，从模型来看，可以分为两类，一类是pipeline，一类是end-to-end。其实很多领域的模型都可以分为这两种的了，前者的意思是一个系统包含了多个模块，数据输入到系统之后，按顺序被一个个模块处理，最终得到输出；而后者则是用一个完整的模型处理，直接输出结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然最后做出来的效果好像比前人好，但确实没什么值得细说的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">先看pipeline，比较经典的一种模型是分为三个模块，首先是自然语言理解，然后是对话管理，最后是自然语言生成。自然语言理解一方面是为了把输入从文字转化为向量，一方面是为了让机器理解输入的浅层语义。对话管理是为了结合上下文等因素综合分析出输入的深层语义，并且根据深层语义进一步确定出系统的响应，从而进行分析得到结果。而自然语言生成则是把对话管理的结果转化为人类语言，从而得到最终的输出。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自然语言理解的目的是为了理解输入的语义，语义是一个很抽象的概念，包括我们自己也很难说清楚一句话的语义到底是什么，而对于机器来说，语义可以用domain（领域）、intent（意图）和slot（语义槽）表示，比如说"我想订一张明天去北京的机票"，对于这句话来说，domain就是"机票"，intent就是"订机票"，slot包括"时间：明天，目的地：北京"。所以很多时候，当我们在做自然语言理解，其实就做领域/意图分析以及slot filling。领域或者意图分析本质上来说都属于文本分类，分析输入到底属于哪个领域，属于哪个意图，而slot filling则可以看成一个序列标注问题，类似于命名实体识别，从句子中提取实体，而slot filling则是从句子中找到相关的slot，两者都属于信息提取的范畴。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">系统可以通过NLU确定出输入的intent、slot，但那是不足够的，因为NLU的分析过程只是基于单一的句子，所以需要对话管理，结合两轮对话进行分析（这里做了马尔可夫假设，假设当前对话最多和上一轮相关）。对话管理也包含两个过程，首先dialogue state tracking，这是为了分析出句子的真实语义，然后是dialogue policy learning，基于得到的语义进行响应得到结果，比如对一个订机票系统，DST分析出用户现在想查询一张机票，那么DPL就会进一步分析查询机票需要执行什么操作，并且完成这些操作得到最终结果。得到了结果之后，就通过NLG转化成句子，返回给用户。以上就是一个比较经典的pipeline对话系统处理流程。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了pipeline还有end-to-end，所谓的end-to-end就是指seq2seq、transformer、bert这些复杂但有效的模型，从模型的设计上来说，他们更注重对于输入序列的分析，注重如何有效提取特征，如何避免梯度消失之类的问题，而不是注重如何用来构建一个对话系统，实现一些特定的功能。但是，正正因为他们能够有效地从句子中提取特征，所以他们不论在对话系统，还是在其他NLP各式各样的子领域都得到很好的效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于pipeline和end-to-end的对比，可以从几个角度来看，首先我个人以前是一直不喜欢pipeline，不认同这些引入先验理论的模型，可以想一下，哪个人小时候学过语法，但是这完全不影响他们学会说话，学会一门新语言，说到底靠的都是多说多听，这和深度学习的思想是比较接近的。从另一角度来说，我们可以看看目标检测领域，看看R-CNN的发展，从R-CNN到fast R-CNN再到faster R-CNN，一个很重要的改进就是把模型的各个模块融合在一起，比如把边界框回归、分类器、CNN融合在一起，比如提出region proposal network，把寻找候选框的过程融入到神经网络当中，一个主要目的就是减少特征复用，提高模型推理速度。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，我们也不能全面否定pipeline的作用，毕竟上面说的都是我以前的想法，真正让我改观的是DST的一篇经典论文《Neural Belief Tracker: Data-Driven Dialogue State Tracking》，从本质上来说这也是一个神经网络，但是它在结构上设计得很巧妙（主要是输入设计得很好，同时也在适当的位置引入了门控结构），实现了综合两轮对话的语义分析，我想了一下，如果只是设计一个深层网络，然后直接把两轮两轮对话作为输入，应该很难达到这篇论文的效果，归根到底，就是一个良好的结构使得模型能够更有效地提取特征。所以我觉得，或许我们不是不应该过多地引入先验知识，而是应该思考一下，如何从模型的结构层面引入先验知识，使得模型能够更高效地运转起来。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，其实上面说了那么多，说到底都是如果需要考虑速度，pipeline或许比end-to-end更好，但是如果不考虑速度，只考虑效果，那么end-to-end或许还是目前最佳的选择。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
 
             </div>
 

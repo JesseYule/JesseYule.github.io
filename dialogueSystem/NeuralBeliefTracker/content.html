@@ -102,17 +102,17 @@
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了自然语言理解、对话管理，其中对话管理包括DST和DPL，简单再说一遍，NLU是为了分析单一输入的语义，通过intent和slot表示语义，而DST是为了结合当前输入、上一时刻的输入和上一时刻系统的action分析出综合语义state，一般也是用intent和slot表示，而DPL则是基于得到的state分析action。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了自然语言理解、对话管理，其中对话管理包括DST和DPL，简单再说一遍，NLU是为了分析单一输入的语义，通过intent和slot表示语义，而DST是为了结合当前输入、上一时刻的输入和上一时刻系统的action分析出综合语义state（一般都是指slot-value），一般是指对NLU得到的slot进行更新，而DPL则是基于得到的state分析action。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里主要结合例子讲一下现实中是如何进行DST的，实现的模型是十分经典的Neural Belief Tracker。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里主要结合具体的模型讲一下现实中是如何进行DST的，这个模型是十分经典的Neural Belief Tracker，模型的结构原理真的很厉害，真的很值得细细品味。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们提到先进行NLU再进行DST和DPL，而Neural Belief Tracker则是把NLU和DST合并在一起，既然NLU分析得到的slot很可能不准确，那就直接不单独分析单句话的语义，而是连着两句话进行分析（假设当前对话语义只和上一轮对话紧密相连，马尔可夫假设），所以Neural Belief Tracker分析的对象（输入）是上一轮的输入和当前的输入，同时还有所有候选的slot-value pairs（比如food：Japanese、food：Chinese……），输出就是slot-value pairs，所以也可以说，Neural Belief Tracker就是根据两轮对话的情况，从所有可能的slot-value pairs中找出符合当前真实语义的slot-value pairs。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们提到先进行NLU再进行DST和DPL，而Neural Belief Tracker则提出把NLU和DST合并在一起，既然NLU分析得到的slot很可能不准确，那就直接不单独分析单句话的语义，而是连着两句话进行分析（假设当前对话语义只和上一轮对话紧密相连，马尔可夫假设），所以Neural Belief Tracker分析的对象（输入）是上一轮的系统输出和当前的输入，同时还有所有候选的slot-value pairs中的某一个，输出就是一个二分类结果"有关联"或者"没有关联"，通过遍历所有slot-value pairs，从而把所有和当前输入有关联的slot-value都找出来。</div>
                 <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
                     <picture>
                         <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
                     </picture>
                 </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是整个模型的结构图，从最上层开始看起，分别是system output、user utterance和candidate pair，user utterance就是当前的模型输入句子，candidate pair就是所有可能的slot-value，重点在于system output，也就是上一轮系统的输出，这是比较有意思的一个地方，在任务导向型对话系统中，系统的output可以分为两种，一种是system request，主要为了询问用户关于某些slot的value，比如问"想要买什么时候的机票"，另一种就是system confirm，是为了确定一些特定的slot-value是否正确，比如问用户"你购买的是三号从上海飞北京的机票，信息正确吗？"，对于system request，system output直接用特定的slot的embedding向量tq表示，对于system confirm，output是特定的slot-value的embedding向量（ts，tv）表示，注意！注意！注意！这里的括号是表示这是一个二元组，不是一个数组，也没有拼接在一起的意思。对于system output，说到底都是用slot或者slot-value的embedding向量表示，而不是用系统最终生成的语句表示，当然这也有道理，毕竟用系统生成的语句表示，说到底还是需要通过NLU转化为slot-value，还不如一开始就是用上一轮生成的slot。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这是整个模型的结构图，从最上层开始看起，分别是system output、user utterance和candidate pair，user utterance就是当前的模型输入句子，candidate pair就是所有可能的slot-value，重点在于system output，也就是上一轮系统的输出，这是比较有意思的一个地方，在任务导向型对话系统中，系统的output可以分为两种，一种是system request，主要为了询问用户关于某些slot的value，比如问"想要买什么时候的机票"，另一种就是system confirm，是为了确定一些特定的slot-value是否正确，比如问用户"你购买的是三号从上海飞北京的机票，信息正确吗？"，对于system request，system output直接用特定的slot的embedding向量tq表示，对于system confirm，output是特定的slot-value的embedding向量（ts，tv）表示，注意！注意！注意！这里的括号是表示这是一个二元组，不是一个数组，也没有拼接在一起的意思。对于system output，说到底都是用slot或者slot-value的embedding向量表示，而不是用系统上一轮生成的语句表示，当然这也有道理，毕竟用系统生成的语句表示，说到底还是需要通过NLU转化为slot-value，还不如一开始就是用上一轮最终生成的slot-value。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以来到第二层，就可以知道，context represantation就是指（tq，ts，tv）这些slot或者slot-value的embedding向量，因为要么是slot要么是slot-value，所以当其中一个不存在时就用零向量表示。对于candidate represantation，也是slot-value的embedding向量（cs，cv）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
@@ -150,20 +150,16 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$m_r = (c_s \cdot t_q)r$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$m_r = (c_s \cdot t_s)(c_v \cdot t_v)r$$</section></div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得一开始说过，system output可能是slot也可能是slot-value pairs，所以这里分两种情况又两种公式，首先我们要进行的是system output和当前的candidate pair的相似度计算，这里相当于一个门机制，我是这样理解的，假设上一轮system output的内容是food（没有value），tq=（1，0，0），现在的candidate pair是food：Indian，词向量可能是cs=（0.9,0.1,0.2），这样点积的结果是（0.9，0，0），还有一种情况，candidate可能是sports：basketball，向量cs=（0，0，1），这时候点积结果就是（0，0，0），所以，通过system output和candidate pair的点积运算，得到的向量其实是可以反映出两者的关联的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得一开始说过，system output可能是slot也可能是slot-value pairs，所以这里分两种情况有两种公式，首先我们要进行的是system output和当前的candidate pair的相似度计算，这里相当于一个门机制，我是这样理解的，假设上一轮system output的内容是food（没有value），tq=（1，0，0），现在的candidate pair是food：Indian，词向量可能是cs=（0.9,0.1,0.2），这样点积的结果是0.9+0+0=0.9，还有一种情况，candidate可能是sports：basketball，向量cs=（0，0，1），这时候点积结果就是0+0+0=0，所以，通过system output和candidate pair的点积运算，得到的数值其实是可以反映出两者的关联的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后再用得到的相似度向量乘utterance r，按照论文的说法，这样的目的是只传递和system output、candidate pair都相关的信息，比如说system output和candidate pair都提到food，就抽取出utterance中的food的信息作为context modelling的结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后再用得到的相似度乘以utterance r，按照论文的说法，目的是只传递和system output、candidate pair都相关的信息，比如说system output和candidate pair都提到food，相似度就比较高，utterance就可以比较完整地传递过去，如果system output和当前的candidate pair不相关，最终计得的context modelling向量甚至可能接近0。关于这点，也比较好理解，假如当前的candidate pair是food：persian，而上一轮的output是sport：basketball，那么就完全不相关了，既然上一轮系统在谈论运动和篮球的话题，那么这一轮用户的回答应该也是和这个话题有关的，换句话说当前的输入很大概率和candidate pairs无关，而这种无关性就可以通过接近0的context modelling向量反映。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的方法，论文还提到一个很重要的作用，在system out是confirm的情况下，比如"would you like indian food？"这时候用户的回答可能只是一个"yes"，并不包含任何的slot-value，但是实际上这个yes的意思就是确认了food：indian这个slot-value pair的正确性，为了能发掘出这一层意思，模型在分析的过程中就必须考虑到utterance、candidate pair和system output之间的interaction，而context modelling的作用就是提供这三者的interaction（三个向量相乘）。其实个人觉得这种说法有点玄乎，但是既然出效果了就当他可行吧。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上的方法，论文还提到一个很重要的作用，在system output是confirm的情况下，比如"would you like indian food？"这时候用户的回答可能只是一个"yes"，并不包含任何的slot-value，但是实际上这个yes的意思就是确认了food：indian这个slot-value pair的正确性，我们当然可以知道yes包含了这层意思，可是模型怎么学习出这层意思呢，这就是context modelling这个结构最巧妙的地方，注意！注意！注意！当system output和candidate pair高度相关时，user utterance能够完整地传递给context modelling，也就是"yes"的语义向量能比较完整地传给context modelling模块，而当模型遇到多次"yes"，都发现system output和candidate pair都高度相关时，模型就能领悟到，只要下次也接收到这个"yes"，就意味着它包含了上一轮system output的slot-value，所以说，这个context modelling，真的是整个模型最叹为观止的地方。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，终于到了binary decision making，通过神经网络基于context modelling和semantic modelling的结果进行简单的二分类，从而分析出user utterance和当前的candidate pair到底有没有联系，如果有就说明用户的输入可以反映出food：persian这个信息，没有就继续分析下一个candidate pair，一直把所有candidate pairs都分析一遍，从而把user utterance中所有有关的slot-value pair都找出来。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，终于到了binary decision making，通过神经网络基于context modelling和semantic modelling的结果进行二分类，从而分析出user utterance和当前的candidate pair到底有没有联系，如果有就说明用户的输入可以反映出candidate pair的信息，没有就继续分析下一个candidate pair，一直把所有candidate pairs都分析一遍，从而把user utterance中所有有关的slot-value pair都找出来。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再总结一下整个模型的流程，首先，模型的目的就是基于上一轮系统的输出和当前系统的输入，分析输入和候选的slot-value pair有没有关系，怎么看有没有关系，自然就是对候选的pair逐个进行分析，逐个进行二分类，在分析的过程中，首先需要进行representation learning，把output、utterance和candidate pair都转化为向量，然后一方面分析utterance和candidate pair的关系，一方面综合分析system output、utterance和candidate pair之间的关系，最后再把分析出来的特征向量传入神经网络进行二分类，判断utterance有没有包含当前的candidate pair。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于模型的评价，整个模型可以看成三层，第一层是embedding层，第二层是特征提取层，第三层是分类层，主要还是在于特征提取层，是否有必要分为context modelling和semantic decoding两个部分，引入门控结构是否真的有作用，这样的结构会比单纯的多层神经网络更能有效地提取特征吗，当然这些疑问需要进一步的实验才能验证，不论怎样，Neural Belief Tracker是一个很棒的模型，提出了一个很好地利用神经网络综合分析两轮对话和slot-value的关系的思路。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再总结一下整个模型的流程，首先，模型的目的是基于上一轮系统的输出和当前系统的输入，分析输入和候选的slot-value pair有没有关系，怎么看有没有关系，自然就是对候选的pair逐个进行分析，逐个进行二分类，在分析的过程中，首先需要进行representation learning，把output、utterance和candidate pair都转化为向量，然后一方面分析utterance和candidate pair的关系，一方面综合分析system output、utterance和candidate pair之间的关系，最后再把分析出来的特征传入神经网络进行二分类，判断utterance有没有包含当前的candidate pair信息。</div>
+
                
 
             </div>

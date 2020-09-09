@@ -96,68 +96,33 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">R-CNN</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">小样本学习与元学习综述</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">R-CNN是深度学习最早应用到目标检测的模型，主要还是对CNN进行改进，补充一些结构功能，使得模型能够满足目标检测的目标位置确定与分类。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近几周一直在看meta learning的模型，从最初的小样本学习模型开始看到最近的MAML各种改进版本，算是有了一点初步的了解，这次就主要介绍一下，什么是小样本学习，什么是元学习，以及在这个领域有哪些经典的值得学习的模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">CNN的图像分类效果是非常好的，遗憾的是它无法对目标进行定位，所以R-CNN的思路就是，既然CNN没法定位目标，那不如把图像中潜在的目标都找出来，再分析找得对不对。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是小样本学习，按照字面意思，可以理解成在样本量较少的情况下的深度学习。以前也多次提到，其实在样本量较少的时候，往往深度学习模型会过拟合，所以一般不使用深度学习的模型，而小样本学习就是研究如何克服或者缓解这个问题而提出的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一步要做的就是找出图像中潜在的目标，也就是生成候选区域，方法有很多，比如selective search、edge boxes，这里以selective search为例，它主要的思路就是根据图像的颜色、纹理、尺寸相似性和空间重合度，划分出一个个区域：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/1.jpeg"><img src="image/1.jpeg" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，其实选出来的区域大小是不一致的，但是CNN要求输入应为固定大小，所以我们就简单粗暴地对图像进行缩放变形，使得它变成我们预设的尺寸。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">样本量少的话，还用深层神经网络的话，就会导致参数量比训练数据还要多，那还训练什么，这就是以前我们认为样本量少的时候神经网络失效的一个原因。但是有人提出，对人类来说，如果你教一个小孩子什么是斑马，给他看几张照片，他下次就很可能辨认出斑马了，既然人能做到，计算机也应该能做到，那么到底计算机缺少了什么呢，答案就是先验知识。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">调整了尺寸之后，会继续输入到CNN，利用CNN对每个候选区域（你没看错，是每个，所以R-CNN效率很低）进行分类。在这里我们先回想一下，CNN做分类，其实就是利用卷积层池化层提取特征，最后再用全连接层做分类，而R-CNN在利用CNN提取了特征之后，会有两个head，一个head继续做分类，一个head做边界框回归：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 300px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们继续看看分类操作，还是像传统的CNN那样，最后利用全连接层进行分类，而在R-CNN的论文中，最后还利用SVM（上图没有显示出来），进一步分析CNN的分类结果是否正确（进行二分类判断对错）。主要原因有两点，第一是实验证明在这里SVM的分类效果比CNN好，所以利用SVM进一步提高模型的分类准确度，第二是SVM分类的结果是一个01之间的数值，这个数值可以看成置信度或者分类得分，在测试过程中，我们就可以根据这个得分，挑选前n个最可能的目标。除此之外还有一个作用，比如有几个候选框，框中了同一个人的头、手和全身，然后用CNN分类都得到这是一个人，这时候模型就认为图像里面有三个人了，可是我们引入了SVM对分类结果评分之后，可能只有全身的分类得到较高，其他两个分类得分较低，这时候我们只需要设定一个合理的阈值，就能只保留最合理的那个识别结果（具体可了解一下非极大值抑制）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">小孩子能快速学会什么是斑马，是因为他知道什么是马，什么是斑马线，所以他一下子就能把这两者结合起来，认为如果一只马身上有斑马线那样的纹路，它就是斑马，可是普通的深度学习模型的算法中并没有体验出这种对先验知识的利用，只是通过大量的数据进行学习什么是斑马，所以小样本学习就从对先验知识的利用出发，构建全新的神经网络。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">而边界框回归（bounding-box regression）则主要是为了调整候选框的尺寸位置，使得它更接近真实边界框，这里详细讲解一下。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说完了小样本学习，再说说元学习，网上有些资料说元学习可以理解成学会学习，可以经过少数几次梯度下降，模型就达到较好的效果，我们从另一个角度来看，只经过少数几次梯度下降，和没有什么训练数据，只能在有限的训练次数中达到较好的效果是不是一个意思，所以我更偏向于认为这两者说的都是一个东西，当然一般来说元学习说的是MAML那些模型，但是为了方便理解，还是把这两者看成同一个东西吧。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，我们要知道，训练数据是有明确说明图像中的目标以及边界框的具体位置信息的，我们可以用下式表示真实边界框：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$G^i = (G_x^i, G_y^i, G_w^i, G_h^i)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">分别表示边界框的左上角坐标以及框的宽和高。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们来看看具体的模型，对先验知识的利用我认为可以看成有三个方向，第一个方向是把训练数据看成先验知识进行利用，第二个方向是构建外部记忆，在记忆中引入先验知识，第三个方向是在模型的初始化参数引入先验知识。（也有一说是base-model和model agnostic，前两者我认为是base-model，最后是model agnostic）</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">候选边界框可以表示为：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P^i = (P_x^i, P_y^i, P_w^i, P_h^i)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">边界框回归，就是想办法让候选边界框无限接近真实边界框（ground-truth bounding box），那么候选边界框怎么才能接近真实边界框呢？我们可以认为主要通过两种操作：一个是对边界框进行尺度变换，也就是变形，使得它的形状尺寸接近真实边界框，也就是对框的宽和高进行处理；另一个是对边界框进行平移变换，改变框的位置，也就是框的坐标。平移变换的公式如下：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_x = P_w d_x(P) + P_x$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_y = P_h d_y(P) + P_y$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">尺度变换公式如下：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_w = P_w exp(d_w(P))$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_h = P_h exp(d_h(P))$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来分析的重点就是，为什么平移变换和尺度变换的公式的形式是这样。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们用分类任务作为例子，看看模型是如何应用的。首先是把训练数据看成先验知识，最初的模型是孪生网络，主要思路就是把测试数据和训练数据一个个对比，看和谁最接近就完成分类，这样效率就很低了，所以就有了原型网络，找出训练数据不同类别的特征向量中心，称为原型，把测试数据和原型对比分析分类。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来看看平移变换公式，我们先来想象一下，如果想要候选框变换成真实框，那么从坐标的角度来说，只需要在xy轴的坐标分别加上一个差值常数不就行了，所以可以看到，Gx和Gy都是由Px、Py（候选框坐标）加上另一个项。但是如果知道真实框，当然可以直接加一个数，现在的问题就是不知道，所以我们就需要从模型的输入（CNN特征图）出发，利用模型计算出这个"常数"。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，还有匹配网络和关系网络，都是从不同的角度基于训练数据对测试数据进行分析。在这里你可能会想，难道我们以前就没有利用训练数据吗，我的理解是以前我们用训练数据来训练模型，所以先验知识融入到模型的参数中，而现在我们在模型的输入中引入了训练数据，就更直接地利用了训练数据辅助判断分析。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设坐标差为：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\Delta x = G_x - P_x = P_w d_x(P)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d_x(P) = \Delta x / P_w$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，模型要通过输入计算的实际上就是一个经过归一化的坐标差，为什么要归一化，或者说为什么差值要处以候选框的宽和高，个人认为，更多是为了增强模型的鲁棒性。这里边界框回归的输入尺度是一样的，所以进不进行归一化看起来都差不多，但是在后期的模型（比如Faster R-CNN中的RPN），我们会对不同尺度的输入进行边界框回归，这时候边界框的宽高不同，就会影响了模型对于差值计算的判断，所以如果让模型直接学习归一化的差值，再乘上归一化项得出差值，模型的效果就会更好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二种思路是构建外部记忆，其实就是最经典的LSTM、GRU、神经图灵机这些模型，虽然一开始我们构建这些模型是为了改善RNN的长期依赖问题，后来发现引入的记忆矩阵有点像人类的记忆机制，所以就在小样本学习这里派上用场了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再说一下这个d(P)，先来看看模型，输入的是CNN的特征图，所以边界框回归就是通过特征图利用不同的参数计算出d_x(P)和d_y(P)，而那些参数就是模型要学习的东西了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后一种思路就是最经典的从初始化参数入手，最经典的模型就是MAML，个人认为这是元学习最最经典的模型，值得深入学习，大概思路是什么呢，就是训练模型，使得它在各种任务都能取得较好的效果，然后再针对我们特定的任务进行fine tuning，比如我们现在希望训练一个识别海豚的分类器，然后刚好我们的海豚数据又很少，我们就可以把其他差不多样子的鱼的数据，比如三文鱼、鲸鱼等等，让分类器每次训练都进行不同的任务，比如这次训练如何识别三文鱼，下次识别鲸鱼，有时候也学习识别一下海豚，加强它的泛化能力，最后再集中学习如何识别海豚，这个算法的思路有点复杂，详情可看本人的另一篇文章。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于尺度变换，思路上也是差不多，乘上一个项使得候选框的宽高接近真实框的宽高。问题在于要有一个exp函数，主要原因就是保证这个数值大于0，不然模型如果算出一个负数就不可解释了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺带一提，通过模型求得的参数，可以得知候选框如果要转化为真实边界框，需要进行的变换的程度，而这个指标正正可以作为模型的损失函数，判断候选框与真实框的接近程度。关于边界框回归还有很多细节值得探讨，这里暂不详细讨论，感兴趣的朋友可以继续深入研究。如果是做计算机视觉的朋友，对于边界框回归的这些公式推导细节，都是值得慢慢深入研究的。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再简单说一下模型的训练过程，主要看看模型的损失函数。损失函数和模型一样由两部分相加，一个是分类的损失，一个是边界框回归损失，训练数据标注了真实边界框的信息，所以我们训练模型，就是希望模型的分类结果尽可能准确，得到的候选框尽可能接近真实边界框。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">作为总结，再说一下R-CNN的优缺点，首先优点当然是首次把CNN引入到目标检测领域，但是缺点也很明显，第一，选出候选框就很耗时间，一般来说，一幅图像需要选出两千多个候选框，第二，我们需要对每个候选框进行一次CNN计算，也就是说，即使只是处理一幅图，也要进行两千多次CNN计算，十分耗时，所以针对R-CNN的这些缺点，就有了改进的Fast R-CNN、Faster R-CNN等模型。</div>
-
-
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，小样本学习和元学习也算比较新的方向，目前发展前景不错，可以和很多方向结合起来，研究还不算很多，也是一个水论文的新方向。</div>
 
 
             </div>

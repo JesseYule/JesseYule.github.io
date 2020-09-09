@@ -96,28 +96,34 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">元学习介绍</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Prototypical Networks</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">人类最强大的一个能力就是可以通过少量的例子就能快速学习新概念新知识，而事实上，这个过程是通过重新利用过去已经学习的其他领域的知识，利用自身的学习能力实现的，比如你学会了加法，很容易就能学会减法，甚至有些聪明的小孩子可以从加法推导出减法，但是现在大部分算法模型还不能做到，如果要让它"学会"减法，那么我们就需要给他和训练学习加法同样数量的数据，所以就有人提出，能不能让计算机也领悟到人类的这种强大的学习能力呢。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们了解了孪生网络以及他是如何处理one-shot learning的例子，现在我们再来看看另一个模型，原型网络Prototypical Networks。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前说过，孪生网络的缺点就是要对比目标和过去每个样本之间的相似度，从而分析目标的类别，而原型网络就提出，先把样本投影到一个空间，计算每个样本类别的中心，在分类的时候，通过对比目标到每个中心的距离，从而分析出目标的类别：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">大致思路很简单，具体实现也不难，首先是把输入投影到新的特征空间，这个和nlp中的word embedding比较相似，也是通过神经网络，把输入（比如图像）转化为一个新的特征向量，使得同一类的向量之间的距离比较接近，不同类的向量距离比较远。同时，计算每个类别的均值表示该类的原型prototype。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是原型网络也有一些细节需要注意，先来看看具体过程，首先我们有训练集：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$D = \{(x_1,y_1),...,(x_n,y_n)\}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设我们一共有K个类别，那么我们就从D中为每个类别分出K个子集，每一次迭代，就对一个子集随机抽样得到support set支持集和query set查询集（注意支持集和查询集不能有重复），利用支持集计算原型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$c_k=\frac{1}{S_k}\sum_{(x_i,y_i)\in S_k}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到每个类的原型之后，再用查询集计算每个样本对应每个类的概率：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{\phi}(y=k|x)=\frac{exp(-d(f_{\phi}(x),c_k))}{\sum_{k'}exp(-d(f_{\phi}(x),c_{k'})}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设样本对应的真实类别为k'，那么就可以定义损失函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$J(\phi) = -log(p_{\phi} (y=k'|x))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们希望最小化损失，所以相当于最大化log，也就是最大化x正确分类的概率。通过最小化损失函数，从而优化最初的embedding网络。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">整个模型比较特别的地方是训练过程中把数据划分成支持集和查询集，这个很容易理解，毕竟我们必须要通过一部分数据去确定出prototype的位置，在测试过程中我们可以利用训练集确定prototype，但在训练过程中，我们只能划分出两部分，一部分用来确定prototype，另一部分用来训练模型。最后，值得一提的是，通过训练集确定prototype，其实本质上就是模型利用训练集作为先验知识的过程。</div>
+
 
 
 

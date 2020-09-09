@@ -96,29 +96,47 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习建模训练心得（一）：如何开始训练</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习建模训练总结（二）：基础神经网络结构回顾</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以前都是侧重于看算法看模型，没有真正从零开始写一个模型然后训练它，最近开始自己写模型训练，发现很多东西都值得探讨一下，比如到底不同的模型有什么本质上的区别、神经元数量和神经层数量的不同有什么影响、如何选择激活函数、写好一个模型后怎么训练、训练有没有一个系统的流程等等，所以我就打算尽可能都了解一下，记录一下收获的东西。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近秋招要准备面试，所以我就想着回顾一下之前学过的内容，同时也想结合这些内容，谈谈如何构建模型和训练优化模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">作为这个系列第一篇文章，我想讨论一下，当你写好一个模型之后，应该如何开始训练。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前简单介绍了一下如何开始训练模型，最后提到如果模型无法收敛，就要回到模型的结构进行分析，所以从这里开始，将会重点回顾一下关于神经网络结构的相关内容，总的来说，我们有两点需要时刻注意的，一个是如何根据我们场景、问题的需求，构建一个合理的模型结构，第二个是为了让模型收敛、损失降低，如何改进模型的结构。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先第一点，我认为应该使用小数据集训练，看模型能否过拟合。我自己遇过很多次，写好模型之后马上训练，然后发现模型无法收敛，损失降到一定数值就降不下去了，然后就想办法加深层数，用各种各样的技巧，模型还是无法收敛，最后却发现原来是某条公式写错了，所以还不如一开始就是用小数据集测试，看模型能都过拟合，如果模型连小数据集都无法过拟合，那么肯定是代码细节出了问题了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当我们谈论神经网络的结构时，我第一时间想到的就是最经典的四个结构：全连接层、卷积层、RNN和LSTM，我喜欢称这四个为最基本的神经网络结构，也是最常用的结构（虽然事实上我很少用RNN、LSTM），所以这次我想先从这四个结构入手进行分析。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺便我也可以说一下，一般如果代码出问题导致模型损失无法下降，一般都是出在数据的预处理或者模型的输出附近位置，举个例子，做分类问题，判断图片是猫还是狗，有可能在数据预处理的时候，把猫狗的图片都标记成狗，这样最后训练出来的模型损失就会降到0.5就降不下去（而且还是完美的0.5，别看这个操作好像很傻，我还真试过几次，导致后来看到损失降到0.5就知道肯定是数据有问题），至于模型的输出出问题也很正常，比如目标检测问题，模型得到了输出之后还要对输出处理一下，公式不小心打错了模型就死活无法收敛了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是全连接层，我觉得这真的是最简单但是又最常用到的结构，用途很广泛，比如做图像分类的时候，可以先从CNN提取特征，最后压成一维向量再用全连接层做分类，比如我最近做的生物信息项目，我就用了全连接层对生物实体进行embedding。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二点，当你检查过模型可以过拟合，就可以正式训练了，训练的过程中我一般会调整两个参数，一个是学习率，一个是batch size，一般来说，一开始我会希望模型能收敛得快点，我会把学习率调高一点，batch size调低一点，学习率的意思就不用说太多了，主要是batch size，这个batch size又会涉及到随机梯度下降、mini batch梯度下降、批量梯度下降，我自己的简单理解就是每次训练用到的batch size大小。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在用到全连接层的时候，我主要考虑的问题就是，到底每一层的神经元数量怎么设置，要设置多少神经层（隐藏层），关于这点，我想展示几个例子来说明一下。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步说明之前，先回顾一下epoch和batch的关系，我的理解是，每个epoch，模型都会学习所有的数据，比如我现在有1000个数据，设置了batch size为100，那么每个epoch，模型就需要学习10次才能遍历所有数据，如果设置了epoch为1000，这个过程就会重复1000次，所以在pytorch的代码中一般可以看到两个循环，一个是针对epoch的循环，一个是针对batch的循环。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，我想介绍一下cover定理：将复杂的模式分类问题非线性地投射到高维空间将比投射到低维空间更可能是线性可分的。一个很经典的例子：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.jpg"><img src="image/1.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于左图，我们是没办法用一条直线进行分类的，但是右图我们可以用一个平面实现效果较好的分类（不要误认为线性可分就是用一条直线分类，应该是用x=3之类的式子作为一个分类的依据，而x=3在二维空间表示为直线，在三维空间则表示为平面）。从这个例子我们就能看到，如果我们设置神经层的神经元数量比输入层的数量少，可能就需要较多的神经层模型才能达到较好的效果，相反，可能如果我们设置神经元的数量多于输入，就可能只需要一两层就能实现较好的分类效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了epoch和batch size之后，再来看，假如我设置epoch size为1000和100，区别就在于每次epoch模型的学习次数，或者说反向传播次数，当batch size小时，模型就会学习更多次，但是相对的，因为每次学习的数据只是所有数据的一部分，所以学习的方向不准确，是比较随机的，但毕竟我们会重复这个过程epoch次，所以总的来说损失还是能下降，而且因为学习次数多，下降得比较快，所以，在模型训练的开始阶段，我更喜欢设置小的batch size。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个例子，我想说的是word2vec，这是一个word embedding算法，详细说比较麻烦，我们只需要知道它的输入是一个尺寸非常大的向量，比如10000，而第一层神经层，他设置的神经元数量一般是300，很明显，它的目的就是为了降维。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到了后期，如果还是设置小batch，因为小batch导致模型每次学习的方向都比较随机，这就会导致损失会波动变化，所以才需要设置大的batch size，让模型能基于数据整体分析应该学习的方向。当然，还需要设置小的学习率，不然模型无法收敛。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">综合上面两个例子就能看出，其实用多少神经元，不过除去这一点，实际上对我来说，我一般都是写几层，训练一下看效果如何，拟合不了就继续加神经层，不断尝试找到最好的效果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上这个流程虽然比较简单，但我觉得只要模型结构合理，一般都能收敛到比较满意的水准了，如果这时候模型还是无法收敛，或许就需要从模型的结构入手改进了，这部分的内容以后会继续更新。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说完全连接层，再来看看卷积层，和全连接层相比，卷积层既能处理一维数据，也能处理高维数据，所以一般来说，对于一维以上的数据我都是使用卷积层处理分析，但是卷积层也不是完全没有优点，和全连接层相比，全连接层处理的是完整的输入，而卷积核每次计算的都是局部的数据，这就导致了，卷积核对于全局特征的提取能力较弱（关于这一点之前的文章我有详细的介绍），除此这点，我觉得更直观的一个问题是使用了卷积层会导致训练和推理的速度变慢，而且随着层数增多越明显。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，全连接层和卷积层已经可以处理大部分的情况了，而RNN的出现，主要是针对两个问题，第一，处理变长的输入，第二，分析序列的顺序信息。同时，基于RNN也发展出很多新模型，所以虽然我平时很少用RNN，但是它的后续发展模型也是经常需要接触到的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
 
 
 

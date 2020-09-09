@@ -96,32 +96,15 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Deep learning of the back-splicing code for circular RNA formation</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">circDeep: deep learning approach for circular RNA classification from other long non-coding RNA</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">感觉现在写的这些生物信息的内容越来越偏门了，但毕竟我也不想做流量博主，还是希望能多分享一些别人少写的内容，帮助有需要的人。另外我也不是学生物的，所以或许会有一些知识性错误，欢迎指出。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">circRNA的预测有三个步骤，首先将非编码RNA与蛋白质编码基因转录物区分开，然后将长和短的非编码RNA区分开，最后再从长非编码RNA（lncRNA）中预测circRNA，但是目前从lncRNA中对circRNA进行分类的工具效果都一般般，所以本文就尝试利用深度学习进行分析。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这次阅读的论文主要研究的是circRNA的反向剪接，事实上，circRNA就是RNA（一般指pre-mRNA）在剪接时，外显子的50和30末端通过反向剪接共价连接形成circRNA的</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">并非所有外显子都能参与反向剪接，有多种因素会影响到circRNA的形成，或者简单来说，就是你不能说一个片段头尾能碱基互补配对就能形成circRNA，可能还会受到其他片段的调控，所以我们才需要深度学习进行分析，判断哪些片段能进行反向剪接，哪些不能。</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">数据方面，主要是从CircRNADB和CircBase中获取外显子circRNA，对于每个circRNA，都有两个剪接位点的基因组位置，从两个剪接位点各提取前后50nt的序列得到总长度为200的序列作为positive数据，对于negative数据，则是选择相同转录本中但未包括在positive数据中的另一对剪接位点进行数据的提取，这样，我们就得到了长度为200的输入序列了，然后再对AUCG进行独热编码，得到模型的输入。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实从模型的结构图就可以看出，整个模型挺简单的，仅仅只是用了两个卷积层，加上最大池化，就展开用全连接层做分类了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然最后做出来的效果好像比前人好，但确实没什么值得细说的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在lncRNA中区分circRNA和非circRNA的困难在于实验数据分析的计算复杂性和几乎所有lncRNA的低表达，目前仅两种工具能实现circRNA的分类，一个是PredcircRNA，另一个是H-ELM。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>

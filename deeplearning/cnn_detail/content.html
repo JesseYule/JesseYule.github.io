@@ -142,6 +142,15 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">看着有点复杂，但尝试乘一下就知道为什么矩阵是这个形式了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面只是一个例子，主要想说明的是虽然我们在程序中可以通过循环来进行卷积运算，但效率十分低下，所以我们才需要矩阵，当然pytorch、tensorflow的卷积运算肯定还有更多的优化，这里只是想简单介绍一下卷积运算的一种实现方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再介绍一下CNN在NLP中的应用，也就是所谓的TextCNN：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.jpg"><img src="image/3.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">CNN能应用到自然语言领域的主要原因就是，经过embedding的一句话其实可以表示为一个二维矩阵，一维是词向量，一维是句子的各个词，然后我们就可以像处理图像那样处理文本了，只是有一点不同的是，图像处理中卷积核很多时候是一个正方形的矩阵，而textcnn的卷积核有一维的尺寸通常来说是等于词向量的维度的，比如现在有一句话包含十个词，词向量长度为300，那么我们可以采用3*300大小的卷积核，对句子进行卷积运算，这样卷积核每次滑动过的位置都是完整的单词，保证了单词作为语言中最小粒度的合理性。</div>
+
 
 
 

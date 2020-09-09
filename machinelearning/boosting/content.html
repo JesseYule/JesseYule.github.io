@@ -98,20 +98,49 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机森林</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">集成学习与boosting</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">随机森里名字听起来很厉害，实际上就是由多个决策树构成，同时决策树之间是没有关联的，主要的分析过程就是，利用多个决策树分别对输入数据进行处理，每棵树都得到自己的结果，然后哪个结果多，就把它作为随机森林的最终结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前多次提到，通过构建多个学习器进行综合分析完成学习任务，这种思想就是集成学习。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们来讨论一下怎么构建随机森林，主要就是怎么构建决策树，其实基本过程和构建一棵决策树是接近的，不同的地方有几点：第一，构建每棵决策树所用到的数据（样本），是通过有放回抽样从原始样本集合中抽取的，所以每个决策树的训练数据都不同；第二，对一个节点进行特征选择的时候，并不是考虑所有的特征，而是只是随机从M个特征中选择N个（N远小于M）。个人觉得，这两个不同点，目的都是让不同的决策树差异大一点，不然大家都用同样的数据，进行同样的特征选择，那么最后生成的决策树当然是一样的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">学习器可以是同一种，也可以是不同的，比如随机森林就都是由决策树构成的，有时候可能也会把决策树和其他模型混合在一起。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么，为什么生成多个不同的决策树，集合在一起构成随机森林，会比单个决策树更好呢，这涉及到集成学习的思想，不同的决策树可以认为是重点分析某些特征，从不同的角度出发分析问题，最后结合多个决策树，推导出结果，就可以认为这个分析过程更全面合理。其实在深度学习中，这种方法更常见，比如CNN构建多个通道，不同通道学习不同特征，最后结合起来做推断，比如transformer中的multi-head attention，为什么head要multi，还是为了提取不同特征进行综合分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果我们只是单纯把模型堆在一起，那么模型的上限也就只能是其中最好的模型，所以我们应该遵循什么规则呢，这里不卖关子，答案就是模型之间性能差异不能过大且具有多样性。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，随机森林的优点首先就是实现简单，训练速度快，相比单个决策树没那么容易过拟合，还可以判断出不同特征之间的相互影响，判断特征的重要程度，当然缺点还是有的，有实验证明随机森林在某些噪声较大的分类或回归问题回过拟合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，整个集成学习模型，会根据里面的各个个体学习器的结果，进行简单投票法，哪个结果是由最多学习器得到的，这个结果就作为整个模型的最终输出。而我们希望学习器性能好且具有多样性，其实可以从这个角度来思考，性能好是当然的，可是为什么需要多样性，假如每个模型都十分接近，比如说都是一个节点十分相似的决策树，那么构成的随机森林和单纯用一个决策树还会有区别吗，为什么随机森林里面要有多个决策树，其实就是希望每个决策树都能从不同的角度出发分析问题，得出答案，当每个决策树分析的侧重点不同，得到的答案仍然非常接近，这时候是不是就更有理由认为这个就是正确答案了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从另一个角度来说，还是深度学习中的transformer这个例子，为什么attention需要multi-head，说到底还是希望模型能提取出多个特征，综合多个角度进行分析，这样模型的鲁棒性就会更强，准确率更高，这些改进，其实本质上都是集成学习的思想。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">加下来我们再来看看什么是boosting，首先，集成学习可以分为两类，一类是学习器之间具有依赖关系的，就是不同的学习器可以相互交流改进，还有一种就是不存在依赖关系，各学各的，前者的代表就是boosting，后者的代表就是bagging和随机森林。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">boosting的基本思路就是，先从初始训练集训练出一个基学习器，然后根据基学习器的表现对训练样本的分本进行调整，使得之前训练出错的样本再之后的训练中得到更多的关注，然后用经过调整的训练集训练下一个基学习器，直到训练事先预定的次数，再将所有得到的基学习器进行加权结合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于boosting算法的细节，其实还是有些地方没有说清楚，比如基学习器的表现是通过什么反映，样本的权重是怎么更新的，对基学习器进行加权结合，权重是怎么计算，boost家族中的不同算法对这些问题提出了不同的解答方案，现在主要来看看比较经典的adaboost是怎么解决的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以分类问题为例，假设我们有数据：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$T = \{(x_1, y_1), ..., (x_n, y_n)\}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">训练集的权重为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$D(K) = (w_{k1}, w_{k2}, ..., w_{kn})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个权重是不断变化的，一开始，权重初始化全为1/m。然后正如boosting的思想，用基学习器进行训练，通过训练误差反映基学习器G_k的表现：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$e_k = \sum_{i=1}^m w_{ki}I(G_k(x) \neq y_i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，误差主要是通过没有正确分类的样本的权重来反映的，这也是我们一开始设定每个样本的权重的目的，如果一个样本经过多个基学习器依然没有成功分类，它的权重就会不断上升，接下来，我们再看看样本的权重是怎样变化的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{k+1, i} = \frac{w_{ki}}{Z_K}exp(-\alpha_k y_i G_k(x_i))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Z_K是规范化因子，其实就是归一化处理：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z_k = \sum_{i=1}^m w_{ki} exp(-\alpha_k y_i G_k(x_i))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">alpha_k则是基学习器的权重：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\alpha_k = \frac{1}{2} log\frac{1-e_k}{e_k}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个权重也是最后用来对所有基学习器进行加权结合的，可以看出权重和误差有关，误差越小权重越大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，adaboost还会把一轮训练错误的数据，和原始数据集合并用于下一轮的训练，所以这时候训练数据中错误训练的数据所占的比重就会增大。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以adaboost所做的，就是告诉boost算法，如何评价一个基学习器的性能，如何确定每个样本的权重以及这些权重有什么作用，如何更新样本的分布。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后说一下adaboost的优缺点，首先是优点，adaboost分类精度高，可使用各种回归分类模型作为基学习器，不容易过拟合，但是，adaboost对异常样本敏感，异常样本在训练中可能会得到较高的权重，影响模型的性能。</div>
+
 
 
 

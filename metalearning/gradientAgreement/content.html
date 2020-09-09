@@ -96,28 +96,34 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">元学习介绍</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Gradient Agreement as an Optimization</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">人类最强大的一个能力就是可以通过少量的例子就能快速学习新概念新知识，而事实上，这个过程是通过重新利用过去已经学习的其他领域的知识，利用自身的学习能力实现的，比如你学会了加法，很容易就能学会减法，甚至有些聪明的小孩子可以从加法推导出减法，但是现在大部分算法模型还不能做到，如果要让它"学会"减法，那么我们就需要给他和训练学习加法同样数量的数据，所以就有人提出，能不能让计算机也领悟到人类的这种强大的学习能力呢。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">MAML尝试学习模型的初始化参数，使得这些参数对各类任务的梯度都是敏感的，这样针对某一特定任务甚至新的任务只需进行少数几次的梯度下降，就能取得较好的效果，可是因为这个过程中使用了二阶微分计算，增大了计算开销。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Reptile在MAML的原理上进行改进，省略了二阶微分计算的过程，同时也避免模型的性能显著下降，在性能和计算开销之间都取得较好的平衡。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，MAML和Reptile都是在想办法找到一个点，到各类任务的最优点的距离之和最小，但是其实两者都默认了各类任务对于寻求最优初始点的贡献是一样的，从MAML的公式就可以明显看出这一点：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta_{new} = \theta - \beta \nabla_{\theta} \sum L  (f_{\theta '_i})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式中的损失函数只是各个任务的损失函数之和，不同的损失函数拥有相同的权重。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在有一种情况就是假如有n个任务，n-1个任务都倾向于同一个梯度下降方向，而还有一个任务则倾向于另一个完全相反的方向，这时候这个任务就阻止了模型朝着最优方向前进了，或者说，在这种情况下，模型更倾向于抛弃最后一个任务，通过降低那个任务的性能来优化更多的任务。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以MAML为例来看看Gradient Agreement是如何进行改进的，首先也是随机抽取不同任务的N个样本，对每个样本进行梯度下降：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta_i = \theta - \alpha_{inner} \nabla L_{\tau_i} (f_\theta)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$g_i = \theta - \theta_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是Gradient Agreement的重点，计算每个任务的权重了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_i = \frac{\sum_{j \in T} (g_i^T g_j)}{\sum_{k \in T}  |\sum_{j \in T} (g_k^T g_j) |}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的意思就是，假如现在有五类任务，每类任务有五个样本，对于第一类任务的权重，分子等于第一类任务五个样本和所有样本之间的乘积之和，分母等于任意这二十五个样本任意两个的乘积之和的绝对值。简单来说，如果某类样本的梯度更新方向和其他样本的梯度更新方向比较接近，就会得到更高的权重，相反就更低。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">计算出每类任务的权重之后，就可以继续进行分析，对MAML，就是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _{new} = \theta - \alpha_{outer} \sum_i w_i \nabla L_{\tau_i}(f_{\theta_i})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对Reptile：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta _{new} = \theta + \alpha_{outer} \sum_i w_i (\theta_i - \theta)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，Gradient Agreement的创新点就是针对不同的任务引入不同的权重，使得模型的能准确地朝着对初始参数进行优化。</div>
 
 
 

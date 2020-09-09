@@ -98,50 +98,20 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">决策树</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机森林</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">决策树是一种分类模型，如下图：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据这棵树，我们就可以一步步进行判断，所以问题就是，我们到底怎么构建这棵树。具体来说，就是怎么确定节点和节点之间的关系，如果特征是连续变量，还需要确定节点的划分阈值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">随机森里名字听起来很厉害，实际上就是由多个决策树构成，同时决策树之间是没有关联的，主要的分析过程就是，利用多个决策树分别对输入数据进行处理，每棵树都得到自己的结果，然后哪个结果多，就把它作为随机森林的最终结果。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来看一下如何决定节点以及决定他们之间的关系。所谓的节点其实就是特征，一般来说我们可能有很多特征，从中选择一个特征作为当前节点的分裂标准，选择的方法有很多，根据不同的选择衍生出不同的决策树，比如ID3（通过信息增益选择特征）、C4.5（通过信息增益比选择特征）、CART（通过Gini指数选择特征）。总的来说，我们选择不同的节点，并且分析出他们的父子或者并行关系，主要就是希望通过这样进行分类，使得每个类别的纯度较高，以上图为例，如果一个瓜的纹理稍糊而且触感硬滑，那么就大部分是好瓜，而不是好坏混杂在一起。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们来讨论一下怎么构建随机森林，主要就是怎么构建决策树，其实基本过程和构建一棵决策树是接近的，不同的地方有几点：第一，构建每棵决策树所用到的数据（样本），是通过有放回抽样从原始样本集合中抽取的，所以每个决策树的训练数据都不同；第二，对一个节点进行特征选择的时候，并不是考虑所有的特征，而是只是随机从M个特征中选择N个（N远小于M）。个人觉得，这两个不同点，目的都是让不同的决策树差异大一点，不然大家都用同样的数据，进行同样的特征选择，那么最后生成的决策树当然是一样的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍ID3之前，先了解一下信息增益这个概念。首先熵表示的是随机变量的不确定性，条件熵表示在一定条件下随机变量的不确定性，而信息增益则是通过熵减去条件熵确定的。通俗地说，就是如果给定一个条件，那么熵会减少多少，在这个角度来说，或许我们用熵减去信息增益等于条件熵这个公式更好理解。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么，为什么生成多个不同的决策树，集合在一起构成随机森林，会比单个决策树更好呢，这涉及到集成学习的思想，不同的决策树可以认为是重点分析某些特征，从不同的角度出发分析问题，最后结合多个决策树，推导出结果，就可以认为这个分析过程更全面合理。其实在深度学习中，这种方法更常见，比如CNN构建多个通道，不同通道学习不同特征，最后结合起来做推断，比如transformer中的multi-head attention，为什么head要multi，还是为了提取不同特征进行综合分析。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为我们都希望熵或者条件熵尽可能小，所以信息增益当然就越大越好了，如果信息增益越大，就意味着给定一个条件之后，熵也会大幅度减小，很明显这个条件就是我们希望得到的特征，所以我们可以通过信息增益去进行特征选择，构建决策树。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以通过公式计算信息增益：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Ent(D) = -\sum_{k=1}^{|y|} p_k log_2 p_k $$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Gain(D,a) = Ent(D) - \sum_{v=1}^V \frac{D^v}{D}Ent(D^v)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">知道了如何计算信息增益之后，再来看看如何构建一颗决策树，首先，我们要计算所有特征的信息增益：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，纹理的信息增益最大，所以我们选择纹理作为第一个节点。根据纹理，我们可以把原始的数据集分为纹理清晰、烧糊、模糊三个子类，然后再对这三个子类，计算信息增益，继续分析其他节点。直到最后，决策树的每个子类的纯度达到一定程度，比如90%是好瓜或者坏瓜，就停止分析。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">信息增益的问题就在于，如果一个特征可取值较多，比如现在有一个特征是编号，那么结果就会更偏向于它，因为可取数值较多，就会导致每一个取值的子集较小，在计算过程中，就会认为条件熵较小，从而推导出信息增益较大。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对信息增益的这个问题，就引入了信息增益率来进行分析，这就是c4.5算法。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">信息增益率的公式为：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Gain\_ratio(D,a) = \frac{Gain(D,a)}{IV(a)}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$IV(a) = \sum_{v=1}^V \frac{|D^v|}{|D|} log_2 \frac{|D^v|}{|D|}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">IV(a)和类别数成正比，所以信息增益率就不会盲目朝着类别数更多的特征进行选择了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后还有一种CART，它和ID3、c4.5不同的地方一个是分类都是二分类，不像id3那样，特征有几个类别，就把节点分出几个子节点，另外cart是基于gini指数进行特征选择的。Gini指数和信息增益、信息增益率有点不同，但目的还是希望能把划分的子集类别纯度更高，这里暂不细说了。</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以总的来说，决策树的重点还是在于如何选择父节点子节点，通过不同的分析方法就可以得到不同的决策树。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，随机森林的优点首先就是实现简单，训练速度快，相比单个决策树没那么容易过拟合，还可以判断出不同特征之间的相互影响，判断特征的重要程度，当然缺点还是有的，有实验证明随机森林在某些噪声较大的分类或回归问题回过拟合。</div>
 
 
 

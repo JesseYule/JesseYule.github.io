@@ -98,31 +98,58 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Bayesian Data Analysis</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">决策树</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-        
-			  <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍贝叶斯统计之前，首先需要学习什么是先验概率什么是后验概率。</div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-              <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，先验概率就是，事件发生前的预判概率，可以是基于历史数据的统计，也可以是人的主观观点给出的，一般是单独事件概率，比如通过统计得到全国有百分之七十的人玩过王者荣耀，这个百分之七十就是先验概率。</div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-            <div class="p-lower-kv__outline p-lower-kv__outline--col2">后验概率，简单来说，就是事件已经发生，那么这个事件发生的原因是由某个因素引起的可能性的大小。还有一种说法是，后验概率是基于事件发生了获得的新的信息，修正原来的先验概率后获得的更接近实际情况的概率估计，一般来说，后验概率是通过贝叶斯公式对先验概率进行修正而获得的概率。另一方面，通过似然函数也可以计算后验概率。</div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">决策树是一种分类模型，如下图：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据这棵树，我们就可以一步步进行判断。而本文讨论的重点就是如何构建这么一棵决策树，简单来说，构建一个决策树包括三个过程：特征选择、决策树生成、决策树剪枝。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了先验概率和后验概率，之后先谈一下贝叶斯公式： P(y|x) = ( P(x|y) * P(y) ) / P(x)，以前用贝叶斯公式主要是为了在知道P(x|y)的前提下怎么求P(y|x)，当时感觉这就是一个解题的技巧，现在才明白它更多是与贝叶斯统计相关。首先要明白，在贝叶斯公式中，P(y|x) 是后验概率，一般是我们求解的目标，P(x|y) 是条件概率，又叫似然概率，一般是通过历史数据统计得到。一般不把它叫做先验概率，但从定义上也符合先验定义，P(y)是先验概率，一般都是人主观给出的。贝叶斯中的先验概率一般特指它。P(x) 其实也是先验概率，只是在贝叶斯的很多应用中不重要，需要时往往用全概率公式计算得到。比如说，假设y是文章种类，是一个枚举值；x是向量，表示文章中各个单词的出现次数，针对这种情况，可以统计出p(x),p(y),p(x|y)，而P(y|x)则是无法通过统计得到的（通过单词出现次数统计是哪种文章），所以只能通过贝叶斯公式去计算，这就是后验概率，也是贝叶斯公式的作用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">特征选择就是判断对于当前的节点，我们选择用哪个特征，比如上图的最上方选择用纹理作为根节点，那么到底是怎么分析出来的呢。事实上，特征选择的方法有很多，对于不同的方法，也衍生出不同的决策树，比如比较常见的通过信息增益选择特征，对应的决策树叫ID3，通过信息增益比进行选择，对应的就是C4.5，通过Gini指数选择的就是CART。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就是重点贝叶斯推断，首先要明白的是，贝叶斯和以前的观点有一个不同，就是把参数看作随机变量。这也是为什么要提出先验概率和后验概率的原因，以前我们一般把参数看成实数或者向量，比如服从p=0.5的伯努利分布，贝叶斯则是把参数看成随机变量，也就是定义在样本空间上的实值函数，所以用一个分布来表示，它是不确定的，是可以根据实际情况进行修正的。比如，现在我写好了一段代码，但是不确定有没有bug，因此在一个简单的例子上应用这段代码，没有问题，我初步相信代码是正确的，然后进一步把代码应用到更复杂的例子中，都没有问题，在不断的测试过程中，我越来越坚信自己的代码没有问题，我的相信程度，就是一个随机变量，也是一个后验概率，通过实验结果不断修正改变，而这整个过程，就可看成是贝叶斯推断对参数估计的应用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在我们正式讲解ID3的细节之前，首先来了解信息增益、熵、条件熵这些概念：熵表示的是随机变量的不确定性，条件熵表示在一定条件下随机变量的不确定性，而信息增益则是等于熵减去条件熵。通俗地说，就是如果给定一个条件，那么熵会减少多少，从这个角度来说，或许我们用熵减去信息增益等于条件熵这个公式更好理解。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有了对贝叶斯推断初步的了解，就可以看看怎么通过贝叶斯推断进行参数估计了。在我们得到了参数的后验分布之后，可以选择根据后验分布的期望（mean）、中位数（median）或者众数（mode）作为对参数的估计值，其中，对后验分布的众数进行估计又称为maximum a posteriori（MAP，最大后验估计），这个最大后验估计是最常用的，主要是因为计算期望或者中位数都需要积分，对计算机而言是比较困难的计算，而MAP并不需要积分，所以更常用。顺带一提，mode指的是概率密度函数达到最大的值（因为密度最大，所以在整个分布里面最多），又因为整个计算过程涉及到密度函数，所以不需要积分，然后最重要的是！其实我们的后验概率p(θ|x)本身就相当于密度函数（离散情况），所以估计后验分布的众数就是求参数使得后验概率达到最大，也就等价于使得P(x|θ)P(θ)达到最大（事实上，完整的表达式是P(x|θ)P(θ)/P(x)，也就是贝叶斯公式。但是因为我们已经做了试验，知道了P(x)的结果（就是投十次正面朝上八次），是常数所以就省去了）。这样看来，其实最大后验估计和极大似然估计又是相似的，只是在极大似然估计的基础上乘上了一个p(θ)。之所以这样做，主要是因为MAP不仅仅考虑了似然函数，也考虑了P(θ)这个先验概率的影响，从中也可以看出贝叶斯统计的思想。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为我们都希望熵或者条件熵尽可能小，所以信息增益当然就越大越好了，如果信息增益越大，就意味着给定一个条件之后，熵也会大幅度减小，很明显这个条件就是我们希望得到的特征，所以我们可以通过信息增益去进行特征选择，构建决策树。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上简单介绍了贝叶斯统计的基本思想以及对后验参数估计的一些方法，在后续的文章里会继续详细讲解如何计算后验期望以及最大后验概率的方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以通过公式计算信息增益：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Ent(D) = -\sum_{k=1}^{|y|} p_k log_2 p_k $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Gain(D,a) = Ent(D) - \sum_{v=1}^V \frac{D^v}{D}Ent(D^v)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">知道了如何计算信息增益之后，再来看看如何进行特征选择，如何确定出决策树的第一个节点，首先，我们要计算所有特征的信息增益：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，纹理的信息增益最大，所以我们选择纹理作为第一个节点（根节点）。根据纹理，我们可以把原始的数据集分为纹理清晰、烧糊、模糊三个子类，在这三个子类的基础上，我们可以判断一下，每个子类的纯度如何，比如90%都是好瓜或者坏瓜，就可以停止分析了，否则，就继续前面的步骤，继续进行特征选择。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">参考资料：<br>
-                [1]https://www.zhihu.com/question/55819120<br>
-                [2]https://www.jianshu.com/p/0a038974d48c<br>
-                [3]https://cloud.tencent.com/developer/article/1094425</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以对ID3来说，整个构建决策树的过程，就是自上而下的，一步步确定每个节点（特征），从而使得每个子类的纯度都足够高，这个过程就是决策树的生成过程。事实上，所有的决策树都是依据这样的构建过程，唯一的不同就是特征选择的依据。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来，我们来看一下信息增益的问题（有不足是正常的，不然也不需要其他判断依据了），如果一个特征可取值较多，比如现在有一个特征是编号，那么结果就会更偏向于它。因为可取数值较多，就会导致每一个取值的子集较小，在计算过程中，模型会认为条件熵较小，从而推导出信息增益较大的错误结论。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">既然子类太多也不好，那么在信息增益的公式中，引入惩罚项不就行了。我们希望信息增益增大，但又不希望特征的类别数过多，那就对信息增益除以一个和特征类别数有关的项，这就是c4.5算法，改进的信息增益公式就称为信息增益率公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Gain\_ratio(D,a) = \frac{Gain(D,a)}{IV(a)}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$IV(a) = \sum_{v=1}^V \frac{|D^v|}{|D|} log_2 \frac{|D^v|}{|D|}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，IV(a)和类别数成正比，所以信息增益率就不会盲目朝着类别数更多的特征进行选择了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是ID3和C4.5的基本思路，除此之外还有cart，这里就暂时不细说了。总的来说，不论选择哪一种决策树，目的还是希望分出来的子类纯度高一点，分类的效果好一点。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于特征提取，再补充一点，上面提到的特征，可以看到其实都是离散型的，实际上还会有连续型的，比如一个瓜种植的天数，那么我们对这类特征进行选择的时候，其实还需要考虑对这个特征分成几个类别，每个类别的阈值用哪个，分出来的子类纯度更高，更具体的细节，这里就暂不细说了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然生成一棵决策树是一个关键的过程，但也不能忽略了生成之后对决策树的评价和改善，最主要的考察就是这棵决策树会不会过拟合数据，因为有时候可能会生成太深的决策树（也就是节点过多），这时候子类的的纯度当然很高，但是拿去做测试的时候就发现这个模型的准确率不行，这就是过拟合的问题。一般来说，我们会通过剪枝，也就是删除部分节点，避免决策树过拟合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">综上所述，个人觉得，决策树是一种十分接近人的思维的模型，所以很容易解释，建模和测试模型的速度也很快，不需要做什么复杂的运算，但是很容易发生过拟合，优点缺点都很明显吧，算是可以看到天花板的模型。</div>
+
+
+
+
 
             </div>
           </div>

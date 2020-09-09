@@ -96,30 +96,29 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">元学习介绍</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Siamese Networks</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">人类最强大的一个能力就是可以通过少量的例子就能快速学习新概念新知识，而事实上，这个过程是通过重新利用过去已经学习的其他领域的知识，利用自身的学习能力实现的，比如你学会了加法，很容易就能学会减法，甚至有些聪明的小孩子可以从加法推导出减法，但是现在大部分算法模型还不能做到，如果要让它"学会"减法，那么我们就需要给他和训练学习加法同样数量的数据，所以就有人提出，能不能让计算机也领悟到人类的这种强大的学习能力呢。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">目前有一种说法认为，深度学习模型在数据量较大的情况下才能取得较好的效果，当数据量较少，更偏向于使用传统的机器学习模型。想办法从深度学习的方向构建模型，使得模型在数据量较小的情况下也能取得较好效果，就是meta learning的目标。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么如何才能实现这个目标呢，从人类学习分类物体的角度来说，人类认识新的物体并不需要太多的样本，这是因为人类拥有更多的先验知识，比如现在叫一个没见过碟子的人，从一堆文具数据中区分出唯一一个碟子，他可能很容易做到，因为他已经在脑海中抽象出文具的概念，即使可能难以描述文具和碟子具体的定义是什么，仍然可以找出那个不属于文具的碟子，这就是人类强大的能力。但是现在的机器做不到，如果想要解决这个问题，模型就需要大量的文具和碟子数据，学习文具和碟子的抽象概念，再进行对比分类。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以问题可以更具体地表示为，在碟子数据较少的情况下，如何充分利用其他数据作为先验知识构建网络，使得网络能较好地对碟子进行分类，这就是目前主要研究的问题。这里先来介绍一个模型，Siamese Networks孪生网络。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.jpeg"><img src="image/1.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们可以看看模型的结构，其实思路很简单，就是输入两个样本到两个同样的网络（参数结构相同），最后计算两个网络输出的距离，如果距离较近就认为是同一类，较远就认为是不同的类别，在这里，我们可以使用两个同样参数的CNN，利用CNN从图像中提取特征。注意这里必须是同样的CNN，不然两个不同的CNN，即使输入相同，输出也可能认为两者不同。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在我们来分析一下孪生网络为什么可以有效地区分碟子，即使数据集中只有一个碟子样本。比如我们有99个文具样本和1个碟子样本，在训练的时候，最多可以用1个碟子和99个文具进行99次训练，这样即使模型依然无法抽象出碟子的概念，但是起码它也可以知道，碟子和文具之间的区别是什么，只要在测试的时候不要加入新的数据（比如突然加入一个杯子，模型就有可能认为他是碟子了，毕竟它都完全没见过杯子），那么模型就很大概率能成功进行分类。顺带一提，模型的测试可以理解成对比测试数据和训练数据中的哪个样本最接近，就认为测试数据是什么类别。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">深度学习模型参数一般比较多，而样本数量不足必然就会导致过拟合，而上述的孪生网络，通过对比两个输入进行分类，大量增加了模型的训练数据，这样就相对缓解了模型过拟合的问题。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，其实也可以看出，对孪生网络来说，先验知识就是训练集的数据，在测试的过程中，把测试数据和训练数据进行一一对比，就是一个利用先验知识的过程，虽然这个过程效率比较低下，所以才有了后续的改进模型。</div>
 
 
 

@@ -96,30 +96,43 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">反向传播算法</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">从数学角度看深度学习</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到神经网络在训练过程中需要根据预测输出和实际输出去调整权重和阈值，但是没有具体说明这个过程，在回归模型中我们往往会采用梯度下降法，这里介绍一种神经网络比较常用的方法，反向传播算法，本质上我觉得它还是梯度下降法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">学习人工智能差不多一年，这一年的时间里，先是学了线性回归之类的传统机器学习，然后学了各式各样神经网络的深度学习，把基础都打好了就开始了解自然语言处理，最后实习的时候因为项目的原因又接触了目标识别，所以学了那么多之后到底学了什么，到底深度学习是什么，现在和最初相比，对于深度学习的看法有什么改变，这次就来聊一下。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们采用实际输出矢量（actual output vector）和期望输出矢量（desired output vector）的欧式距离作为损失函数（一个简单例子）：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_p = \frac{1}{M} \sum_{j=1}^M (y_{dpj} - y_{apj})^2$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们考虑一种最简单的情况，激活函数使用sigmoid函数，神经网络的隐藏层只有一层，包含两个神经元，最后就是一个包含一个神经元的输出层，再假设输入层有两个神经元（两个输入）：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们把两个隐藏层的神经元的表达式都写出来：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_1(x_1, x_2) = \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_2(x_1, x_2) = \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后把两个神经元的输出作为输出层神经元的输入，得到：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31} F_1(x_1, x_2) + w_{32} F_2(x_1, x_2) +\theta _3}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后我们得到了神经网络的输出的完整表达式，其中包含了输入x1、x2，以及各个权重w，事实上，这个比较复杂的表达式已经完整了表示了整个神经网络结构，如果我们把这个表达式代进损失函数里，就能得到一个包含了所有权重的损失函数的表达式，这时候，我们就可以利用梯度下降法的思想，通过损失函数对权重求偏导，得到权重的迭代公式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{ij} ^{new} = w_{ij} ^{old} - \eta \frac{\partial E_p}{\partial w_{ij}}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">只要我们通过这个表达式更新权重，那么损失函数就会不断降低了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个想谈一下的是传统机器学习和深度学习，其实机器学习的范围很广，也可以说深度学习属于机器学习的一个分支，这些概念的东西我就不想谈太多了，主要想谈一些个人的观点。首先，我们不能百分百认为深度学习就是人工智能的最终方向，很难说未来会不会有人提出更智能更优秀却又截然不同的模型理论，但是，和传统机器学习相比，深度学习的上限一定是高得多的。机器学习有很多模型，会有很多繁杂的理论，引入很多先验知识，辅助模型做判断，这样的优点在于数据量少的时候，模型也可以较准确地做判断，可是在数据量大的时候，这种优点就不明显，反而因为引入了先验知识，限制了模型的潜能，使得模型没有考虑到其他潜在的特征，导致最终出来的结果远远没有深度学习模型好，总的来说，我们不能否定传统机器学习的优点，但是在目前的大数据时代，深度学习一定是越来越好的，况且，因为元学习的出现，人们也慢慢发现在小样本的情况下，深度学习模型也有办法很好地进行学习。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面提到，因为引入先验知识，限制了模型的潜能，而深度学习模型则没有这个问题，怎么理解这一点呢，举个简单的例子，我们看到一些看起来好像分布在直线附近的点，传统机器学习先生根据他的经验（直觉），说用一个一次函数去拟合就足够了，深度学习先生说什么都不知道，就用两层神经网络去拟合吧（这里暂且把神经网络简化为一个二次函数，反正因为有激活函数绝对不是一次函数），最后，如果结果确实是一次函数，那两个人都对，因为二次项系数接近0二次函数就变成一次函数了，但是万一实际上结果是二次函数，那么深度学习先生就取胜了，也就是说在这场游戏里，深度学习先生是绝对不会输的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么，为什么说深度学习具有这样的潜能呢，一方面，当然是它没有任何的先验知识，一个CNN，你可以用来做分类，可以用来做回归，什么问题你都可以用得上，但是你说一个分类决策树能什么都不改就拿来做回归分析吗。另一方面，是因为神经网络的结构，带给了它无限的可能性，我在另一篇文章《关于神经网络之强大的个人见解》中也提到，从公式的角度，神经网络的函数具有一种分形的结构，所以可以充满整个解空间，具有高度的复杂度，或者从另一个更简单的例子来看，还记得神经网络规定了激活函数一定是非线性变换吧，我们现在定义一个这样的激活函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$activation(x) = x + x^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这也是一个简单的非线性激活函数，那么它的奥妙在哪里呢，我们可以看看，现在用这个激活函数来构建一个神经网络，一共三层，第一层为输入层，每层只有一个神经元，那么每层的输出依次是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f_1(x) = x $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f_2(x) = (a_1x+a_2)+(a_1x+a_2)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f_3(x) = b_1((a_1x+a_2)+(a_1x+a_2)^2) + b_2 + (b_1((a_1x+a_2)+(a_1x+a_2)^2) + b_2)^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">把括号拆开再整理一下，其实可以知道，实际上f2就是一个二次函数，f3就是一个三次函数，所以，这里构建的神经网络，实质上就是一个标准的多元多次函数，元数由神经元数量决定，次数由层数决定。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步说明把神经网络等价于一个多元多次函数的意义之前，先来谈谈泰勒公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$f(x) = \frac{f(x_0)}{0!} +
+                    \frac{f'(x_0)}{1!}(x-x_0) +  \frac{f''(x_0)}{2!}(x-x_0)^2 + ... +
+                    \frac{f^{(N)}(x_0)}{n!}(x-x_0)^n + R_n(x)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">泰勒公式是将一个在x=x0处具有n阶导数的函数f(x)利用(x-x0)的n次多项式来逼近函数的方法，也就是说，对任意函数，都能用一个n次多项式去逼近，而具体的次数则通过该函数的可导性去分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以说，其实我们刚刚构建的神经网络，本质上就是一个万能的函数逼近器，只要层数足够深，它就能逼近任意的函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">至于刚刚我们构建的激活函数和平时常用的激活函数有什么区别，一下子又很难说他们有什么区别，毕竟都是非线性函数，如果强行说这个函数和sigmoid有区别，那么我们也可以用同样的依据说sigmod和relu有区别了，当然，这个问题还是值得深入探究一下的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说了那么多，其实就是说明了神经网络理论上可以拟合任意函数。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再来总的说一下整个深度学习家族吧，平时你会听到各式各样的神经网络，但我觉得，最核心、最根源的网络，或者说结构只有两个，一个是全连接层，一个是卷积层，而且也不能说他们是割裂的，本质上他们也是统一的，全连接层处理的是一维的数据，所以如果要把数据输入到全连接层，必须压扁成一维，而CNN则可以通过卷积运算处理二维的数据，并且通过增加通道、卷积核，使得卷积层能处理更高维的数据。虽然全连接层和卷积层处理的维度不一样，但本质上还不是先进行线性变换，再通过激活函数进行非线性变换，所以从这个角度来说两者都是统一的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在全连接层和卷积层的基础上，引入递归结构就得到RNN，引入长期记忆、遗忘门等结构就得到LSTM，引入残差结构就得到ResNet，引入RPN等结构就得到Faster R-CNN，所以说，网络千千万万种，说到底都是在全连接层、卷积层的基础上，出于某种目的，引入一些结构，给一个好听的名字，就得到了新的网络了，甚至说，我也可以把使用上面我定义的激活函数的网络称为JesseNet。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">深度学习的模型是统一的，我觉得深度学习的研究方向也不是割裂的，比如说计算机视觉和自然语言处，图像和文本数据，初看觉得好像两码事，可是一般我们用一个向量表示一个词，然后一句话不就变成了一个二维向量，和一幅图像是一样的，所以处理起来也可以是相通的（是可以，不是真的一样，实际上还是有区别的）。</div>
 
 
 

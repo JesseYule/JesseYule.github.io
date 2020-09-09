@@ -96,29 +96,100 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习训练环境</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">针对华为Atlas 500的模型转换及tensorflow算子修改心得</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最近在实习，发现其实深度学习在工业界的应用和学术界做研究还是区别很大的，当然和自学自己做研究就区别更大了，最明显的一点，学术界会为了提高模型的准确度提出各式各样的模型，模型可能会非常复杂，但结果只是提高了几个百分点的准确度，而工业界则更注重模型能不能落地、稳不稳定、能不能产生利益，所以我就打算出一个专题，介绍一下工业界深度学习模型落地涉及到的各个方面，当然我也只是一个初学者，说到底也只是把现学的知识分享一下，给大家一个初步的了解，可能有不准确的地方，欢迎交流。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">纵观过去写的文章，我觉得最有价值的文章是元学习系列和分位数回归，以分位数回归为例，我记得写的时候网上还没多少中文的资料，只能谷歌一些英文的博客，加上上课的课件才写出来的，最后我觉得出来的文章还是能把分位数回归的思想说清楚的，像这种可能比较小众但是能确确实实帮到其他人的文章，对我来说价值才是最大的，而这次写的关于Atlas500的模型转化以及算子的修改也是如此。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先想说一下模型的训练需要一个什么样的环境。以前我自学的时候，都是拿一台macbook，装了anaconda和python就足够了，这样的设备跑一些简单的模型当然没问题，复杂的模型跑个几分钟也行，跑久一点电脑风扇一直转也不忍心了。而在实际的工作中，要训练出一个满意的模型肯定就需要花一定的时间，总不能还是用macbook一直跑吧，所以这时候就需要一台专门用来训练模型的机器了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来谈一下模型如何进行转化，第一步当然是要保存tensorflow模型，必须是保存为pb格式，然后，模型的转化有两种方法，一个是利用华为提供的mind studio，在ide进行转化，这种方式的优点在于转化报错的时候，如果是因为算子不支持的原因，可以在ide直接看清楚是哪些算子不支持，但是要安装mind studio也是比较麻烦的一件事，除此之外还可以在安装Atlas500 DDK后，用命令对模型进行转化，具体可看相关的文档，我觉得两者很难说谁更好，只是如果在服务器上进行模型转化就只能用后者了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有些公司可能自己本身就配置了主机用来训练，而我们则选择了华为云（当然阿里云、谷歌云什么的也行，只是因为项目原因用到华为云），像这种云服务器有什么优点呢，不说太多虚的，最直观一点，你在网站上选择好配置，给钱，然后就有一个完善的环境给你了，你就可以直接开发了，而且后续也不需要对机器检查维护，一切交给华为，省心省时间，而且，如果后期发现机器的配置不够好，还可以随时升级，说到底，只要有钱，一切都是那么的方便。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们看一下模型转化的详细过程：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">主要包含五个步骤，其中往往在解析模型和生成算子离线结构的过程中，因为算子不支持的问题而报错。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在选择服务器的规格的时候，我会比较关注几个点，第一个当然是系统，我是因为项目需要必须选择ubuntu的系统（关于这个项目以后有机会也会介绍一下），当然其实一般来说linux都是比windows更好，比如说可能有些python库根本就不支持windows等等（现在不知道这种情况还常不常见，反正以前总是遇到，所以后来就换成mac了）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来看看如何用mind studio转化模型。首先在chrome浏览器打开mind studio，新建项目（new project），导入我们的项目：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">点击tool，选择convert model转化离线模型：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/4.png"><img src="image/4.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺利的话即可成功转化：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可是如果那么容易就不会有这篇文章了，所以接下来就看一下会在哪里出错，以及有什么解决思路。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个我会关注GPU，也就是选择服务器规格的时候，不是选择通用计算型，也不是通用计算增强型，而是GPU加速型，为什么这个GPU如此重要，这个就可以慢慢说了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当在解析模型的过程中报错，mind studio会直接显示出有哪些算子是不支持的：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/6.png"><img src="image/6.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里的解决思路比较简单，根据OperatorName定位出算子在模型中的位置，或者说直接在网上查找算子对应什么函数，比如LeakyRelu算子对应了tf.nn.leaky_relu()这个函数，然后我们就可以用其他类似的函数代替，或者用atlas 500支持的算子去编写一个LeakyRelu函数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">GPU这个概念是Nvidia公司1999年提出的，它是显卡上的一块芯片，就像cpu是主板上的一块芯片，关于他们的区别，有一个比喻很形象，cpu就像一个大学生，他能力很强，可以计算很复杂的数学题，但是依然没办法在十分钟内完成1000道百位数的加法；gpu则像100个小学生，虽然做不出复杂的题，但是他们可以一起在十分钟内完成1000道计算。而神经网络往往就是需要进行大量的简单矩阵运算，所以gpu就比cpu更适合咯。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">下面再举些例子分析如何解决算子不支持的问题。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">提到gpu，就不得不提cuda，cuda（通用并行计算架构）是一种计算平台，利用cuda，可以改编我们的程序，实现并行化，再扔到cpu和gpu上面跑，没有cuda这个开发工具，就没法充分发挥GPU强大的并行计算能力。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对AddV2算子，对应yolov3.py中的“+”运算符，可使用tf.add()替换。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之所以要说到cuda，并不是因为要学习cuda如何加速gpu，只是想说选择gpu最好选择支持cuda加速的gpu，也就是Nvidia的GPU（不确定其他牌子会不会有），也要注意即使是Nvidia的显卡也不是全都支持cuda加速的，所以必须要了解清楚。关于GPU和cuda还有很多可以深入了解的地方，这里就不细说了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对SplitV算子，对应代码中的tf.split()函数，它的功能是对tensor进行分割，这里我直接分开取tensor中的某一列，实现分割效果：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/7.png"><img src="image/7.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后为了保持维度一致使用了expand_dims函数。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面说了那么多，其实就是给了一个选择深度学习训练环境的建议，最后再给出我自己挑选的华为云规格：一张NVIDIA T4加上Ubuntu 16.04 server系统。说起来简单，但这真的很贵，贵得恐怖，所以以前自己学习的时候根本就不会想过了解gpu、cuda是什么，因为我根本没这个钱去接触这些东西。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在生成算子离线结构时出错，mind studio不会显示是因为什么算子问题而出错，而是输出一个log文件，所以我们需要利用这个log文件去定位出错的地方，再进行修改。Log文件内容很多，但是我们需要关注的是文件的最后部分，直接定位到[ERROR]位置：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/8.png"><img src="image/8.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以这个log文件为例，可以看到第一个ERROR显示BroadcastOutputTensor5D……Invalid dim，这里就可以初步判断，是模型进行到某一步的时候，广播操作出错了，而且是5维张量的广播操作出错，翻看atlas 500算子清单就可知道，其实atlas 500中的算子是不支持5维张量的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">继续看下一行ERROR，提到了node：Add，也就是说，是模型中的某一步5维张量的加法，因为进行加法的两个张量维度不一致，需要进行广播操作，但是atlas 500不支持这种5维张量的广播操作，所以就报错了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这时候，我们就可以回到原代码中查找模型中哪里进行了加法，也就是查找tf.add函数，但是往往这样找也会找到数个候选项，当然我们也可以逐个分析它们是不是5维张量的乘法，但是也可以利用ERROR上方的INFO信息，进一步判断报错的具体位置。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/9.png"><img src="image/9.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">需要注意的是这部分，它提到了一个对4位的张量进行的加操作，而4维分别是13*13*3*2，回到YOLO模型本身，13*13意味着feature map的cell，每个cell有3个anchor，2就有很多种可能，比如边界框的坐标，或者边界框的宽高等等，但是这里的信息也足够去判断，其实出错的地方是比较接近模型的输出的，然后就可以找到报错的位置了：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/10.png"><img src="image/10.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们计得的边界框坐标是相对于cell而言的，所以需要加上cell的左上角坐标才能得到相对于整幅图像的坐标，而这里因为两个张量维度不一致，就需要进行广播操作。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里再说明一下，虽然看到的张量是4维，实际上因为还有一个batch维，所以对box_center来说，它的张量尺寸应该是batch*13*13*3*2，而x_y_offset则是13*13*2（每个cell一个坐标）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">虽然atlas 500不支持5维张量的广播操作，但是它支持4维的，所以这里的解决思路就是先把x_y_offset拼接三次，把维度转化成13*13*3*2，然后对box_center、x_y_offset降维，转化成batch*13*13*6、13*13*6，这时候就可以直接进行广播加法，得到batch*13*13*6，最后再升维，变成batch*13*13*3*2:</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/11.png"><img src="image/11.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为Atlas 500不支持5维的操作，所以这种先降维操作后再升维的方法是很常用的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，转化模型的难点一个是定位报错的地方，一个是根据Atlas500的要求写代码，有些地方了解得不够深入，或许说得不够准确，欢迎指出。</div>
+
 
             </div>
 

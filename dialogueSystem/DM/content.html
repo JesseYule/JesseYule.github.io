@@ -96,45 +96,28 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Dialogue Policy Learning</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">对话管理简述</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对一个pipeline任务导向型对话系统来说，最重要的三个模块是自然语言理解、对话管理、自然语言生成，之前已经讨论过自然语言理解，这次就来谈一下对话管理，为了避免翻译上的偏差，接下来部分名词都直接用英语。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先思考一个问题，为什么一个对话系统需要对话管理，好像即使只有自然语言理解和自然语言生成也可以构成一个对话系统，确实如此，但这样的对话系统只能实现单轮对话，或者说，这样的系统是没有记忆的，比如一个订机票的系统，可能你刚告诉了系统你的目的地是北京，它下一句话又可能问你想飞去哪里，归根到底是因为你说的每一句话对系统来说都是独立来理解的，系统并没有综合分析历史聊天记录，而这就是对话管理的其中一个作用。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，对话系统具有Dialogue State Tracking和Dialogue Policy Learning两部分，在进一步讲解之前，先重新了解一下一个任务型对话系统的分析过程以及一些术语。我们输入到模型的语句称为observation，这是模型听到的内容，假设把一个男生看成一个对话系统，这时候他听到女朋友说"我没有生气哦"，首先模型会进行自然语言理解，分析出intent和slot，这里的分析只是比较浅层的分析，为了知道说这句话的人到底有没有生气，还需要联系上下文进行深入研究，这就是对话管理所做的，最终模型可能就分析出其实说这句话的人十分生气，这一层真实的意思称为state，有了state还需要确定出进一步的action，比如说这里模型经过分析确定action是"安慰她"，而不是"打她"这类不相关的action，明确了action是"安慰她"之后，模型就会进一步分析什么语句和"安慰她"这个action高度相关，进而通过自然语言生成得到最终回复"多喝热水哦"。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从上面的例子我们可以看到，模型在接收到"我没有生气哦"到回复出"多喝热水了"之间，做了两件事，一个是分析state，另一个是分析action，前者就是Dialogue State Tracking所做的，后者就是Dialogue Policy Learning所做的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步理解DST之前，需要先理解state的具体含义。简单来说，我们可以认为state就是包含了输入语句的intent和slot、上一时刻的state和action的综合语义（这里假设了当前对话最多和上一轮对话相关联），那么具体来说这个state到底是什么呢，事实上还是intent和slot（毕竟通过intent和slot就可以反映出语义），而且一般情况下我们说要维护更新state，更多情况下是指更新slot-value，比如说，订机票的系统，如果订一张机票需要的三个slot{出发地=？，目的地=？，时间=？}，在上一轮的对话中用户已经提供了出发地和目的地，那么这一轮系统就应该能在对话管理中及时更新相应的slot的value，同时确定当前的action是确定出时间的value，基于这个action，通过NLG模块生成这一轮系统的回复"请问什么时间出发？"</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">既然明确了DST的state还是指slot-value，那么对于DST其实需要做什么就不难理解了，答案就是把当前的输入的intent和slot、上一轮的state（slot）、上一轮的action作为输入，更新该轮的state（slot），实现的方法模型有很多，之后再详细讲解。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">DST主要是为了分析state，而DPL则是基于得到的state分析出action并且完成这个action，至于这个action是什么，我觉得涉及的范围其实挺广的，比如说对一个订机票的系统，这个action可以是根据用户需求在数据库中查询机票信息，可以是询问用户提供订机票所需要的信息，对一个知识问答系统，这个action可以是根据用户的提问在知识库中匹配答案，所以说，对于不同的系统，根据不同的业务和实际情况这个action做的东西都有可能不同。在实际中，好像会更多地采用强化学习的方法进行DPL，因为目前还没学习强化学习，等以后有所了解，会在这方面继续探究。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后简单总结一下，对话管理主要包含两个重要模块（实际可能还有其他模块，但这两个是最核心的），首先是Dialogue State Tracking，主要作用是基于当前轮和上一轮的对话，分析出当前用户真实的语义state，然后是Dialogue Policy Learning，根据state确定出系统需要处理的action，并完成这个action，把结果传给NLG模块，生成最终的回复。</div>
+
 
 
             </div>

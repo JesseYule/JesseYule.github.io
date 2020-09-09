@@ -96,48 +96,43 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">transformer</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">transformer公式推导</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在介绍self attention时也提到，用CNN、RNN处理序列数据的时候，无法很好地进行并行计算，同时也会存在信息的丢失，因而transformer就选择直接舍弃CNN、RNN，完全由attention机制构成。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">本文主要按照transformer对数据处理的流程，分析各个步骤transformer模型的处理细节和公式推导。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">学习一个模型，我觉得最重要的是首先要明白模型要做什么，以及它为什么这样做，对transformer来说，它本质上还是一个encoder-decoder（seq2seq）模型，在之前提到的常规seq2seq结构是由两个RNN（LSTM）加上注意力机制构成的，而现在transformer就是为了解决RNN在处理序列时的不足，而选择把seq2seq中的RNN结构也替换成attention。</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们来一个个分析transformer的结构，首先来回顾一下之前已经介绍过self attention，这里直接给出它的表达式：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}}V)$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，这里的self attention采用点积的方式计算相似度，主要是点积能转化为矩阵运算，计算速度更快，然而点积也有一个问题，当dk太大时，点积计算得到的内积会太大，这就导致softmax的结果不是0就是1，所以我们需要处一个根号dk进行缩放，这种归一化的手段在构建模型的时候非常常见。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们有一个句子，首先要做的就是embedding，一般来说可以使用预训练的词向量（比如Glove），把句子转换成向量。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但事实上，transformer不仅仅是用self attention那么简单，而是使用了multi-head attention，而实际上这可以说是self attention的升级版，它是由多个self attention构成：</div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MultiHead(Q,K,V) = concat(head_1, ..., head_h)W^O$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)$$</section></div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/2.PNG"><img src="image/2.PNG" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从上图的结构和公式就能看出，其实multi-head attention就是对同样的词向量，从多个角度（乘以不同的WQ、WK、WV得到多个Q、K、V）进行多次self attention，正如原来所说的，self attention之所以基于一个词向量构建出三个新的向量QKV，是为了在解决问题时根据目的更灵活地计算，而现在我们进行多个self attention，就可以理解成我们希望从多个角度去分析问题，得到不同的输出作为不同的理解，最后结合起来，或者说增强了模型捕获不同的信息的能力，所以我们就可以看到，multi-head attention最后也会把不同的self attention计算结果合并到一个张量中。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为transformer模型不像CNN、RNN那样可以分析序列的位置（顺序）信息，所以一开始我们要针对序列进行positional encoding：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$PE_p{(pos, 2i)} = sin(pos/10000^{2i/d_{model}})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$PE_p{(pos, 2i+1)} = cos(pos/10000^{2i/d_{model}})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从公式可以看出，位置编码会得到一段和词向量同样长度的位置编码向量，向量第2i个元素为正弦函数，第2i+1个元素为余弦函数，比如pos=3（句子的第三个词），d_model=128(词向量长度）：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$[sin(3/10000^{0/128}), cos(3/10000^{1/128}), sin(3/10000^{2/128})...] $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">不同pos的词向量会得到不同频率的正弦余弦函数生成的位置编码向量，因为和词向量长度相同，就可以直接叠加到词向量上。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">理解了multi-head attention之后，我们就可以来看看完整的transformer结构了，这里我们可以对比一下常规的encoder-decoder结构：</div>
-                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
-                    <picture>
-                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
-                    </picture>
-                </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，原先的encoder层我们会采用LSTM来分析序列数据，而在transformer中，我们则换成multi-head attention，通过multi-head分析了词向量之后，有一个add&norm结构，其实就是残差连接（主要是增加一个x，这样求偏导的时候就避免了梯度消失）和layer normalization（归一化），再传入到一个position-wise feed-forward networks（position-wise的意思是对一个个词的multi-head attention输出，而不是一整个句子的multi-head attention输出进行分析），主要作用是提取特征和降维，这样的一个multi-head加上一个networks就构成了encoder中的一个sub-layer。而实际上我们可以在encoder中堆叠多个这样的sub-layer，从而更好地从句子中提取信息。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">完成了positional encoding，序列就传送到transformer的encoder层，encoder层包括多个encoder（一般6个），一层encoder的输出作为另一层encoder的输入，最后的输出传送到decoder。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在原先的decoder中，我们如果要输出一个y_i，就需要历史时刻的输出和c的信息，同样，在transformer中也是需要来自encoder的信息和历史时刻的output信息，首先我们可以看看上一个时刻的output，同样会经过一个masked multi-head attention处理，masked的意思就是只处理过去的输出，避免不小心处理了未来的数据，再和encoder的输出一起输入到一个multi-head attention中，但是这里的attention结构就不再是self-attention，而是之前介绍的普通的attention结构，也就是针对两个句子（encoder输出和时刻i-1的output），分析相似度并计算输出，最后再输入到network中进行分析，并通过softmax等结构得到时刻i的输出。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">encoder包括一个multi-head attention和position-wise feed forward network。multi-head attention就是多个self attention：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Attention（Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}}V)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所谓self attention，就是对输入自身进行注意力计算，首先，句子中的各个词向量并行输入到multi-head，然后每个词向量会进行线性变换，生成三个新的向量QKV，之后再进行注意力计算。所谓multi-head，就是对每个词向量，会生成多组QKV，进行多次的注意力计算，最后再将结果合并在一起，并通过权重矩阵（WO）把维度调整到和原输入一样：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之所以要把最后的输入通过权重矩阵调整为和原输入一样，是因为后面的feed forward是逐个位置计算的，也就是说如果heads不同，输出维度也不同，就要每次调整feed forward的超参数了，所以这里选择每次把multihead的输出调整为和原输入一样。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过上面的分析，就可以看到本质上来说transformer就是一个encoder-decoder模型，主要就是把RNN、CNN结构替换成multi-head attention。</div>
-
-
-
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">multihead的输出不是直接输入到feed forward，而是首先经过残差连接和层级归一化，这两个操作在feed forward的输出也有用到，主要避免梯度消失等问题：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$LayerNorm(x+Sublayer(x))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Sublayer就是指multihead或者feed forward这些运算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来就轮到feed forward，一般会使用两个线性变换和一个ReLU激活函数</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$FFN(x) = max(0, xW_1 + b_1)W_2+b_2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我认为feed forward的主要作用是降维和特征提取。另外要注意的是，feed forward在同一层是参数共享的，也就是不同位置的词向量都是输入到同一个feed forward网络，但是不同层就不共享参数，顺带一提，之前的multihead中不同的head很明显也是参数不共享的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于decoder来说，一个不同点是decoder会接受历史时刻的输出作为输入，这时候就要求模型在训练时不能不小心读取了未来时刻的序列数据，我们通过sequence mask来实现。主要是产生一个上三角矩阵，上三角全为1，下三角全为0，作用到序列中，就可以达到我们的目的了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基本上这些就是transformer中涉及到的细节，模型具体怎么运作、不同层不同函数的功能之前的文章也有详细叙述，这里不再复述。</div>
 
             </div>
 

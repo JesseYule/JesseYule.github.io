@@ -96,37 +96,80 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">Context-Free Grammars</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">自然语言理解概述</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在文章的开头，我必须说明，自然语言理解的定义、理论在网上有太多不同的说法，我在这里给出的是我个人认为比较好理解、能梳理清楚各个子领域的一种概述，如果有哪里出错了麻烦指正。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所谓自然语言理解，就是希望机器能像人类一样，具备理解语言的能力，就像另一半说没有生气，到底是真的没有生气还是气到肺都炸了，这就需要很高的语言理解能力了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体来说，我觉得自然语言理解要解决两个问题，第一个是理解什么，第二个是机器怎么理解。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于理解什么，主要有三点，句子的领域（domain）、意图（intent）和细节信息（slot，虽然应该翻译成槽，但翻译成细节或者属性或许更好理解），对应的就是自然语言理解的三个重要子领域：领域分类、意图识别、属性提取（槽填充）。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.jpg"><img src="image/3.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实domain、intent和slot我觉得是一个句子不同层次的信息，首先是domain，它说明了一个句子属于什么领域，这是一个很大的概念，比如说"你知道昨天湖人拿了总冠军了吗"这句话就属于篮球领域，"Red Velvet的Irene太美了"这句话就属于娱乐圈领域，确定一个句子的领域的一个作用在于缩小分析范围，比如说你对一个订机票的系统说"湖人总冠军"，它通过确定这句话的领域和订机票无关，就不需要进一步分析这句话想订飞去哪里的机票、具体时间等细节信息了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于intent，就是更具体的内容，还是以订机票为例，比如说"我想买一张上海飞北京的头等舱，下午5点出发，国航的"，首先系统会分析句子的领域属于机票相关领域，然后就会进一步分析句子的意图，看看你想订机票还是退机票还是换位置什么的。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">分析之后发现你想订机票，就会进一步分析你提供了什么信息，也就是slot，这是语义信息的最小粒度，对这句话来说，"我"、"想"、"买"、"一张"等词都有相应的语义成分，但是和订机票这个意图相关的信息，只有"上海" 、"北京"、"头等舱"、"下午5点"、"国航"，其中"上海"对应的标记就是"出发地"，所以说，实际上槽填充就是一个序列标注问题。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/4.jpg"><img src="image/4.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，上图的表格就把句子的意思完整表示出来了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到这里已经介绍完自然语言处理到底理解什么，下一步就是介绍机器到底怎么去理解我们所提到的domain、intent和slot。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">让机器学会"理解"，其实就是所谓的语义表示，要知道机器只能处理数字，所以其实我们能做的只是通过不同的方式，把语言转化为数字。一般来说，语义表示有三种，分布式语义表示（distributional semantics representation)、模型论语义表示（model-theoretic semantics representation）和框架语义表示（frame semantics representation）。分布式语义表示就是之前提到的word2vec、glove之类的词嵌入，把词和句子用高维向量表示，模型论语义表示这里暂不细说，而对于框架语义表示，其实上面订机票的例子用的就是框架语义表示，把整个句子分成了三个层次，表示domain、intent、slots，当然我们也可以划分成其他各种各样的形式，根据实际情况构建出不同的框架。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么如果订机票这个例子用分布式语义表示会有什么不同吗，比如说分析domain，对框架语义表示来说，"我想订几张机票"和"我想退一张机票"都属于"机票"领域，domain都用"机票"表示，所以两者的domain是完全一致的，可是如果用分布式语义去表示，直接分析出句子的domain向量，就不会完全相同了，比如说可能一个是（0，0，0.8），另一个是（0，0，0.75）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">来到这里，已经讲清楚了两个问题，总结一下，第一，自然语言理解要理解分析的是一个句子的domain、intent和slot，第二，我们可以用分布式语义表示、模型论语义表示和框架语义表示去表示分析的结果。接下来就剩下最后一个问题了，可以通过什么方法模型实现上述所说的内容。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从应用的模型来看，自然语言理解经历了三个阶段，基于规则的方法、基于机器学习和基于深度学习，对于机器学习和深度学习，主要都是SVM、神经网络那些模型了，只是如何结合起来应用而已，后面我会继续详细介绍深度学习模型和自然语言理解的结合应用，而在本文则继续简单看一下基于规则的方法（因为现在好像不常用，这里简单说一下就过了）。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于基于规则的方法，我主要简单谈一下CFG（context-free grammar）的思想，看看如何用CFG实现框架语义表示，找出句子的domain、intent和slot。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到一种框架是三层分层结构，而CFG采用的则是语法树结构，以前我们可以根据句子中每个词的词性构建语法树：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中S表示句子，NP、VP、PP是名词、动词、介词短语（短语级别），N、V、P分别是名词、动词、介词。可以看到，其实从语法的角度，也把句子分成了句子级、短语级和词级，所以相应的我们用domain、intent、slot替换这三个等级，就可以得到新的语法树：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.jpg"><img src="image/2.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">通过学习标注好的数据，CFG可以推导出一个句子的语法结构，从而找出句子的domain、intent和slot，关于CFG的详细过程这里暂不细说。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这种基于规则的方法虽然可以推导出句子的语法结构，但是因为词的多义性，结果未必准确，从语法的角度来说，词的多义性就是一个词的词性不同，意思也完全不同，比如情态动词的can表示"可以"，可是名词的"can"表示罐头，这是传统语法的情况。而像我们上面那种自定义的模型，比如说有这么一个句子"我想飞去上海，而不是北京"，模型就有可能把上海预测成"from city"，把北京预测成"to city"。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从根本上来说，基于规则的方法不完美，不仅仅是因为词的多义性之类的问题，语言变化多端，不同句子有不同意思，甚至同一句子在不同场景下都会有不同的意思，即使能制定再多的规则，比如搞出一套非常复杂的语法系统，也无法把语言的多样性分析透彻，所以到后来，基于规则的方法就慢慢被机器学习和深度学习取代了。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再来谈谈自然语言理解的难点，第一个难点就是语言的多样性，比如说表达我爱你的时候，可以直白地说"我爱你"，也可以说"今夜月色真美"，对于后者，别说计算机，对人类来说，如果不知道这个典故谁又会知道这是在表白。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个难点是语言的歧义，和语言的多样性有点联系又不尽相同，可以这样说，多样性指不同的话可以表达同样的意思，而歧义则是同一句话可以表达很多意思，正如一开始说的"我没有生气"，到底是生气还是没有生气？</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个是语言的鲁棒性，意思是语言可能含有噪音，但是对语言的意思影响不大，比如说"今天天气真好"和"今天天气真tm好"，两句话完全一样的意思，但是机器就有可能觉得后者在说脏话。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第四个是语言的知识依赖，我觉得这个才是最大的难点，比如说这样一句话"菊花台真不错"，如果不知道菊花台是一首歌，就可能以为是一个地方名，或者一幅画，怎么理解知识，并且构建知识之间的联系，绝对是今后研究的热点。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第五个是语言的上下文，如何有效地利用上下文对于自然语言理解有着重大的意义。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到目前为止，已经大概介绍了自然语言理解到底需要理解什么、怎么理解、实现的方法以及相关的难点，后续也会进一步介绍相关的模型理论。</div>
+
+
+
 
             </div>
 

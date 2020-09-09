@@ -98,13 +98,13 @@
 
           <div class="p-lower">
           <div class="c-red-line c-slide-in u-animdel-100"></div>
-          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（三）：ARIMA</h2>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析教程（三）：ARIMA</h2>
 
 		  
 		   <div class="p-lower-kv">
             <div class="p-lower-kv__text">
               <div class="p-lower-kv__subtitle"> </div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">ARIMA模型又叫差分自回归移动平均模型，在学习这个模型之前，先依照顺序学习AR、MA、ARMA模型先。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">ARIMA模型又叫差分自回归移动平均模型，在学习这个模型之前，先依照顺序学习AR、MA、ARMA模型。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">AR（Autoregressive，自回归）模型，认为通过时间序列历史数据加上白噪声就可以预测当前时刻的数值。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
@@ -122,25 +122,25 @@
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">感觉很神奇是不是，怎么还能用误差进行预测，接下来就主要证明一下为什么我们可以用误差去预测未来的数据，首先看回一开始提到的AR模型：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = W_1 [Y_{t-1}, ... ] + e_t$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t-1 = W_2 [Y_{t-2}, ... ] + e_t-1$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t-2 = W_3 [Y_{t-3}, ... ] + e_t-2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_{t-1} = W_2 [Y_{t-2}, ... ] + e_t-1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_{t-2} = W_3 [Y_{t-3}, ... ] + e_t-2$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$......$$</section></div>
 
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设Y是一个无穷序列，然后用第二条式子带进第一条式子，第三条式子带进第二条式子，一直这样操作，最后，Y就消去了，只剩下误差项和参数，也就得到我们的MA模型了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设Y是一个无穷序列，然后用第二条式子带进第一条式子，第三条式子带进第二条式子，一直这样操作，因为Y是无穷的，所以我们可以近似地认为，Yt可用白噪声的线性组合表示，也就得到了MA模型了，注意，Y是无穷序列这个假设是必须的，不然代到最后，Y0没办法消去，我们就没法完全用白噪声表示Yt了。个人认为，从另一个角度来说，Y是无穷序列的话，也可认为时间太过久远的序列对预测作用不大，所以只用较新的白噪声足以用于预测。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">至于什么是ARMA模型，其实就是把AR模型和MA模型加在一起：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + ... + \beta_p Y_{t-p} + e_t  + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q}$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始我觉得有点惊讶，这样加一下又搞出一个新模型了，不过认真想一下还是有道理的，其实我们可以把ARMA看成AR和MA的线性组合，AR和MA分别提取时间序列的不同特征，最终构成一个更稳健的模型，这个思想有点向transformer中multi-head attention，CNN中也有类似的增加通道提取不同的特征最后再综合在一起分析的做法，总的来说这种建模方法还是挺好的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始我觉得有点惊讶，这样加一下又搞出一个新模型了，不过认真想一下还是有道理的，其实我们可以把ARMA看成AR和MA的线性组合，AR和MA分别提取时间序列的不同特征，最终构成一个更稳健的模型，这个思想有点像transformer中multi-head attention，CNN中也有类似的增加通道提取不同的特征最后再综合在一起分析的做法，本质上就是集成学习的思想，有兴趣的可以看一下我写的集成学习的文章。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后终于来到ARIMA（差分自回归移动平均）模型了，其实就是在ARMA的基础上在引入差分法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先什么是差分法，就是计算相邻观测值的差值，得到一个新的序列，差分法和时间序列分析有什么联系呢，之前我们也提到我们总是希望序列数据具有平稳性的，但有时候，数据或许不平稳，但是数据之间的差值具有平稳性，所以差分其实是一种或许能让序列变平稳的方法。</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以，其实ARIMA就是针对那些不平滑的数据，对他们进行差分计算后再利用ARMA模型建模分析，和ARMA相比，ARIMA会多一个参数d，表示使序列转化为平稳序列所做的差分次数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以，其实ARIMA就是针对那些不平滑的数据，对他们进行差分计算后，把他们转化为平稳序列，一次差分运算不行就做两次，一般最多做三次就足够了，最后再利用普通的ARMA模型建模分析，和ARMA相比，ARIMA会多一个参数d，他就是表示使序列转化为平稳序列所做的差分运算的次数：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=0, y_t = Y_t$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=1, y_t = Y_t-Y_{t-1}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=2, y_t = (Y_t-Y_{t-1} )- (Y_{t-1}-Y_{t-2})$$</section></div>
-                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当序列转化为平稳序列后，即可带进ARMA的公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当序列转化为平稳序列后，即可代入ARMA的公式：</div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_t = \beta_0 +  \beta_1 y_{t-1} + \beta_2 y_{t-2} + ... + \beta_p y_{t-p} + e_t  + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q}$$</section></div>
                 <div class="p-lower-kv__outline p-lower-kv__outline--col2">有时候我们会在网络上看到其他ARIMA的公式，其实他们就是引入了滞后算子和差分算子，本质上还是一样的，这里我没有这样做，主要还是觉得这样写的话会更容易理解。</div>
 
