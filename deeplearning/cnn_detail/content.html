@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">卷积神经网络细节分析</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前曾经简单介绍过cnn的原理，但终究只是感性的理解，如果只是简单调用CNN肯定是足够了，但最近在研究CNN、RNN、Transformer在提取特征的优缺点时，深深感觉到如果不从公式层面推导一次各个模型，是无法深入理解它们的不同之处的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先要分析的第一个问题是，卷积神经网络为什么不采用卷积运算而是用互相关运算。首先要知道，卷积层的作用是提取局部特征，卷积核需要遍历整幅图像才能获取局部信息，所以重点就在于卷积核的移动是怎么反映的，我们可以来看看卷积运算和相关运算的公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\int _{-\infty} ^{\infty} f(x) g(-x+t)dx$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\int _{-\infty} ^{\infty} f (x) g (x+t)dx $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，不论是卷积还是相关运算都需要积分，求不同的x的值再加起来，不同的x就反映了需要计算不同"位置"的x的结果，这是卷积核的一种"移动"。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是这个移动是一个方向上的，即使我们的输入是最简单的黑白图像，用二维矩阵表示，卷积核至少也需要在纵横两个方向移动：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">公式中还有一个t，我个人认为另一个方向的移动就是通过公式中的t实现的，这个t可以理解成偏移量，或者一个新的方向的遍历，这个偏移量只存在于函数g。对g来说，就意味着计算结果时，既需要考虑不同位置的x，也需要考虑不同的偏移量t，如果把函数g理解成图像，那么公式就意味着函数f（卷积核）在函数g的x和t两个方向上遍历计算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">至于为什么卷积运算采用相关公式而不是卷积公式，首先可以看出相关运算和卷积运算的区别就在于那个正负号，可以理解成函数的"翻转"，在其他领域这个翻转可能有其他目的，但是从卷积神经网络的分析过程来看，这个翻转没有特别的作用，所以在卷积神经网络中才一般使用相关运算。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再给出一个更容易理解的卷积运算公式，对于n*n的输入和m*m的卷积核，h是输出，可得到公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$h_{i,j} = \sum_{k=1}^m \sum_{l=1}^m w_{k,l}, x_{i+k-1, j+l-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上是关于相关运算和卷积神经网络中的卷积运算的关系的分析，接下来分析的就是如何用更加数学的形式去表示这个过程，或者说在实际编程中，我们是怎么实现卷积运算的。这里我举一个在书上看到的例子，假设我们有一个4*4的输入以及大小为3*3的卷积核，首先可以把输入展开为一维：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x^{(16,1)} = [x_{1,1}, x_{1,2},..., x_{4,4}]^T$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于卷积核构建一个新的矩阵：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$
+                    \begin{matrix}
+                    w_{1,1} & w_{1,2} & w_{1,3} & 0 & w_{2,1} & w_{2,2} & w_{2,3} & 0 & w_{3,1} & w_{3,2} & w_{3,3} & 0 & 0 & 0 & 0 & 0\\
+                    0 & w_{1,1} & w_{1,2} & w_{1,3} & 0 & w_{2,1} & w_{2,2} & w_{2,3} & 0 & w_{3,1} & w_{3,2} & w_{3,3} & 0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 & w_{1,1} & w_{1,2} & w_{1,3} & 0 & w_{2,1} & w_{2,2} & w_{2,3} & 0 & w_{3,1} & w_{3,2} & w_{3,3} & 0  \\
+                    0 & 0 & 0 & 0 & 0 & w_{1,1} & w_{1,2} & w_{1,3} & 0 & w_{2,1} & w_{2,2} & w_{2,3} & 0 & w_{3,1} & w_{3,2} & w_{3,3} \\
+                    \end{matrix}
+                    $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">看着有点复杂，但尝试乘一下就知道为什么矩阵是这个形式了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面只是一个例子，主要想说明的是虽然我们在程序中可以通过循环来进行卷积运算，但效率十分低下，所以我们才需要矩阵，当然pytorch、tensorflow的卷积运算肯定还有更多的优化，这里只是想简单介绍一下卷积运算的一种实现方法。</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

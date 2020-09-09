@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">word2vec</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了词袋模型，词袋模型是一种用向量表示句子的方法，像这样把一段文本转换成数值形式，就称为词嵌入（word embedding），除了词袋模型之外还有很多方法可以对文本进行转换，现在就来介绍另外一种非常著名的方法word2vec。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前就提到了，通过词袋模型表示句子并没有考虑到词与词之间的联系，同时需要注意的是，如果我们用词袋法表示一个词，就相当于独热编码的方法，会产生一个稀疏矩阵。而我们现在要介绍的word2vec，首先，它可以表示一个词，而且可以用一个远比词汇表小的向量去表示，另一方面，它也考虑了词与词之间的关系，总的来说，就是比词袋法好。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/word.jpg"><img src="image/word.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">word2vec的一个优点就是考虑了一个句子中词与词之间的关系，关于两个词的关系亲疏，word2vec从两个角度去考虑。第一，如果两个词意思比较相近，那么他们的向量夹角或者距离（比如欧几里得距离）是比较小的，举个例子，"king"用（0，1）表示，"queen"用（0，1.1）表示，那么他们的距离就是0.01，这就意味着两者是有很大关联的。第二，如果两个词意思比较接近，那么他们也有更大的可能出现在同一个句子中，甚至两个词可以相互替换句子的意思也不会改变。基于这两点，word2vec就提出了两种具体的语言模型：skip-gram模型和CBOW（连续词袋）模型。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/cbow.pbm"><img src="image/cbow.pbm" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先以skip-gram为例详细分析一下word2vec的思想。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一步是基于语料库构建词汇表（语料库就是句子集合，所以单词会重复，但是词汇表没有重复），比如我们从语料库中抽出10000个单词构建词汇表，然后会通过one-hot编码把单词表示成向量，这样每个单词都是一个10000维的向量，向量的每个维度的值只有0和1。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">把单词表示成向量之后，skip-gram就构建了这么一个语言模型，一个单词出现在一个句子中，那么这个单词就是和它的上下文有联系的，因此，我们可以通过一个单词以及语料库，推导它最可能的上下文，比如我们有单词"是"，同时我们的语料库有"今天"、"开心"、"星期一"，如果我们要推断"是"的前后文，很容易就能知道答案是："今天是星期一"。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">根据以上的语言模型，我们可以构建一个神经网络，它的输入就是一个单词的向量，输出就是词汇表中各个单词是前后文的单词的概率，一般来说，这个神经网络包含一个输入层、线性隐层（不含激活函数）、输出层（softmax函数）。通过训练我们的模型，我们就能得到一个能够通过一个词预测它的前后文的语言模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得我们最初的目标吗，我们希望构建一个词向量，能够表示词与词之间的关系，同时也不会过于稀疏，那么我们怎么从这个语言模型中得到我们的向量，答案就是神经网络中的隐层。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/skipgram.png"><img src="image/skipgram.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在解释为什么答案和隐层有关之前，我们先来想象一下，我们的神经网络计算输出的各个概率的时候，对输出层来说，它只考虑了上一层的输出作为输入，在这里，也就是隐层的输出，换句话说，假如我们的隐层输出一个300维的向量给输出层，它和我们最初的10000维向量，对于整个模型的输出是等效的，因为这个300维的向量就是最初的10000维向量经过线性变换得到的，所以，我们完全可以用这300维的向量，去表示最初的向量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为什么这个方法得到的向量会考虑到单词之间的联系，我们可以这样去考虑，假如有两个词，他们的前后文的非常接近，那么他们训练得到的向量应该也是非常接近的，比如"he"和"she"的前后文就可能非常相似，表示的向量也应该非常接近。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后，再从另一个角度去看待一下这个模型，现在我们有几个句子："他很好因为他帮助了我"、"我觉得他很有礼貌很好"，什么是"好"我们很难定义，但是通过"帮助"、"礼貌"等关键词就能反映出"好"这个概念，这时候我们就不再需要研究如何去定义"好"了，我觉得这也是为什么可以通过句子去表达一个单词的意思。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上是关于skip-gram的简单介绍，除了skip-gram，我们还有cbow模型，cbow就是从另一个方向构建的语言模型：通过前后文去推断目标词。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/detail.png"><img src="image/detail.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">模型的输入是前后文的各个单词对应的向量，输出是词汇表，每个元素都是对应的单词的概率，其实就是把skip-gram反过来，理解了skip-gram，cbow模型也就不难理解了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">不论是skip-gram还是cbow，我觉得它们的核心都在于构建一种单词和前后文之间的关系，然后不断的拓展，在模型的训练过程中逐渐完善这种单词与单词之间的关系，因为这种关系归根到底就是通过单词向量的距离和夹角反映的，所以最后，这两个模型都是得到各个单词在空间中的合理位置，就像最开始那副图。</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

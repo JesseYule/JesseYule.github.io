@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #ffffff ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">反向传播算法</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到神经网络在训练过程中需要根据预测输出和实际输出去调整权重和阈值，但是没有具体说明这个过程，在回归模型中我们往往会采用梯度下降法，这里介绍一种神经网络比较常用的方法，反向传播算法，本质上我觉得它还是梯度下降法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们采用实际输出矢量（actual output vector）和期望输出矢量（desired output vector）的欧式距离作为损失函数（一个简单例子）：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E_p = \frac{1}{M} \sum_{j=1}^M (y_{dpj} - y_{apj})^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们考虑一种最简单的情况，激活函数使用sigmoid函数，神经网络的隐藏层只有一层，包含两个神经元，最后就是一个包含一个神经元的输出层，再假设输入层有两个神经元（两个输入）：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们把两个隐藏层的神经元的表达式都写出来：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_1(x_1, x_2) = \frac{1}{1+e^{w_{11} x_1 + w_{12} x_2 +\theta _1}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_2(x_1, x_2) = \frac{1}{1+e^{w_{21} x_1 + w_{22} x_2 +\theta _2}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后把两个神经元的输出作为输出层神经元的输入，得到：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_{apj} = F_3(x_1, x_2) = \frac{1}{1+e^{w_{31} F_1(x_1, x_2) + w_{32} F_2(x_1, x_2) +\theta _3}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后我们得到了神经网络的输出的完整表达式，其中包含了输入x1、x2，以及各个权重w，事实上，这个比较复杂的表达式已经完整了表示了整个神经网络结构，如果我们把这个表达式代进损失函数里，就能得到一个包含了所有权重的损失函数的表达式，这时候，我们就可以利用梯度下降法的思想，通过损失函数对权重求偏导，得到权重的迭代公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$w_{ij} ^{new} = w_{ij} ^{old} - \eta \frac{\partial E_p}{\partial w_{ij}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">只要我们通过这个表达式更新权重，那么损失函数就会不断降低了。</div>
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

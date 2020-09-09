@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">LSTM</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">RNN的主要问题是在BPTT过程中会出现梯度消失或者爆炸，事实上，一般来说我们会更关注梯度消失的问题，其实梯度消失不仅仅是计算机精度造成的，我们也可以从这个角度来理解，从BPTT的推导我们知道，距离比较远的序列数据在当前时刻的BPTT计算时对应的参数指数较大，当参数小于1，就会导致比较旧的数据对于梯度更新的贡献十分少，这就相当于"忘记"了这些数据。所以，虽然我们也可以通过截断的BPTT避免梯度爆炸或者梯度消失，但是无法长期记忆这个问题没有得到解决，而长短期记忆网络（LSTM）正是针对这个问题而提出的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先以下是一个经典的LSTM结构图：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm1.jpeg"><img src="image/lstm1.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm2.jpeg"><img src="image/lstm2.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们一步步从零开始推导出这个结构。LSTM最初的想法就是，既然原来的RNN没有办法长期记忆，那么就想办法在模型中加一个模块用于长期记忆：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm3.jpeg"><img src="image/lstm3.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">为什么这个模块可以进行长期记忆，主要是因为它没有神经元，也就是不包含模型的参数，不会涉及到模型的反向传播，因而避免了之前提到的梯度消失等问题。这个模块主要就是一些数据（向量或者矩阵），或者形象一点说，就是模型的记忆内容、模型的信息。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在长期的记忆输入到模型之后，模型首先要做的就是分析有没有什么需要忘记，又有没有什么新的信息需要记住，首先，模型根据当前时刻的输入数据以及上一时刻的隐层输出，判断在长期记忆中是否有需要遗忘的信息：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm4.jpeg"><img src="image/lstm4.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当前数据以及上一时刻的隐层输出被输入到sigmoid函数，得到一个[0,1]之间的结果，最后再与长期记忆中的信息进行按位的乘法操作。这里的sigmoid函数就是整个模型的重点了，我们怎么理解它和记忆或遗忘之间的联系呢。首先，sigmoid的输出为0，就意味着我们需要完全舍弃之前的信息，1是代表着我们要完全保留之前的信息。所以，一个经过训练的模型，可以根据当前的数据输入以及历史数据，输入到sigmoid之后得到一个合理的数值，然后再与长期记忆进行运算，决定应该丢弃什么信息。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">决定了长期记忆中应该遗忘什么信息之后，第二步就是分析当前时刻有没有值得加入的新信息，这个信息就是我们原来的RNN的输出：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm5.png"><img src="image/lstm5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm6.png"><img src="image/lstm6.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，这里除了正常地以一个正常的RNN结构计算输出之外，同时再次利用一个sigmoid函数，分析当前的RNN输出，有多少部分是值得被长期记忆的，也就是说，并不是所有的信息都值得被长期记忆，这很重要，也很合理。得到了需要被长期记忆的重要信息之后，再通过按位加法添加到长期记忆中。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">此时，在长期记忆中，就包含了所有在当前时刻有意义的历史信息，以及新追加的有意义的信息，这时候，我们就可以把这部分数据输入到激活函数tanh中，计算输出：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/lstm7.png"><img src="image/lstm7.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，在图中的结构中，当我们计算了激活函数的输出后，还需要与sigmoid的输出做一次按位乘法，也就是说，我们最终的输出还需要进行一次筛选，或许是认为不是所有的输出信息都和本次训练相关。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">事实上，LSTM还有很多种不同的变体，但是我觉得LSTM的核心有两点，一个是整个模型包含长期记忆和短期记忆两条分支，第二点是使用sigmoid函数作为遗忘门，判断什么信息需要保留，什么信息需要舍弃，这才是基于原来的RNN实现的重大改进，而具体不同的结构，更多是因为不同的分析思路，实际上，人们经过对比发现，不同的变体在性能上不会出现十分明显的区别，只是针对某些具体的问题会有更优的结构。</div>
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

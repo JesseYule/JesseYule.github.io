@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（四）：AR模型详细分析（公式推导）</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前从比较浅的角度介绍了AR、MA、ARMA等模型，最近在课堂上发现其实还有很多细节可以深究。如果只是想要简单了解这些模型然后应用，我个人觉得之前的文章已经足够了，而如果有兴趣更深入地了解AR模型，这里会更多地从数学的角度进行分析展示。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先介绍一下滞后算子（Backward shift operator）和差分算子（difference operator）。对一段时间序列，滞后算子为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$BX_t = B(X_t) = X_{t-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">进一步定义二阶和三阶滞后算子：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$B^2X_t =  X_{t-2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$B^3X_t =  X_{t-3}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">差分算子：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\bigtriangledown X_t =  X_{t} - X_{t-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\bigtriangledown^2 X_t =  (X_{t} - X_{t-1}) - (X_{t-1} - X_{t-2}) = X_{t} - 2X_{t-1} + X_{t-2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">注意，滞后算子和差分算子存在关系：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\bigtriangledown  =  1 - B$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来先分析AR模型，之前介绍过它的公式可以表达为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + ... + \beta_p Y_{t-p} + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">改写beta_0：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\beta_0 = \mu - \beta_1 \mu - \beta_2 \mu - ... - \beta_p \mu $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以下就是见证奇迹的时刻了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t -  \beta_0 - \beta_1 Y_{t-1} - \beta_2 Y_{t-2} - ... - \beta_p Y_{t-p} = e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$(Y_t - \mu) - \beta_1 (Y_{t-1}-\mu) - \beta_2 (Y_{t-2}-\mu) - ... - \beta_p (Y_{t-p}-\mu) = e_t$$</section></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ \phi (B) (Y_t-\mu) = e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$ where \quad \phi (B) = 1 - \beta_1 B - \beta_2 B^2 - ... - \beta_p B^p$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上就是引入了滞后算子的AR模型表达式。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于AR模型的表达式，再看看AR模型的均值和方差，首先看看一阶AR模型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(Y_t) = \mu + \beta_1 ^t (E(Y_0) - \mu)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(Y_t) = \beta_1^{2t}[Var(Y_0)-\frac{\sigma^2}{1-\sigma^2}] + \frac{\sigma^2}{1-\sigma^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中sigma是白噪声的标准差。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体的推导过程这里为了不引起读者反感就省略了，有兴趣的可以在网上搜索相关资料，接下来，我们就可以通过期望方差公式，引出一阶AR模型平稳的条件：序列长度无穷以及beta1的绝对值小于1，我们可以看一下这种条件下期望和方差的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(Y_t) = \mu $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(Y_t) = \frac{\sigma^2}{1-\sigma^2}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">两者都是常数，满足平稳的条件。因此这就是一阶AR模型的平稳条件。那么对于高阶的AR模型呢，事实上没有那么简单，这里直接给出判别条件：AR模型是平稳的当且仅当以下方程的根z_i(i=1,2,...,p)的绝对值都大于1：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\phi(z) = 1 - \beta_1 z - \beta_2 z^2 - ... - \beta_p z^p = 0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，所有解都落在解平面的单位圆外。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果用这个定理判断一阶AR模型，如果z的绝对值大于1，就以为这beta_1的绝对值小于1，故模型是平稳的。</div>
+
+
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

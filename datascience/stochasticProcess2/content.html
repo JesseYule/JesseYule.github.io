@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">随机过程（三）：连续时间的马尔可夫链</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们介绍了离散时间离散状态的马尔可夫链，这次就主要来谈一下连续时间的马尔可夫链，有时候也称为Markov Jump。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在开始之前，先说明对于齐次马尔可夫链，因为转移概率不会随着时间变化，所以有一种简化的写法：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m) = p_{ij}(0，m)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前我们谈马尔可夫链的时候还没有讲它的计算，我把它放到这里来讲，就可以对比一下离散时间和连续时间的马尔可夫链在计算上的区别了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">计算马尔可夫链的状态转移，如果是一次演变，那么在转移矩阵直接找对应的概率就行，假如是两次演变，就需要注意一下了，因为我们只需要经过两次演变从状态i到达状态j，至于第一次到达哪里是没关系的，所以我们需要考虑所有的情况，把概率加起来：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{k \in S} p_{ik}(m,m+1) p_{kj}(m+1,n)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中n=m+2，对于n>m+2的情况，有：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{ij}(m,n) = \sum _{i_1,...,i_l \in S} p_{i,i_1}(m,m+1)...p_{i_l,j}(n-1,n)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上式的意思就是其实就是把m到n中每一步所有可能的状态转移都计算一遍最后再加起来，而这条公式也就是Chapman-Kolmogorov equation。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这部分还是很好理解的，接下来我们就来看看时间连续的情况，其实时间连续带来最大的不同就是我们不能像之前那样定义某一时刻到下一时刻的转移概率，因为现在时间的间隔是无穷小，所以就引出了一系列新概念。注意，为了不展开太多，下面的讨论都是假设状态i不等于状态j。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个是transition rate：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\mu _{ij} = lim_{h \to 0} \frac{p_{ij}(h)}{h}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出transition rate就是对原来的转移概率的求导，类似于速度和速率之间的关系，可以看成瞬时转移概率的一个反映，由transition rate进一步可构建出intensity matrix：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$A(t) = ( \mu_{ij}(t))_{k*k}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面两个概念都是转移概率和转移矩阵在连续时间的马尔可夫链的引申。可以看出，当时间连续的时候，我们的定义、计算都应该调整为瞬时，也就是进行微分，所以对于Chapman-Kolmogorov equation也是如此，我们定义，Kolmogorov’s forward differential equation：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} p_{ik}(t) \mu _{kj}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">同时也有Kolmogorov’s backward differential equation：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\frac{d}{dt}p_{ij}(t) = \sum _{k\in S} \mu _{ik} p_{kj}(t) $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出形式上还是Kolmogorov equation，主要在于对前面的p还是后面的p微分。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">解这个方程有几种方法，Triangularisation、Matrix eigenvalues and eigenvectors、Linear differential equations，这里暂不详细说了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">关于连续时间的马尔可夫链，还有一些内容值得探讨。第一个是occupancy probability：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_{\overline {ii}}(x, x+t) = Pr(Y_{x+s} = i:0\leq s \leq t | Y_x = i) = e ^{\int _x ^{x+t} \mu_{ii}(s)ds}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从公式上来看occupancy probability表示在时间t内一直状态i的概率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是residual holding time：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Pr(R_x > t| Y_x = i) = p_{\overline{ii}}(x, x+t)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，Rx表示从时间x到下一次状态转移的时间间隔。这个等式也不难理解，一直保持这状态i可以理解成状态一直没有发生转移，即Rx不可能小于等于t，从极限的角度来看，比如说t=1，保持状态i的概率等于1，那么发生下一次状态转移的时间大于t=1就是一个必然的事件，也就是概率等于1等于时间t内保持状态i的概率。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个是holding（waiting） time：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Pr(W_x(i) > t| Y_x = i) = p_{\overline{ii}}(x, x+t)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中W_x(i)指从时刻x进入状态i开始处于状态i的完整时间，感觉这个概念和residual holding time有点像又不是完全一样，holding time针对完整的处于状态i的时间，而residual holding time则是针对剩余的时间。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从连续时间的马尔科夫链其实也可以转化为离散时间的马尔科夫链，因为并不是每一个时刻状态都发生转移，所以我们可以定义Wn为从n-1到n次状态转移间隔的时间，并进一步定义：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\widetilde Y_n = Y_{W_1 + W_2 + ... + W_n}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这里也不难理解，其实就是把发生状态转移的时刻抽出来，和状态一起构成一个新的随机变量族，这时候这个随机过程过程就变成了离散时间的马尔科夫链，并称他为jump chain，值得注意的是，这是针对time-homogeneous Markov jump process做的转换。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+
+
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

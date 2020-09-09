@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">YOLOv1</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前提到的R-CNN，需要先找到可能包含物体的框，然后进行前背景分类，消除重叠框，进行边界框回归和分类，这个过程就十分繁琐，速度很慢，虽然准确率不错，但如果想要实现实时的目标检测就很难了，于是接下来就介绍一下速度较快的YOLOv1（you only look once）系列模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来简单介绍一下YOLOv1的思想，我们先来想一下，我们看一幅照片的时候，是不是扫一眼，找到感兴趣的地方（目标），然后再从照片的某个位置开始看的，也就是说，其实人类确定目标和确定目标的范围是一个十分迅速且同时进行的过程。当然，回想一下faster R-CNN，其实它也是希望先找出region proposal，再分析region内保不包含目标，可是利用RPN找region的过程更像是学习大量的图片，记住了不同图像的目标可能出现在什么位置，然后遇到了一幅新图像，就去可能出现目标的区域验证一下，这样不是说不行，但是就麻烦耗时间了，所以R-CNN速度就慢了，但是我觉得它的这个方向还是可以借鉴的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">那么YOLOv1是怎么做的呢，第一，最重要的是YOLOv1选择直接输出边界框的信息和分类结果，而不是先分析边界框再分析分类结果，把two stage变成了one stage，这是YOLOv1速度提升的原因，第二，既然YOLOv1的输出是同时输出边界框和分类结果，如果我们的分析对象还是整副图像，那么就要求模型具有十分厉害的特征提取能力，才能分析出一张图像具有多少个目标，每个目标在哪里了，所以YOLOv1就简化了一下，不让模型分析整幅图像，而是把图像分成了s*s个区域，一个一个区域进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">具体我们可以先看看YOLOv1的模型，再分析它是如何做到把图像分成s*s个区域的：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/1.webp"><img src="image/1.webp" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从上图我们可以看到，假设图像输入尺寸为448*448*3，最终特征图变成了7*7*30，通过卷积运算，就把图像分成了7*7个区域，每个区域用一个长度为30的特征向量表示，这时候，我们就可以利用这个特征向量，分析该区域的边界框和分类结果了，比如说，可以利用全连接层分析，最后输出边界框的左上角坐标xy，宽高wh，以及各个类别的概率值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面这样做其实是还不够的，回想一下我们把图像分成了7*7个区域，那么每个区域都会预测出边界框以及分类结果，可是我们总不能把这49个结果都输出吧，所以模型还需要学会判断，到底哪个区域的输出是正确的，是包含目标的，就保留，其余的一律舍弃。怎么让模型学会识别呢，就是让计算每个区域的置信度，设置一个阈值，置信度超过阈值就保留这个区域的信息，低于阈值就舍弃。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以我们再来看看这个置信度是怎么计算的：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$confidence = Pr(class) * IoU$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">Pr(class)就是目标落在区域内的概率，训练的时候，这个要么就是1要么就是0，后面的IOU则是预测的bounding box和真实的之间的IoU。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">现在再来考虑一个问题，一个目标可能比较大，占据了多个区域，假设每个区域预测一个边界框，然后这个目标占据了五个边界框，可能最终模型就会输出五个十分接近、重叠度很高的边界框，所以我们就需要非极大抑制，去除重复的边界框，然后就可以得到最终的输出了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后我们再回顾一下YOLOv1，他把图像分成是s*s个区域再进行分析，每个区域可以预测多个边界框，但是只能分析一个目标类别，也就是说，假如一个区域内存在两个不同类别的目标，它是识别不出来的，这就意味着YOLOv1对小目标的识别效果并不好，所以后期也从这个问题出发进行改进。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">另一方面，虽然一开始说把图像分成s*s再进行分析，但其实因为卷积运算的特性，最后得到的s*s的区域之间也是相互联系而不是完全分隔开的，或者说，我们在分析某一个小区域的时候，也附带了整幅图像的信息，这就是YOLOv1最大的优点，正因为能利用全局信息，所以YOLOv1也更不容易在背景上预测出错误的目标信息。</div>
+
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

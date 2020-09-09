@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">CNN, RNN, Transformer关于特征提取的对比分析</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在自然语言领域，不论是什么问题，首先都会有一种比较主流的操作，就是先对输入基于预训练的词向量做embedding，再用一个结构（特征提取器）结合上下文去做多一次embedding，这样得到的词向量，就可以有效地反映出自身的含义，以及在句子中与其他词之间的联系了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">即使特征提取器五花八门，但总的来说可以认为都是基于CNN、RNN、transformer的改进版本，所以他们或多或少都有着这几个模型的优点和缺点，这里就来分析对比一下这几个模型在embedding过程中的优缺点。其实主要是缺点，因为我个人觉得模型的上限受到很多因素的影响，但是一些模型的结构会导致一些根本的缺点，这才是目前我们需要关注的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是RNN，为什么先分析RNN，主要是因为它是最早在NLP领域爆红的深度学习模型，同时也是现在越来越不受重用的模型。一开始，RNN应用到NLP是因为它本身的循环结构，使得它天生就具备分析位置信息的能力，同时，也可以处理不定长度的序列，这些都是它独一无二的优点。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可是随着其他模型的发展，越来越多的模型拥有和他相仿的优点，反倒是他的缺点慢慢被放大。第一，是它的短期记忆，在反向传播过程中，模型一层一层地沿着各个时刻的隐层输出传播，从而调整各个参数，当序列过长，梯度更新过程中衰减较大，就会导致梯度消失，或者说过去太久远的信息无法有效参与到模型学习。虽然也有改进版本的LSTM和GRU，但只要不改变它的循环结构，就终究只能缓和这个缺点，并没有彻底解决。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二点是因为RNN必须按顺序计算，如果没有计算出上一时刻的隐层输出，就无法计算下一时刻的隐层输出，所以无法并行计算，在目前模型都偏向于更深、更多参数的趋势下，RNN的这个缺点更使得它无法成为主流，除非改变RNN的这种循环结构，可是改变了这种循环结构它也不能算是RNN了，所以这就是RNN的根本问题。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们来看一下CNN，虽然之前一直说它更多被用来做图像处理，但自从2014年首次引入到NLP领域后，也慢慢火了起来。一般来说，一段句子经过embedding后，就会变成一个尺寸为len(sentence)*len(emb)的矩阵，也就是句子的长度乘以词向量的长度，因此CNN就可以把文本看成图像那样处理了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">和图像处理一样，CNN通过卷积核从文本向量中提取特征，一个d*k大小的卷积核从第一个词开始，从前往后从上往下遍历。可以看出，卷积核能捕获到多少特征，和卷积核的大小有关，本质上就是一个n-gram片段信息，n的大小就决定了能捕获间隔多远的距离，那么是不是卷积核越大越好，事实上实验证明了，卷积核相对小一点，卷积层深一点，模型的效果会更好。这里我再详细解释一下，比如说现在有一个距离为5的特征，如果我们采用大小为3*3的卷积核，那么单层卷积层是无法分析出这个特征的，可是我们来看看多层的卷积层会怎样：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.jpg"><img src="image/1.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以说，CNN如果能做到足够深，那么理论上它是可以捕获远距离的特征，同时也可以高效地进行并行计算。可是现实并没有那么美好，不然就没有transformer的事了，实验结果显示，似乎更深的层数并没有带来显著的效果改善，一方面是因为目前深层网络参数优化手段依然不足，另一方面是池化层的问题，我们可以想象一下，如果我们使用了池化层，比如最大池化，选择最大的值抛弃其他值，这就丢失了位置信息，这又是一个严重的问题，所以目前如果没有特别的需求，CNN在NLP中是不采用池化层的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">综上所述，CNN和RNN相比，并行计算能力更强，对于改进版本的CNN也能有效地保留位置信息，可是对远距离的特征捕获能力相对较弱，但这是可以慢慢改善的，所以目前CNN的各种改进版本越来越多，和RNN相比越来越火。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后要介绍的就是目前最流行的Transformer，首先，它有很多优点，并行计算能力强，通过自注意力提取不同词之间的特征，计算效率十分高，也解决了短期记忆的问题。看起来，他好像已经具备了RNN和CNN的所有优点了。当然，transformer也有他的缺点，那就是注意力机制带来的运算量，特别是处理长序列的时候，如果要对每个词都进行一次自注意力运算，那么计算复杂度就会非常大，所以也看到最近提出了一些动态自注意力模型等等的新模型，就是针对计算复杂度这个问题提出的改进方案。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，这三个模型并不是各有优劣，而是transformer目前在各方面来说都是较优的选择，CNN通过改进有可能进一步和transformer相抗衡，当然只是有可能，而RNN，就目前来看，估计是很难翻身了。而对我来说，我目前是更希望能够在transformer中融入CNN或者RNN，作为encoder中的一个模块，一方面目前已经有这类研究，且实验证明了确实有一定的改善，另一方面，在还没有提出突破性的模型之前，或许这是少数有可能有成效的研究方向。</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（三）：ARIMA</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">ARIMA模型又叫差分自回归移动平均模型，在学习这个模型之前，先依照顺序学习AR、MA、ARMA模型先。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">AR（Autoregressive，自回归）模型，认为通过时间序列历史数据加上白噪声就可以预测当前时刻的数值。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先什么是白噪声，他也是一段序列{e_0, e_1, ..., e_t}，需要满足条件：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(e_t)=0$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Var(e_t)=\sigma^2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cov(e_t, e_{t+k})=o $$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">个人认为，它就相当于线性回归模型中的随机误差项。再看看AR模型的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + ... + \beta_p Y_{t-p} + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，这就是一个以时间序列作为自变量的多元线性回归模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后是MR（moving average）模型，这个模型比较神奇，他不用历史数据进行预测，反倒是利用历史预测的误差进行预测：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = c + e_t + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中e_t就是白噪声，我看到有些公式是写成减去白噪声的线性组合，不过都一样，反正参数的正负可以改变的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">感觉很神奇是不是，怎么还能用误差进行预测，接下来就主要证明一下为什么我们可以用误差去预测未来的数据，首先看回一开始提到的AR模型：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = W_1 [Y_{t-1}, ... ] + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t-1 = W_2 [Y_{t-2}, ... ] + e_t-1$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t-2 = W_3 [Y_{t-3}, ... ] + e_t-2$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$......$$</section></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设Y是一个无穷序列，然后用第二条式子带进第一条式子，第三条式子带进第二条式子，一直这样操作，最后，Y就消去了，只剩下误差项和参数，也就得到我们的MA模型了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">至于什么是ARMA模型，其实就是把AR模型和MA模型加在一起：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + ... + \beta_p Y_{t-p} + e_t  + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始我觉得有点惊讶，这样加一下又搞出一个新模型了，不过认真想一下还是有道理的，其实我们可以把ARMA看成AR和MA的线性组合，AR和MA分别提取时间序列的不同特征，最终构成一个更稳健的模型，这个思想有点向transformer中multi-head attention，CNN中也有类似的增加通道提取不同的特征最后再综合在一起分析的做法，总的来说这种建模方法还是挺好的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后终于来到ARIMA（差分自回归移动平均）模型了，其实就是在ARMA的基础上在引入差分法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先什么是差分法，就是计算相邻观测值的差值，得到一个新的序列，差分法和时间序列分析有什么联系呢，之前我们也提到我们总是希望序列数据具有平稳性的，但有时候，数据或许不平稳，但是数据之间的差值具有平稳性，所以差分其实是一种或许能让序列变平稳的方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以，其实ARIMA就是针对那些不平滑的数据，对他们进行差分计算后再利用ARMA模型建模分析，和ARMA相比，ARIMA会多一个参数d，表示使序列转化为平稳序列所做的差分次数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=0, y_t = Y_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=1, y_t = Y_t-Y_{t-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d=2, y_t = (Y_t-Y_{t-1} )- (Y_{t-1}-Y_{t-2})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当序列转化为平稳序列后，即可带进ARMA的公式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_t = \beta_0 +  \beta_1 y_{t-1} + \beta_2 y_{t-2} + ... + \beta_p y_{t-p} + e_t  + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">有时候我们会在网络上看到其他ARIMA的公式，其实他们就是引入了滞后算子和差分算子，本质上还是一样的，这里我没有这样做，主要还是觉得这样写的话会更容易理解。</div>
+
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

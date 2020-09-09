@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">CNN发展史简述</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">相信很多人和我一样，在学习深度学习的时候会发现五花八门的各种模型名称，搞到头皮发麻，所以这次就打算简单介绍一下各种CNN的改进版本，在后续会对部分模型做详细分析介绍。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个要介绍的是LeNet，诞生于1998年，可以说它就是我们入门时学习的卷积神经网络，包含了最基本的卷积层、池化层、全连接层。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是AlexNet，和LeNet相比，使用了ReLU作为激活函数（验证了效果在较深网络超过了sigmoid，成功解决了sigmoid在较深网络的梯度弥散问题）；使用Dropout、Data augmentation等方法防止过拟合；使用重叠的最大池化而不是较常用的平均池化，避免了平均池化的模糊化效果；提出了LRN层，对局部神经元的活动创建竞争机制，使得其中响应比较大的值变得相对更大，并抑制其他反馈较小的神经元，增强了模型的泛化能力。这些改进使得网络层数得到进一步加深（5个卷积层+3个全连接层），别看只是八层，这里已经包含了6000万个参数和65万个神经元了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.jpeg"><img src="image/1.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从整个模型来看，在前几个卷积层，参数量并不多，如果换成全连接，那么参数量和计算量就会变得十分可怕了，这就是卷积层最大的作用，通过较小的参数提取有效的特征，而且从实验结果来看，去掉任何一个卷积层都会导致模型性能大幅度下降。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三个是VGG-Net，和AlexNet相比只是进一步加深层数（16－19层），在结构上并没有特别的创新点。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第四个是GoogLeNet，主要创新点是提出了Inception结构，可以看到其他CNN都在想办法让层数变深，但是GoogLeNet基于Network in Network的思想，对卷积核进行改进，将原来的线性卷积层（linear convolution layer）变为多层感知卷积层（multilayer perceptron），使得卷积核具有更强的特征提取能力。同时使用全局平均池化层（即将图片尺寸变为1´1）来取代最后全连接层，去掉了全连接层使得参数大量减少，也减轻了过拟合。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第五个是Resnet，通过引入残差连接使得模型层数进一步加深：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3.png"><img src="image/3.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后一个是DenseNet，它提出了密集连接的概念，也就是网络结构中任意两层之间都有直接连接，每一层的输入都是前面所有层的输出的并集，密集连接缓解了梯度消失问题，加强了特征传播，极大减少了参数量。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面介绍了六个比较著名的CNN模型，可以看出，其实CNN的发展主要还是以增加层数为目标，主要的原因是卷积核只能提取局部特征，针对远距离特征，在不改变卷积核大小的情况下，只能通过加深模型层数，在更深的卷积层中对提取远距离特征，如下图所示，对于一个距离为5的特征，假如使用大小为3的卷积核，最起码要有两层卷积层才能覆盖到，而对于更远距离的特征，同样道理，就需要更深的卷积层才能覆盖到了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/4.jpg"><img src="image/4.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺带再说明一下，为什么CNN需要做那么多改进才能使得层数加深，或者说，为什么普通的深层CNN难以训练，其实这个应该不仅仅是CNN遇到的问题，目前神经网络很多时候都会遇到一种奇怪的情况，就是层数加深的过程中，一开始确实越深越好，可是深到一定程度，模型的效果就遇到瓶颈甚至下降了，其实原因有很多，比如梯度消失梯度爆炸，ReLU、残差连接、密集连接可以缓解这种现象，比如过拟合，可以通过Dropout、全局平均池化层来改善。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以总的来说，CNN需要深层，更需要聪明地深层，有一种说法我觉得挺好的，神经网络本身的无限可能性让模型走得太远，以至于已经忘记了最初出发的目的，所以才需要人类时时去提醒。</div>
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

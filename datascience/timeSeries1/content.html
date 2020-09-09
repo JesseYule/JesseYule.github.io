@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（一）：入门</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">时间序列分析，其实就是和自然语言处理一样对序列数据进行分析，只是这里的序列数据是关于时间的序列，而自然语言处理是关于语言的序列。另一方面，时间序列也没有自然语言处理那样有很多分析目标，一般来说会有三种目标：描述历史数据的动态变化，分析数据变化的规律以及预测未来数据的变化趋势。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先介绍一下时间序列最重要的平稳性（stationary），主要是假设随机变量的基本特征（统计性质）在未来的一个长时期内是保持不变，和过去一样的：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">严格来说，如果对一个序列，对任意t都满足：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$F_{X_{t_1}, X_{t_2},...,x_{t_n}}(x_1, x_2,..., x_n)=F_{X_{t_1+k}, X_{t_2+k},...,x_{t_n+k}}(x_1, x_2,..., x_n)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">式子的意思就是即使有一个时间t的滑动，联合分布依然保持不变，以上称为强平稳。还有一种弱平稳：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$E(x_{t_1}) = E(x_{t_1+k}) = constant$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Cov(x_{t_1},x_{t_2}) = Cov(x_{t_1+k},x_{t_2+k})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们看看强平稳和弱平稳，从公式来看，强平稳的条件更严格，但不能说满足强平稳就一定弱平稳。我个人觉得，强平稳就是一种很理想的情况，在这种情况下进行时间序列分析结果会很好，可是实际数据很难满足这种要求，所以才在强平稳的基础上提出条件稍微没那么严苛的弱平稳。但本质上来说，不论是强平稳还是弱平稳，都是在描述时间序列的统计性质关于时间平移的不变性。强平稳要求所有统计性质都是关于时间平移不变的，而弱平稳只要求期望和协方差是不变的。通过判断数据是否满足这些要求，就能分析出统计性质是否会在未来发生变化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一般来说，时间序列都是转化为满足弱平稳条件再进行分析的，既然是弱平稳而不是强平稳，那么自然就会想知道，数据平稳的程度有多少，为了衡量平稳的程度，就有了自相关函数（ACF）和偏自相关函数 (PACF)，基于这两个函数，我们甚至可以分析出一段序列中，哪一部分对预测未来最有用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">自相关函数用来度量时间序列中每隔 k 个时间单位（yt 和 yt–k）的观测值之间的相关性。统计中的相关性指的就是两个变量之间的相关程度，对时间序列来说只有一段序列，所以它无法和其他序列做比较，但是却可以比较自身在不同时间段的相关性，这就是自相关函数分析的内容。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对一个平稳序列，有自相关函数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\rho = Corr(X_t,  X_{t+k}) = \frac{Cov(X_t, X_{t+k})}{\sqrt{Var(X_t)}\sqrt{Var(X_{t+k})}}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">是不是看着有点熟悉，因为本质上它就是皮尔逊相关系数：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\rho_{X,Y} = \frac{Cov(X, Y)}{\sigma_X \sigma_Y}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">因为自相关函数分析的事不同时间段的序列的相关性，不同时间段之间的滞后时间可能会对分析带来影响，偏自相关函数就是先剔除这些因素的干扰再分析相关性。关于自相关函数和偏自相关函数，会在后续结合AR模型继续进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果时间序列满足平稳性就可以很好地进行分析了，可是不满足就不能进行分析了吗，当然不是，针对非平稳性时间序列，如果满足其他一些特性，也可以进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个是趋势性，可分为确定性趋势和随机性趋势。确定性趋势就是指序列的趋势可以用趋势线拟合，剔除掉这种趋势后序列就变成平稳序列。另一种随机性趋势则是无法通过单一的趋势线分析的，在不同时间趋势是随机变化的。一般来说，如果数据具有确定性趋，通过移除这种趋势，数据就能满足平稳性，进行分析了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二种是季节性，就是在某个时间段有明显的变化规律：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/3"><img src="image/3" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还有一种是周期性，和季节性不同</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">所以总的来说，我们可以进行分析的时间序列数据可以有一个经典的表达式：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z_t = T_t + S_t + X_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">T_t表示确定性趋势变化，S_t表示确定性季节变化，X_t就是满足平稳性的时间序列。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

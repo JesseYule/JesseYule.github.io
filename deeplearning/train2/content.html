@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #ffffff ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">深度学习建模训练心得（一）：如何开始训练</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以前都是侧重于看算法看模型，没有真正从零开始写一个模型然后训练它，最近开始自己写模型训练，发现很多东西都值得探讨一下，比如到底不同的模型有什么本质上的区别、神经元数量和神经层数量的不同有什么影响、如何选择激活函数、写好一个模型后怎么训练、训练有没有一个系统的流程等等，所以我就打算尽可能都了解一下，记录一下收获的东西。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">作为这个系列第一篇文章，我想讨论一下，当你写好一个模型之后，应该如何开始训练。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先第一点，我认为应该使用小数据集训练，看模型能否过拟合。我自己遇过很多次，写好模型之后马上训练，然后发现模型无法收敛，损失降到一定数值就降不下去了，然后就想办法加深层数，用各种各样的技巧，模型还是无法收敛，最后却发现原来是某条公式写错了，所以还不如一开始就是用小数据集测试，看模型能都过拟合，如果模型连小数据集都无法过拟合，那么肯定是代码细节出了问题了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺便我也可以说一下，一般如果代码出问题导致模型损失无法下降，一般都是出在数据的预处理或者模型的输出附近位置，举个例子，做分类问题，判断图片是猫还是狗，有可能在数据预处理的时候，把猫狗的图片都标记成狗，这样最后训练出来的模型损失就会降到0.5就降不下去（而且还是完美的0.5，别看这个操作好像很傻，我还真试过几次，导致后来看到损失降到0.5就知道肯定是数据有问题），至于模型的输出出问题也很正常，比如目标检测问题，模型得到了输出之后还要对输出处理一下，公式不小心打错了模型就死活无法收敛了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二点，当你检查过模型可以过拟合，就可以正式训练了，训练的过程中我一般会调整两个参数，一个是学习率，一个是batch size，一般来说，一开始我会希望模型能收敛得快点，我会把学习率调高一点，batch size调低一点，学习率的意思就不用说太多了，主要是batch size，这个batch size又会涉及到随机梯度下降、mini batch梯度下降、批量梯度下降，我自己的简单理解就是每次训练用到的batch size大小。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">在进一步说明之前，先回顾一下epoch和batch的关系，我的理解是，每个epoch，模型都会学习所有的数据，比如我现在有1000个数据，设置了batch size为100，那么每个epoch，模型就需要学习10次才能遍历所有数据，如果设置了epoch为1000，这个过程就会重复1000次，所以在pytorch的代码中一般可以看到两个循环，一个是针对epoch的循环，一个是针对batch的循环。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">了解了epoch和batch size之后，再来看，假如我设置epoch size为1000和100，区别就在于每次epoch模型的学习次数，或者说反向传播次数，当batch size小时，模型就会学习更多次，但是相对的，因为每次学习的数据只是所有数据的一部分，所以学习的方向不准确，是比较随机的，但毕竟我们会重复这个过程epoch次，所以总的来说损失还是能下降，而且因为学习次数多，下降得比较快，所以，在模型训练的开始阶段，我更喜欢设置小的batch size。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">到了后期，如果还是设置小batch，因为小batch导致模型每次学习的方向都比较随机，这就会导致损失会波动变化，所以才需要设置大的batch size，让模型能基于数据整体分析应该学习的方向。当然，还需要设置小的学习率，不然模型无法收敛。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">以上这个流程虽然比较简单，但我觉得只要模型结构合理，一般都能收敛到比较满意的水准了，如果这时候模型还是无法收敛，或许就需要从模型的结构入手改进了，这部分的内容以后会继续更新。</div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

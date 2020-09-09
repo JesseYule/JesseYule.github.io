@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析教程（六）：Box-Jenkins方法（上）</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了时间序列的基本性质和一些基本模型，这里就介绍对时间序列进行分析建模的一套完整流程，也就是Box-Jenkins方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说Box-Jenkins方法包括四个阶段，第一，把序列转化为平稳序列，并判断出合适的ARMA模型（确定阶数）用于分析；第二，估计模型的未知参数；第三，对模型进行评价分析；第四，使用得到的模型进行预测。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看到，其实整个过程最重要的还是第一个阶段，即如何对非平稳序列进行转化，以及如何确定ARMA模型的阶数。本文先主要介绍如何转化非平稳序列。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前也说过，非平稳序列主要分析的对象就是非随机的趋势性和季节性，当然实际非平稳序列有很多也可以很复杂，你随便写一个序列也可以是非平稳序列，主要还是目前只有针对这两者的模型发展比较成熟，建模可以得到较好效果，所以才只主要分析他们，至于其他类型的序列，或许深度学习模型是个不错的选择</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来看看，如何判断非平稳，最简单的办法就是看图像，初次之外我们还可以利用SACF（样本自相关函数，sample autocorrelation function）和SPACF（样本偏自相关函数，sample partial autocorrelation function）进行分析。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当我们得到一个样本序列Xt，我们可以计算样本的协方差：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat\gamma_k=\frac{1}{n} \sum_{t=k+1}^n (x_t - \hat\mu)(x_{t-k}-\hat\mu)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">基于样本的协方差，就可以进一步推出SACF和SPACF。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">SACF和SPACF有什么用呢，我们分两种情况来讨论，第一是序列具有平稳性：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">1. 如果SACF在时间间隔k较小时剧烈下降到0附近，SPACF快速收敛到0，那么我们可以使用MA模型；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">2. 如果SPACF在时间间隔k较小时剧烈下降到0附近，SACF快速收敛到0，那么我们可以使用AR模型；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">3. 如果SACF和SPACF都没有剧烈下降，但最终都收敛到0，那么使用ARMA模型更合适。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上述表述中的剧烈下降就是指断崖式的下降，而且不是指收敛到0，后面可能还会上升，比如：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">右下图就是一个ACF的图像，可以看到他在k=2时就下降到0附近，可是后面又有波动变化，我们就不能说它收敛到0，所以用剧烈下降到0附近这种表述。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当序列不具有平稳性，我们也能利用SACF和SPACF判断它具有趋势性还是季节性：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">1. 如果SACF缓慢下降并最终稳定在1附近，可能序列就具有趋势性，我们可以尝试进行差分运算对其进行转换；</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">2. 如果SACF显示出周期性，那么可能具有季节性，就需要其他手段进行性转换了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来，我们来重点讨论一下，如果序列具有趋势性或者季节性，应该怎么消除他们的影响。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们来看看趋势性，趋势性可以分为线性趋势和非线性趋势，如果序列显示出线性趋势，我们可以利用线性回归：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_t = \alpha + \beta t + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中，et是白噪声序列，针对序列数据拟合出alpha和beta之后，我们可以计算模型和数据之间的残差：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat e_t = x_t - \hat \alpha - \hat \beta x$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这段残差序列，就构成了一个移除了线性趋势的序列。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">类似的，我们也可以利用非线性模型对数据进行拟合，并通过同样的流程得到一段移除了非线性趋势的新序列。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">当然，我们的老方法差分运算也可以移除趋势，假设：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_t = a+bt+e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\bigtriangledown x_t = x_t - x_{t-1} = b + \bigtriangledown e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来，我们看看怎么处理季节性。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">我们还是利用差分运算，但是要注意差分的步长，应该和季节性变化一致，比如现在有一段每月平均气温的数据，它的变化周期就是一年:</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_t = \mu + \theta_t + e_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\theta_{t+12} = \theta_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这时候我们作步长为12的差分：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_t - x_{t-12} = \mu + \theta_t + e_t - \mu - \theta_{t-12} - e_{t-12}=e_t- e_{t-12}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，之前介绍过的移动平均，也可以用来移除这种季节性，还是以上面这个周期为12的序列为例子：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$y_t = \frac{1}{12} (\frac{1}{2}x_{t-6} + x_{t-5} + ... + x_{t+5} + \frac{1}{2}x_{t+6}   )$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">得到的新序列yt就移除了季节性了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除此之外，还有很多方法，这里就暂不一一介绍了。</div>
+
+
+
+
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

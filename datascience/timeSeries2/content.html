@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                                                   <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">时间序列分析（二）：移动平均与指数平滑</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle"> </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前介绍了时间序列的基本概念，现在就正式介绍一些模型方法，第一个是移动平均法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">移动平均法很简单，就是用最近的数据预测未来短时间内的数据。有简单移动平均法，真的很简单，就是用最近的一组数据，去平均，作为下一时刻的预测：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i = (x_{i-1} + x_{i-2} + ...+ x_{i-n})/n$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单移动平均最大的优点就是通过计算平均可以减小随机波动的影响，当时序数据受到周期变动和随机波动的影响而起伏较大时，通过移动平均就能消除这种影响，进一步分析出它的发展方向与趋势。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单移动平均的升级版就是加权移动平均，其实就是在各个时刻的数据加上一个权重，考虑了不同时刻的数据对未来的预测的作用的不同，不同于机器学习的模型，这里的权重更多是根据经验法和试算法确定的，个人觉得没有太大研究价值，不再深入讨论。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个要介绍的模型是指数平滑模型，它包括一次指数平滑、二次指数平滑、三次指数平滑，当时间序列没有明显趋势变化时，可以使用一次指数平滑进行预测，一次指数平滑的基本公式就是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i = \alpha * x_i + (1-\alpha)S_{i-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中S_i是时刻t的预测值，x_i是时刻t的真实值，S_i-1是时刻t-1的预测值，a是平滑常数。一次指数平滑的预测公式是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_{i+k} = s_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一次指数平滑可以看成通过结合过去信息和当前信息进行预测，结合的方式就是通过合适的权重进行加权求和，得到的结果是一条直线，所以在序列没有明显趋势的时候才适用。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">如果序列具有线性趋势变化，就可以使用二次指数平滑，二次指数平滑的基本公式是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i= \alpha *x_i + (1-\alpha)(S_{i-1} + t_{i-1})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$t_i  = \beta * (s_i - s_{i-1}) + (1-\beta)t_{i-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，二次指数平滑和一次指数平滑相比，加多了一项t_i用于表示趋势，在每个时刻对趋势进行分析，再加入到一次指数平滑中。预测公式是：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_{i+h} = s_i + h*t_i$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得之前提到过，一般的时间序列可表示为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$Z_t = T_t + S_t + X_t$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中包含了平稳的序列，趋势变化以及季节性变化，在二次指数平滑的预测公式中，我们看到预测值的等于一次指数平滑的预测值加上表示趋势变化的t_i，如果再继续引入季节性变化呢，就得到三次指数平滑了：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$S_i = \alpha *(x_i-p_{i-k}) + (1-\alpha)(S_{i-1} + t_{i-1})$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$t_i  = \beta * (s_i - s_{i-1}) + (1-\beta)t_{i-1}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$p_i  = \gamma * (x_i - s_i ) + (1-\gamma)p_{i-k}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">预测公式为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$x_{i+h} = s_i + h*t_i + p_{i-k+h}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，指数平滑的实质就是对现在的数据进行加权线性变换，不论是一次二次还是三次，即使是加入趋势和季节变化信息，也是用基本公式表示这些信息，然后汇总起来。</div>
+
+
+
+            </div>
+          </div>
+		  
+
+
+
+        </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">YOLOv2</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">之前也提到，YOLOv1很快，但是不够R-CNN准确，所以现在就来谈一下v2是怎么改进的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个改进策略batch normalization，它可以提升模型的收敛速度，起到正则化效果，降低模型过拟合，yolov2中每个卷积层后面都加了BN层，而不再使用dropout层。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个是使用更高分辨率的输入，以前一般是使用224*224的输入，现在就使用448*448的输入对原模型进行fine tuning。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">前两个都是常规改进方法，接下来说说比较有意思的改进，首先是引入faster r-cnn的anchor机制，所谓anchor就是预设了尺寸的边界框，yolo要做的就是对预设的边界框进行调整，使其更接近真实的边界框，那么具体怎么做呢，这里我看论文不大懂，但是看了代码就明白了，这里的操作很高明，一定要注意。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先是去掉全连接层，也就是说当我们得到最后一个特征图，我们不用全连接层去分析特征图从而计算边界框分类等信息，而是采用卷积运算去计算，那么怎么计算，假设我们有一个个7*7*30的特征图，假设每个cell（区域）预设5个anchor，目标有3类，那么我们就可以对特征图进行卷积运算，输出的尺寸为[7，7，5*（4+1）+3]，也可以说是通道数量由30变为5*（4+1+3），这里的5就是anchor数量，一个anchor预测4个边界框信息加1个置信度，然后因为一个cell只预测一次类别，所以就直接加上3。通过这个过程，我们就把全连接层剔除了，剔除全连接层的作用十分重大，特别是整个模型没有了全连接层，模型的输入就不受限制，我们就可以采用不同尺寸的输入训练模型，进一步加强模型的泛化能力。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来我们再来看看anchor是怎么预设的，论文就提出从训练数据入手，对训练数据的边界框进行聚类，根据模型的复杂度和准确度，确定常见的长宽比和合适的数量，最后实验分析出使用5个anchor的综合效果最好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">还记得以前我们是直接预测边界框信息的，现在我们有了预设的anchor，那么怎么利用它来计算出边界框呢，答案就是计算偏移量，对anchor进行调整，使其更接近真实边界框，主要就是求出anchor的坐标和真实边界框坐标的两个偏移量，加上宽和高的两个变换比例，所以还是四个输出结果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是这样算又有一个问题，就是anchor可以任意地调整，向任何方向移动，落在图片的任何位置，这就导致了模型不稳定，所以作者又提出，要对坐标的偏移量做限制，首先，我们假设anchor都处于cell的左上角，假设我们的每一个cell的长宽都是1，然后我们计算的偏移量就是真实边界框的中点相对于cell左上角坐标的偏移量，而这个偏移量一定是01之间的，这可以通过sigmoid函数实现，计算出来后再根据实际cell的长度换算就好：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$b_x = \sigma (t_x) + c_x$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$b_y = \sigma (t_y) + c_y$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其中tx就是我们预测的结果，cx是cell的左上角横坐标，bx就是边界框的中点横坐标。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">然后我们再看看怎么处理宽高：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$b_w = p_w e^{t_w}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$b_h = p_h e^{t_h}$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">其实对于宽高并没有坐标那样的限制，只需要能逼近真实边界框的尺寸即可，所以这里也没有用sigmoid函数tw、th。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">看完了anchor相关的内容，我们再看看v2相比v1还有什么优化策略，还记得v1我们最终使用尺寸为13*13*30的特征图做分析，这样的特征图会导致一些小物体的特征丢失，所以YOLOv2就提出了一个passthrough层，passthrough层与ResNet的shortcut类似，把前面更高分辨率的特征图连接到后面的特征图，比如说我们取26*26*50的特征图，对其变换成13*13*200，这样我们就可以拼接得到13*13*230的特征图了，至于如何变换，看图可能更容易理解：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/2.jpg"><img src="image/2.jpg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">这个方法在识别小目标的时候十分值得借鉴，需要注意。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，YOLOv2借鉴了很多其他论文的思路对YOLOv1做出了改进，接下来，我们继续看看YOLOv3又改进了什么地方。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一个改进是特征提取器从Darknet-19变为darknet-53，其实就是通过引入残差连接让网络层数加深，加强了网络的特征提取能力。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二个改进是FRN架构（feature pyramid network）：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/3.jpg"><img src="image/3.jpg" alt="ポジショニングマップ">
+                    </picture>4
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">简单来说，就是利用三个尺寸的特征图，通过拼接和卷积运算，融合他们的特征，而yolov2的passthrough层的单纯拼接，这样做的目的我觉得还是为了提高模型对于小特征的提取分析能力。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

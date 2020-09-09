@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">空间金字塔池化与Fast R-CNN</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">SPPNet、Fast R-CNN是R-CNN的改进版本，这里我不打算单独介绍他们，而是注重介绍他们的改进方法。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来回顾一下R-CNN有哪些缺点，第一，我们在用CNN对图像进行处理之前，需要处理图像使得他们保持同样的尺寸，一般可以选择扭曲图像或者直接裁剪，不论怎么做都有可能造成图像信息的丢失。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第二，R-CNN需要对每个候选框进行一次CNN计算，计算之后还需要用SVM验证。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第三，模型包含多个阶段的训练，一个是对CNN的fine tuning，一个是SVM，一个是边界框回归器。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第一个缺点，回想一下，为什么CNN需要固定尺寸的输入呢，实质上不是CNN需要固定尺寸的输入，因为卷积运算和池化运算都是可以针对任意尺寸的输入得到相应输出的，但最后做分类的时候，我们用到了MLP，这就需要输入的尺寸统一了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对这个问题的解决方法就是空间金字塔池化，它是一种池化方法，主要实现了针对不同尺寸的输入，也能得到固定的输出，具体是怎么实现的呢，首先我们回想一下传统的池化过程，比如最大池化，就是用一个比如3*3的框，遍历整个特征图，计算每个区域的最大值，而空间金字塔池化，它则是把整个特征图分成3*3，一共九个部分，计算每个部分的最大值，这样，不论输入尺寸多大，都能得到同样尺寸的输出了。</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/1"><img src="image/1" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图也可以更清晰地反映出空间金字塔池化的思想，一般来说，我们会对特征图进行多个划分，比如1*1、2*2、4*4，这样就可以计算出21个特征值，如果想要更多的特征值，就进行更多的划分。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">空间金字塔池化会对一个输入进行不同尺度的池化，而ROI（region of interest）池化，本质上就是空间金字塔池化的简化版本，只进行单一尺度的池化。实验证明，其实多个尺度的池化带来的模型效果的提升并不显著，所以目前更多偏向于使用ROI池化。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第二个缺点，其实我们只需要改一下计算顺序就能解决了，也就是说，先对输入图像计算CNN得到特征图（feature map），再根据region proposals挑选出特征图对应的部分，因为特征图比原输入尺寸变小了，所以要注意region proposals坐标也要进行相应的缩放，之后，再利用前面的ROI池化层，把提取出来的局部特征图进行池化处理统一尺寸，最后再进行分类和边界框回归。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">针对R-CNN的第三个缺点，也就是模型包含多阶段训练，目前来看就是在模型的最后要分别利用SVM进行分类以及边界框回归，针对这个问题的解决方案就是用MLP对CNN的输出进行处理，同时输出分类结果以及边界框回归结果：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/2.png"><img src="image/2.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上图可以更清晰地反映出，ROI池化层后接多层神经网络，神经网路中途分成两个分支，一部分通过softmax处理计算分类结果，另一部分进行边界框回归，所以模型的损失函数是一个多任务损失函数（multi-task loss）：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$L(p,u,t^u,v)=L_{cls}(p,u) + \lambda[u \leq 1] L_{loc}(t^u,v)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">说到底不论是分类还是边界框回归，得到的结果也是一堆数值，所以像这样把两个问题的结果融合到一个模型中进行训练也是确实可行的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">上面提到的所有内容，就构成了Fast R-CNN。</div>
+
+
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

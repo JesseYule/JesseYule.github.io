@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">R-CNN</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">R-CNN是深度学习最早应用到目标检测的模型，主要还是对CNN进行改进，补充一些结构功能，使得模型能够满足目标检测的目标位置确定与分类。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">CNN的图像分类效果是非常好的，遗憾的是它无法对目标进行定位，所以R-CNN的思路就是，既然CNN没法定位目标，那不如把图像中潜在的目标都找出来，再分析找得对不对。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">第一步要做的就是找出图像中潜在的目标，也就是生成候选区域，方法有很多，比如selective search、edge boxes，这里以selective search为例，它主要的思路就是根据图像的颜色、纹理、尺寸相似性和空间重合度，划分出一个个区域：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/1.jpeg"><img src="image/1.jpeg" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">可以看出，其实选出来的区域大小是不一致的，但是CNN要求输入应为固定大小，所以我们就简单粗暴地对图像进行缩放变形，使得它变成我们预设的尺寸。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">调整了尺寸之后，会继续输入到CNN，利用CNN对每个候选区域（你没看错，是每个，所以R-CNN效率很低）进行分类。在这里我们先回想一下，CNN做分类，其实就是利用卷积层池化层提取特征，最后再用全连接层做分类，而R-CNN在利用CNN提取了特征之后，会有两个head，一个head继续做分类，一个head做边界框回归：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="image/5.png"><img src="image/5.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先我们继续看看分类操作，还是像传统的CNN那样，最后利用全连接层进行分类，而在R-CNN的论文中，最后还利用SVM（上图没有显示出来），进一步分析CNN的分类结果是否正确（进行二分类判断对错）。主要原因有两点，第一是实验证明在这里SVM的分类效果比CNN好，所以利用SVM进一步提高模型的分类准确度，第二是SVM分类的结果是一个01之间的数值，这个数值可以看成置信度或者分类得分，在测试过程中，我们就可以根据这个得分，挑选前n个最可能的目标。除此之外还有一个作用，比如有几个候选框，框中了同一个人的头、手和全身，然后用CNN分类都得到这是一个人，这时候模型就认为图像里面有三个人了，可是我们引入了SVM对分类结果评分之后，可能只有全身的分类得到较高，其他两个分类得分较低，这时候我们只需要设定一个合理的阈值，就能只保留最合理的那个识别结果（具体可了解一下非极大值抑制）。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">而边界框回归（bounding-box regression）则主要是为了调整候选框的尺寸位置，使得它更接近真实边界框，这里详细讲解一下。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先，我们要知道，训练数据是有明确说明图像中的目标以及边界框的具体位置信息的，我们可以用下式表示真实边界框：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$G^i = (G_x^i, G_y^i, G_w^i, G_h^i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">分别表示边界框的左上角坐标以及框的宽和高。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">候选边界框可以表示为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$P^i = (P_x^i, P_y^i, P_w^i, P_h^i)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">边界框回归，就是想办法让候选边界框无限接近真实边界框（ground-truth bounding box），那么候选边界框怎么才能接近真实边界框呢？我们可以认为主要通过两种操作：一个是对边界框进行尺度变换，也就是变形，使得它的形状尺寸接近真实边界框，也就是对框的宽和高进行处理；另一个是对边界框进行平移变换，改变框的位置，也就是框的坐标。平移变换的公式如下：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_x = P_w d_x(P) + P_x$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_y = P_h d_y(P) + P_y$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">尺度变换公式如下：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_w = P_w exp(d_w(P))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\hat G_h = P_h exp(d_h(P))$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">接下来分析的重点就是，为什么平移变换和尺度变换的公式的形式是这样。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先来看看平移变换公式，我们先来想象一下，如果想要候选框变换成真实框，那么从坐标的角度来说，只需要在xy轴的坐标分别加上一个差值常数不就行了，所以可以看到，Gx和Gy都是由Px、Py（候选框坐标）加上另一个项。但是如果知道真实框，当然可以直接加一个数，现在的问题就是不知道，所以我们就需要从模型的输入（CNN特征图）出发，利用模型计算出这个"常数"。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">假设坐标差为：</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$\Delta x = G_x - P_x = P_w d_x(P)$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><section style="text-align: center; margin:0 auto">$$d_x(P) = \Delta x / P_w$$</section></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">也就是说，模型要通过输入计算的实际上就是一个经过归一化的坐标差，为什么要归一化，或者说为什么差值要处以候选框的宽和高，个人认为，更多是为了增强模型的鲁棒性。这里边界框回归的输入尺度是一样的，所以进不进行归一化看起来都差不多，但是在后期的模型（比如Faster R-CNN中的RPN），我们会对不同尺度的输入进行边界框回归，这时候边界框的宽高不同，就会影响了模型对于差值计算的判断，所以如果让模型直接学习归一化的差值，再乘上归一化项得出差值，模型的效果就会更好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">再说一下这个d(P)，先来看看模型，输入的是CNN的特征图，所以边界框回归就是通过特征图利用不同的参数计算出d_x(P)和d_y(P)，而那些参数就是模型要学习的东西了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对于尺度变换，思路上也是差不多，乘上一个项使得候选框的宽高接近真实框的宽高。问题在于要有一个exp函数，主要原因就是保证这个数值大于0，不然模型如果算出一个负数就不可解释了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">顺带一提，通过模型求得的参数，可以得知候选框如果要转化为真实边界框，需要进行的变换的程度，而这个指标正正可以作为模型的损失函数，判断候选框与真实框的接近程度。关于边界框回归还有很多细节值得探讨，这里暂不详细讨论，感兴趣的朋友可以继续深入研究。如果是做计算机视觉的朋友，对于边界框回归的这些公式推导细节，都是值得慢慢深入研究的。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最后再简单说一下模型的训练过程，主要看看模型的损失函数。损失函数和模型一样由两部分相加，一个是分类的损失，一个是边界框回归损失，训练数据标注了真实边界框的信息，所以我们训练模型，就是希望模型的分类结果尽可能准确，得到的候选框尽可能接近真实边界框。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">作为总结，再说一下R-CNN的优缺点，首先优点当然是首次把CNN引入到目标检测领域，但是缺点也很明显，第一，选出候选框就很耗时间，一般来说，一幅图像需要选出两千多个候选框，第二，我们需要对每个候选框进行一次CNN计算，也就是说，即使只是处理一幅图，也要进行两千多次CNN计算，十分耗时，所以针对R-CNN的这些缺点，就有了改进的Fast R-CNN、Faster R-CNN等模型。</div>
+
+
+
+
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>

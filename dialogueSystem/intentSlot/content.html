@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://carrac.co.jp/service/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jesse Yule's Blog</title>
+    <meta name="viewport" content="width=device-width">
+
+    <style>.l-page { visibility: hidden; }</style>
+    <link rel="stylesheet" as="style" href="../../css/main/main.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://carrac.co.jp/img/common/app_icon.png">
+
+    <link rel="stylesheet" href="../../css/menu/common.css" media="all">
+    <link rel="stylesheet" href="../../css/menu/home.css" media="all">
+    <script type="text/javascript" async="" src="../../css/menu/analytics.js"></script>
+    <script async="" src="../../css/menu/js"></script>
+
+
+    <meta name="theme-color" content="#ffffff">
+    <!-------------------------matjax------------------------------>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <!---------------------------------------------------------------->
+    <script type="text/javascript" async="" src="../../css/main/analytics.js"></script><script async="" src="../../css/main/gtm.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHDRBVP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body style="font-family: 等线, 等线 Light,'微软雅黑 Light',Helvetica Neue, Helvetica, Arial, PingFang SC; font-weight: lighter ;word-break: break-all ;background-color: #323638 ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHDRBVP"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;
+      &lt;/iframe&gt;
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="l-page" data-page-id="service">
+      <!-- Start to define the global header.-->
+      <div class="l-gh"></div>
+      <!-- End to define the global header.-->
+
+
+
+
+      <div class="l-contents">
+        <!-- Start to define the main content.-->
+
+          <header class="st-hdr" id="js-hdr">
+              <div class="hdr-bar m-row m-row--jc--spacebetween m-row--ai--center">
+
+              </div>
+
+          </header>
+
+          <button class="trigger" id="js-trigger"><span></span><span></span><span></span></button>
+
+
+
+          <nav class="overlay-navigation" style="color: #eeeeee">
+              <div class="overlay-navigation__inner m-row">
+                  <div class="overlay-navigation__block">
+                      <ul class="sitemap m-row m-row--fw--wrap">
+
+                              <li class="sitemap__unit"><a href="../../index.html">Home</a></li>
+
+                          <li class="sitemap__unit"><a href="../../about/about.html">About</a></li>
+
+                          <li class="sitemap__unit"><a href="../../programming/java1.html">Java</a></li>
+
+
+
+                          <li class="sitemap__unit"><a href="../../math/all1.html">Mathematics</a></li>
+
+                          <li class="sitemap__unit"><a href="../../naturallanguage/all1.html">Natural Language</a></li>
+
+                          <li class="sitemap__unit"><a href="../../machinelearning/ml1.html">Machine Learning</a></li>
+
+<li class="sitemap__unit"><a href="../../articles/all1.html">Others</a></li>
+
+                      </ul>
+
+                  </div>
+                  <div class="sns"><h2 class="overlay-navigation__siteID"><img src="../../css/menu/img_siteID-m.svg"
+                                                                               alt=""></h2></div>
+              </div>
+          </nav>
+
+
+
+          <div class="p-lower">
+          <div class="c-red-line c-slide-in u-animdel-100"></div>
+          <h2 class="p-lower__title-en c-slide-in u-animdel-100">再谈意图识别与语义槽填充</h2>
+
+		  
+		   <div class="p-lower-kv">
+            <div class="p-lower-kv__text">
+              <div class="p-lower-kv__subtitle">  </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">对话系统可以分为任务导向型和非任务导向型，其中任务导向型又可以分为pipeline和end to end两类方法，其中pipeline很多情况下都包括三大模块：自然语言理解、对话管理和自然语言生成，之前在自然语言理解的概述中就简单介绍了意图识别（分类）和语义槽填充的概念，这次就详细介绍一下它们的应用和模型。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">首先回顾一下意图识别的发展，最早的意图识别是基于规则模版的方法，但是不同的表达方式会导致规则模版数量的增加，需要大量的人力物力时间，所以这种方法就慢慢被淘汰了，当然，它也有它的优点，那就是不需要大量的训练数据也能在单一领域内取得不错的效果。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">下一个阶段是基于统计特征进行分类，也就是传统机器学习阶段，这个阶段的思路就是首先对文本通过N-GRAM等方法进行特征提取，然后通过SVM、朴素贝叶斯之类的分类器进行意图的分类，整体效果更好，可是这些分类器都无法提取深层特征。后来随着深度学习的发展，人们也渐渐发现应用深度学习模型进行意图识别在性能上有很大的提升，所以后来研究方向也慢慢转向深度学习。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">深度学习和传统机器学习相比，第一个改进的地方就在于词向量，以往我们使用的N-GRAM模型，会导致数据稀疏，同时我觉得得到的词向量既不能表示出词的多义性，也不能体现出词与词之间的联系，而在深度学习时代，以word2vec为代表的分布式语义表示方法，通过使用低维、稠密的向量表示词的语义信息，从而表示出词的深层、多样的语义以及词与词之间的联系。除此之外，甚至有研究团队将HowNet等大型语言知识库的知识融入到词向量的学习中，进一步增强了词的表示效果。词向量表示效果的优化，对于最终识别的效果也有显著的提升。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">从模型的角度来说，其实都是那几个的了，第一个就是CNN，得到词向量后，利用CNN提取文本的特征，从而进行意图的分类，但是论文也提到CNN只能提取到意图文本的局部特征，不能保持语义的连贯性，个人是这样理解的，可能有些句子的意图要通过整个句子来判断，比如说"虽然我想先看看今晚去哪家餐厅吃饭，但是还是先买机票比较重要"，对这句话来说，如果只看前半句就以为句子的意图是搜索餐厅了，只有看完整句话才能知道意图是订机票，而对于一般的CNN来说提取出来的特征图都是针对句子的局部特征的，而无法反映出整句话的全局特征，所以在这种情况下就可能识别的效果不好。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了CNN，下一个就是大名鼎鼎的RNN，Bhargava等人通过利用RNN把上下文特征也应用到意图识别，实验证明了上下文信息有助于模型效果的提升，所以也有通过LSTM、GRU之类的模型去进行意图识别。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">除了CNN、RNN，深度学习那么多模型都可以应用到意图识别，说实话，我觉得意图识别和普通的文本分类之间似乎还没有很明显的区别，至少从模型构建的过程来看，并不会因为我们做的是意图识别，就需要对数据或者模型进行些特别的处理。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">下面就谈一下语义槽填充。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">一开始我把语义槽填充和属性提取搞混了，但是后来想了一下其实语义槽填充和属性提取、实体提取（命名实体识别）、关系提取一样，都可以认为是属于信息提取的范畴，说到底就是要从文本中提取需要的信息，只是根据情况不同，细节上有所不同，比如通过下图可以看到语义槽和实体的区别：</div>
+                <div class="p-service-index-map__image c-fade-in-up js-scroll-item is-shown">
+                    <picture>
+                        <source media="(max-width: 568px)" srcset="image/1.png"><img src="image/1.png" alt="ポジショニングマップ">
+                    </picture>
+                </div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">留意Boston和New York，如果我们做的是实体提取，那么他们都属于city，但是如果做的是机票领域的语义槽填充，那么Boston就属于出发地，New York就属于目的地。从某种程度上来说，语义槽比起实体更多样化，蕴含的信息更多。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">但是正如上面所说的，语义槽填充本质上就是信息提取，和命名实体识别是一样的，所以我们可以把槽填充看成一个序列标注问题。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">最早期的槽填充也是使用基于规则的方法去做，研究人员通过观察训练语料的文本数据，基于语言学的知识，人工为每个槽构造一些识别模版组成模版集合，这些模版可以是基于字、词、词性、句法的，得到模版集合后，再设置模版的使用顺序，对输入的句子按顺序使用模版来抽取槽信息，像这种基于规则的方法，需要大量的人力物力，但是也依然无法覆盖所有的情况，而且换一个领域就要重新分析构建新的模版，所以基于规则的方法很快就被淘汰了。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">来到序列标注模型的时期，主要的思路就是一个词对应生成一个槽标签，最常用的模型就是条件随机场，但是近年来，随着深度学习的发展，人们开始尝试把深度学习的模型应用到序列标注中，比如Kaisheng Yao等人就利用RNN，同时引入词性特征和命名实体特征，实现了更好效果的槽填充，但是也有学者质疑RNN类模型的性能，并且通过实现表明了对于复杂的语料，条件随机场仍然比神经网络取得更好的效果。所以在槽填充的问题上，目前似乎还没有找到最好的方向。</div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2"><br></div>
+                <div class="p-lower-kv__outline p-lower-kv__outline--col2">总的来说，这里介绍的意图识别和语义槽填充，虽然听起来很新鲜，但我更倾向于把他们看成自然语言理解领域的分类问题和序列标注问题。</div>
+
+
+            </div>
+
+        <!-- End to define the main content.-->
+      </div>
+
+
+    </div>
+    <script src="../../css/main/main.min.js" async=""></script>
+
+    <script type="text/javascript" defer=""
+            src="../../css/menu/autoptimize_73b1aaeb49de3f7372d04614ffa9ecd3.js"></script>
+
+</body></html>
